@@ -1,0 +1,16 @@
+{
+  "name": "Cahier d'HLP · Terminale",
+  "short_name": "Cahier HLP",
+  "description": "Fiches, flashcards, QCM corrigés et exercices pour réviser la spécialité HLP.",
+  "lang": "fr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f3fa",
+  "theme_color": "#1c2a24",
+  "icons": [
+    { "src": "img/icone-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "img/icone-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "img/icone-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

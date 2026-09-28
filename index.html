@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cahier d'HLP · Terminale</title>
+<meta name="description" content="Fiches, flashcards, QCM corrigés et exercices pour réviser les textes de la spécialité HLP en Terminale. Gratuit, sans compte.">
+<meta name="theme-color" content="#1c2a24">
+<link rel="icon" href="img/icone-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="img/icone-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Cahier d'HLP">
+<meta property="og:title" content="Cahier d'HLP · Terminale">
+<meta property="og:description" content="Fiches, flashcards, QCM corrigés, palais de mémoire : pour réviser les textes d'HLP. Gratuit, sans compte.">
+<meta property="og:url" content="https://naulio.github.io/cahier-hlp/">
+<meta property="og:image" content="https://naulio.github.io/cahier-hlp/img/partage.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cahier d'HLP : fiches, flashcards et QCM pour réviser la spécialité HLP">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,500;0,700;0,800;1,500&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Caveat:wght@500;700&display=swap">
+<link rel="stylesheet" href="style.css?v=202609281909">
+</head>
+<body>
+<a class="skip" href="#" onclick="document.getElementById('view').focus();return false">Aller au contenu</a>
+<svg id="sprite" width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-basket" viewBox="0 0 24 24"><path d="M3.5 10h17l-1.6 8.6a2 2 0 0 1-2 1.6H7.1a2 2 0 0 1-2-1.6z"/><path d="M8 10l3-6M16 10l-3-6"/><path d="M4.3 14h15.4M8.5 10v10M12 10v10M15.5 10v10"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 5.5V12l3.6 2.1"/><path d="M12 2.5v1M12 20.5v1M2.5 12h1M20.5 12h1"/></symbol>
+    <symbol id="i-ladder" viewBox="0 0 24 24"><path d="M7 3v18M17 3v18M7 7h10M7 12h10M7 17h10"/></symbol>
+    <symbol id="i-bars" viewBox="0 0 24 24"><rect x="3.5" y="4" width="17" height="16" rx="1.5"/><path d="M8 4v16M12 4v16M16 4v16"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="M4.5 14.5a7.5 7.5 0 0 1 15 0z"/><path d="M12 14.5h9.5"/><path d="M8.5 8.2l-2.3 6.3M12 7V4.5"/><circle cx="12" cy="4" r="1"/></symbol>
+    <symbol id="i-lamp" viewBox="0 0 24 24"><path d="M12 2.6c1.3 1.5 1.3 2.8 0 4-1.3-1.2-1.3-2.5 0-4z"/><path d="M9.5 8h5l1.5 8.5h-8z"/><path d="M7 16.5h10l-1 4H8z"/><path d="M16 11h2.5a1.5 1.5 0 0 1 0 3H16.7"/></symbol>
+    <symbol id="i-tablet" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="2"/><path d="M12 3.5v17M6.5 8h3M6.5 12h3M6.5 16h3M14.5 8h3M14.5 12h3M14.5 16h3"/></symbol>
+    <symbol id="i-palms" viewBox="0 0 24 24"><path d="M5 21C9 15.5 11.5 10 12.5 3"/><path d="M19 21C15 15.5 12.5 10 11.5 3"/><path d="M7.5 17.2l-3.2-.6M9.4 13.8l-3.3-1.6M11 10.3l-3-2M16.5 17.2l3.2-.6M14.6 13.8l3.3-1.6M13 10.3l3-2"/></symbol>
+    <symbol id="i-hand" viewBox="0 0 24 24"><path d="M7 11.5V6.5a1.5 1.5 0 0 1 3 0v4M10 10.5V4.8a1.5 1.5 0 0 1 3 0V10.5M13 10.5V5.8a1.5 1.5 0 0 1 3 0v5.7M16 11.5V8.8a1.5 1.5 0 0 1 3 0v5.7a6.5 6.5 0 0 1-6.5 6.5h-.8a6 6 0 0 1-5-2.6L4.3 15a1.5 1.5 0 0 1 2.4-1.8L7 13.6"/></symbol>
+    <symbol id="i-wall" viewBox="0 0 24 24"><path d="M2.5 12h1.8M6.5 12h1.8"/><rect x="11" y="5" width="10.5" height="14" rx="1"/><path d="M11 9.7h10.5M11 14.3h10.5M16.2 5v4.7M13.6 9.7v4.6M18.8 9.7v4.6M16.2 14.3V19"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v10h13V10"/><path d="M10 20v-5h4v5"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M3 5.5c3-1.5 6-1.5 9 .5v14c-3-2-6-2-9-.5z"/><path d="M21 5.5c-3-1.5-6-1.5-9 .5v14c3-2 6-2 9-.5z"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.3"/></symbol>
+    <symbol id="i-school" viewBox="0 0 24 24"><path d="M2.5 21h19M4.5 21V10.5L12 5l7.5 5.5V21"/><path d="M10 21v-4.5h4V21M12 5V2.5l2.5 1"/><path d="M7.5 13h2M14.5 13h2"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="M3 12h18"/><circle cx="6" cy="12" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="18" cy="12" r="1.8"/><path d="M6 8V6M12 16v2M18 8V6"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6.5h16M4 12h16M4 17.5h16"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19.5 7"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M7 7l10 10M17 7 7 17"/></symbol>
+    <symbol id="i-timer" viewBox="0 0 24 24"><circle cx="12" cy="13.5" r="7.5"/><path d="M12 13.5V9.5M9.5 2.5h5M18.5 6.5l1.5-1.5"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></symbol>
+    <symbol id="i-photo" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.8"/><path d="M21 15.5l-5-5-8.5 8.5"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3.5 21.5 20h-19z"/><path d="M12 10v4.5M12 17.3v.2"/></symbol>
+    <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-4 10.5c.8.8 1 1.5 1 2.5h6c0-1 .2-1.7 1-2.5A6 6 0 0 0 12 3z"/></symbol>
+    <symbol id="i-cards" viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="15" rx="2"/><path d="M8 3h11a2 2 0 0 1 2 2v12"/></symbol>
+    <symbol id="i-table" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 9h18M3 14.5h18M9 4v16"/></symbol>
+    <symbol id="i-pen" viewBox="0 0 24 24"><path d="M15.5 4.5l4 4L8 20H4v-4z"/><path d="M13.5 6.5l4 4"/></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4.5 19.5 12 7 19.5z"/></symbol>
+    <symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+    <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M12 3l7.8 4.5v9L12 21l-7.8-4.5v-9z"/><path d="M12 7.5l3.5 3-1.5 5h-4l-1.5-5z"/></symbol>
+    <symbol id="i-swords" viewBox="0 0 24 24"><path d="M4 4l9 9M20 4l-9 9M6.5 15.5l-2 2M17.5 15.5l2 2M3.5 20.5l3-3M20.5 20.5l-3-3"/><path d="M4 4h3v3M20 4h-3v3"/></symbol>
+    <symbol id="i-map" viewBox="0 0 24 24"><path d="M3 3.5v17h17.5"/><circle cx="9" cy="14" r="1.6"/><circle cx="14" cy="8.5" r="1.6"/><circle cx="18" cy="12" r="1.6"/></symbol>
+    <symbol id="i-quote" viewBox="0 0 24 24"><path d="M4 18c0-6 2-9 6-10M13 18c0-6 2-9 6-10"/><path d="M4 18h5v-5H4zM13 18h5v-5h-5z"/></symbol>
+  </defs>
+</svg>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="#accueil" aria-label="Accueil du cahier">
+      <span class="brand-mark" aria-hidden="true">h</span>
+      <span style="min-width:0"><span class="brand-t">Cahier d'HLP</span><span class="brand-s" id="brandSub">Terminale · révisions</span></span>
+    </a>
+    <span class="spacer"></span>
+    <button class="iconbtn" id="themeBtn" type="button" title="Thème : automatique / clair / sombre" aria-label="Changer de thème"><svg class="icon"><use href="#i-moon"/></svg></button>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="sidebar" id="sidebar" aria-label="Navigation principale"></nav>
+  <main id="view" tabindex="-1"><p style="padding:20px" class="muted">Chargement du cahier…</p></main>
+</div>
+
+<nav class="tabbar" id="tabbar" aria-label="Navigation">
+  <a class="tab" href="#accueil" data-tab="accueil"><svg class="icon"><use href="#i-home"/></svg>Accueil</a>
+  <a class="tab" href="#accueil" data-tab="chapitre"><svg class="icon"><use href="#i-book"/></svg>Chapitre</a>
+  <a class="tab" href="#accueil" data-tab="entrainement"><svg class="icon"><use href="#i-target"/></svg>S'entraîner</a>
+  <a class="tab" href="#accueil" data-tab="relier"><svg class="icon"><use href="#i-link"/></svg>Relier</a>
+  <a class="tab" href="#plus" data-tab="plus"><svg class="icon"><use href="#i-menu"/></svg>Plus</a>
+</nav>
+
+<div class="viewer" id="viewer" hidden role="dialog" aria-modal="true" aria-label="Photo de la feuille">
+  <div class="vbar">
+    <span class="vt" id="vTitle"></span>
+    <span id="vTabs" style="display:flex;gap:6px"></span>
+    <button type="button" id="vOut" aria-label="Dézoomer">−</button>
+    <button type="button" id="vIn" aria-label="Zoomer">+</button>
+    <button type="button" id="vFit" aria-label="Ajuster">Ajuster</button>
+    <button type="button" id="vClose" aria-label="Fermer">✕</button>
+  </div>
+  <div class="vstage" id="vStage"><img id="vImg" alt=""></div>
+  <div class="vhelp">Pince pour zoomer · glisse pour déplacer · double-tape pour agrandir · Échap pour fermer</div>
+</div>
+
+<noscript><p style="padding:20px">Le cahier a besoin de JavaScript pour fonctionner.</p></noscript>
+
+<!-- Moteur (ne contient aucun cours) -->
+<script src="config.js?v=202609281909"></script>
+<script src="app/moteur.js?v=202609281909"></script>
+<script src="app/activites.js?v=202609281909"></script>
+
+<!-- LEÇONS : un fichier par chapitre (l'ordre d'affichage vient du champ « ordre »).
+     Pour ajouter un chapitre : créer lecons/<id>.js puis ajouter UNE ligne ici. -->
+<script src="lecons/education.js?v=202609281909"></script>
+
+<!-- Démarrage (toujours en dernier) -->
+<script src="app/demarrage.js?v=202609281909"></script>
+</body>
+</html>
