@@ -1,6 +1,7 @@
-"""Original score, generated from code and locked to the picture (v3 : la partition de la v1,
-plus énergique — batterie et caisse claire, pulsation dès le problème, montée jusqu'au déclic,
-la communauté garde le rythme, montée finale vers le nom).
+"""Original score, generated from code and locked to the picture.
+
+v4 : la partition de la v1, sans batterie (choix du commanditaire : « bande son drumless »).
+La piste « drums » est encore écrite en stem pour mémoire, mais n'entre plus dans le mix.
 
 Instruments: Salamander grand piano (real samples, played soft and filtered
 like a felt piano), synth pad, sub bass, soft procedural percussion, a
@@ -53,25 +54,6 @@ def bass(note, at, dur, level=0.3):
     T["bass"].add(lib.sub(lib.mtof(n2m(note)), dur, level=level), at)
 
 
-def snare(level=0.3):
-    """Caisse claire / clap : bruit filtré court + corps accordé."""
-    n = lib.seconds(0.32)
-    t = np.arange(n) / SR
-    body = np.sin(2 * np.pi * 190 * t) * np.exp(-t / 0.045) * 0.6
-    nz = lib.filt(rng.standard_normal(n).astype(np.float32), "bandpass", [1200, 7500]) * np.exp(-t / 0.09)
-    clap = np.zeros(n, np.float32)
-    for d in (0.0, 0.011, 0.022):                   # trois claquements rapprochés
-        i = lib.seconds(d)
-        clap[i:] += lib.filt(rng.standard_normal(n - i).astype(np.float32), "bandpass", [900, 3000]) * np.exp(-t[: n - i] / 0.012) * 0.5
-    return lib.st((body + nz + clap) * level)
-
-
-def open_hat(level=0.05):
-    n = lib.seconds(0.28)
-    t = np.arange(n) / SR
-    return lib.st(lib.filt(rng.standard_normal(n).astype(np.float32), "highpass", 7000) * np.exp(-t / 0.09) * level)
-
-
 # =====================================================================
 # 1) HOOK — une note par nom, sur un bourdon de ré mineur
 # =====================================================================
@@ -112,13 +94,12 @@ for b, (_, notes, bnote, padn) in enumerate(PROBLEM):
         t = bar0 + i * BEAT / 2
         if t >= cut:
             break
-        T["drums"].add(lib.rim(level=0.05 if i % 2 else 0.075, f=2400), t, p=0.3 if i % 2 else -0.3)
         if b >= 1:
+            T["drums"].add(lib.rim(level=0.05 if i % 2 else 0.075, f=2400), t, p=0.3 if i % 2 else -0.3)
+        if b >= 2:
             T["drums"].add(lib.shaker(level=0.035), t + BEAT / 4, p=0.4)
-        if b >= 1 and i % 2 == 0:
-            T["drums"].add(lib.kick(level=0.32 + 0.06 * b, f0=90, f1=42, tau=0.28), t)
-        if b >= 3 and i % 4 == 2:
-            T["drums"].add(snare(0.16), t, p=0.05)
+        if b >= 2 and i % 4 == 0:
+            T["drums"].add(lib.kick(level=0.35, f0=90, f1=42, tau=0.28), t)
 
 # =====================================================================
 # 3) SUSPENSE — note tenue, souffle inversé jusqu'au déclic
@@ -143,7 +124,7 @@ P(["F2", "C3"], G, vel=66, dur=3.0)
 P(["F4", "A4", "C5", "G5"], G + 0.02, vel=50, dur=2.6, gain=-2)
 chord_pad(["F2", "C3", "A3", "G4", "C5"], G, 2 * BAR + 0.4, level=0.16, cutoff=2400, attack=0.35, release=1.5)
 bass("F1", G, BAR * 1.6, level=0.32)
-T["drums"].add(lib.kick(level=0.8, f0=80, f1=34, tau=0.6), G)
+T["drums"].add(lib.kick(level=0.55, f0=80, f1=38, tau=0.5), G)
 P(["Bb2", "F3"], G + BAR, vel=52, dur=2.4)
 P(["D4", "F4", "A4", "C5"], G + BAR + 0.02, vel=44, dur=2.2, gain=-3)
 bass("Bb1", G + BAR, BAR * 0.95, level=0.26)
@@ -178,11 +159,9 @@ for b in range(nb):
         if tt >= brk:
             break
         if i % 8 == 0 or i == 6 or (i == 14 and b % 2):
-            T["drums"].add(lib.kick(level=0.62 if i % 8 == 0 else 0.42), tt)
+            T["drums"].add(lib.kick(level=0.5 if i % 8 == 0 else 0.34), tt)
         if i % 8 == 4:
-            T["drums"].add(snare(0.24 + 0.06 * lift), tt, p=-0.05)
-        if lift and i % 4 == 2:
-            T["drums"].add(open_hat(0.05), tt, p=0.3)
+            T["drums"].add(lib.rim(level=0.11, f=1650), tt, p=-0.1)
         if i % 2 == 0:
             T["drums"].add(lib.rim(level=0.028 if i % 4 else 0.04, f=5200), tt, p=0.35)   # charleston fermé, doux
         if b >= 1:
@@ -223,23 +202,6 @@ for k, (pd, pn) in enumerate(BR):
     P(pn, t, vel=40, dur=seglen, gain=-3, rel=1.2)
     bass(pd[0], t, seglen * 0.9, level=0.18)
     P(pn[-1].replace("4", "5").replace("3", "5"), t + seglen * 0.5, vel=34, dur=seglen * 0.5, gain=-8)
-# la batterie ne s'arrête pas : pulsation légère, puis montée (caisse claire en accélération) vers le nom
-t = brk
-while t < v14 - 0.02:
-    T["drums"].add(lib.kick(level=0.4), t)
-    T["drums"].add(lib.rim(level=0.03, f=5200), t + BEAT / 2, p=0.35)
-    if int(round((t - brk) / BEAT)) % 2 == 1:
-        T["drums"].add(snare(0.14), t, p=-0.05)
-    t += BEAT
-roll0 = v14 - 2 * BAR / 2
-k = 0
-t = roll0
-while t < v14 - 0.03:                                  # roulement : noires → croches → doubles
-    step = BEAT if t < v14 - BAR * 0.5 else (BEAT / 2 if t < v14 - BAR * 0.25 else BEAT / 4)
-    T["drums"].add(snare(0.08 + 0.2 * (t - roll0) / (v14 - roll0)), t, p=0.1 * np.sin(k))
-    t += step
-    k += 1
-T["texture"].add(lib.noise_swell(2.0, 300, 9000, level=0.06, curve=2.8), v14 - 2.0 + 0.35)
 # la classe s'allume : arpège montant (une note par rangée)
 for r, nm in enumerate(["F5", "G5", "A5", "C6", "D6", "F6"]):
     P(nm, M["v13_classe"] - 0.35 + r * 0.075 + 0.02, vel=34 + r * 2, dur=1.6, gain=-6, pan_=-0.4 + r * 0.16, rel=1.5)
@@ -251,8 +213,7 @@ P(["F1", "F2", "C3"], v14 + 0.35, vel=60, dur=5.0, rel=2.5)
 P(["A3", "C4", "G4"], v14 + 0.37, vel=42, dur=4.5, gain=-3, rel=2.5)
 chord_pad(["F2", "C3", "A3", "G4", "C5", "E5"], v14 + 0.3, M["end"] - v14 - 1.8, level=0.14, cutoff=2000, attack=0.6, release=2.5)
 bass("F1", v14 + 0.35, 4.5, level=0.24)
-T["drums"].add(lib.kick(level=0.7, f0=80, f1=36, tau=0.6), v14 + 0.35)
-T["drums"].add(snare(0.3), v14 + 0.35)
+T["drums"].add(lib.kick(level=0.38, f0=80, f1=38, tau=0.5), v14 + 0.35)
 tag = [w for w in next(l for l in TL["lines"] if l["id"] == "V14")["words"]][-6:]
 motif = [("A4", tag[0]["t0"]), ("C5", tag[2]["t0"]), ("D5", tag[3]["t0"] if len(tag) > 3 else tag[2]["t1"]),
          ("E5", tag[4]["t0"]), ("F5", tag[5]["t0"])]
@@ -292,11 +253,14 @@ def proc(name, x):
     return x[: len(T["piano"].buf)]
 
 
-GAIN = {"piano": 0.0, "keys": -3.0, "pad": 0.0, "bass": -5.5, "drums": 0.0, "arp": -4.0, "texture": 1.0}
+GAIN = {"piano": 0.0, "keys": -4.0, "pad": 0.0, "bass": -8.0, "drums": -3.0, "arp": -5.0, "texture": 0.0}
 out = ROOT / "audio" / "music"
 out.mkdir(parents=True, exist_ok=True)
 mix = np.zeros_like(T["piano"].buf)
+DRUMLESS = True
 for k, tr in T.items():
+    if DRUMLESS and k == "drums":        # v4 : sans batterie
+        continue
     x = proc(k, tr.buf) * db(GAIN[k])
     x = np.pad(x, ((0, max(0, len(mix) - len(x))), (0, 0)))[: len(mix)]
     lib.sf.write(str(out / f"stem_{k}.wav"), x, SR, subtype="PCM_24")
@@ -305,8 +269,8 @@ mix = lib.fx(mix, HighpassFilter(28), Compressor(threshold_db=-14, ratio=2.0, at
 peak = np.max(np.abs(mix))
 mix *= db(-3) / max(peak, 1e-6)
 # automation par section : la courbe d'énergie du film
-AUTO = [(0.0, -2), (M["q_tout"], -1), (M["v3_start"], -4), (M["v4_notes"], -3), (M["v5_tout"], -1), (M["v5_mais"], -1),
-        (sh, 0), (g1, 0), (M["v11_start"], 1), (brk - 0.2, 1), (brk + 0.8, -2), (M["v13_classe"] - 0.5, -1),
+AUTO = [(0.0, -3), (M["q_tout"], -2), (M["v3_start"], -7), (M["v4_notes"], -5), (M["v5_tout"], -3), (M["v5_mais"], -3),
+        (sh, 0), (g1, 0), (M["v11_start"], 1), (brk - 0.2, 1), (brk + 0.8, -5), (M["v13_classe"] - 0.5, -4),
         (v14 + 0.3, 0), (M["capture"], -1), (M["end"], -4)]
 ts = np.array([a for a, _ in AUTO]); gs = np.array([g for _, g in AUTO])
 tt = np.arange(len(mix)) / SR

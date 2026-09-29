@@ -84,8 +84,17 @@ cut("card_flip__84322", 0, "card_flip", thr=0.03, min_gap=0.15, hp=150)
 # ------------------------------------------------ appareil photo
 y, ev = events("shutter__579883", thr=0.03, min_gap=0.08)
 save("shutter_k1000", y[ev[0][0]:ev[-1][1] + int(0.08 * SR)], "shutter__579883", note="Pentax K1000", hp=80)
+y, ev = events("shutter__734819", thr=0.03, min_gap=0.06)
+adv = [e for e in ev if e[0] / SR > 1.0]
+save("film_advance", y[adv[0][0]:adv[-1][1]], "shutter__734819", note="levier d'avance du film", hp=120) if adv else None
 y, ev = events("polaroid__755841", thr=0.03, min_gap=0.3)
 save("polaroid_eject", y[ev[0][0]:ev[-1][1]], "polaroid__755841", note="moteur d'éjection", hp=90)
+y, ev = events("autofocus__176539", thr=0.1, min_gap=0.03)
+for k in range(3):
+    a, b = ev[(k * 2 + 1) % len(ev)]
+    save(f"af_motor_{k + 1}", y[a:b], "autofocus__176539", note=f"rafale {k * 2 + 2}", hp=300)
+y, _ = events("autofocus__483381")
+save("af_beep", y[: int(0.14 * SR)], "autofocus__483381", note="bip de mise au point (début)", hp=500)
 y = lib.load(SRC / META["room_tone__565535"]["file"])
 save("room_tone", y, "room_tone__565535", peak_db=-12, hp=40)
 

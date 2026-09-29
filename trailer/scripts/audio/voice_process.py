@@ -27,17 +27,16 @@ TAKES_LOG = json.loads((ROOT / "logs" / "voice_takes.json").read_text())
 SPEED = {"default": 1.0, "V02": 0.88, "V05b": 0.9}   # v3 : débit naturel du narrateur, sans ralentissement (retour du commanditaire : « longue »)
 TARGET_RMS_DB = -20.0
 
-# v3 « narrateur cinéma » : la voix B (intonation choisie par le commanditaire) descendue d'un demi-ton
-# (timbre plus grave, proche de la voix C qu'il aimait), grave plus chaud, présence, compression plus ferme
-VOICE_SHIFT_ST = float(__import__("os").environ.get("VOICE_SHIFT_ST", -1.0))
+# v4 : voix B d'origine (sans demi-ton) — le décalage reste réglable par VOICE_SHIFT_ST ; égalisation légère (v1)
+VOICE_SHIFT_ST = float(__import__("os").environ.get("VOICE_SHIFT_ST", 0.0))
 chain = Pedalboard([
-    HighpassFilter(cutoff_frequency_hz=70),
-    LowShelfFilter(cutoff_frequency_hz=160, gain_db=2.0),
-    PeakFilter(cutoff_frequency_hz=380, gain_db=-2.0, q=1.0),       # moins de « carton »
-    PeakFilter(cutoff_frequency_hz=3000, gain_db=2.2, q=0.8),       # présence
-    PeakFilter(cutoff_frequency_hz=7000, gain_db=-2.5, q=1.2),      # dé-essage doux (sibilantes)
-    HighShelfFilter(cutoff_frequency_hz=10000, gain_db=1.0),
-    Compressor(threshold_db=-24, ratio=3.5, attack_ms=5, release_ms=80),
+    HighpassFilter(cutoff_frequency_hz=80),
+    LowShelfFilter(cutoff_frequency_hz=180, gain_db=-1.5),
+    PeakFilter(cutoff_frequency_hz=320, gain_db=-1.5, q=1.0),
+    PeakFilter(cutoff_frequency_hz=3200, gain_db=1.8, q=0.8),
+    PeakFilter(cutoff_frequency_hz=7000, gain_db=-2.5, q=1.2),     # dé-essage doux (sibilantes)
+    HighShelfFilter(cutoff_frequency_hz=9500, gain_db=1.2),
+    Compressor(threshold_db=-22, ratio=3.0, attack_ms=6, release_ms=90),
 ])
 
 

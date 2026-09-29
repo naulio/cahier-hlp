@@ -206,6 +206,15 @@
   "note": "Pentax K1000",
   "dur": 0.276
  },
+ "film_advance": {
+  "source": "shutter__734819",
+  "title": "Canon A-1 Shutter and Film Advance",
+  "author": "lisaisanut",
+  "url": "https://freesound.org/people/lisaisanut/sounds/734819/",
+  "license": "CC0 1.0 (creativecommons.org/publicdomain/zero/1.0)",
+  "note": "levier d'avance du film",
+  "dur": 0.232
+ },
  "polaroid_eject": {
   "source": "polaroid__755841",
   "title": "PRO_Polaroid",
@@ -214,6 +223,42 @@
   "license": "CC0 1.0 (creativecommons.org/publicdomain/zero/1.0)",
   "note": "moteur d'éjection",
   "dur": 2.041
+ },
+ "af_motor_1": {
+  "source": "autofocus__176539",
+  "title": "focus_01_copy.aif",
+  "author": "finestship",
+  "url": "https://freesound.org/people/finestship/sounds/176539/",
+  "license": "CC0 1.0 (creativecommons.org/publicdomain/zero/1.0)",
+  "note": "rafale 2",
+  "dur": 0.215
+ },
+ "af_motor_2": {
+  "source": "autofocus__176539",
+  "title": "focus_01_copy.aif",
+  "author": "finestship",
+  "url": "https://freesound.org/people/finestship/sounds/176539/",
+  "license": "CC0 1.0 (creativecommons.org/publicdomain/zero/1.0)",
+  "note": "rafale 4",
+  "dur": 0.192
+ },
+ "af_motor_3": {
+  "source": "autofocus__176539",
+  "title": "focus_01_copy.aif",
+  "author": "finestship",
+  "url": "https://freesound.org/people/finestship/sounds/176539/",
+  "license": "CC0 1.0 (creativecommons.org/publicdomain/zero/1.0)",
+  "note": "rafale 6",
+  "dur": 0.237
+ },
+ "af_beep": {
+  "source": "autofocus__483381",
+  "title": "Sony A7 II autofocus & shutter mechanism sound",
+  "author": "michx123",
+  "url": "https://freesound.org/people/michx123/sounds/483381/",
+  "license": "CC0 1.0 (creativecommons.org/publicdomain/zero/1.0)",
+  "note": "bip de mise au point (début)",
+  "dur": 0.14
  },
  "room_tone": {
   "source": "room_tone__565535",
