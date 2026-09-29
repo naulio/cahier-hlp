@@ -3609,7 +3609,7 @@
     "speech_time_s": 1.99,
     "pauses_ge_180ms": 1,
     "mean_pause_s": 0.33,
-    "score": 0.468,
+    "score": 0.621,
     "seed": 1000,
     "words": [
      {
@@ -3671,7 +3671,7 @@
     "speech_time_s": 1.96,
     "pauses_ge_180ms": 0,
     "mean_pause_s": 0.0,
-    "score": 0.401,
+    "score": 0.633,
     "seed": 8919,
     "words": [
      {
@@ -3733,7 +3733,7 @@
     "speech_time_s": 2.04,
     "pauses_ge_180ms": 1,
     "mean_pause_s": 0.47,
-    "score": 0.211,
+    "score": 0.233,
     "seed": 16838,
     "words": [
      {
@@ -3795,7 +3795,7 @@
     "speech_time_s": 1.81,
     "pauses_ge_180ms": 1,
     "mean_pause_s": 0.45,
-    "score": 2.075,
+    "score": 2.75,
     "seed": 24757,
     "words": [
      {
