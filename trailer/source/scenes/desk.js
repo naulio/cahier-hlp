@@ -317,6 +317,7 @@
     // ---- post-it, fiches bristol
     extras.forEach((x, k) => {
       let px = x.x, py = x.y, pr = x.r, op = 1;
+      if (!x.at) op = seg(t, q0 - 0.3, 0.25, E.linear);  // fiches déjà posées : hors champ tant que la caméra est serrée
       if (x.at) {                                        // pages qui arrivent pendant l'accumulation
         const ta = M(x.at) + (x.dt || 0) - 0.34, e = seg(t, ta, 0.62, E.out);
         const n = Math.hypot(px, py) || 1;

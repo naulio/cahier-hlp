@@ -79,8 +79,7 @@ subprocess.run([sys.executable, str(ROOT / "scripts/audio/plot_audio.py"), str(Q
                 str(ROOT / "audio/mix/trailer_mix.wav"), str(ROOT / "audio/mix/stem_voice.wav"),
                 str(ROOT / "audio/mix/stem_music.wav"), str(ROOT / "audio/mix/stem_sfx.wav")], check=True)
 subprocess.run([sys.executable, str(ROOT / "scripts/audio/plot_audio.py"), str(Q / "audio_music_stems.png"),
-                *[str(ROOT / f"audio/music/{f}") for f in ("score.wav", "stem_piano.wav", "stem_keys.wav", "stem_pad.wav",
-                                                          "stem_bass.wav", "stem_drums.wav", "stem_arp.wav")]], check=True)
+                *[str(p) for p in [ROOT / "audio/music/score.wav"] + sorted((ROOT / "audio/music").glob("stem_*.wav"))]], check=True)
 takes = json.loads((ROOT / "logs" / "voice_takes.json").read_text())
 current = [l["id"] for l in json.loads((ROOT / "scripts/voice/lines.json").read_text())["lines"]]
 vm = []
