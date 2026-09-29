@@ -12,7 +12,28 @@ examen blanc, frise chronologique, mode oral… Gratuit, sans compte, sans publi
 dans le navigateur. Premier chapitre : « Éducation, transmission et émancipation » (Rabelais, Rousseau,
 Balzac, Flaubert, Hugo, Ferry, Péguy, Camus, Arendt).
 
-## Ce que le commanditaire exige (résumé fidèle)
+## ⚠️ Retour du commanditaire après la v2 — PRIORITAIRE sur tout le reste de ce brief
+Le commanditaire a vu la v1 et la v2. Son verdict, mot pour mot : « la v1 était mieux en tout point. […] la voix,
+longue, pas assez narrateur, et vraiment mauvaise. Manque de VFX et SFX, il faut captiver l'attention, le style
+motion avec moins de texture de la v1 est… 100× mieux. »
+Les évaluations précédentes ont poussé la v2 dans la mauvaise direction (plus de papier, de crayon, de textures,
+d'« artisanal », moins d'effets sonores). **Ne recommande plus cela.** Ce qu'il veut, et ce que tu dois noter :
+- **Captiver l'attention** du début à la fin : énergie, rythme, relances visuelles et sonores, moments « wow ».
+- **Style motion net et moderne de la v1** (interface claire, aplats, peu de textures, typographie propre) :
+  c'est la référence de style. Des textures lourdes, un look « fait main » terne ou lent sont des défauts.
+- **VFX** : transitions dynamiques et motivées (poussées de caméra, whip, zooms punchés sur le rythme, flashs,
+  halos et balayages de lumière, masques, vitesse variable, typographie cinétique forte, parallaxe). Absence
+  d'effets = défaut. Seule limite : rien de cheap, de néon/cyberpunk ou d'illisible.
+- **SFX riches et synchronisés** : whooshes, impacts, montées (risers), sub drops, clics d'interface, déclics…
+  Une bande-son dense est **souhaitée** tant qu'elle reste calée à l'image et sous la voix.
+- **Voix de narrateur** : présence, assurance, rythme soutenu, vraie narration de bande-annonce ; une voix lente,
+  étirée, plate ou « lecture » est un défaut majeur. Durée totale serrée (≈ 55-60 s).
+- La **musique** doit porter l'énergie (montée, drops, relances), pas rester en retrait.
+Tout ce qui suit reste valable **sauf** là où cela contredit ce retour (en particulier : « pas un whoosh sur chaque
+animation », « interdits : particules, glitchs », « voix calme ») — le retour du commanditaire l'emporte.
+La **v1** (`logs/qa/v1/`) est la référence de style : compare la version évaluée à la v1 et dis si elle fait mieux.
+
+## Ce que le commanditaire exigeait au départ (résumé fidèle)
 - Trailer de **55 à 70 s** (idéal ~60 s), **4:3 paysage** (1440×1080), lisible sur ordinateur **et téléphone**.
 - Ton : moderne, intelligent, élégant, accessible, ambitieux, légèrement émotionnel ; **jamais** cringe,
   corporate artificiel, infantilisant ou trop scolaire. Pas une pub agressive : un projet d'élève pour la classe.
@@ -44,6 +65,8 @@ Balzac, Flaubert, Hugo, Ferry, Péguy, Camus, Arendt).
 ## Barème (note sur 10)
 - **< 5** : raté, à refaire structurellement. **5 à < 8** : insuffisant, à corriger. **≥ 8** : bon / très bon.
 - Pour le hook, la voix, l'identité visuelle, le carton de fin et le sound design, la cible est **≥ 9**.
+- La note mesure **l'écart au résultat attendu par le commanditaire** (retour ci-dessus), pas ton goût personnel :
+  un trailer « sage » et bien fait mais qui ne captive pas ne dépasse pas 6.
 
 ## Matériel (dossier de la version à évaluer, ex. `logs/qa/v1/`)
 Tu **ne peux pas regarder la vidéo en temps réel ni écouter l'audio**. Tu disposes de :
