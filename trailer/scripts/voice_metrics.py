@@ -23,7 +23,8 @@ import soundfile as sf
 
 def norm_words(s):
     s = s.lower().replace("’", "'").replace("œ", "oe").replace("æ", "ae")
-    s = s.replace("pensez", "pensé")  # homophones
+    s = s.replace("pensez", "pensé").replace("essentielle", "essentiel")  # homophones
+    s = re.sub(r"\b5\b", "cinq", s)
     s = unicodedata.normalize("NFC", s)
     s = re.sub(r"[«»\"“”…\.,;:!\?\(\)\-–—]", " ", s)
     s = s.replace("'", "' ")
