@@ -5321,14 +5321,14 @@
   "provider": "kyutai",
   "voice": "unmute-prod-website_fabieng-enhanced-v2.wav",
   "text": "Rabelais.",
-  "best": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01a_kyutai_b52cf90290.wav",
+  "best": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01a_kyutai_748666deb6.wav",
   "takes": [
    {
     "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01a_kyutai_8a7805c989.wav",
     "duration_s": 0.93,
-    "transcript": "Oubliez et abonnez-vous à notre chaîne pour plus de vidéos !",
-    "wer": 11.0,
-    "mean_word_prob": 0.492,
+    "transcript": "Toi, habillé ?",
+    "wer": 2.0,
+    "mean_word_prob": 0.476,
     "words_per_min_speech": 76.9,
     "peak_dbfs": -6.24,
     "f0_median_hz": 127.1,
@@ -5338,80 +5338,31 @@
     "speech_time_s": 0.78,
     "pauses_ge_180ms": 0,
     "mean_pause_s": 0.0,
-    "score": 113.36,
+    "score": 18.833,
+    "keep_pause_s": 0.0,
+    "keep_depth_db": 12.9,
+    "keep_heard": "Je vous remercie d'avoir regardé cette vidéo !",
+    "context_heard": "Robert Rousseau, Flaubert, Hugo.",
+    "context_p": 0.046,
     "seed": 1000,
     "words": [
      {
-      "w": "Oubliez",
+      "w": "Toi,",
       "t0": 0.0,
-      "t1": 0.74,
-      "p": 0.503
+      "t1": 0.28,
+      "p": 0.534
      },
      {
-      "w": "et",
-      "t0": 0.74,
-      "t1": 0.98,
-      "p": 0.058
+      "w": "habillé",
+      "t0": 0.28,
+      "t1": 0.78,
+      "p": 0.448
      },
      {
-      "w": "abonnez",
-      "t0": 0.98,
-      "t1": 1.48,
-      "p": 0.715
-     },
-     {
-      "w": "-vous",
-      "t0": 1.48,
-      "t1": 1.48,
-      "p": 0.89
-     },
-     {
-      "w": "à",
-      "t0": 1.48,
-      "t1": 1.5,
-      "p": 0.365
-     },
-     {
-      "w": "notre",
-      "t0": 1.5,
-      "t1": 1.5,
-      "p": 0.205
-     },
-     {
-      "w": "chaîne",
-      "t0": 1.5,
-      "t1": 1.5,
-      "p": 0.932
-     },
-     {
-      "w": "pour",
-      "t0": 1.5,
-      "t1": 1.5,
-      "p": 0.259
-     },
-     {
-      "w": "plus",
-      "t0": 1.5,
-      "t1": 1.5,
-      "p": 0.457
-     },
-     {
-      "w": "de",
-      "t0": 1.5,
-      "t1": 1.5,
-      "p": 0.644
-     },
-     {
-      "w": "vidéos",
-      "t0": 1.5,
-      "t1": 1.5,
-      "p": 0.642
-     },
-     {
-      "w": "!",
-      "t0": 1.5,
-      "t1": 1.5,
-      "p": 0.239
+      "w": "?",
+      "t0": 0.78,
+      "t1": 1.18,
+      "p": 0.446
      }
     ]
    },
@@ -5430,7 +5381,12 @@
     "speech_time_s": 0.6,
     "pauses_ge_180ms": 0,
     "mean_pause_s": 0.0,
-    "score": 21.6,
+    "score": 1.32,
+    "keep_pause_s": 0.144,
+    "keep_depth_db": 53.6,
+    "keep_heard": "Rappelez-vous ?",
+    "context_heard": "Rabelais, Rousseau, Flaubert, Hugo.",
+    "context_p": 0.754,
     "seed": 8919,
     "words": [
      {
@@ -5462,7 +5418,12 @@
     "speech_time_s": 0.67,
     "pauses_ge_180ms": 0,
     "mean_pause_s": 0.0,
-    "score": 13.64,
+    "score": 12.572,
+    "keep_pause_s": 0.0,
+    "keep_depth_db": 0.0,
+    "keep_heard": "Brabeulet.",
+    "context_heard": "Rabelais, Perousseau, Flaubert, Hugo",
+    "context_p": 0.523,
     "seed": 16838,
     "words": [
      {
@@ -5488,7 +5449,12 @@
     "speech_time_s": 0.53,
     "pauses_ge_180ms": 0,
     "mean_pause_s": 0.0,
-    "score": 21.852,
+    "score": 18.159,
+    "keep_pause_s": 0.0,
+    "keep_depth_db": 10.4,
+    "keep_heard": "",
+    "context_heard": "Brice Rousseau, Flaubert, Hugo",
+    "context_p": 0.341,
     "seed": 24757,
     "words": [
      {
@@ -5517,121 +5483,304 @@
   "provider": "kyutai",
   "voice": "unmute-prod-website_fabieng-enhanced-v2.wav",
   "text": "Rousseau.",
-  "best": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01b_kyutai_bbce1dc266.wav",
+  "best": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01b_kyutai_a5d2d3b439.wav",
   "takes": [
    {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01b_kyutai_5172f452e0.wav",
-    "duration_s": 1.04,
-    "transcript": "Rousseau...",
-    "wer": 0.0,
-    "mean_word_prob": 0.605,
-    "words_per_min_speech": 58.8,
-    "peak_dbfs": -8.12,
-    "f0_median_hz": 109.1,
-    "f0_std_st": 1.37,
-    "f0_range_p5_p95_st": 4.0,
-    "voiced_ratio": 0.914,
-    "speech_time_s": 1.02,
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01b_kyutai_26e1a323f5.wav",
+    "duration_s": 1.86,
+    "transcript": "Le rouceau, puis tout le reste.",
+    "wer": 0.4,
+    "mean_word_prob": 0.824,
+    "words_per_min_speech": 288.5,
+    "peak_dbfs": -4.15,
+    "f0_median_hz": 136.3,
+    "f0_std_st": 4.84,
+    "f0_range_p5_p95_st": 13.28,
+    "voiced_ratio": 0.444,
+    "speech_time_s": 1.04,
     "pauses_ge_180ms": 0,
     "mean_pause_s": 0.0,
-    "score": 2.857,
+    "score": 19.755,
+    "keep_pause_s": 0.0,
+    "keep_depth_db": 30.1,
+    "keep_heard": "Le Rousseau",
+    "context_heard": "Rabelais, De Rousseau, Flaubert, Hugo",
+    "context_p": 0.105,
     "seed": 1000,
     "words": [
      {
-      "w": "Rousseau...",
+      "w": "Le",
       "t0": 0.0,
-      "t1": 1.14,
-      "p": 0.605
+      "t1": 0.18,
+      "p": 0.145
+     },
+     {
+      "w": "rouceau,",
+      "t0": 0.18,
+      "t1": 0.64,
+      "p": 0.853
+     },
+     {
+      "w": "puis",
+      "t0": 0.86,
+      "t1": 1.04,
+      "p": 0.964
+     },
+     {
+      "w": "tout",
+      "t0": 1.04,
+      "t1": 1.26,
+      "p": 0.985
+     },
+     {
+      "w": "le",
+      "t0": 1.26,
+      "t1": 1.46,
+      "p": 0.998
+     },
+     {
+      "w": "reste.",
+      "t0": 1.46,
+      "t1": 1.74,
+      "p": 0.999
      }
     ]
    },
    {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01b_kyutai_a7bbc56cca.wav",
-    "duration_s": 1.04,
-    "transcript": "Le Rousseau",
-    "wer": 1.0,
-    "mean_word_prob": 0.421,
-    "words_per_min_speech": 59.4,
-    "peak_dbfs": -7.57,
-    "f0_median_hz": 116.6,
-    "f0_std_st": 2.74,
-    "f0_range_p5_p95_st": 8.66,
-    "voiced_ratio": 0.905,
-    "speech_time_s": 1.01,
-    "pauses_ge_180ms": 0,
-    "mean_pause_s": 0.0,
-    "score": 12.316,
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01b_kyutai_40ce2203bb.wav",
+    "duration_s": 1.83,
+    "transcript": "Deux rouceaux, puis tout le reste.",
+    "wer": 0.4,
+    "mean_word_prob": 0.874,
+    "words_per_min_speech": 250.0,
+    "peak_dbfs": -6.86,
+    "f0_median_hz": 134.7,
+    "f0_std_st": 3.22,
+    "f0_range_p5_p95_st": 11.48,
+    "voiced_ratio": 0.56,
+    "speech_time_s": 1.2,
+    "pauses_ge_180ms": 1,
+    "mean_pause_s": 0.23,
+    "score": 16.97,
+    "keep_pause_s": 0.0,
+    "keep_depth_db": 45.1,
+    "keep_heard": "Eurus",
+    "context_heard": "Rabelais, Gerousse, Flaubert, Hugo.",
+    "context_p": 0.32,
     "seed": 8919,
     "words": [
      {
-      "w": "Le",
+      "w": "Deux",
       "t0": 0.0,
-      "t1": 0.26,
-      "p": 0.062
+      "t1": 0.3,
+      "p": 0.553
      },
      {
-      "w": "Rousseau",
-      "t0": 0.26,
-      "t1": 1.04,
-      "p": 0.78
+      "w": "rouceaux,",
+      "t0": 0.3,
+      "t1": 0.78,
+      "p": 0.757
+     },
+     {
+      "w": "puis",
+      "t0": 0.92,
+      "t1": 1.16,
+      "p": 0.963
+     },
+     {
+      "w": "tout",
+      "t0": 1.16,
+      "t1": 1.34,
+      "p": 0.975
+     },
+     {
+      "w": "le",
+      "t0": 1.34,
+      "t1": 1.48,
+      "p": 0.999
+     },
+     {
+      "w": "reste.",
+      "t0": 1.48,
+      "t1": 1.7,
+      "p": 0.999
      }
     ]
    },
    {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01b_kyutai_bbce1dc266.wav",
-    "duration_s": 0.79,
-    "transcript": "Rousseau?",
-    "wer": 0.0,
-    "mean_word_prob": 0.604,
-    "words_per_min_speech": 95.2,
-    "peak_dbfs": -7.22,
-    "f0_median_hz": 148.2,
-    "f0_std_st": 4.95,
-    "f0_range_p5_p95_st": 12.39,
-    "voiced_ratio": 0.775,
-    "speech_time_s": 0.63,
-    "pauses_ge_180ms": 0,
-    "mean_pause_s": 0.0,
-    "score": 2.013,
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01b_kyutai_dd310baf42.wav",
+    "duration_s": 1.78,
+    "transcript": "Le rouceau, puis tout le reste.",
+    "wer": 0.4,
+    "mean_word_prob": 0.805,
+    "words_per_min_speech": 240.0,
+    "peak_dbfs": -8.03,
+    "f0_median_hz": 127.9,
+    "f0_std_st": 4.07,
+    "f0_range_p5_p95_st": 12.84,
+    "voiced_ratio": 0.587,
+    "speech_time_s": 1.25,
+    "pauses_ge_180ms": 1,
+    "mean_pause_s": 0.24,
+    "score": 7.784,
+    "keep_pause_s": 0.0,
+    "keep_depth_db": 24.2,
+    "keep_heard": "Le Rousseau",
+    "context_heard": "Rabelais, Rousseau, Flaubert, Hugo",
+    "context_p": 0.68,
     "seed": 16838,
     "words": [
      {
-      "w": "Rousseau?",
+      "w": "Le",
       "t0": 0.0,
-      "t1": 0.7,
-      "p": 0.604
+      "t1": 0.18,
+      "p": 0.238
+     },
+     {
+      "w": "rouceau,",
+      "t0": 0.18,
+      "t1": 0.74,
+      "p": 0.807
+     },
+     {
+      "w": "puis",
+      "t0": 0.96,
+      "t1": 1.04,
+      "p": 0.798
+     },
+     {
+      "w": "tout",
+      "t0": 1.04,
+      "t1": 1.16,
+      "p": 0.987
+     },
+     {
+      "w": "le",
+      "t0": 1.16,
+      "t1": 1.36,
+      "p": 0.999
+     },
+     {
+      "w": "reste.",
+      "t0": 1.36,
+      "t1": 1.62,
+      "p": 0.999
      }
     ]
    },
    {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01b_kyutai_cd38e7a2d2.wav",
-    "duration_s": 0.95,
-    "transcript": "Le Rousseau...",
-    "wer": 1.0,
-    "mean_word_prob": 0.382,
-    "words_per_min_speech": 85.7,
-    "peak_dbfs": -6.36,
-    "f0_median_hz": 204.2,
-    "f0_std_st": 3.06,
-    "f0_range_p5_p95_st": 7.77,
-    "voiced_ratio": 0.705,
-    "speech_time_s": 0.7,
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01b_kyutai_a5d2d3b439.wav",
+    "duration_s": 1.64,
+    "transcript": "Rousseau, puis tout le reste.",
+    "wer": 0.0,
+    "mean_word_prob": 0.905,
+    "words_per_min_speech": 272.7,
+    "peak_dbfs": -5.25,
+    "f0_median_hz": 141.1,
+    "f0_std_st": 4.36,
+    "f0_range_p5_p95_st": 15.45,
+    "voiced_ratio": 0.579,
+    "speech_time_s": 1.1,
     "pauses_ge_180ms": 0,
     "mean_pause_s": 0.0,
-    "score": 17.341,
+    "score": 4.213,
+    "keep_pause_s": 0.085,
+    "keep_depth_db": 63.0,
+    "keep_heard": "Le rousseau",
+    "context_heard": "Rabelais, Rousseau, Flaubert, Hugo.",
+    "context_p": 0.793,
     "seed": 24757,
+    "words": [
+     {
+      "w": "Rousseau,",
+      "t0": 0.2,
+      "t1": 0.56,
+      "p": 0.666
+     },
+     {
+      "w": "puis",
+      "t0": 0.7,
+      "t1": 0.88,
+      "p": 0.871
+     },
+     {
+      "w": "tout",
+      "t0": 0.88,
+      "t1": 1.06,
+      "p": 0.988
+     },
+     {
+      "w": "le",
+      "t0": 1.06,
+      "t1": 1.22,
+      "p": 0.999
+     },
+     {
+      "w": "reste.",
+      "t0": 1.22,
+      "t1": 1.52,
+      "p": 0.999
+     }
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01b_kyutai_8373cd0c6a.wav",
+    "duration_s": 1.73,
+    "transcript": "Le rousseau, puis tout le reste.",
+    "wer": 0.2,
+    "mean_word_prob": 0.832,
+    "words_per_min_speech": 300.0,
+    "peak_dbfs": -6.7,
+    "f0_median_hz": 120.7,
+    "f0_std_st": 4.98,
+    "f0_range_p5_p95_st": 14.69,
+    "voiced_ratio": 0.486,
+    "speech_time_s": 1.0,
+    "pauses_ge_180ms": 1,
+    "mean_pause_s": 0.38,
+    "score": 11.343,
+    "keep_pause_s": 0.0,
+    "keep_depth_db": 22.9,
+    "keep_heard": "Le Rousseau",
+    "context_heard": "Rabelais, Rousseau, Flaubert, Hugo",
+    "context_p": 0.605,
+    "seed": 32676,
     "words": [
      {
       "w": "Le",
       "t0": 0.0,
-      "t1": 0.2,
-      "p": 0.094
+      "t1": 0.18,
+      "p": 0.425
      },
      {
-      "w": "Rousseau...",
-      "t0": 0.2,
-      "t1": 1.1,
-      "p": 0.669
+      "w": "rousseau,",
+      "t0": 0.18,
+      "t1": 0.8,
+      "p": 0.655
+     },
+     {
+      "w": "puis",
+      "t0": 1.0,
+      "t1": 1.08,
+      "p": 0.932
+     },
+     {
+      "w": "tout",
+      "t0": 1.08,
+      "t1": 1.22,
+      "p": 0.996
+     },
+     {
+      "w": "le",
+      "t0": 1.22,
+      "t1": 1.32,
+      "p": 0.983
+     },
+     {
+      "w": "reste.",
+      "t0": 1.32,
+      "t1": 1.58,
+      "p": 0.999
      }
     ]
    }
@@ -5641,121 +5790,286 @@
   "provider": "kyutai",
   "voice": "unmute-prod-website_fabieng-enhanced-v2.wav",
   "text": "Flaubert.",
-  "best": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01c_kyutai_564d940d41.wav",
+  "best": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01c_kyutai_88ac35183f.wav",
   "takes": [
    {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01c_kyutai_38855101a9.wav",
-    "duration_s": 1.04,
-    "transcript": "un Flaubert",
-    "wer": 1.0,
-    "mean_word_prob": 0.408,
-    "words_per_min_speech": 59.4,
-    "peak_dbfs": -5.55,
-    "f0_median_hz": 130.9,
-    "f0_std_st": 1.94,
-    "f0_range_p5_p95_st": 5.94,
-    "voiced_ratio": 0.886,
-    "speech_time_s": 1.01,
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01c_kyutai_96db72a489.wav",
+    "duration_s": 1.75,
+    "transcript": "Le Flaubert, puis tout le reste.",
+    "wer": 0.2,
+    "mean_word_prob": 0.84,
+    "words_per_min_speech": 245.9,
+    "peak_dbfs": -4.87,
+    "f0_median_hz": 141.5,
+    "f0_std_st": 3.47,
+    "f0_range_p5_p95_st": 10.3,
+    "voiced_ratio": 0.568,
+    "speech_time_s": 1.22,
     "pauses_ge_180ms": 0,
     "mean_pause_s": 0.0,
-    "score": 12.576,
+    "score": 15.173,
+    "keep_pause_s": 0.0,
+    "keep_depth_db": 35.2,
+    "keep_heard": "",
+    "context_heard": "Rabelais, Rousseau, Hugo.",
+    "context_p": 0.718,
     "seed": 1000,
     "words": [
      {
-      "w": "un",
+      "w": "Le",
       "t0": 0.0,
-      "t1": 0.24,
-      "p": 0.103
+      "t1": 0.26,
+      "p": 0.479
      },
      {
-      "w": "Flaubert",
-      "t0": 0.24,
-      "t1": 0.76,
-      "p": 0.713
+      "w": "Flaubert,",
+      "t0": 0.26,
+      "t1": 0.7,
+      "p": 0.638
+     },
+     {
+      "w": "puis",
+      "t0": 0.98,
+      "t1": 1.12,
+      "p": 0.967
+     },
+     {
+      "w": "tout",
+      "t0": 1.12,
+      "t1": 1.28,
+      "p": 0.983
+     },
+     {
+      "w": "le",
+      "t0": 1.28,
+      "t1": 1.42,
+      "p": 0.977
+     },
+     {
+      "w": "reste.",
+      "t0": 1.42,
+      "t1": 1.7,
+      "p": 0.998
      }
     ]
    },
    {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01c_kyutai_899fa98bd5.wav",
-    "duration_s": 1.04,
-    "transcript": "Flaubert",
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01c_kyutai_a5003a1dfa.wav",
+    "duration_s": 2.19,
+    "transcript": "Flaubert, puis tout le reste.",
     "wer": 0.0,
-    "mean_word_prob": 0.78,
-    "words_per_min_speech": 89.6,
-    "peak_dbfs": -7.63,
-    "f0_median_hz": 152.9,
-    "f0_std_st": 8.05,
-    "f0_range_p5_p95_st": 21.02,
-    "voiced_ratio": 0.752,
-    "speech_time_s": 0.67,
-    "pauses_ge_180ms": 0,
-    "mean_pause_s": 0.0,
-    "score": 3.267,
+    "mean_word_prob": 0.913,
+    "words_per_min_speech": 240.0,
+    "peak_dbfs": -3.97,
+    "f0_median_hz": 174.7,
+    "f0_std_st": 4.21,
+    "f0_range_p5_p95_st": 13.58,
+    "voiced_ratio": 0.423,
+    "speech_time_s": 1.25,
+    "pauses_ge_180ms": 1,
+    "mean_pause_s": 0.21,
+    "score": 4.686,
+    "keep_pause_s": 0.122,
+    "keep_depth_db": 65.1,
+    "keep_heard": "Flaubert ?",
+    "context_heard": "Rabelais, Perousseau, Flaubert, Hugo.",
+    "context_p": 0.943,
     "seed": 8919,
     "words": [
      {
-      "w": "Flaubert",
-      "t0": 0.0,
-      "t1": 0.76,
-      "p": 0.78
+      "w": "Flaubert,",
+      "t0": 0.1,
+      "t1": 0.7,
+      "p": 0.68
+     },
+     {
+      "w": "puis",
+      "t0": 1.36,
+      "t1": 1.38,
+      "p": 0.924
+     },
+     {
+      "w": "tout",
+      "t0": 1.38,
+      "t1": 1.56,
+      "p": 0.963
+     },
+     {
+      "w": "le",
+      "t0": 1.56,
+      "t1": 1.72,
+      "p": 0.999
+     },
+     {
+      "w": "reste.",
+      "t0": 1.72,
+      "t1": 2.02,
+      "p": 0.998
      }
     ]
    },
    {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01c_kyutai_564d940d41.wav",
-    "duration_s": 0.93,
-    "transcript": "Flaubert...",
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01c_kyutai_88ac35183f.wav",
+    "duration_s": 1.72,
+    "transcript": "Flaubert, puis tout le reste.",
     "wer": 0.0,
-    "mean_word_prob": 0.668,
-    "words_per_min_speech": 113.2,
-    "peak_dbfs": -7.35,
-    "f0_median_hz": 146.9,
-    "f0_std_st": 3.05,
-    "f0_range_p5_p95_st": 8.81,
-    "voiced_ratio": 0.638,
-    "speech_time_s": 0.53,
+    "mean_word_prob": 0.941,
+    "words_per_min_speech": 256.4,
+    "peak_dbfs": -8.04,
+    "f0_median_hz": 110.7,
+    "f0_std_st": 3.45,
+    "f0_range_p5_p95_st": 10.34,
+    "voiced_ratio": 0.491,
+    "speech_time_s": 1.17,
     "pauses_ge_180ms": 0,
     "mean_pause_s": 0.0,
-    "score": 1.635,
+    "score": 3.145,
+    "keep_pause_s": 0.106,
+    "keep_depth_db": 62.2,
+    "keep_heard": "Flaubert",
+    "context_heard": "Rabelais, Rousseau, Flaubert, Hugo.",
+    "context_p": 0.959,
     "seed": 16838,
     "words": [
      {
-      "w": "Flaubert...",
-      "t0": 0.0,
-      "t1": 1.04,
-      "p": 0.668
+      "w": "Flaubert,",
+      "t0": 0.22,
+      "t1": 0.7,
+      "p": 0.768
+     },
+     {
+      "w": "puis",
+      "t0": 1.04,
+      "t1": 1.06,
+      "p": 0.949
+     },
+     {
+      "w": "tout",
+      "t0": 1.06,
+      "t1": 1.2,
+      "p": 0.995
+     },
+     {
+      "w": "le",
+      "t0": 1.2,
+      "t1": 1.36,
+      "p": 0.999
+     },
+     {
+      "w": "reste.",
+      "t0": 1.36,
+      "t1": 1.6,
+      "p": 0.995
      }
     ]
    },
    {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01c_kyutai_8859c89b27.wav",
-    "duration_s": 0.84,
-    "transcript": "Flaubert ?",
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01c_kyutai_ad255fb480.wav",
+    "duration_s": 1.62,
+    "transcript": "Flaubert puis tout le reste.",
     "wer": 0.0,
-    "mean_word_prob": 0.631,
-    "words_per_min_speech": 120.0,
-    "peak_dbfs": -7.75,
-    "f0_median_hz": 148.8,
-    "f0_std_st": 3.93,
-    "f0_range_p5_p95_st": 9.6,
-    "voiced_ratio": 0.31,
-    "speech_time_s": 0.5,
+    "mean_word_prob": 0.84,
+    "words_per_min_speech": 288.5,
+    "peak_dbfs": -6.24,
+    "f0_median_hz": 122.8,
+    "f0_std_st": 2.97,
+    "f0_range_p5_p95_st": 10.0,
+    "voiced_ratio": 0.589,
+    "speech_time_s": 1.04,
     "pauses_ge_180ms": 0,
     "mean_pause_s": 0.0,
-    "score": 1.961,
+    "score": 4.407,
+    "keep_pause_s": 0.056,
+    "keep_depth_db": 62.3,
+    "keep_heard": "Flaubert",
+    "context_heard": "Rabelais, Rousseau, Flaubert, Hugo.",
+    "context_p": 0.942,
     "seed": 24757,
     "words": [
      {
       "w": "Flaubert",
-      "t0": 0.0,
-      "t1": 0.62,
-      "p": 0.79
+      "t0": 0.12,
+      "t1": 0.66,
+      "p": 0.728
      },
      {
-      "w": "?",
-      "t0": 0.62,
-      "t1": 1.14,
-      "p": 0.472
+      "w": "puis",
+      "t0": 0.66,
+      "t1": 0.92,
+      "p": 0.484
+     },
+     {
+      "w": "tout",
+      "t0": 0.92,
+      "t1": 1.06,
+      "p": 0.992
+     },
+     {
+      "w": "le",
+      "t0": 1.06,
+      "t1": 1.22,
+      "p": 0.999
+     },
+     {
+      "w": "reste.",
+      "t0": 1.22,
+      "t1": 1.5,
+      "p": 0.996
+     }
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01c_kyutai_f1d983f15f.wav",
+    "duration_s": 1.79,
+    "transcript": "Flaubert, puis tout le reste.",
+    "wer": 0.0,
+    "mean_word_prob": 0.941,
+    "words_per_min_speech": 272.7,
+    "peak_dbfs": -6.16,
+    "f0_median_hz": 129.4,
+    "f0_std_st": 4.62,
+    "f0_range_p5_p95_st": 15.4,
+    "voiced_ratio": 0.561,
+    "speech_time_s": 1.1,
+    "pauses_ge_180ms": 0,
+    "mean_pause_s": 0.0,
+    "score": 3.585,
+    "keep_pause_s": 0.095,
+    "keep_depth_db": 61.7,
+    "keep_heard": "Flaubert",
+    "context_heard": "Rabelais, Rousseau, Flaubert, Hugo.",
+    "context_p": 0.95,
+    "seed": 32676,
+    "words": [
+     {
+      "w": "Flaubert,",
+      "t0": 0.24,
+      "t1": 0.72,
+      "p": 0.744
+     },
+     {
+      "w": "puis",
+      "t0": 0.96,
+      "t1": 1.04,
+      "p": 0.97
+     },
+     {
+      "w": "tout",
+      "t0": 1.04,
+      "t1": 1.2,
+      "p": 0.994
+     },
+     {
+      "w": "le",
+      "t0": 1.2,
+      "t1": 1.36,
+      "p": 0.999
+     },
+     {
+      "w": "reste.",
+      "t0": 1.36,
+      "t1": 1.64,
+      "p": 0.996
      }
     ]
    }
@@ -5765,136 +6079,239 @@
   "provider": "kyutai",
   "voice": "unmute-prod-website_fabieng-enhanced-v2.wav",
   "text": "Hugo.",
-  "best": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01d_kyutai_00045e41cf.wav",
+  "best": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01d_kyutai_d18cdf7bd9.wav",
   "takes": [
    {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01d_kyutai_f30820ceb9.wav",
-    "duration_s": 0.63,
-    "transcript": "You go.",
-    "wer": 2.0,
-    "mean_word_prob": 0.413,
-    "words_per_min_speech": 142.9,
-    "peak_dbfs": -9.81,
-    "f0_median_hz": 114.6,
-    "f0_std_st": 3.2,
-    "f0_range_p5_p95_st": 9.54,
-    "voiced_ratio": 0.703,
-    "speech_time_s": 0.42,
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01d_kyutai_d18cdf7bd9.wav",
+    "duration_s": 1.48,
+    "transcript": "Et puis, Hugo.",
+    "wer": 0.0,
+    "mean_word_prob": 0.87,
+    "words_per_min_speech": 193.5,
+    "peak_dbfs": -7.75,
+    "f0_median_hz": 125.0,
+    "f0_std_st": 2.51,
+    "f0_range_p5_p95_st": 8.56,
+    "voiced_ratio": 0.638,
+    "speech_time_s": 0.93,
     "pauses_ge_180ms": 0,
     "mean_pause_s": 0.0,
-    "score": 22.348,
+    "score": 0.176,
+    "keep_pause_s": 0.148,
+    "keep_depth_db": 52.6,
+    "keep_heard": "Hugo...",
+    "context_heard": "Rabelais, Rousseau, Flaubert, Hugo.",
+    "context_p": 0.956,
     "seed": 1000,
     "words": [
      {
-      "w": "You",
+      "w": "Et",
       "t0": 0.0,
-      "t1": 0.36,
-      "p": 0.357
+      "t1": 0.28,
+      "p": 0.673
      },
      {
-      "w": "go.",
-      "t0": 0.36,
-      "t1": 0.52,
-      "p": 0.469
+      "w": "puis,",
+      "t0": 0.28,
+      "t1": 0.78,
+      "p": 0.998
+     },
+     {
+      "w": "Hugo.",
+      "t0": 1.08,
+      "t1": 1.22,
+      "p": 0.939
      }
     ]
    },
    {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01d_kyutai_448d339702.wav",
-    "duration_s": 0.51,
-    "transcript": "Tu goûtes ?",
-    "wer": 2.0,
-    "mean_word_prob": 0.394,
-    "words_per_min_speech": 153.8,
-    "peak_dbfs": -13.76,
-    "f0_median_hz": 115.2,
-    "f0_std_st": 3.24,
-    "f0_range_p5_p95_st": 8.24,
-    "voiced_ratio": 0.846,
-    "speech_time_s": 0.39,
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01d_kyutai_ebae470f04.wav",
+    "duration_s": 1.3,
+    "transcript": "Et puis, Hugo.",
+    "wer": 0.0,
+    "mean_word_prob": 0.836,
+    "words_per_min_speech": 197.8,
+    "peak_dbfs": -7.11,
+    "f0_median_hz": 129.4,
+    "f0_std_st": 3.67,
+    "f0_range_p5_p95_st": 11.82,
+    "voiced_ratio": 0.654,
+    "speech_time_s": 0.91,
     "pauses_ge_180ms": 0,
     "mean_pause_s": 0.0,
-    "score": 22.424,
+    "score": 0.264,
+    "keep_pause_s": 0.07,
+    "keep_depth_db": 62.5,
+    "keep_heard": "Yugo.",
+    "context_heard": "Rabelais, Rousseau, Flaubert, Hugo.",
+    "context_p": 0.934,
     "seed": 8919,
     "words": [
      {
-      "w": "Tu",
+      "w": "Et",
       "t0": 0.0,
-      "t1": 0.24,
-      "p": 0.073
+      "t1": 0.28,
+      "p": 0.677
      },
      {
-      "w": "goûtes",
-      "t0": 0.24,
-      "t1": 0.74,
-      "p": 0.469
+      "w": "puis,",
+      "t0": 0.28,
+      "t1": 0.68,
+      "p": 0.997
      },
      {
-      "w": "?",
-      "t0": 0.74,
-      "t1": 1.08,
-      "p": 0.641
+      "w": "Hugo.",
+      "t0": 0.94,
+      "t1": 1.06,
+      "p": 0.835
      }
     ]
    },
    {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01d_kyutai_00045e41cf.wav",
-    "duration_s": 0.59,
-    "transcript": "Égout",
-    "wer": 1.0,
-    "mean_word_prob": 0.304,
-    "words_per_min_speech": 153.8,
-    "peak_dbfs": -9.28,
-    "f0_median_hz": 127.9,
-    "f0_std_st": 3.56,
-    "f0_range_p5_p95_st": 10.1,
-    "voiced_ratio": 0.695,
-    "speech_time_s": 0.39,
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01d_kyutai_e420b8b9db.wav",
+    "duration_s": 1.33,
+    "transcript": "Et puis Hugo",
+    "wer": 0.0,
+    "mean_word_prob": 0.682,
+    "words_per_min_speech": 200.0,
+    "peak_dbfs": -12.71,
+    "f0_median_hz": 125.0,
+    "f0_std_st": 2.43,
+    "f0_range_p5_p95_st": 7.5,
+    "voiced_ratio": 0.759,
+    "speech_time_s": 0.9,
     "pauses_ge_180ms": 0,
     "mean_pause_s": 0.0,
-    "score": 12.784,
+    "score": 0.304,
+    "keep_pause_s": 0.1,
+    "keep_depth_db": 56.7,
+    "keep_heard": "Ugo.",
+    "context_heard": "Rabelais, Perousseau, Flaubert, Hugo",
+    "context_p": 0.924,
     "seed": 16838,
     "words": [
      {
-      "w": "Égout",
+      "w": "Et",
       "t0": 0.0,
-      "t1": 0.56,
-      "p": 0.304
+      "t1": 0.32,
+      "p": 0.701
+     },
+     {
+      "w": "puis",
+      "t0": 0.32,
+      "t1": 0.84,
+      "p": 0.999
+     },
+     {
+      "w": "Hugo",
+      "t0": 0.84,
+      "t1": 1.18,
+      "p": 0.345
      }
     ]
    },
    {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01d_kyutai_04a8119a4c.wav",
-    "duration_s": 0.7,
-    "transcript": "Du goût.",
-    "wer": 2.0,
-    "mean_word_prob": 0.499,
-    "words_per_min_speech": 136.4,
-    "peak_dbfs": -9.83,
-    "f0_median_hz": 149.5,
-    "f0_std_st": 6.75,
-    "f0_range_p5_p95_st": 16.68,
-    "voiced_ratio": 0.69,
-    "speech_time_s": 0.44,
-    "pauses_ge_180ms": 0,
-    "mean_pause_s": 0.0,
-    "score": 23.429,
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01d_kyutai_2f93fbc473.wav",
+    "duration_s": 1.89,
+    "transcript": "Et puis, Hugo.",
+    "wer": 0.0,
+    "mean_word_prob": 0.846,
+    "words_per_min_speech": 159.3,
+    "peak_dbfs": -7.89,
+    "f0_median_hz": 103.3,
+    "f0_std_st": 2.21,
+    "f0_range_p5_p95_st": 6.25,
+    "voiced_ratio": 0.608,
+    "speech_time_s": 1.13,
+    "pauses_ge_180ms": 1,
+    "mean_pause_s": 0.44,
+    "score": 1.737,
+    "keep_pause_s": 0.124,
+    "keep_depth_db": 61.5,
+    "keep_heard": "You go.",
+    "context_heard": "Rabelais, Rousseau, Flaubert, Hugo",
+    "context_p": 0.908,
     "seed": 24757,
     "words": [
      {
-      "w": "Du",
+      "w": "Et",
       "t0": 0.0,
-      "t1": 0.32,
-      "p": 0.21
+      "t1": 0.64,
+      "p": 0.628
      },
      {
-      "w": "goût.",
-      "t0": 0.32,
-      "t1": 0.64,
-      "p": 0.789
+      "w": "puis,",
+      "t0": 0.64,
+      "t1": 0.96,
+      "p": 0.993
+     },
+     {
+      "w": "Hugo.",
+      "t0": 1.22,
+      "t1": 1.44,
+      "p": 0.916
+     }
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01d_kyutai_f4c74cc63e.wav",
+    "duration_s": 1.5,
+    "transcript": "Et puis, Hugo !",
+    "wer": 0.0,
+    "mean_word_prob": 0.803,
+    "words_per_min_speech": 139.5,
+    "peak_dbfs": -2.33,
+    "f0_median_hz": 135.1,
+    "f0_std_st": 4.94,
+    "f0_range_p5_p95_st": 13.6,
+    "voiced_ratio": 0.861,
+    "speech_time_s": 1.29,
+    "pauses_ge_180ms": 0,
+    "mean_pause_s": 0.0,
+    "score": 17.637,
+    "keep_pause_s": 0.0,
+    "keep_depth_db": 12.6,
+    "keep_heard": "Oh",
+    "context_heard": "Rabelais, Rousseau, Flaubert ou...",
+    "context_p": 0.363,
+    "seed": 32676,
+    "words": [
+     {
+      "w": "Et",
+      "t0": 0.0,
+      "t1": 0.24,
+      "p": 0.818
+     },
+     {
+      "w": "puis,",
+      "t0": 0.24,
+      "t1": 0.6,
+      "p": 0.998
+     },
+     {
+      "w": "Hugo",
+      "t0": 0.86,
+      "t1": 1.08,
+      "p": 0.869
+     },
+     {
+      "w": "!",
+      "t0": 1.08,
+      "t1": 1.7,
+      "p": 0.527
      }
     ]
    }
   ]
+ },
+ "_names_check": {
+  "heard": "Rabelais, Rousseau, Flaubert, Hugo.",
+  "word_prob": [
+   0.75,
+   0.79,
+   0.96,
+   0.96
+  ],
+  "ok": true
  }
 }

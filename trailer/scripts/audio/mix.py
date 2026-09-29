@@ -68,7 +68,7 @@ for i in range(len(act)):
     v = a_up * v + (1 - a_up) * act[i] if act[i] > v else a_dn * v + (1 - a_dn) * act[i]
     g[i] = v
 DUCK = 5.0
-MUSIC_GAIN = -2.0
+MUSIC_GAIN = -0.5
 music *= (db(MUSIC_GAIN) * db(-DUCK * g))[:, None]
 # bruitages sous la voix : aigus adoucis (pas de conflit avec les sifflantes) et 2 dB plus bas
 sl = lib.filt(sbuf, "lowpass", 5500, order=2)

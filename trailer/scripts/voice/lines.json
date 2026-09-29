@@ -1,5 +1,5 @@
 {
- "_doc": "Script de la voix off. 'text' = orthographe exacte ; 'tts' = graphie pour Kyutai (sigles épelés) ; 'tts_google' = graphie pour Google (lit les sigles seul). 'at' : nombre = ancre (s) ; '+x' = x s après la fin de la réplique précédente ; '@shutter+x' = après le déclic. 'onset' : l'attaque du mot tombe sur 'at'. 'split' : réplique générée d'un seul tenant puis coupée à ses silences ('gaps' = écarts ajoutés). 'pauses' : silence inséré après un mot. 'question' : l'intonation finale doit monter.",
+ "_doc": "Script de la voix off. 'text' = orthographe exacte ; 'tts' = graphie pour Kyutai (sigles épelés) ; 'tts_google' = graphie pour Google (lit les sigles seul). 'at' : nombre = ancre (s) ; '+x' = x s après la fin de la réplique précédente ; '@shutter+x' = après le déclic. 'onset' : l'attaque du mot tombe sur 'at'. 'split' : réplique générée d'un seul tenant puis coupée à ses silences ('gaps' = écarts ajoutés). 'pauses' : silence inséré après un mot. 'question' : l'intonation finale doit monter. 'context' : le nom est vérifié replacé parmi les quatre (Whisper invente sur un mot isolé). 'keep' : seul le premier ('first') ou le dernier ('last') mot de la phrase porteuse 'tts' est gardé (noms du hook ; « Rablais » force la prononciation usuelle [ʁablɛ]). 'parts' : texte attendu de chaque morceau d'une réplique découpée (vérifié par scripts/voice/pick_split_take.py).",
  "style_prompt": "Voix française naturelle d'un jeune adulte. Ton calme, articulé, légèrement chaleureux, comme la narration d'un lancement de produit sobre. Pas de ton publicitaire, pas d'emphase exagérée. Débit posé.",
  "lines": [
   {
@@ -7,10 +7,23 @@
    "at": 0.6,
    "onset": true,
    "text": "Rabelais.",
-   "tts": "Rabelais, puis tout le reste.",
+   "tts": "Rabelais...",
+   "carrier_text": "Rabelais.",
    "tts_google": "Rabelais.",
    "keep": "first",
-   "takes": 5
+   "takes": 4,
+   "context": [
+    "V01a",
+    "V01b",
+    "V01c",
+    "V01d"
+   ],
+   "context_words": [
+    "rabelais",
+    "rousseau",
+    "flaubert",
+    "hugo"
+   ]
   },
   {
    "id": "V01b",
@@ -20,7 +33,19 @@
    "tts": "Rousseau, puis tout le reste.",
    "tts_google": "Rousseau.",
    "keep": "first",
-   "takes": 5
+   "takes": 5,
+   "context": [
+    "V01a",
+    "V01b",
+    "V01c",
+    "V01d"
+   ],
+   "context_words": [
+    "rabelais",
+    "rousseau",
+    "flaubert",
+    "hugo"
+   ]
   },
   {
    "id": "V01c",
@@ -30,7 +55,19 @@
    "tts": "Flaubert, puis tout le reste.",
    "tts_google": "Flaubert.",
    "keep": "first",
-   "takes": 5
+   "takes": 5,
+   "context": [
+    "V01a",
+    "V01b",
+    "V01c",
+    "V01d"
+   ],
+   "context_words": [
+    "rabelais",
+    "rousseau",
+    "flaubert",
+    "hugo"
+   ]
   },
   {
    "id": "V01d",
@@ -40,7 +77,19 @@
    "tts": "Et puis, Hugo.",
    "tts_google": "Hugo.",
    "keep": "last",
-   "takes": 5
+   "takes": 5,
+   "context": [
+    "V01a",
+    "V01b",
+    "V01c",
+    "V01d"
+   ],
+   "context_words": [
+    "rabelais",
+    "rousseau",
+    "flaubert",
+    "hugo"
+   ]
   },
   {
    "id": "V02",
@@ -169,6 +218,7 @@
   "v2_noms_separes": "V01a–V01d (un nom par réplique) : abandonné, Kyutai lit mal un mot isolé (« Brabeulet », « Égout »).",
   "v2_V08": "Chaque texte vu en classe a sa fiche : l'essentiel en cinq points, les citations clés.  (entendu « s'affiche » par Whisper sur toutes les prises)",
   "v2_V13": "Fait en TG1, par l'un d'entre nous. Pour toute la classe.  (« Fait en » entendu « Faites en » / « Fâte »)",
-  "v2_V01_liste": "V01 « Rabelais. Rousseau. Flaubert. Hugo. » lu en liste puis découpé : noms trop liés (« Rabelais-rousse / ouf »), abandonné."
+  "v2_V01_liste": "V01 « Rabelais. Rousseau. Flaubert. Hugo. » lu en liste puis découpé : noms trop liés (« Rabelais-rousse / ouf »), abandonné.",
+  "v2_V01a_rablais": "« Rablais, puis tout le reste. » : lu « Rablé » / « Chablais », abandonné. « Rabelais, puis tout le reste. » : « Ra-beu-lais », entendu « Rabeulet »."
  }
 }

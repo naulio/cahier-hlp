@@ -27,6 +27,7 @@
 
   S.build = function (stage) {
     root = el("div", "layer", stage);
+    root.style.background = "#F4F0E6";
     cam = el("div", "layer", root);
     cam.style.overflow = "visible";
     cam.style.transformOrigin = "0 0";
@@ -87,7 +88,7 @@
     root.style.clipPath = rv < 1 ? `circle(${(rv * 1900).toFixed(1)}px at ${ax}px ${ay}px)` : "none";
     // caméra : plan serré sur le titre, puis recul sur toute la page
     const pb = seg(t, v13 - 0.1, 1.3, E.inOut);
-    const z = lerp(1.55, 1.0, pb), fx = lerp(520, 720, pb), fy = lerp(330, 540, pb);
+    const z = lerp(1.55, 1.0, pb), fx = lerp(520, 720, pb), fy = lerp(360, 540, pb);   // cadre toujours couvert par la page
     cam.style.transform = `translate(${(720 - fx * z).toFixed(2)}px, ${(540 - fy * z).toFixed(2)}px) scale(${z.toFixed(4)})`;
     const out = seg(t, v14 - 0.85, 0.35);                       // tout s’efface sauf les tables
     [gr, co].forEach((tw, k) => {

@@ -24,14 +24,15 @@
   const TGT = {};                            // cibles du doigt, mesurées une fois la mise en page faite
 
   function T() {
+    const yes = M("v9_reviennent") + 0.1;      // « Je savais » : la carte file dans sa boîte sur « reviennent »
     return {
       v7s: M("v7_start"), v7c: M("v7_cahier"), v7e: M("v7_end"),
       build: M("v7_end") + 0.3,
       tapCard: M("v8_fiche") - 0.3,
       ess: M("v8_essentiel"), cit: M("v8_citations"), cles: M("v8_retenir"),
       navFlash: M("v9_start") - 0.55,
-      flip: M("v9_flash") + 0.25, yes: M("v9_reviennent") + 0.45, stamp: M("v9_moment") + 0.05,
-      navQcm: M("v10_start") - 0.55, qIn: M("v10_qcm"),
+      flip: M("v9_flash") + 0.25, yes, stamp: Math.max(M("v9_moment") + 0.05, yes + 0.8),   // tampon après l’arrivée de la carte
+      navQcm: M("v10_start") - 0.55, qIn: Math.min(M("v10_qcm"), M("v10_start") - 0.55 + 0.5),   // la question est là dès l’arrivée
       qTap: M("v10_corriges") - 0.2, qExp: M("v10_expliques") - 0.05,
       navFrise: M("v11_start") - 0.5,
     };
@@ -283,13 +284,13 @@
     const r0 = { x: s1.x - A.x, y: s1.y - A.y, w: s1.w, h: s1.h };
     const exOn = t >= k.tapCard + 0.08 && t < k.navFlash + 0.5;
     if (exOn) {
-      put(expander, { op: 1 - seg(t, k.navFlash, 0.35, E.linear), x: -seg(t, k.navFlash, 0.45, E.in) * 60 });
+      put(expander, { op: 1 - seg(t, k.navFlash, 0.2, E.linear), x: -seg(t, k.navFlash, 0.45, E.in) * 60 });
       expander.style.left = lerp(r0.x, HEAD.x, ex).toFixed(2) + "px"; expander.style.top = lerp(r0.y, HEAD.y, ex).toFixed(2) + "px";
       expander.style.width = lerp(r0.w, HEAD.w, ex).toFixed(2) + "px"; expander.style.height = lerp(r0.h, HEAD.h, ex).toFixed(2) + "px";
       expander.style.borderRadius = lerp(16, 14, ex).toFixed(2) + "px";
       expander.card.style.opacity = (1 - seg(t, k.tapCard + 0.1, 0.22, E.linear)).toFixed(3);
     } else put(expander, { op: 0 });
-    const fo = (1 - seg(t, k.navFlash, 0.35, E.linear));
+    const fo = (1 - seg(t, k.navFlash, 0.2, E.linear));     // un écran part avant que l’autre arrive (pas de fondu enchaîné)
     put(fiche, { op: (t >= k.tapCard + 0.3 ? 1 : 0) * fo, x: -seg(t, k.navFlash, 0.45, E.in) * 60 });
     const fIn = d => seg(t, k.tapCard + 0.42 + d, 0.45, E.out);
     [[fiche.back, 0], [fiche.auth, 0.03], [fiche.ftitle, 0.09], [fiche.oeuvre, 0.14]].forEach(([e, d]) => put(e, { op: fIn(d), y: (1 - fIn(d)) * 14 }));
@@ -304,8 +305,8 @@
     fiche.note.style.clipPath = `inset(-10% ${((1 - nIn) * 100).toFixed(1)}% -10% 0)`;
 
     // ---------- flashcards
-    const flIn = seg(t, k.navFlash + 0.12, 0.55, E.emph);
-    put(flash, { op: flIn * (1 - seg(t, k.navQcm, 0.35, E.linear)), x: (1 - flIn) * 70 - seg(t, k.navQcm, 0.45, E.in) * 60 });
+    const flIn = seg(t, k.navFlash + 0.2, 0.55, E.emph);
+    put(flash, { op: flIn * (1 - seg(t, k.navQcm, 0.2, E.linear)), x: (1 - flIn) * 70 - seg(t, k.navQcm, 0.45, E.in) * 60 });
     const cardIn = seg(t, k.navFlash + 0.3, 0.55, E.out);
     const flip = seg(t, k.flip, 0.6, E.inOut);
     const toBox = seg(t, k.yes + 0.1, 0.62, E.emph);
@@ -329,7 +330,7 @@
     put(flash.stamp, { op: st > 0 ? 0.92 : 0, s: st > 0 ? 1 + 0.35 * Math.exp(-st / 0.035) : 1.35, r: -5 });
 
     // ---------- QCM
-    const qcIn = seg(t, k.navQcm + 0.12, 0.55, E.emph);
+    const qcIn = seg(t, k.navQcm + 0.2, 0.55, E.emph);
     put(qcm, { op: qcIn, x: (1 - qcIn) * 70 });
     put(qcm.q, { op: seg(t, k.qIn - 0.25, 0.5), y: (1 - seg(t, k.qIn - 0.25, 0.5)) * 12 });
     const ojit = [0, 0.1, 0.17, 0.3];
@@ -397,7 +398,7 @@
     cam.style.transform = `translate(${(720 - fx * z).toFixed(2)}px, ${(540 - fy * z).toFixed(2)}px) scale(${z.toFixed(4)})`;
 
     // sortie : la frise naît du toucher sur « Frise »
-    put(root, { op: 1 - seg(t, k.navFrise + 0.1, 0.35, E.linear) });
+    put(root, { op: 1 });      // la frise se pose par-dessus (deux calques à demi transparents assombriraient l’image)
   };
 
   S.blur = t => {

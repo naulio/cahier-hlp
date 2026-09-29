@@ -55,8 +55,14 @@ Problèmes principaux et idées retenues : `logs/qa/v1/REVIEWS.md`.
 - Exactitude : 10 textes / 9 auteurs, titres complets, ponctuation des extraits respectée.
 
 **Voix**
-- Les quatre noms sont lus comme une vraie liste (une seule prise découpée) puis posés chacun sur son
-  Polaroid : intonations différentes, plus de chevauchement.
+- Les quatre noms : un nom seul est mal lu par le moteur local (« Brabeulet », « Égout ») et une liste lue
+  d'un trait lie les noms (« Rabelais-rousse / ouf »). Chaque nom vient donc d'une courte phrase porteuse
+  (« Rousseau, puis tout le reste. » ; « Et puis, Hugo. ») coupée dans la pause qui suit : intonation de
+  continuation sur les trois premiers, chute sur Hugo, attaque nette ; chaque nom est posé sur son Polaroid
+  (0,85 s d'écart, plus de chevauchement). Contrôle : les quatre noms extraits, réentendus ensemble par
+  Whisper, donnent « Rabelais, Rousseau, Flaubert, Hugo. » (confiance 0,75 à 0,96).
+- Répliques découpées (« Mais où ? », TG1, « Tout est là. ») : chaque morceau est réentendu seul avant
+  d'être retenu ; l'ancienne prise de « Mais où ? » se serait coupée en « Mais… Ouf ! ».
 - « Chaque texte … a sa fiche » (entendu « s'affiche ») → « Pour chaque texte vu en classe, une fiche » ;
   « Fait en TG1 » (entendu « Faites en ») → « Imaginé en TG1 ».
 - Débit : pénalité doublée pour les prises pressées ; ralentissement de 5 % sans changer le timbre ;

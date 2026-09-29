@@ -52,15 +52,23 @@ Tu **ne peux pas regarder la vidéo en temps réel ni écouter l'audio**. Tu dis
 - `phone_size_360px.jpg` : images réduites à la largeur d'un téléphone (lisibilité) ;
 - `frames/` : images pleine résolution (1440×1080) aux instants des planches ;
 - `timeline.json` : répliques de la voix off placées, mots horodatés, repères de synchro (`marks`) ;
+- `voice_takes.json` : toutes les prises générées par réplique, leurs mesures et la prise retenue ;
 - `voiceover_script.json` : le texte exact de la voix off ;
 - `voice_metrics.json` : par réplique, transcription Whisper (medium), WER, confiance moyenne des mots,
   F0 médiane et dispersion (demi-tons), débit ;
 - `audio_mix_stems.png` / `audio_music_stems.png` : enveloppes de niveau (dB) par piste + spectrogramme, avec repères ;
 - `mix_report.json` : loudness intégrée, crête vraie, niveaux voix/musique ;
-- `sfx_cues.json` (placement de chaque effet), `sfx_library.json` (provenance et licence de chaque son) ;
+- `sfx_cues.json` (placement de chaque effet, avec la scène qui le déclare), `sfx_library.json` (provenance et licence de chaque son) ;
 - `onscreen_content.js` : tous les textes affichés dans l'interface.
 Le code source des scènes est dans `source/` (JS) et le pipeline dans `scripts/` si tu veux vérifier un point.
 Pour l'audio, dis clairement ce que tu déduis des données et ce que tu ne peux pas vérifier sans écoute.
+
+## Version à évaluer
+Le dossier indiqué dans ta mission (ex. `logs/qa/v2/`). Pour une version ≥ 2, `logs/qa/v1/REVIEWS.md` résume
+les critiques de la version précédente et ce qui a été changé (`QA_REPORT.md`). Juge d'abord la nouvelle
+version **pour elle-même**, puis dis brièvement quels problèmes signalés sont réglés, lesquels persistent,
+et ce que la correction a abîmé. `voice_takes.json` détaille toutes les prises de voix et leurs mesures
+(dont `_names_check` : les quatre noms du hook réentendus ensemble).
 
 ## Ce que tu dois rendre
 1. **Note /10** pour ton domaine (et, si pertinent, une note par section : hook, problème, solution,

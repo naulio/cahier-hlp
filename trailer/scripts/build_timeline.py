@@ -181,8 +181,9 @@ def main(model="small"):
             end = segs[-1]["at"] + segs[-1]["dur"]
         else:
             segs = [{"file": str(wav.relative_to(ROOT)), "at": round(at, 3), "dur": round(dur, 3)}]
-            wl = [{"w": r, "t0": round(at + a, 3), "t1": round(at + b, 3)} for r, (a, b) in zip(ref, tt)]
             end = at + dur
+            # mots bornés au fichier (Whisper étire parfois le dernier mot d'une réplique courte)
+            wl = [{"w": r, "t0": round(min(at + a, end), 3), "t1": round(min(at + b, end), 3)} for r, (a, b) in zip(ref, tt)]
         placed.append({"id": lid, "text": line["text"], "onsets": line.get("onsets") or ([float(line["at"])] if line.get("onset") else None), "at": round(segs[0]["at"], 3), "dur": round(end - segs[0]["at"], 3),
                        "end": round(end, 3), "words": wl, "segments": segs})
         prev_end = wl[-1]["t1"]

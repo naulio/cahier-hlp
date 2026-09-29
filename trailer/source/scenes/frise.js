@@ -55,7 +55,7 @@
 
   S.update = function (t) {
     const t0 = S.t0(), fr = M("v11_frise"), rab = M("v11_rabelais"), are = M("v11_arendt");
-    put(bgp, { op: seg(t, t0, 0.35, E.linear) });
+    put(bgp, { op: seg(t, t0, 0.3, E.linear) });
     // l’axe naît du menu : un point qui s’étire jusqu’à la largeur de la frise
     const [nx, ny] = app().navFriseXY || [150, 400];
     const a1 = seg(t, t0, 0.55, E.emph), a2 = seg(t, t0 + 0.25, 0.9, E.emph);
@@ -88,7 +88,7 @@
     const lk = seg(t, rab - 0.05, are - rab + 0.1, E.inOut);
     link.setAttribute("x2", lerp(xs[0], xs[8], lk).toFixed(1));
     link.setAttribute("opacity", t > rab - 0.05 ? 1 : 0);
-    put(title, { op: seg(t, t0 + 0.2, 0.5), y: (1 - seg(t, t0 + 0.2, 0.5)) * 12 });
+    put(title, { op: seg(t, t0 + 0.45, 0.5), y: (1 - seg(t, t0 + 0.45, 0.5)) * 12 });   // après le départ de l’écran QCM
     const z = 1 + seg(t, t0, S.t1() - t0, E.linear) * 0.04;
     world.style.transform = `scale(${z.toFixed(4)})`;
   };

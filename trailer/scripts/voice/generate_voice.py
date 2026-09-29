@@ -19,6 +19,7 @@ import hashlib
 import json
 import os
 import sys
+import tempfile
 import time
 import urllib.request
 from pathlib import Path
@@ -28,7 +29,7 @@ import soundfile as sf
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
-from voice_metrics import analyse  # noqa: E402
+from voice_metrics import analyse, norm_words, transcribe  # noqa: E402
 
 LINES = ROOT / "scripts" / "voice" / "lines.json"
 TAKES = ROOT / "audio" / "voice" / "takes"
@@ -195,14 +196,41 @@ def keep_word(y, sr, words, keep):
             k = j
         else:
             k += 1
+    runs = [r for r in runs if r[1] - r[0] >= int(0.03 * sr)]            # au moins 30 ms de silence
     if runs:
-        r0, r1 = max(runs, key=lambda r: r[1] - r[0])
+        # la pause la plus proche du nom (pas la plus longue : elle peut tomber après le mot suivant)
+        r0, r1 = runs[0] if keep == "first" else runs[-1]
         cut, pause = i0 + (r0 + r1) // 2, (r1 - r0) / sr
     else:
         cut, pause = i0 + int(np.argmin(seg)), 0.0
     depth = peak - float(seg.min())
     piece = y[:cut] if keep == "first" else y[cut:]
     return trim(piece, sr), pause, depth
+
+
+def in_context(piece, sr, line):
+    """Put the candidate back among the other names (current best of each, 0.35 s apart)
+    and check Whisper hears the right name at its place. Returns (ok, word prob, heard)."""
+    ids, expect = line["context"], line["context_words"]
+    parts = []
+    for lid in ids:
+        if lid == line["id"]:
+            y = piece
+        else:
+            f = BEST / f"{lid}.wav"
+            if not f.exists():
+                continue
+            y, _ = sf.read(f)
+            y = y.mean(1) if y.ndim > 1 else y
+        parts += [y, np.zeros(int(sr * 0.35))]
+    with tempfile.NamedTemporaryFile(suffix=".wav") as tmp:
+        sf.write(tmp.name, np.concatenate(parts), sr)
+        heard, words = transcribe(tmp.name, "medium")
+    k = ids.index(line["id"])
+    hw = norm_words(heard)
+    ok = k < len(hw) and hw[k] == expect[k] and len(hw) == len(ids)
+    pw = float(words[k]["p"]) if k < len(words) else 0.0
+    return ok, pw, heard
 
 
 def final_rise_st(path):
@@ -271,7 +299,8 @@ def main():
                 y = trim(y, sr)
                 sf.write(path, y, sr, subtype="PCM_24")
                 print(f"  {line['id']} take {k} {len(y)/sr:.2f}s audio in {time.time()-t0:.0f}s")
-            m, words = analyse(str(path), text if line.get("keep") else line["text"], a.whisper)
+            ref = line.get("carrier_text", text) if line.get("keep") else line["text"]   # graphie correcte de la phrase porteuse
+            m, words = analyse(str(path), ref, a.whisper)
             if line.get("question"):
                 m["final_rise_st"] = round(final_rise_st(str(path)), 2)
             m["score"] = score(m, line)
@@ -279,7 +308,18 @@ def main():
                 y0, sr0 = sf.read(str(path))
                 piece, pause, depth = keep_word(y0, sr0, words, line["keep"])
                 m["keep_pause_s"], m["keep_depth_db"] = round(pause, 3), round(depth, 1)
+                # pour information seulement : Whisper invente souvent sur un mot isolé de moins d'une seconde ;
+                # la vérification qui compte est scripts/voice/check_names.py (les quatre noms ensemble)
+                with tempfile.NamedTemporaryFile(suffix=".wav") as tmp:
+                    sf.write(tmp.name, piece, sr0)
+                    m["keep_heard"], _ = transcribe(tmp.name, a.whisper)
                 m["score"] = round(m["score"] + (4 if pause < 0.035 else 0) + max(0, 28 - depth) * 0.2, 3)
+                if line.get("context"):          # le nom, replacé dans la liste des quatre, doit être compris
+                    ok, pw, heard = in_context(piece, sr0, line)
+                    m["context_heard"], m["context_p"] = heard, round(pw, 3)
+                    # sur un mot seul, le taux d'erreur de Whisper n'est pas fiable : le test en contexte le remplace
+                    m["score"] = round(m["score"] - m["wer"] * 10 - (1 - (m.get("mean_word_prob") or 0)) * 4
+                                       + (0 if ok else 8) + (1 - pw) * 4, 3)
             m["seed"] = seed
             m["words"] = words
             results.append(m)

@@ -1,374 +1,417 @@
 [
  {
-  "t": 1.368,
-  "sfx": "paper_hit_1",
-  "gain_db": -13.0,
-  "pan": -0.35
- },
- {
-  "t": 2.035,
-  "sfx": "paper_hit_2",
-  "gain_db": -13.5,
-  "pan": -0.12
- },
- {
-  "t": 2.702,
-  "sfx": "paper_hit_3",
-  "gain_db": -14.0,
-  "pan": 0.12
- },
- {
-  "t": 3.368,
-  "sfx": "paper_hit_1",
-  "gain_db": -14.5,
-  "pan": 0.35
- },
- {
   "t": 0.0,
   "sfx": "room_tone",
-  "gain_db": -30,
-  "pan": 0.0
+  "g": -30,
+  "p": 0,
+  "scene": "desk",
+  "len": 17.98
  },
  {
-  "t": 5.41,
-  "sfx": "air_long",
-  "gain_db": -14,
-  "pan": 0.0
- },
- {
-  "t": 7.2,
-  "sfx": "paper_slide_1",
-  "gain_db": -16,
-  "pan": 0.5
- },
- {
-  "t": 7.65,
-  "sfx": "paper_hit_2",
-  "gain_db": -21,
-  "pan": 0.5
- },
- {
-  "t": 8.12,
-  "sfx": "paper_slide_2",
-  "gain_db": -16,
-  "pan": -0.4
- },
- {
-  "t": 8.57,
-  "sfx": "paper_hit_3",
-  "gain_db": -21,
-  "pan": -0.4
- },
- {
-  "t": 8.9,
-  "sfx": "paper_slide_3",
-  "gain_db": -16,
-  "pan": 0.3
- },
- {
-  "t": 9.35,
+  "t": 0.58,
   "sfx": "paper_hit_1",
-  "gain_db": -21,
-  "pan": 0.3
+  "g": -14,
+  "p": -0.375,
+  "scene": "desk"
  },
  {
-  "t": 10.31,
-  "sfx": "paper_slide_4",
-  "gain_db": -16,
-  "pan": -0.5
- },
- {
-  "t": 10.76,
-  "sfx": "paper_hit_2",
-  "gain_db": -21,
-  "pan": -0.5
- },
- {
-  "t": 10.98,
-  "sfx": "paper_slide_5",
-  "gain_db": -16,
-  "pan": 0.1
- },
- {
-  "t": 11.43,
+  "t": 1.48,
   "sfx": "paper_hit_3",
-  "gain_db": -21,
-  "pan": 0.1
+  "g": -14.5,
+  "p": -0.125,
+  "scene": "desk"
  },
  {
-  "t": 9.15,
-  "sfx": "paper_slide_6",
-  "gain_db": -17,
-  "pan": -0.6
+  "t": 2.25,
+  "sfx": "paper_hit_2",
+  "g": -15,
+  "p": 0.125,
+  "scene": "desk"
  },
  {
-  "t": 11.42,
+  "t": 3.17,
+  "sfx": "paper_hit_1",
+  "g": -15.5,
+  "p": 0.375,
+  "scene": "desk"
+ },
+ {
+  "t": 5.683,
+  "sfx": "air_long",
+  "g": -17,
+  "p": 0,
+  "scene": "desk"
+ },
+ {
+  "t": 7.973,
+  "sfx": "paper_slide_2",
+  "g": -20,
+  "p": 0.5,
+  "scene": "desk"
+ },
+ {
+  "t": 9.713,
+  "sfx": "paper_slide_4",
+  "g": -21,
+  "p": 0.192,
+  "scene": "desk"
+ },
+ {
+  "t": 11.263,
+  "sfx": "paper_slide_5",
+  "g": -20,
+  "p": -0.231,
+  "scene": "desk"
+ },
+ {
+  "t": 12.143,
   "sfx": "pen_stroke_2",
-  "gain_db": -15,
-  "pan": 0.3
+  "g": -21,
+  "p": 0.2,
+  "scene": "desk"
  },
  {
-  "t": 11.64,
-  "sfx": "pen_stroke_3",
-  "gain_db": -15,
-  "pan": 0.0
+  "t": 12.923,
+  "sfx": "paper_hit_1",
+  "g": -23,
+  "p": 0.45,
+  "scene": "desk"
  },
  {
-  "t": 11.86,
-  "sfx": "pen_stroke_4",
-  "gain_db": -15,
-  "pan": -0.3
+  "t": 13.083,
+  "sfx": "paper_hit_2",
+  "g": -24,
+  "p": -0.45,
+  "scene": "desk"
  },
  {
-  "t": 12.27,
+  "t": 13.223,
+  "sfx": "paper_hit_3",
+  "g": -25,
+  "p": 0.158,
+  "scene": "desk"
+ },
+ {
+  "t": 13.313,
   "sfx": "marker_1",
-  "gain_db": -17,
-  "pan": -0.2
+  "g": -22,
+  "p": -0.1,
+  "scene": "desk"
  },
  {
-  "t": 12.45,
-  "sfx": "marker_2",
-  "gain_db": -17,
-  "pan": 0.2
- },
- {
-  "t": 14.96,
-  "sfx": "af_motor_1",
-  "gain_db": -13,
-  "pan": -0.4
- },
- {
-  "t": 15.58,
-  "sfx": "af_motor_2",
-  "gain_db": -13,
-  "pan": 0.4
- },
- {
-  "t": 16.2,
-  "sfx": "af_motor_3",
-  "gain_db": -13,
-  "pan": -0.1
- },
- {
-  "t": 16.64,
-  "sfx": "af_beep",
-  "gain_db": -21,
-  "pan": 0.0
- },
- {
-  "t": 16.96,
+  "t": 17.853,
   "sfx": "shutter_k1000",
-  "gain_db": -4,
-  "pan": 0.0
+  "g": -7,
+  "p": 0,
+  "scene": "desk"
  },
  {
-  "t": 17.41,
-  "sfx": "film_advance",
-  "gain_db": -14,
-  "pan": 0.2
- },
- {
-  "t": 17.29,
-  "sfx": "paper_sweep",
-  "gain_db": -13,
-  "pan": 0.0
- },
- {
-  "t": 18.12,
-  "sfx": "card_tick_1",
-  "gain_db": -23,
-  "pan": -0.4
- },
- {
-  "t": 18.195,
-  "sfx": "card_tick_2",
-  "gain_db": -23,
-  "pan": -0.30000000000000004
- },
- {
-  "t": 18.27,
-  "sfx": "card_tick_3",
-  "gain_db": -23,
-  "pan": -0.2
- },
- {
-  "t": 18.345,
-  "sfx": "card_tick_1",
-  "gain_db": -23,
-  "pan": -0.09999999999999998
- },
- {
-  "t": 18.42,
-  "sfx": "card_tick_2",
-  "gain_db": -23,
-  "pan": 0.0
- },
- {
-  "t": 18.495,
-  "sfx": "card_tick_3",
-  "gain_db": -23,
-  "pan": 0.09999999999999998
- },
- {
-  "t": 18.57,
-  "sfx": "card_tick_1",
-  "gain_db": -23,
-  "pan": 0.20000000000000007
- },
- {
-  "t": 18.645,
-  "sfx": "card_tick_2",
-  "gain_db": -23,
-  "pan": 0.30000000000000004
- },
- {
-  "t": 18.72,
-  "sfx": "card_tick_3",
-  "gain_db": -23,
-  "pan": 0.4
- },
- {
-  "t": 21.23,
-  "sfx": "air_soft",
-  "gain_db": -20,
-  "pan": 0.0
- },
- {
-  "t": 24.38,
-  "sfx": "ui_click",
-  "gain_db": -15,
-  "pan": 0.0
- },
- {
-  "t": 30.38,
-  "sfx": "ui_click",
-  "gain_db": -15,
-  "pan": 0.0
- },
- {
-  "t": 32.57,
-  "sfx": "ui_click",
-  "gain_db": -15,
-  "pan": 0.0
- },
- {
-  "t": 33.45,
-  "sfx": "ui_click",
-  "gain_db": -15,
-  "pan": 0.0
- },
- {
-  "t": 35.51,
-  "sfx": "ui_click",
-  "gain_db": -15,
-  "pan": 0.0
- },
- {
-  "t": 24.5,
-  "sfx": "air_soft",
-  "gain_db": -22,
-  "pan": 0.0
- },
- {
-  "t": 26.18,
-  "sfx": "ui_tick",
-  "gain_db": -22,
-  "pan": 0.0
- },
- {
-  "t": 26.28,
-  "sfx": "ui_tick",
-  "gain_db": -22,
-  "pan": 0.0
- },
- {
-  "t": 26.38,
-  "sfx": "ui_tick",
-  "gain_db": -22,
-  "pan": 0.0
- },
- {
-  "t": 30.09,
-  "sfx": "marker_3",
-  "gain_db": -22,
-  "pan": 0.0
- },
- {
-  "t": 30.51,
-  "sfx": "air_soft",
-  "gain_db": -22,
-  "pan": 0.0
- },
- {
-  "t": 33.53,
-  "sfx": "air_soft",
-  "gain_db": -22,
-  "pan": 0.0
- },
- {
-  "t": 32.13,
-  "sfx": "card_flip",
-  "gain_db": -13,
-  "pan": 0.0
- },
- {
-  "t": 33.36,
-  "sfx": "wood_tock",
-  "gain_db": -16,
-  "pan": 0.0
- },
- {
-  "t": 33.15,
-  "sfx": "ui_tick",
-  "gain_db": -20,
-  "pan": 0.0
- },
- {
-  "t": 36.88,
-  "sfx": "air_soft",
-  "gain_db": -24,
-  "pan": 0.0
- },
- {
-  "t": 38.59,
-  "sfx": "marker_3",
-  "gain_db": -21,
-  "pan": 0.0
- },
- {
-  "t": 41.61,
-  "sfx": "air_soft",
-  "gain_db": -22,
-  "pan": 0.0
- },
- {
-  "t": 48.71,
-  "sfx": "air_soft",
-  "gain_db": -21,
-  "pan": 0.0
- },
- {
-  "t": 52.18,
-  "sfx": "air_soft",
-  "gain_db": -21,
-  "pan": 0.0
- },
- {
-  "t": 58.44,
-  "sfx": "shutter_k1000",
-  "gain_db": -6,
-  "pan": 0.0
- },
- {
-  "t": 58.59,
+  "t": 17.983,
   "sfx": "polaroid_eject",
-  "gain_db": -7,
-  "pan": 0.0
+  "g": -14,
+  "p": 0,
+  "scene": "desk",
+  "len": 1.3,
+  "fade": 0.35
  },
  {
-  "t": 59.52,
+  "t": 18.233,
+  "sfx": "paper_sweep",
+  "g": -18,
+  "p": 0,
+  "scene": "desk"
+ },
+ {
+  "t": 19.183,
+  "sfx": "card_tick_1",
+  "g": -25,
+  "p": -0.133,
+  "scene": "desk"
+ },
+ {
+  "t": 19.553,
+  "sfx": "card_tick_3",
+  "g": -26,
+  "p": 0.089,
+  "scene": "desk"
+ },
+ {
+  "t": 19.763,
+  "sfx": "card_tick_2",
+  "g": -25,
+  "p": 0.31,
+  "scene": "desk"
+ },
+ {
+  "t": 20.853,
+  "sfx": "pen_stroke_2",
+  "g": -25,
+  "p": 0,
+  "scene": "app"
+ },
+ {
+  "t": 22.003,
+  "sfx": "air_soft",
+  "g": -23,
+  "p": 0,
+  "scene": "app"
+ },
+ {
+  "t": 25.183,
+  "sfx": "ui_click",
+  "g": -17.5,
+  "p": 0.083,
+  "scene": "app"
+ },
+ {
+  "t": 25.283,
+  "sfx": "paper_slide_6",
+  "g": -27,
+  "p": 0,
+  "scene": "app"
+ },
+ {
+  "t": 28.533,
+  "sfx": "marker_2",
+  "g": -23,
+  "p": 0.1,
+  "scene": "app"
+ },
+ {
+  "t": 28.833,
+  "sfx": "write_a",
+  "g": -24,
+  "p": 0.15,
+  "scene": "app"
+ },
+ {
+  "t": 29.213,
+  "sfx": "ui_click",
+  "g": -17.5,
+  "p": -0.333,
+  "scene": "app"
+ },
+ {
+  "t": 30.593,
+  "sfx": "card_flip",
+  "g": -15,
+  "p": 0,
+  "scene": "app"
+ },
+ {
+  "t": 31.483,
+  "sfx": "ui_click",
+  "g": -17.5,
+  "p": 0.188,
+  "scene": "app"
+ },
+ {
+  "t": 32.183,
+  "sfx": "wood_tock",
+  "g": -19,
+  "p": 0.1,
+  "scene": "app"
+ },
+ {
+  "t": 32.283,
+  "sfx": "stamp",
+  "g": -14,
+  "p": 0.1,
+  "scene": "app"
+ },
+ {
+  "t": 32.893,
+  "sfx": "ui_click",
+  "g": -17.5,
+  "p": -0.333,
+  "scene": "app"
+ },
+ {
+  "t": 34.943,
+  "sfx": "ui_click",
+  "g": -16,
+  "p": 0.083,
+  "scene": "app"
+ },
+ {
+  "t": 38.165,
+  "sfx": "ui_click",
+  "g": -17.5,
+  "p": -0.333,
+  "scene": "app"
+ },
+ {
+  "t": 38.315,
+  "sfx": "marker_3",
+  "g": -22,
+  "p": -0.1,
+  "scene": "frise"
+ },
+ {
+  "t": 42.415,
+  "sfx": "write_b",
+  "g": -24,
+  "p": -0.2,
+  "scene": "frise",
+  "len": 1.1799999999999955,
+  "fade": 0.2
+ },
+ {
+  "t": 44.392,
+  "sfx": "air_soft",
+  "g": -22,
+  "p": 0,
+  "scene": "classe"
+ },
+ {
+  "t": 44.682,
+  "sfx": "write_a",
+  "g": -21,
+  "p": -0.15,
+  "scene": "classe"
+ },
+ {
+  "t": 45.862,
+  "sfx": "write_b",
+  "g": -21,
+  "p": 0.1,
+  "scene": "classe"
+ },
+ {
+  "t": 47.022,
+  "sfx": "paper_slide_6",
+  "g": -22,
+  "p": 0.3,
+  "scene": "classe"
+ },
+ {
+  "t": 49.072,
+  "sfx": "pen_stroke_2",
+  "g": -25,
+  "p": 0,
+  "scene": "classe"
+ },
+ {
+  "t": 49.372,
   "sfx": "pencil_caption",
-  "gain_db": -14,
-  "pan": 0.0
+  "g": -25,
+  "p": 0.1,
+  "scene": "classe"
+ },
+ {
+  "t": 50.022,
+  "sfx": "marker_1",
+  "g": -23,
+  "p": -0.2,
+  "scene": "classe"
+ },
+ {
+  "t": 51.942,
+  "sfx": "pen_stroke_4",
+  "g": -21,
+  "p": 0.04,
+  "scene": "classe"
+ },
+ {
+  "t": 53.322,
+  "sfx": "pen_stroke_1",
+  "g": -25,
+  "p": 0.103,
+  "scene": "classe"
+ },
+ {
+  "t": 53.455,
+  "sfx": "pen_stroke_3",
+  "g": -26,
+  "p": 0.289,
+  "scene": "classe"
+ },
+ {
+  "t": 53.618,
+  "sfx": "pen_stroke_4",
+  "g": -27,
+  "p": 0.289,
+  "scene": "classe"
+ },
+ {
+  "t": 53.782,
+  "sfx": "pen_stroke_1",
+  "g": -25,
+  "p": 0.226,
+  "scene": "classe"
+ },
+ {
+  "t": 53.956,
+  "sfx": "pen_stroke_3",
+  "g": -26,
+  "p": -0.083,
+  "scene": "classe"
+ },
+ {
+  "t": 54.143,
+  "sfx": "pen_stroke_4",
+  "g": -27,
+  "p": 0.04,
+  "scene": "classe"
+ },
+ {
+  "t": 54.3,
+  "sfx": "pen_stroke_1",
+  "g": -25,
+  "p": 0.289,
+  "scene": "classe"
+ },
+ {
+  "t": 55.342,
+  "sfx": "paper_down",
+  "g": -21,
+  "p": 0,
+  "scene": "end"
+ },
+ {
+  "t": 55.522,
+  "sfx": "pen_stroke_2",
+  "g": -25,
+  "p": 0,
+  "scene": "end"
+ },
+ {
+  "t": 57.572,
+  "sfx": "marker_2",
+  "g": -21,
+  "p": 0,
+  "scene": "end"
+ },
+ {
+  "t": 60.702,
+  "sfx": "shutter_k1000",
+  "g": -8,
+  "p": 0,
+  "scene": "end"
+ },
+ {
+  "t": 60.852,
+  "sfx": "polaroid_eject",
+  "g": -14,
+  "p": 0,
+  "scene": "end",
+  "len": 1,
+  "fade": 0.3
+ },
+ {
+  "t": 61.832,
+  "sfx": "pencil_caption",
+  "g": -17,
+  "p": -0.05,
+  "scene": "end"
+ },
+ {
+  "t": 62.682,
+  "sfx": "write_b",
+  "g": -18,
+  "p": 0.05,
+  "scene": "end",
+  "len": 1.1,
+  "fade": 0.2
  }
 ]

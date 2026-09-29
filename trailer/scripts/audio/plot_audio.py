@@ -15,7 +15,7 @@ for ax, f in zip(axes, files):
     ax.grid(alpha=.3)
 y, sr = sf.read(files[0], always_2d=True)
 axes[-1].specgram(y.mean(1), NFFT=2048, Fs=sr, noverlap=1024, cmap="magma", vmin=-110); axes[-1].set_ylim(0, 8000)
-for k in ("n1", "q_tout", "v3_start", "v5_mais", "shutter", "v7_cahier", "v8_start", "v10_corriges", "v11_start", "v12_start", "v13_classe", "v14_start", "v14_endroit", "capture"):
+for k in ("n1", "q_tout", "v3_start", "v5_mais", "shutter", "v7_cahier", "v8_start", "v10_corriges", "v11_start", "v12_start", "v13_classe", "v14_start", "v14_tout", "capture"):
     for ax in axes: ax.axvline(M[k], color="r", lw=0.6, alpha=.6)
     axes[0].text(M[k], 1, k, fontsize=6, rotation=90, va="bottom")
 fig.tight_layout(); fig.savefig(out, dpi=70)
