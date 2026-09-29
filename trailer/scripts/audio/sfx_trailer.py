@@ -61,17 +61,17 @@ def whoosh(dur, f0, f1, body=True):
     return lib.fx(x, Reverb(room_size=0.35, wet_level=0.18, dry_level=0.9))
 
 
-def impact(tail=1.6, f_hi=58, f_lo=34, crack=0.6):
+def impact(tail=1.6, f_hi=58, f_lo=34, crack=0.6, tau=0.3):
     n = lib.seconds(tail)
     tt = t_(n)
     f = f_lo + (f_hi - f_lo) * np.exp(-tt / 0.06)
-    sub = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-tt / 0.45)
+    sub = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-tt / tau)
     body = lib.filt(rng.standard_normal(n).astype(np.float32), "bandpass", [120, 900]) * np.exp(-tt / 0.08) * 0.8
     click = lib.filt(rng.standard_normal(n).astype(np.float32), "highpass", 2500) * np.exp(-tt / 0.006) * crack
     x = lib.st(sub * 1.2 + body + click)
     x = lib.fx(x, Compressor(threshold_db=-10, ratio=3, attack_ms=2, release_ms=120),
                Reverb(room_size=0.75, damping=0.4, wet_level=0.22, dry_level=0.95, width=1.0))
-    return lib.saturate(x, 1.4)
+    return lib.saturate(x, 1.15)
 
 
 def riser(dur, f0=200, f1=4200, tone=True):
@@ -91,8 +91,8 @@ def sub_drop(dur=1.4, f0=90, f1=28):
     n = lib.seconds(dur)
     tt = t_(n)
     f = f1 + (f0 - f1) * np.exp(-tt / 0.35)
-    x = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-tt / 0.6)
-    return lib.saturate(lib.st(x), 1.8)
+    x = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-tt / 0.45)
+    return lib.saturate(lib.st(x), 1.3)
 
 
 def shimmer(dur=1.2, notes=(2093, 2637, 3136, 4186)):
@@ -140,9 +140,9 @@ def reverse_swell(dur=1.6):
 for k, (d, f0, f1) in enumerate([(0.45, 300, 3000), (0.6, 2500, 250), (0.8, 180, 2400), (0.35, 900, 5000)]):
     save(f"whoosh_{k + 1}", whoosh(d, f0, f1), f"souffle de passage {d}s ({f0}→{f1} Hz)")
 save("whoosh_long", whoosh(1.4, 120, 3200), "grand souffle (recul de caméra)")
-save("impact_1", impact(), "impact grave (révélation)")
-save("impact_2", impact(1.1, 70, 40, 0.9), "impact plus sec")
-save("hit_small", impact(0.5, 95, 60, 1.0), "petit impact (arrivée d'un élément)")
+save("impact_1", impact(tau=0.32), "impact grave (révélation)")
+save("impact_2", impact(1.1, 70, 40, 0.9, tau=0.2), "impact plus sec")
+save("hit_small", impact(0.5, 95, 60, 1.0, tau=0.07), "petit impact (arrivée d'un élément)")
 save("riser_2", riser(2.0), "montée 2 s, coupe nette")
 save("riser_4", riser(4.0, 120, 5200), "montée 4 s, coupe nette")
 save("sub_drop", sub_drop(), "chute grave (après un temps fort)")

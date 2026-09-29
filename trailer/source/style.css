@@ -5,6 +5,8 @@
    ===================================================================== */
 @font-face { font-family: "News"; src: url(../assets/fonts/Newsreader.ttf); font-weight: 200 800; }
 @font-face { font-family: "News"; src: url(../assets/fonts/Newsreader-Italic.ttf); font-style: italic; font-weight: 200 800; }
+@font-face { font-family: "Gara"; src: url(../assets/fonts/EBGaramond.ttf); font-weight: 400 800; }
+@font-face { font-family: "Gara"; src: url(../assets/fonts/EBGaramond-Italic.ttf); font-style: italic; font-weight: 400 800; }
 @font-face { font-family: "Sans"; src: url(../assets/fonts/SchibstedGrotesk.ttf); font-weight: 400 900; }
 @font-face { font-family: "Mono"; src: url(../assets/fonts/DMMono-Regular.ttf); font-weight: 400; }
 @font-face { font-family: "Mono"; src: url(../assets/fonts/DMMono-Medium.ttf); font-weight: 500; }
@@ -46,7 +48,7 @@ body { -webkit-font-smoothing: antialiased; text-rendering: geometricPrecision; 
   padding: 34px 74px 34px 38px; color: #27261F; overflow: hidden;
 }
 .sheet .hd { display: flex; justify-content: space-between; font: 500 11px/1 "Mono"; letter-spacing: .12em; color: #6d6a5e; text-transform: uppercase; border-bottom: 1px solid rgba(0,0,0,.12); padding-bottom: 10px; margin-bottom: 18px; }
-.sheet .tx { font: 400 15.5px/1.72 "News"; }
+.sheet .tx { font: 400 15.5px/1.72 "Gara"; }
 .sheet .tx span.l { display: block; white-space: nowrap; position: relative; }
 .sheet .num { position: absolute; left: 12px; top: 72px; font: 400 10px/1.62 "Mono"; color: #9a968a; }
 

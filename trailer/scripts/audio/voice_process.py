@@ -24,10 +24,7 @@ OUT.mkdir(parents=True, exist_ok=True)
 LINES = json.loads((ROOT / "scripts" / "voice" / "lines.json").read_text())
 TAKES_LOG = json.loads((ROOT / "logs" / "voice_takes.json").read_text())
 
-# ralentissement sans changer le timbre (Rubber Band, formants préservés) ; plus marqué sur les
-# répliques relevées comme pressées par la QA v1 et sur la fin
-SPEED = {"default": 0.95, "V01a": 1.0, "V01b": 1.0, "V01c": 1.0, "V01d": 1.0,
-         "V05": 0.92, "V06": 0.93, "V13": 0.92, "V14": 0.9}
+SPEED = {"default": 1.0}   # v3 : débit naturel du narrateur, sans ralentissement (retour du commanditaire : « longue »)
 TARGET_RMS_DB = -20.0
 
 chain = Pedalboard([

@@ -1,8 +1,6 @@
-"""Export the sound cues declared by the scenes (window.soundCues) to logs/sfx_cues_anim.json.
-
-The animation and the sound design share the same timing formulas: each scene's
-sounds() uses the exact expressions of its update(t). Run after build_timeline.py
-(cues.js) and before mix.py.
+"""Export the sound cues of the VFX/SFX cue sheet (source/scenes/fx_track.js, window.soundCues)
+to logs/sfx_cues_anim.json. Visual effects and sounds come from the same list, computed from
+the voice-over marks, so image and sound hit together. Run after build_timeline.py, before mix.py.
 """
 import json
 import os
@@ -20,8 +18,7 @@ with sync_playwright() as p:
     pg.on("pageerror", lambda e: errors.append(str(e)))
     pg.goto("file://" + str(ROOT / "source" / "index.html"))
     pg.evaluate("window.ready")
-    # une image de la scène « application » pour mesurer les cibles du doigt (panoramique des clics)
-    pg.evaluate("window.renderFrame(window.SCENES.find(s => s.name === 'app').T().tapCard)")
+    pg.evaluate("window.renderFrame(1.0)")
     cues = pg.evaluate("window.soundCues()")
     b.close()
 if errors:

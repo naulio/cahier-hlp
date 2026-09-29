@@ -28,23 +28,23 @@ OUT_JS = ROOT / "source" / "data" / "cues.js"
 OUT_JSON = ROOT / "logs" / "timeline.json"
 VO_DIR = ROOT / "audio" / "voice" / "processed"
 
-SHUTTER_AFTER = 0.75  # s entre « Mais où ? » et le déclic (le viseur cherche dès « Tout est quelque part »)
-CAPTURE_AFTER = 2.6   # s entre la fin de la dernière réplique et le déclic final (adresse lisible)
-END_TAIL = CAPTURE_AFTER + 4.2   # Polaroid final, légende, fondu
+SHUTTER_AFTER = 1.5   # s entre « Mais où ? » et le déclic (valeurs de la v1, reprise en v3)
+CAPTURE_AFTER = 1.45  # s entre la fin de la dernière réplique et le déclic final
+END_TAIL = 5.4        # s après la dernière réplique (Polaroid final + fondu)
 
 # alias -> (line, word of the script, occurrence)  | "start"/"end" of a line
 ALIASES = {
-    "n1": ("V01a", "@part", 0), "n2": ("V01b", "@part", 0), "n3": ("V01c", "@part", 0), "n4": ("V01d", "@part", 0),
+    "n1": ("V01", "@part", 0), "n2": ("V01", "@part", 1), "n3": ("V01", "@part", 2), "n4": ("V01", "@part", 3),
     "q_start": ("V02", "start", 0), "q_souviens": ("V02", "souviens", 0), "q_tout": ("V02", "tout", 0), "q_end": ("V02", "end", 0),
     "v3_start": ("V03", "start", 0), "v3_rentree": ("V03", "rentrée", 0), "v3_textes": ("V03", "textes", 0),
     "v3_accum": ("V03", "accumulent", 0), "v3_end": ("V03", "end", 0),
-    "v4_photocopies": ("V04", "photocopies", 0), "v4_notes": ("V04", "notes", 0), "v4_postit": ("V04", "post-it", 0), "v4_end": ("V04", "end", 0),
-    "v5_tout": ("V05", "tout", 0), "v5_part": ("V05", "part", 0), "v5_mais": ("V05", "mais", 0), "v5_ou": ("V05", "où", 0), "v5_end": ("V05", "end", 0),
-    "v6_start": ("V06", "start", 0), "v6_tout": ("V06", "tout", 0), "v6_rassemble": ("V06", "rassemblé", 0),
-    "v7_start": ("V06", "dans", 0), "v7_cahier": ("V06", "cahier", 0), "v7_hlp": ("V06", "hlp", 0), "v7_end": ("V06", "end", 0),
+    "v4_feuilles": ("V04", "feuilles", 0), "v4_notes": ("V04", "notes", 0), "v4_citations": ("V04", "citations", 0), "v4_end": ("V04", "end", 0),
+    "v5_tout": ("V05a", "tout", 0), "v5_part": ("V05a", "part", 0), "v5_mais": ("V05b", "mais", 0), "v5_ou": ("V05b", "où", 0), "v5_end": ("V05b", "end", 0),
+    "v6_start": ("V06", "start", 0), "v6_tout": ("V06", "tout", 0), "v6_rassemble": ("V06", "rassemblé", 0), "v6_end": ("V06", "end", 0),
+    "v7_start": ("V07", "start", 0), "v7_cahier": ("V07", "cahier", 0), "v7_hlp": ("V07", "hlp", 0), "v7_end": ("V07", "end", 0),
     "v8_start": ("V08", "start", 0), "v8_texte": ("V08", "texte", 0), "v8_classe": ("V08", "classe", 0), "v8_fiche": ("V08", "fiche", 0),
-    "v8_essentiel": ("V08", "essentiel", 0), "v8_cinq": ("V08", "cinq", 0), "v8_citations": ("V08", "citations", 0),
-    "v8_retenir": ("V08", "clés", 0), "v8_end": ("V08", "end", 0),
+    "v8_auteur": ("V08", "auteur", 0), "v8_epoque": ("V08", "époque", 0), "v8_essentiel": ("V08", "essentiel", 0),
+    "v8_cinq": ("V08", "cinq", 0), "v8_citations": ("V08", "citations", 0), "v8_retenir": ("V08", "retenir", 0), "v8_end": ("V08", "end", 0),
     "v9_start": ("V09", "start", 0), "v9_flash": ("V09", "flashcards", 0), "v9_reviennent": ("V09", "reviennent", 0),
     "v9_moment": ("V09", "moment", 0), "v9_end": ("V09", "end", 0),
     "v10_start": ("V10", "start", 0), "v10_qcm": ("V10", "qcm", 0), "v10_corriges": ("V10", "corrigés", 0),
@@ -52,11 +52,10 @@ ALIASES = {
     "v11_start": ("V11", "start", 0), "v11_frise": ("V11", "frise", 0), "v11_relier": ("V11", "relier", 0),
     "v11_oeuvres": ("V11", "œuvres", 0), "v11_rabelais": ("V11", "rabelais", 0), "v11_arendt": ("V11", "arendt", 0), "v11_end": ("V11", "end", 0),
     "v12_start": ("V12", "start", 0), "v12_gratuit": ("V12", "gratuit", 0), "v12_compte": ("V12", "compte", 0),
-    "v12_telephone": ("V12", "téléphone", 0), "v12_end": ("V12", "end", 0),
-    "v13_start": ("V13", "start", 0), "v13_tg1": ("V13", "tg1", 0), "v13_nous": ("V13", "nous", 0),
-    "v13_classe": ("V13", "classe", 0), "v13_end": ("V13", "end", 0),
+    "v12_progression": ("V12", "progression", 0), "v12_appareil": ("V12", "appareil", 0), "v12_end": ("V12", "end", 0),
+    "v13_start": ("V13", "start", 0), "v13_tg1": ("V13", "tg1", 0), "v13_classe": ("V13", "classe", 0), "v13_end": ("V13", "end", 0),
     "v14_start": ("V14", "start", 0), "v14_cahier": ("V14", "cahier", 0), "v14_tout": ("V14", "tout", 0),
-    "v14_la": ("V14", "là", 0), "v14_end": ("V14", "end", 0),
+    "v14_reviser": ("V14", "réviser", 0), "v14_endroit": ("V14", "endroit", 0), "v14_end": ("V14", "end", 0),
 }
 
 

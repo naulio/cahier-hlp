@@ -10,41 +10,37 @@
   const C = window.CONTENT, UI = window.UI;
   const W = 1440, H = 1080, CX = 720, CY = 540;
 
-  const S = { name: "desk", GRID_DX: -124, GRID_DY: 60 };   // grille centrée, un peu basse : le logo s’écrit au-dessus
+  const S = { name: "desk", GRID_DX: -124, GRID_DY: 14 };
   S.t0 = () => 0;
   S.t1 = () => M("v7_start") - 0.2;
 
   /* ---------------- objets du bureau (coordonnées « monde ») ---------------- */
   const SHEET_W = 400, SHEET_H = 566;
   const HOME = {   // x, y, rotation — les feuilles, une par texte
-    rab: [-820, -330, -7], rou: [800, -350, 6], hug: [-800, 440, 4],
+    rab: [-780, -330, -7], rou: [800, -350, 6], hug: [-720, 420, 4],
     flo: [700, 340, 5], fer: [-300, 470, -3.5], peg: [250, -500, 6], bal: [-300, -480, -3], cam: [300, 440, -4.5], are: [-20, 690, 2],
   };
   const PRESENT = ["rab", "rou", "hug"];         // déjà là quand la caméra recule
   const POLA = [                                  // Polaroids du hook
-    { id: "rab", img: "rabelais_sq.jpg", cap: "Rabelais", x: -300, y: 22, r: -6, mark: "n1" },
-    { id: "rou", img: "rousseau_latour_sq.jpg", cap: "Rousseau", x: -100, y: -26, r: 3.5, mark: "n2" },
-    { id: "flo", img: "flaubert_sq.jpg", cap: "Flaubert", x: 100, y: 20, r: -2.5, mark: "n3" },
-    { id: "hug", img: "hugo_carjat_1876_sq.jpg", cap: "Hugo", x: 300, y: -22, r: 5, mark: "n4" },
+    { id: "rab", img: "rabelais_sq.jpg", cap: "Rabelais", x: -270, y: 16, r: -7, mark: "n1" },
+    { id: "rou", img: "rousseau_latour_sq.jpg", cap: "Rousseau", x: -90, y: -20, r: 3.5, mark: "n2" },
+    { id: "flo", img: "flaubert_sq.jpg", cap: "Flaubert", x: 90, y: 14, r: -3, mark: "n3" },
+    { id: "hug", img: "hugo_carjat_1876_sq.jpg", cap: "Hugo", x: 270, y: -12, r: 6, mark: "n4" },
   ];
-  const DROP = [[-60, -80, 10, 0.0], [40, -95, -8, 0.05], [-30, -70, 7, -0.03], [70, -60, -9, 0.04]];   // direction, angle, léger décalage
-  const ARRIVALS = { flo: "v3_rentree", fer: "v3_textes", peg: "v3_accum", bal: "v4_photocopies", cam: "v4_photocopies", are: "v4_notes" };
-  const ARR_OFFS = { cam: 0.28, are: -0.25 };
   const EXTRAS = [
     { kind: "page", x: -470, y: -40, r: 9, html: "<b>Plan du commentaire</b><br>I. Une éducation…<br>&nbsp;&nbsp;a) le corps<br>&nbsp;&nbsp;b) l'esprit<br>II. …", at: "v3_accum", dt: 0.3 },
-    { kind: "page", x: 480, y: -150, r: -8, html: "<b>Procédés</b><br>anaphore<br>antithèse<br>métaphore filée<br>litote ≠ euphémisme", at: "v4_postit", dt: -0.2 },
+    { kind: "page", x: 480, y: -150, r: -8, html: "<b>Procédés</b><br>anaphore<br>antithèse<br>métaphore filée<br>litote ≠ euphémisme", at: "v4_citations", dt: -0.15 },
     { kind: "page", x: 60, y: -700, r: 3, html: "<b>Dissertation</b><br>problématique ?<br>→ l'éducation<br>&nbsp;&nbsp;émancipe-t-elle ?", at: "v4_notes", dt: 0.2 },
-    { kind: "sticky", x: 560, y: -90, r: 8, html: "Arendt ??<br>p. 42", at: "v4_postit", dt: 0.0, drop: true },
-    { kind: "sticky", x: -560, y: -130, r: -10, html: "citations<br>à revoir !", at: "v4_postit", dt: 0.16, drop: true },
-    { kind: "sticky", x: 190, y: 350, r: -4, html: "Hugo :<br>la thèse ?", at: "v4_postit", dt: 0.3, drop: true },
-    { kind: "index", x: 700, y: 190, r: -6, html: "perfectibilité<br>≠ perfection !<br>(Rousseau)" },
-    { kind: "index", x: -760, y: 170, r: 5, html: "Quos ego → Virgile<br>Charbovari = Charles" },
+    { kind: "sticky", x: 620, y: -40, r: 8, html: "Arendt ??<br>p. 42" },
+    { kind: "sticky", x: -640, y: -90, r: -10, html: "citations<br>à revoir !" },
+    { kind: "index", x: 660, y: 170, r: -6, html: "perfectibilité<br>≠ perfection !<br>(Rousseau)" },
+    { kind: "index", x: -680, y: 150, r: 5, html: "Quos ego → Virgile<br>Charbovari = Charles" },
   ];
 
   /* annotations au stylo, en coordonnées de feuille (px) : [type, ligne, x0, x1, texte] */
   const NOTES = {
     rou: [["under", 5, 0, 250], ["bracket", 3, 5], ["margin", 5, "déf. !"]],
-    hug: [["circle", 2, 126, 172], ["margin", 0, "thèse"]],
+    hug: [["circle", 4, 205, 285], ["margin", 0, "thèse"]],
     flo: [["under", 1, 18, 150], ["margin", 1, "Charles"]],
     rab: [["under", 0, 208, 330], ["margin", 0, "4 h !"]],
     fer: [["under", 3, 0, 110]],
@@ -61,7 +57,7 @@
     d.style.cssText = `width:${SHEET_W}px;height:${SHEET_H}px;left:0;top:0;position:absolute;`;
     const lines = f.lignes.map(l => `<span class="l">${l}</span>`).join("");
     if (f.type === "print") {
-      d.innerHTML = `<div class="hd"><span>${f.entete}</span></div><div class="tx"${f.small ? ' style="font-size:12.5px;line-height:1.72"' : ""}>${lines}</div>`;
+      d.innerHTML = `<div class="hd"><span>${f.entete}</span></div><div class="tx">${lines}</div>`;
     } else {
       d.style.backgroundImage = "linear-gradient(to right, transparent 58px, rgba(181,82,59,.55) 58px, rgba(181,82,59,.55) 60px, transparent 60px), repeating-linear-gradient(to bottom, transparent 0 31px, rgba(122,146,172,.4) 31px 32px), url(../assets/textures/paper_sheet.png)";
       d.style.padding = "30px 26px 30px 76px";
@@ -81,8 +77,7 @@
   function annotate(sheetEl, f) {
     const svg = svgEl("svg", { width: SHEET_W, height: SHEET_H, style: "position:absolute;left:0;top:0;overflow:visible" }, sheetEl);
     const strokes = [];
-    const LH = f.small ? 21.5 : 26.66;
-    const lineY = i => 34 + 11 + 18 + 10 + i * LH;   // padding + en-tête + interligne
+    const lineY = i => 34 + 11 + 18 + 10 + i * 26.66;   // padding + en-tête + interligne
     (HILITE[f.id] || []).forEach((li, k) => {
       const r = svgEl("rect", { x: 34, y: lineY(li) - 2, width: 296, height: 21, fill: "#E3C85A", opacity: 0.5, style: "mix-blend-mode:multiply" }, svg);
       r.style.transformOrigin = "34px 0";
@@ -174,10 +169,6 @@
     const qwords = ["Tu", "te", "souviens", "de", "tout", "?"];
     question.innerHTML = qwords.map((w, k) => `<span class="word" data-k="${k}"${w === "tout" ? ' style="font-style:italic"' : ""}>${w}</span>`).join(" ");
     question.words = Array.from(question.querySelectorAll(".word"));
-    const toutW = question.words[4];
-    toutW.style.position = "relative";
-    const ul = svgEl("svg", { width: 120, height: 24, viewBox: "0 0 120 24", style: "position:absolute;left:-6px;top:56px;overflow:visible" }, toutW);
-    question.ul = svgEl("path", { d: "M4 12 C 30 17, 70 7, 116 11", fill: "none", stroke: "#C4674E", "stroke-width": 4, "stroke-linecap": "round", pathLength: 100, "stroke-dasharray": 100, "stroke-dashoffset": 100 }, ul);
     question.qline = qline;
 
     // viseur
@@ -188,21 +179,16 @@
       sides.forEach(sd => c.style["border" + sd + "Width"] = "3px");
       return c;
     });
-    // stigmomètre + collier de microprismes, comme dans le viseur d'un reflex argentique
-    vf.prism = el("div", "", vf);
-    vf.prism.style.cssText = "position:absolute;left:630px;top:450px;width:180px;height:180px;border-radius:50%;"
-      + "background:repeating-conic-gradient(rgba(242,237,227,.10) 0 4deg, rgba(0,0,0,.06) 4deg 8deg);"
-      + "-webkit-mask:radial-gradient(circle, transparent 56px, #000 57px, #000 89px, transparent 90px);mask:radial-gradient(circle, transparent 56px, #000 57px, #000 89px, transparent 90px)";
-    vf.circle = el("div", "", vf);
-    vf.circle.style.cssText = "position:absolute;left:664px;top:484px;width:112px;height:112px;border-radius:50%;border:1.5px solid rgba(242,237,227,.75)";
-    vf.split = [0, 1].map(k => {
-      const l = el("div", "", vf);
-      l.style.cssText = `position:absolute;left:${k ? 720 : 664}px;top:539px;width:56px;height:1.5px;background:rgba(242,237,227,.8)`;
-      return l;
-    });
-    // mise au point locale : le centre reste net, les bords flous
-    vf.dof = el("div", "layer", vf);
-    vf.dof.style.cssText += ";-webkit-mask:radial-gradient(circle at 50% 50%, transparent 150px, #000 420px);mask:radial-gradient(circle at 50% 50%, transparent 150px, #000 420px)";
+    vf.focus = el("div", "", vf);
+    vf.focus.style.cssText = "position:absolute;left:670px;top:500px;width:100px;height:80px;border:2px solid rgba(242,237,227,.85);border-radius:3px";
+    vf.rd1 = el("div", "vf-readout", vf, "1/60&nbsp;&nbsp;&nbsp;F2.8&nbsp;&nbsp;&nbsp;ISO 400");
+    vf.rd1.style.cssText += ";left:0;width:1440px;text-align:center;top:966px";
+    vf.rd2 = el("div", "vf-readout", vf, "AF · RECHERCHE");
+    vf.rd2.style.cssText += ";left:150px;top:100px";
+    vf.rd3 = el("div", "vf-readout", vf, "24");
+    vf.rd3.style.cssText += ";right:150px;top:100px";
+    vf.dot = el("div", "", vf);
+    vf.dot.style.cssText = "position:absolute;left:1262px;top:98px;width:10px;height:10px;border-radius:50%;background:#C8D48A";
 
     vign = el("div", "vignette", root);
     dark = el("div", "layer", root); dark.style.background = "#0c0c0a";
@@ -211,9 +197,9 @@
 
   /* ---------------- caméra ---------------- */
   function camera(t) {
-    const q0 = M("q_tout"), sh = M("shutter"), mais = M("v5_tout") + 0.25;   // le viseur cherche dès « Tout est quelque part »
+    const q0 = M("q_tout"), sh = M("shutter"), mais = M("v5_mais");
     // hook : plan rapproché sur les Polaroids
-    let z = lerp(1.36, 1.44, E.sine(inv(0, q0, t)));
+    let z = lerp(1.42, 1.52, E.sine(inv(0, q0, t)));
     let cx = lerp(-30, 20, E.sine(inv(0, q0, t))), cy = 0, r = 0;
     // recul sur « tout »
     const pb = seg(t, q0 - 0.08, 1.45, E.inOut);
@@ -222,24 +208,23 @@
     const acc = inv(q0 + 1.4, mais, t);
     z *= lerp(1, 1.1, E.sine(acc)); cx += lerp(0, 60, E.sine(acc)); r += lerp(0, 1.8, E.sine(acc));
     // « Mais où ? » : le viseur cherche
-    const spots = [[-600, -300, 1.24], [560, 340, 1.26]];
-    const dur = 0.5, gap = 0.18;
+    const spots = [[-640, -330, 1.28], [640, 360, 1.3], [-120, 520, 1.22]];
+    const dur = 0.42, gap = 0.2;
     let blur = 0;
     let bx = cx, by = cy, bz = z, br = r;
-    const starts = [mais + 0.05, Math.max(mais + 0.05 + dur + gap, M("v5_mais") - 0.15)];   // 2e visée sur « Mais où ? »
     spots.forEach((sp, k) => {
-      const t0 = starts[k];
+      const t0 = mais + 0.05 + k * (dur + gap);
       const e = seg(t, t0, dur, E.inOut);
       if (t >= t0) {
         bx = lerp(bx, sp[0], e); by = lerp(by, sp[1], e); bz = lerp(bz, sp[2], e); br = lerp(br, (k - 1) * 1.5, e);
         const mid = inv(t0, t0 + dur, t);
-        blur = Math.max(blur, Math.sin(Math.PI * clamp(mid)) * 5);
+        blur = Math.max(blur, Math.sin(Math.PI * clamp(mid)) * 7);
         // mise au point qui « pompe » pendant le maintien
         const h = inv(t0 + dur, t0 + dur + gap, t);
         if (h > 0 && h < 1) blur = Math.max(blur, Math.sin(Math.PI * h) * 2.2);
       }
     });
-    const back0 = starts[1] + dur + gap;
+    const back0 = mais + 0.05 + spots.length * (dur + gap);
     const back = seg(t, back0, sh - back0 - 0.12, E.inOut);
     bx = lerp(bx, 0, back); by = lerp(by, 60, back); bz = lerp(bz, 0.66, back); br = lerp(br, 0, back);
     if (t >= back0) blur = Math.max(0, blur * (1 - back)) + Math.sin(Math.PI * back) * 3.5;
@@ -248,8 +233,7 @@
     const amp = t < mais ? 1 : 0.4;
     cx += drift(t, 0.3, 1) * 6 * amp; cy += drift(t, 0.27, 2) * 5 * amp; r += drift(t, 0.2, 3) * 0.15 * amp;
     if (t >= sh) { const f = camera.frozen || (camera.frozen = null); }
-    // flou : léger sur toute l’image, fort seulement hors du centre du viseur (mise au point locale)
-    return { cx, cy, z, r, blur: Math.min(blur, 1.2), dof: blur * 1.6 };
+    return { cx, cy, z, r, blur };
   }
   function camAt(t) { return camera(Math.min(t, M("shutter"))); }
 
@@ -260,7 +244,7 @@
 
   /* ---------------- mise à jour ---------------- */
   S.update = function (t) {
-    const sh = M("shutter"), q0 = M("q_tout"), mais = M("v5_tout") + 0.25;
+    const sh = M("shutter"), q0 = M("q_tout"), mais = M("v5_mais");
     const cam = t < sh ? camera(t) : camAt(sh);
     world.style.transform = `rotate(${cam.r.toFixed(3)}deg) scale(${cam.z.toFixed(4)}) translate(${(-cam.cx).toFixed(2)}px,${(-cam.cy).toFixed(2)}px)`;
     world.style.filter = cam.blur > 0.1 && t < sh ? `blur(${cam.blur.toFixed(2)}px)` : "none";
@@ -271,12 +255,11 @@
 
     // ---- Polaroids
     polas.forEach((p, k) => {
-      const [ddx, ddy, drr, dj] = DROP[k];
-      const tl = M(p.mark) - 0.24 + dj;            // l’impact tombe sur la syllabe
-      const e = seg(t, tl, 0.28, E.out);
-      const st = spring(t - tl - 0.2, 26, 0.55);
+      const tl = M(p.mark) - 0.26;                 // l'impact tombe sur la syllabe
+      const e = seg(t, tl, 0.3, E.out);
+      const st = spring(t - tl - 0.22, 26, 0.55);
       const air = 1 - e;
-      put(p.el, { x: p.x - 130 + air * ddx, y: p.y - 159 + air * ddy, r: p.r + air * drr + (1 - st) * 1.2 * (t > tl + 0.2 ? 1 : 0), s: 1 + air * 0.2, op: seg(t, tl, 0.07, E.linear) });
+      put(p.el, { x: p.x - 130 + air * 30, y: p.y - 159 - air * 70, r: p.r + air * 9 + (1 - st) * 1.4 * (t > tl + 0.22 ? 1 : 0), s: 1 + air * 0.22, op: seg(t, tl, 0.08, E.linear) });
       p.el.style.zIndex = 50 + k;
       const sh2 = lerp(0.38, 0.9, air);
       p.el.style.boxShadow = `0 1px 1px rgba(0,0,0,.3), 0 ${(12 + air * 40).toFixed(1)}px ${(28 + air * 50).toFixed(1)}px rgba(0,0,0,${(0.38 * (1 - air * 0.4)).toFixed(3)}), 0 34px 70px rgba(0,0,0,${(0.22 * sh2).toFixed(3)})`;
@@ -292,19 +275,20 @@
     const ql = question.qline.words || [];
     words.forEach((w, k) => {
       const wt = (ql[Math.min(k, ql.length - 1)] || { t0: M("q_start") + k * 0.2 }).t0 - 0.06;
-      const e = seg(t, wt, 0.3, E.out);
-      put(w, { op: e, y: (1 - e) * 5 });
+      const e = seg(t, wt, 0.42, E.out);
+      put(w, { op: e, y: (1 - e) * 16, blur: (1 - e) * 5 });
     });
-    question.ul.setAttribute("stroke-dashoffset", (100 * (1 - seg(t, q0 - 0.02, 0.32, E.inOut))).toFixed(1));
-    const qOut = seg(t, q0 + 0.45, 0.6, E.in);
+    const qOut = seg(t, q0 + 0.25, 0.6, E.in);
     put(question, { y: 868 - qOut * 30, op: 1 - qOut });
 
     // ---- feuilles
+    const arrivals = { flo: "v3_rentree", fer: "v3_textes", peg: "v3_accum", bal: "v4_feuilles", cam: "v4_feuilles", are: "v4_notes" };
+    const offs = { cam: 0.28, are: -0.25 };
     C.feuilles.forEach((f, i) => {
       const s = sheets[f.id], [hx, hy, hr] = s.home;
       let x = hx, y = hy, r = hr, op = 1;
       if (!PRESENT.includes(f.id)) {
-        const ta = M(ARRIVALS[f.id]) + (ARR_OFFS[f.id] || 0) - 0.34;
+        const ta = M(arrivals[f.id]) + (offs[f.id] || 0) - 0.34;
         const e = seg(t, ta, 0.62, E.out);
         const n = Math.hypot(hx, hy) || 1, dist = 1500;
         x = hx + (hx / n) * dist * (1 - e); y = hy + (hy / n) * dist * (1 - e);
@@ -319,7 +303,7 @@
       // annotations et surlignages
       s.strokes.forEach(st => {
         if (st.kind === "hl") {
-          const e = seg(t, M("v4_postit") + 0.35 + st.k * 0.16 + (i % 3) * 0.07, 0.34, E.outSoft);
+          const e = seg(t, M("v4_citations") - 0.05 + st.k * 0.16 + (i % 3) * 0.07, 0.34, E.outSoft);
           st.node.style.transform = `scaleX(${e.toFixed(3)})`;
         } else {
           const e = seg(t, M("v4_notes") - 0.1 + st.k * 0.22 + (i % 4) * 0.09, 0.5, E.inOut);
@@ -332,12 +316,7 @@
     // ---- post-it, fiches bristol
     extras.forEach((x, k) => {
       let px = x.x, py = x.y, pr = x.r, op = 1;
-      let sc = 1;
-      if (x.at && x.drop) {                              // post-it : posés d'en haut, d'un geste
-        const ta = M(x.at) + (x.dt || 0) - 0.22, e = seg(t, ta, 0.24, E.out);
-        sc = 1 + (1 - e) * 0.35; pr += (1 - e) * 8; py -= (1 - e) * 40;
-        op = seg(t, ta, 0.06, E.linear);
-      } else if (x.at) {                                 // pages qui arrivent pendant l'accumulation
+      if (x.at) {                                        // pages qui arrivent pendant l'accumulation
         const ta = M(x.at) + (x.dt || 0) - 0.34, e = seg(t, ta, 0.62, E.out);
         const n = Math.hypot(px, py) || 1;
         px += (px / n) * 1500 * (1 - e); py += (py / n) * 1500 * (1 - e); pr += (1 - e) * 12;
@@ -348,7 +327,7 @@
         const n = Math.hypot(px, py) || 1;
         px += (px / n) * 1600 * e; py += (py / n) * 1600 * e + 200 * e; pr += e * 25;
       }
-      put(x.el, { x: px - x.w / 2, y: py - x.h / 2, r: pr, op, s: sc });
+      put(x.el, { x: px - x.w / 2, y: py - x.h / 2, r: pr, op });
       x.el.style.zIndex = x.kind === "page" ? 25 + k : 40 + k;
     });
     polas.forEach((p, k) => {
@@ -369,20 +348,16 @@
       put(c0, { x: inset, y: inset * 0.75 }); put(c1, { x: W - inset - 46, y: inset * 0.75 });
       put(c2, { x: inset, y: H - inset * 0.75 - 46 }); put(c3, { x: W - inset - 46, y: H - inset * 0.75 - 46 });
       const hunting = t < sh - 0.35;
-      // les deux demi-images du stigmomètre se rejoignent au moment de la mise au point
-      const off = hunting ? 9 * Math.sin(t * 5.3) : 9 * Math.sin(t * 5.3) * (1 - lock);
-      put(vf.split[0], { y: off }); put(vf.split[1], { y: -off });
-      vf.prism.style.opacity = hunting ? (0.75 + 0.25 * Math.sin(t * 17)).toFixed(3) : "0.6";
+      vf.focus.style.borderColor = hunting ? "rgba(242,237,227,.85)" : "#C8D48A";
+      put(vf.focus, { s: hunting ? 1 + Math.sin(t * 22) * 0.04 : lerp(1.15, 1, lock) });
+      vf.rd2.innerHTML = hunting ? (Math.floor(t * 4) % 2 ? "AF · RECHERCHE" : "AF · RECHERCHE ·") : "AF · OK";
+      vf.dot.style.opacity = hunting ? (Math.floor(t * 3) % 2 ? 1 : 0.25) : 1;
     }
-    // flou de mise au point hors du centre (pas plein cadre)
-    const focusBlur = t < sh ? cam.dof : 0;
-    vf.dof.style.backdropFilter = focusBlur > 0.1 ? `blur(${focusBlur.toFixed(2)}px)` : "none";
 
     // ---- obturateur : noir du miroir puis éclair doux
-    put(dark, { op: 1 - seg(t, 0.0, 0.55, E.outSoft) });
-    const pulse = t >= sh ? Math.exp(-(t - sh) / 0.09) : 0;           // exposition : un éclat bref, sans noir
-    root.style.filter = pulse > 0.02 ? `brightness(${(1 + 0.22 * pulse).toFixed(3)}) contrast(${(1 - 0.06 * pulse).toFixed(3)})` : "none";
-    put(flash, { op: 0 });
+    const blk = t >= sh && t < sh + 0.067 ? 1 : 0;
+    put(dark, { op: Math.max(1 - seg(t, 0.05, 0.9, E.outSoft), blk) });
+    put(flash, { op: t >= sh + 0.067 ? 0.55 * (1 - seg(t, sh + 0.067, 0.45, E.out)) : 0 });
 
     // ---- développement du fond et rangement
     const dv = seg(t, sh + 0.15, 1.5, E.inOut);
@@ -419,37 +394,10 @@
 
   S.blur = t => {
     const q0 = M("q_tout");
-    if (t > q0 && t < q0 + 1.3) return 3;                 // grand recul
+    if (t > q0 && t < q0 + 1.3) return 6;                 // grand recul
     const sh = M("shutter");
-    if (t > sh + 0.3 && t < sh + 1.6) return 3;           // envol des objets
+    if (t > sh + 0.3 && t < sh + 1.6) return 6;           // envol des objets
     return 1;
-  };
-
-  /* ---------------- bruitages, calés sur les mêmes formules que l’image ----------------
-     { t, sfx, g (dB), p (panoramique), len / fade (coupe) } — lus par scripts/export_cues.py */
-  S.sounds = function () {
-    const out = [], sh = M("shutter");
-    const add = (t, sfx, g, p = 0, o = {}) => out.push(Object.assign({ t, sfx, g, p, scene: "desk" }, o));
-    // chaque Polaroid se pose sur la syllabe (fin de la chute)
-    POLA.forEach((p, k) => add(M(p.mark) - 0.24 + DROP[k][3] + 0.22, `paper_hit_${[1, 3, 2, 1][k]}`, -14 - 0.5 * k, p.x / 800));
-    add(M("q_tout") - 0.15, "air_long", -17);                          // le grand recul
-    // trois arrivées de feuilles seulement : la pile se devine, elle ne se compte pas
-    [["flo", "paper_slide_2", -20], ["peg", "paper_slide_4", -21], ["bal", "paper_slide_5", -20]].forEach(([id, s, g]) => {
-      const ta = M(ARRIVALS[id]) + (ARR_OFFS[id] || 0) - 0.34;
-      add(ta + 0.2, s, g, clamp(HOME[id][0] / 1300, -0.5, 0.5));
-    });
-    EXTRAS.filter(x => x.drop).forEach((x, k) => add(M(x.at) + x.dt - 0.22 + 0.2, `paper_hit_${k + 1}`, -23 - k, clamp(x.x / 1200, -0.45, 0.45)));
-    add(M("v4_postit") + 0.37, "marker_1", -22, -0.1);                // surligneur
-    add(M("v4_notes") - 0.08, "pen_stroke_2", -21, 0.2);              // notes au stylo
-    // un seul appareil, un Polaroid : déclic, puis éjection pendant que l’image « se développe »
-    add(sh - 0.03, "shutter_k1000", -7);
-    add(sh + 0.1, "polaroid_eject", -14, 0, { len: 1.3, fade: 0.35 });
-    add(sh + 0.35, "paper_sweep", -18);
-    [[0, "card_tick_1", 0.95, -25], [4, "card_tick_3", 1.02, -26], [8, "card_tick_2", 0.93, -25]].forEach(([i, s, d, g]) => {
-      const sl = UI.slot(i);
-      add(sh + 0.35 + i * 0.075 + d, s, g, clamp((sl.x + sl.w / 2 - 720) / 1400, -0.4, 0.4));
-    });
-    return out;
   };
 
   S.cards = cards;

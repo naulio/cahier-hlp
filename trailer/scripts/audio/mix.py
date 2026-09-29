@@ -44,7 +44,8 @@ for c in cues:
     if c.get("len"):                        # coupe (éjection du Polaroid, trait long) avec fondu
         x = x[: lib.seconds(c["len"])]
         x = lib.fade(x, 0.003, c.get("fade", 0.2))
-    sfx.add(x, c["t"], c["g"], c["p"])
+    t0 = c["at_end"] - len(x) / SR if c.get("at_end") else c["t"]   # sons inversés : la fin tombe sur le temps fort
+    sfx.add(x, t0, c["g"], c["p"])
 # lit d'ambiance (pièce calme) jusqu'au déclic, en fondu : le bureau « existe », puis on entre dans l'écran
 rt = lib.load(SFX / "room_tone.wav")
 rt = lib.fade(np.concatenate([rt] * 3)[: lib.seconds(sh + 0.1)], 1.5, 0.12)

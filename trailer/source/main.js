@@ -10,6 +10,8 @@
   const scenes = window.SCENES || [];
   scenes.forEach(s => { s.build(stage); s.root = s.root || stage.lastElementChild; s.root.style.display = "none"; });
 
+  window.VFX.build();
+
   window.DURATION = (window.CUES && window.CUES.duration) || 60;
   window.FPS = 30;
 
@@ -19,17 +21,21 @@
       if (s.root) s.root.style.display = on ? "" : "none";
       if (on) s.update(t);
     }
+    window.VFX.apply(t, window.FXTRACK().vfx);      // couche d'effets (éclairs, poussées, filés…)
   };
 
   /* Nombre de sous-images pour le flou de mouvement à l'instant t. */
   window.subframes = function (t) {
     let n = 1;
     for (const s of scenes) if (s.blur && t >= s.t0() && t < s.t1()) n = Math.max(n, s.blur(t) || 1);
+    for (const e of window.FXTRACK().vfx) {          // secousses et filés : flou de mouvement réel
+      if ((e.type === "whip" && t > e.t && t < e.t + (e.d || 0.3)) || (e.type === "shake" && t > e.t && t < e.t + (e.d || 0.35))) n = Math.max(n, 6);
+    }
     return n;
   };
 
-  /* Bruitages déclarés par les scènes (mêmes formules que l'image) : lus par scripts/export_cues.py. */
-  window.soundCues = () => scenes.flatMap(s => (s.sounds ? s.sounds() : [])).sort((a, b) => a.t - b.t);
+  /* Bruitages de la feuille de cues (mêmes instants que les effets) : lus par scripts/export_cues.py. */
+  window.soundCues = () => window.FXTRACK().sfx;
 
   /* Attendre que polices et images soient prêtes (rendu déterministe). */
   window.ready = (async function () {

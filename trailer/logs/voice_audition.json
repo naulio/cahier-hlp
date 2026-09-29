@@ -1,0 +1,32 @@
+{
+ "cml-tts_fr_4193_3103_000004-0001_enhanced.wav_0": {
+  "wer": 0.0,
+  "mean_word_prob": 0.983,
+  "f0_median_hz": 78.7,
+  "f0_std_st": 3.24,
+  "f0_range_p5_p95_st": 11.09,
+  "words_per_min_speech": 222.2,
+  "duration_s": 6.03,
+  "transcript": "Depuis la rentrée, les textes s'accumulent, alors on a tout rassemblé dans le cahier d'HLP."
+ },
+ "cml-tts_fr_4482_3103_000063-0001_enhanced.wav_0": {
+  "wer": 0.0,
+  "mean_word_prob": 0.975,
+  "f0_median_hz": 110.0,
+  "f0_std_st": 5.41,
+  "f0_range_p5_p95_st": 12.67,
+  "words_per_min_speech": 245.8,
+  "duration_s": 5.42,
+  "transcript": "Depuis la rentrée, les textes s'accumulent, alors on a tout rassemblé dans le cahier d'HLP."
+ },
+ "cml-tts_fr_2114_1656_000053-0001_enhanced.wav_0": {
+  "wer": 0.0,
+  "mean_word_prob": 0.985,
+  "f0_median_hz": 120.0,
+  "f0_std_st": 5.14,
+  "f0_range_p5_p95_st": 18.21,
+  "words_per_min_speech": 212.9,
+  "duration_s": 5.82,
+  "transcript": "Depuis la rentrée, les textes s'accumulent, alors on a tout rassemblé dans le cahier d'HLP."
+ }
+}
