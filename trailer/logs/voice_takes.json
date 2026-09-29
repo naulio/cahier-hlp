@@ -1068,7 +1068,7 @@
   "provider": "kyutai",
   "voice": "unmute-prod-website_fabieng-enhanced-v2.wav",
   "text": "Tout est quelque part… Mais où ?",
-  "best": "/home/user/cahier-hlp/trailer/audio/voice/takes/V05_kyutai_154e34cc30.wav",
+  "best": "/home/user/cahier-hlp/trailer/audio/voice/takes/V05_kyutai_89102095d7.wav",
   "takes": [
    {
     "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V05_kyutai_154e34cc30.wav",
@@ -1608,6 +1608,104 @@
       "t1": 2.75,
       "p": 0.736
      }
+    ]
+   }
+  ],
+  "split_check": [
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V05_kyutai_154e34cc30.wav",
+    "how": "mots",
+    "score": 9.361,
+    "heard": [
+     "Tout est quelque part...",
+     "Mais... Ouf !"
+    ],
+    "cuts_s": [
+     1.589
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V05_kyutai_1fca25e742.wav",
+    "how": "mots",
+    "score": 12.723,
+    "heard": [
+     "Tout est quelque part...",
+     "Merci d'avoir regardé."
+    ],
+    "cuts_s": [
+     1.721
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V05_kyutai_616c174091.wav",
+    "how": "silences",
+    "score": 9.608,
+    "heard": [
+     "Tout est quelque part...",
+     "Mais ouf !"
+    ],
+    "cuts_s": [
+     1.142
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V05_kyutai_7b646d1cba.wav",
+    "how": "mots",
+    "score": 1.576,
+    "heard": [
+     "Tout est quelque part...",
+     "Mais où ?"
+    ],
+    "cuts_s": [
+     1.637
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V05_kyutai_89102095d7.wav",
+    "how": "mots",
+    "score": 0.528,
+    "heard": [
+     "Tout est quelque part...",
+     "Mais où ?"
+    ],
+    "cuts_s": [
+     1.504
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V05_kyutai_badd7dc4f0.wav",
+    "how": "mots",
+    "score": 12.486,
+    "heard": [
+     "Tout est quelque part...",
+     "Mais aussi de la programe"
+    ],
+    "cuts_s": [
+     1.414
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V05_kyutai_c39c115e5c.wav",
+    "how": "silences",
+    "score": 11.724,
+    "heard": [
+     "Tout est quelque part...",
+     "Mais ouf !"
+    ],
+    "cuts_s": [
+     1.238
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V05_kyutai_db810f2afe.wav",
+    "how": "silences",
+    "score": 14.546,
+    "heard": [
+     "Tout est quelque part.",
+     "Mais aussi de la portine."
+    ],
+    "cuts_s": [
+     1.849
     ]
    }
   ]
@@ -4438,6 +4536,80 @@
      }
     ]
    }
+  ],
+  "split_check": [
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V13_kyutai_23807ebdab.wav",
+    "how": "silences",
+    "score": 1.132,
+    "heard": [
+     "Imaginez, en TG1, par l'un d'entre nous.",
+     "pour toute la classe."
+    ],
+    "cuts_s": [
+     2.904
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V13_kyutai_6f8d333321.wav",
+    "how": "mots",
+    "score": 0.293,
+    "heard": [
+     "Imaginez, en TG1, par l'un d'entre nous.",
+     "Pour toute la classe."
+    ],
+    "cuts_s": [
+     3.241
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V13_kyutai_9d36e92c21.wav",
+    "how": "mots",
+    "score": 11.147,
+    "heard": [
+     "Imaginez en TG-1 par l'un d'entre nous.",
+     "pour toute la classe."
+    ],
+    "cuts_s": [
+     2.778
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V13_kyutai_d032aa5d3d.wav",
+    "how": "silences",
+    "score": 1.681,
+    "heard": [
+     "Imaginez en TG1, par l'un d'entre nous.",
+     "pour toute la classe."
+    ],
+    "cuts_s": [
+     3.021
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V13_kyutai_d3b7cf0f32.wav",
+    "how": "mots",
+    "score": 0.142,
+    "heard": [
+     "Imaginez en TG1, par l'un d'entre nous.",
+     "pour toute la classe."
+    ],
+    "cuts_s": [
+     3.439
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V13_kyutai_d506aab14d.wav",
+    "how": "mots",
+    "score": 0.626,
+    "heard": [
+     "Imaginez, en TG1, par l'un d'entre nous.",
+     "pour toute la classe."
+    ],
+    "cuts_s": [
+     3.331
+    ]
+   }
   ]
  },
  "V14": {
@@ -4754,6 +4926,68 @@
       "t1": 2.02,
       "p": 0.989
      }
+    ]
+   }
+  ],
+  "split_check": [
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V14_kyutai_242c7725c5.wav",
+    "how": "mots",
+    "score": -0.354,
+    "heard": [
+     "Le cahier d'HLP.",
+     "Tout est là."
+    ],
+    "cuts_s": [
+     1.472
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V14_kyutai_2b7c1b10c7.wav",
+    "how": "silences",
+    "score": 11.808,
+    "heard": [
+     "Le cahier d'HTLP?",
+     "Tout est là !"
+    ],
+    "cuts_s": [
+     1.681
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V14_kyutai_2f1e46c478.wav",
+    "how": "mots",
+    "score": -0.372,
+    "heard": [
+     "Le cahier d'HLP.",
+     "Tout est là."
+    ],
+    "cuts_s": [
+     1.648
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V14_kyutai_53d1a46aa1.wav",
+    "how": "mots",
+    "score": 11.354,
+    "heard": [
+     "Le cahier d'HLP.",
+     "T'es là."
+    ],
+    "cuts_s": [
+     1.629
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V14_kyutai_82770d9651.wav",
+    "how": "mots",
+    "score": 0.112,
+    "heard": [
+     "Le cahier d'HLP",
+     "Tout est là."
+    ],
+    "cuts_s": [
+     1.557
     ]
    }
   ]
