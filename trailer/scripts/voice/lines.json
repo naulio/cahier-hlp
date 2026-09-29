@@ -48,7 +48,11 @@
    "text": "Tout est quelque part… Mais où ?",
    "tts": "Tout est quelque part... Mais où ?",
    "question": true,
-   "takes": 8
+   "takes": 8,
+   "parts": [
+    "Tout est quelque part…",
+    "Mais où ?"
+   ]
   },
   {
    "id": "V06",
@@ -106,7 +110,12 @@
    "split": 2,
    "gaps": [
     0.3
-   ]
+   ],
+   "parts": [
+    "Imaginé en TG1, par l'un d'entre nous.",
+    "Pour toute la classe."
+   ],
+   "split_by": "words"
   },
   {
    "id": "V14",
@@ -118,7 +127,11 @@
    "gaps": [
     0.45
    ],
-   "takes": 5
+   "takes": 5,
+   "parts": [
+    "Le Cahier d'HLP.",
+    "Tout est là."
+   ]
   }
  ],
  "_history": {
