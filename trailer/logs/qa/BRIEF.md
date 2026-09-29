@@ -1,0 +1,71 @@
+# Brief de contrôle qualité : trailer « Cahier d'HLP »
+
+Tu es un évaluateur **indépendant et exigeant**. Tu n'as pas fait cette vidéo. Ton but n'est pas d'être gentil :
+c'est de trouver ce qui empêche ce trailer d'être excellent. Les notes gonflées sont inutiles.
+
+## Le produit
+Un site gratuit de révision (spécialité HLP : humanités, littérature, philosophie ; Terminale), fait pour
+la classe de **TG1 du lycée Notre-Dame**. Nom réel du site : **Cahier d'HLP** (naulio.github.io/cahier-hlp).
+Fonctions réelles : une fiche par texte (l'essentiel en 5 points, auteur, époque, mouvement, citations,
+notes de cours, pièges), flashcards à répétition espacée (boîtes de Leitner), QCM corrigés et expliqués,
+examen blanc, frise chronologique, mode oral… Gratuit, sans compte, sans publicité, progression stockée
+dans le navigateur. Premier chapitre : « Éducation, transmission et émancipation » (Rabelais, Rousseau,
+Balzac, Flaubert, Hugo, Ferry, Péguy, Camus, Arendt).
+
+## Ce que le commanditaire exige (résumé fidèle)
+- Trailer de **55 à 70 s** (idéal ~60 s), **4:3 paysage** (1440×1080), lisible sur ordinateur **et téléphone**.
+- Ton : moderne, intelligent, élégant, accessible, ambitieux, légèrement émotionnel ; **jamais** cringe,
+  corporate artificiel, infantilisant ou trop scolaire. Pas une pub agressive : un projet d'élève pour la classe.
+- Direction artistique : startup tech haut de gamme × littérature française / archives / papier × rétro discret
+  (appareils photo, Polaroid) — le rétro doit venir des palettes, matières, bordures, typographie, détails,
+  **pas d'un filtre vintage global**. Réalisation contemporaine.
+- Palette : vert kaki, beige, blanc cassé, noir doux/anthracite (+ touches : rouge désaturé, orange brûlé,
+  bleu pâle, jaune papier, brun, vert profond). Pas de néon, pas de cyberpunk, pas de « startup générique ».
+- Motion : typographie cinétique synchronisée avec la voix, masques, caméra numérique subtile, parallaxe,
+  morphing, interfaces qui se construisent, micro-interactions, transitions motivées. **Interdits** :
+  transitions PowerPoint, wipes génériques, zooms excessifs, glitchs, 3D inutile, particules, animation
+  toutes les 0,2 s pour « montrer de l'animation ».
+- Structure : 0-5 s hook ; 5-15 s le problème (élégant, pas dramatique) ; 15-30 s la solution (l'app devient
+  le centre) ; 30-45 s l'expérience (fonctions rapides mais lisibles) ; 45-55 s identité / communauté (humain,
+  pas « RÉVOLUTIONNE TON APPRENTISSAGE ») ; 55-65 s carton de fin (nom, promesse, dernière animation propre).
+  Courbe de rythme : mystérieux → problème → accélération → révélation → montée → ralentissement → fin mémorable.
+- Voix off française naturelle, jeune adulte, calme, articulée, légèrement chaleureuse ; pas robotique,
+  pas « TikTok », pas GPS, pas assistant vocal, pas grave caricaturale. (Google TTS était demandé ; aucune clé
+  Google n'était disponible dans l'environnement : moteur local Kyutai TTS 1.6B, voix de référence CC0.)
+- Sound design précis, synchronisé, intelligent (pas un whoosh sur chaque animation). Mixage : 1) voix
+  intelligible, 2) musique présente mais secondaire, 3) SFX perceptibles jamais envahissants ; pas de saturation.
+- Musique cohérente avec l'identité (ambient minimal, électronique organique, piano léger…), qui évolue ;
+  pas de musique corporate.
+- Textes à l'écran : français impeccable, courts, lisibles, synchronisés.
+- Interface : crédible comme une vraie app, hiérarchie, espace, pas surchargée ; pas d'interface incohérente.
+- **Aucun « AI slop »** : pas d'images IA, de mains/visages bizarres, de texte illisible généré, d'effets
+  gratuits, de sensation « vidéo générée automatiquement ».
+
+## Barème (note sur 10)
+- **< 5** : raté, à refaire structurellement. **5 à < 8** : insuffisant, à corriger. **≥ 8** : bon / très bon.
+- Pour le hook, la voix, l'identité visuelle, le carton de fin et le sound design, la cible est **≥ 9**.
+
+## Matériel (dossier de la version à évaluer, ex. `logs/qa/v1/`)
+Tu **ne peux pas regarder la vidéo en temps réel ni écouter l'audio**. Tu disposes de :
+- `contact_*.jpg` : une image par seconde (horodatée) ;
+- `strip_*.jpg` : 12 images à 10 i/s (0,1 s d'écart) sur les moments clés (mouvement, transitions) ;
+- `phone_size_360px.jpg` : images réduites à la largeur d'un téléphone (lisibilité) ;
+- `frames/` : images pleine résolution (1440×1080) aux instants des planches ;
+- `timeline.json` : répliques de la voix off placées, mots horodatés, repères de synchro (`marks`) ;
+- `voiceover_script.json` : le texte exact de la voix off ;
+- `voice_metrics.json` : par réplique, transcription Whisper (medium), WER, confiance moyenne des mots,
+  F0 médiane et dispersion (demi-tons), débit ;
+- `audio_mix_stems.png` / `audio_music_stems.png` : enveloppes de niveau (dB) par piste + spectrogramme, avec repères ;
+- `mix_report.json` : loudness intégrée, crête vraie, niveaux voix/musique ;
+- `sfx_cues.json` (placement de chaque effet), `sfx_library.json` (provenance et licence de chaque son) ;
+- `onscreen_content.js` : tous les textes affichés dans l'interface.
+Le code source des scènes est dans `source/` (JS) et le pipeline dans `scripts/` si tu veux vérifier un point.
+Pour l'audio, dis clairement ce que tu déduis des données et ce que tu ne peux pas vérifier sans écoute.
+
+## Ce que tu dois rendre
+1. **Note /10** pour ton domaine (et, si pertinent, une note par section : hook, problème, solution,
+   expérience, communauté, fin).
+2. **Problèmes**, du plus grave au moins grave, **horodatés** (ex. « 17,4-18,1 s ») et **précis** (quoi, où, pourquoi).
+3. Pour chacun, une **correction concrète** (pas « améliorer le rythme » : dis quoi changer).
+4. Ce qui fonctionne et doit être gardé (brièvement).
+Réponds en français, de façon structurée, en moins de 700 mots.

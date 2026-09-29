@@ -1,0 +1,894 @@
+{
+ "duration": 62.42,
+ "lines": [
+  {
+   "id": "V01",
+   "text": "Rabelais. Rousseau. Flaubert. Hugo.",
+   "at": 1.331,
+   "dur": 2.45,
+   "end": 3.781,
+   "words": [
+    {
+     "w": "rabelais",
+     "t0": 1.333,
+     "t1": 1.837
+    },
+    {
+     "w": "rousseau",
+     "t0": 2.0,
+     "t1": 2.462
+    },
+    {
+     "w": "flaubert",
+     "t0": 2.667,
+     "t1": 3.105
+    },
+    {
+     "w": "hugo",
+     "t0": 3.333,
+     "t1": 3.701
+    }
+   ],
+   "segments": [
+    {
+     "file": "audio/voice/processed/V01_1.wav",
+     "at": 1.331,
+     "dur": 0.587
+    },
+    {
+     "file": "audio/voice/processed/V01_2.wav",
+     "at": 1.803,
+     "dur": 0.74
+    },
+    {
+     "file": "audio/voice/processed/V01_3.wav",
+     "at": 2.594,
+     "dur": 0.59
+    },
+    {
+     "file": "audio/voice/processed/V01_4.wav",
+     "at": 3.148,
+     "dur": 0.633
+    }
+   ]
+  },
+  {
+   "id": "V02",
+   "text": "Tu te souviens de tout ?",
+   "at": 3.98,
+   "dur": 2.102,
+   "end": 6.082,
+   "words": [
+    {
+     "w": "tu",
+     "t0": 3.98,
+     "t1": 4.22
+    },
+    {
+     "w": "te",
+     "t0": 4.22,
+     "t1": 4.54
+    },
+    {
+     "w": "souviens",
+     "t0": 4.54,
+     "t1": 5.18
+    },
+    {
+     "w": "de",
+     "t0": 5.18,
+     "t1": 5.56
+    },
+    {
+     "w": "tout",
+     "t0": 5.56,
+     "t1": 5.74
+    }
+   ],
+   "segments": [
+    {
+     "file": "audio/voice/processed/V02.wav",
+     "at": 3.98,
+     "dur": 2.102
+    }
+   ]
+  },
+  {
+   "id": "V03",
+   "text": "Depuis la rentrée, les textes s'accumulent.",
+   "at": 6.29,
+   "dur": 3.466,
+   "end": 9.756,
+   "words": [
+    {
+     "w": "depuis",
+     "t0": 6.29,
+     "t1": 7.17
+    },
+    {
+     "w": "la",
+     "t0": 7.17,
+     "t1": 7.49
+    },
+    {
+     "w": "rentrée",
+     "t0": 7.49,
+     "t1": 8.05
+    },
+    {
+     "w": "les",
+     "t0": 8.29,
+     "t1": 8.41
+    },
+    {
+     "w": "textes",
+     "t0": 8.41,
+     "t1": 9.09
+    },
+    {
+     "w": "s",
+     "t0": 9.09,
+     "t1": 9.19
+    },
+    {
+     "w": "accumulent",
+     "t0": 9.19,
+     "t1": 9.69
+    }
+   ],
+   "segments": [
+    {
+     "file": "audio/voice/processed/V03.wav",
+     "at": 6.29,
+     "dur": 3.466
+    }
+   ]
+  },
+  {
+   "id": "V04",
+   "text": "Les feuilles, les notes, les citations…",
+   "at": 10.04,
+   "dur": 2.921,
+   "end": 12.961,
+   "words": [
+    {
+     "w": "les",
+     "t0": 10.04,
+     "t1": 10.6
+    },
+    {
+     "w": "feuilles",
+     "t0": 10.6,
+     "t1": 11.14
+    },
+    {
+     "w": "les",
+     "t0": 11.34,
+     "t1": 11.52
+    },
+    {
+     "w": "notes",
+     "t0": 11.52,
+     "t1": 11.88
+    },
+    {
+     "w": "les",
+     "t0": 12.16,
+     "t1": 12.32
+    },
+    {
+     "w": "citations",
+     "t0": 12.32,
+     "t1": 12.9
+    }
+   ],
+   "segments": [
+    {
+     "file": "audio/voice/processed/V04.wav",
+     "at": 10.04,
+     "dur": 2.921
+    }
+   ]
+  },
+  {
+   "id": "V05a",
+   "text": "Tout est quelque part.",
+   "at": 13.200000000000001,
+   "dur": 1.437,
+   "end": 14.637,
+   "words": [
+    {
+     "w": "tout",
+     "t0": 13.2,
+     "t1": 13.46
+    },
+    {
+     "w": "est",
+     "t0": 13.46,
+     "t1": 13.76
+    },
+    {
+     "w": "quelque",
+     "t0": 13.76,
+     "t1": 14.14
+    },
+    {
+     "w": "part",
+     "t0": 14.14,
+     "t1": 14.46
+    }
+   ],
+   "segments": [
+    {
+     "file": "audio/voice/processed/V05a.wav",
+     "at": 13.2,
+     "dur": 1.437
+    }
+   ]
+  },
+  {
+   "id": "V05b",
+   "text": "Mais où ?",
+   "at": 14.91,
+   "dur": 0.928,
+   "end": 15.838,
+   "words": [
+    {
+     "w": "mais",
+     "t0": 14.91,
+     "t1": 15.21
+    },
+    {
+     "w": "où",
+     "t0": 15.21,
+     "t1": 15.49
+    }
+   ],
+   "segments": [
+    {
+     "file": "audio/voice/processed/V05b.wav",
+     "at": 14.91,
+     "dur": 0.928
+    }
+   ]
+  },
+  {
+   "id": "V06",
+   "text": "Alors on a tout rassemblé…",
+   "at": 17.340000000000003,
+   "dur": 2.023,
+   "end": 19.363,
+   "words": [
+    {
+     "w": "alors",
+     "t0": 17.34,
+     "t1": 17.7
+    },
+    {
+     "w": "on",
+     "t0": 18.02,
+     "t1": 18.1
+    },
+    {
+     "w": "a",
+     "t0": 18.1,
+     "t1": 18.52
+    },
+    {
+     "w": "tout",
+     "t0": 18.52,
+     "t1": 18.66
+    },
+    {
+     "w": "rassemblé",
+     "t0": 18.66,
+     "t1": 19.2
+    }
+   ],
+   "segments": [
+    {
+     "file": "audio/voice/processed/V06.wav",
+     "at": 17.34,
+     "dur": 2.023
+    }
+   ]
+  },
+  {
+   "id": "V07",
+   "text": "dans le Cahier d'HLP.",
+   "at": 19.45,
+   "dur": 1.596,
+   "end": 21.046,
+   "words": [
+    {
+     "w": "dans",
+     "t0": 19.45,
+     "t1": 19.83
+    },
+    {
+     "w": "le",
+     "t0": 19.83,
+     "t1": 20.15
+    },
+    {
+     "w": "cahier",
+     "t0": 20.15,
+     "t1": 20.45
+    },
+    {
+     "w": "d",
+     "t0": 20.45,
+     "t1": 20.59
+    },
+    {
+     "w": "hlp",
+     "t0": 20.59,
+     "t1": 20.93
+    }
+   ],
+   "segments": [
+    {
+     "file": "audio/voice/processed/V07.wav",
+     "at": 19.45,
+     "dur": 1.596
+    }
+   ]
+  },
+  {
+   "id": "V08",
+   "text": "Pour chaque texte vu en classe, une fiche claire : l'auteur, l'époque, l'essentiel en cinq points, les citations à retenir.",
+   "at": 22.28,
+   "dur": 8.273,
+   "end": 30.553,
+   "words": [
+    {
+     "w": "pour",
+     "t0": 22.28,
+     "t1": 22.54
+    },
+    {
+     "w": "chaque",
+     "t0": 22.54,
+     "t1": 22.88
+    },
+    {
+     "w": "texte",
+     "t0": 22.88,
+     "t1": 23.38
+    },
+    {
+     "w": "vu",
+     "t0": 23.38,
+     "t1": 23.46
+    },
+    {
+     "w": "en",
+     "t0": 23.46,
+     "t1": 23.76
+    },
+    {
+     "w": "classe",
+     "t0": 23.76,
+     "t1": 24.14
+    },
+    {
+     "w": "une",
+     "t0": 24.52,
+     "t1": 24.66
+    },
+    {
+     "w": "fiche",
+     "t0": 24.66,
+     "t1": 25.12
+    },
+    {
+     "w": "claire",
+     "t0": 25.12,
+     "t1": 25.5
+    },
+    {
+     "w": "l",
+     "t0": 25.5,
+     "t1": 25.6
+    },
+    {
+     "w": "auteur",
+     "t0": 25.6,
+     "t1": 25.96
+    },
+    {
+     "w": "l",
+     "t0": 26.2,
+     "t1": 26.26
+    },
+    {
+     "w": "époque",
+     "t0": 26.26,
+     "t1": 26.6
+    },
+    {
+     "w": "l",
+     "t0": 27.08,
+     "t1": 27.08
+    },
+    {
+     "w": "essentiel",
+     "t0": 27.08,
+     "t1": 27.62
+    },
+    {
+     "w": "en",
+     "t0": 27.62,
+     "t1": 27.88
+    },
+    {
+     "w": "cinq",
+     "t0": 27.88,
+     "t1": 28.26
+    },
+    {
+     "w": "points",
+     "t0": 28.26,
+     "t1": 28.5
+    },
+    {
+     "w": "les",
+     "t0": 29.02,
+     "t1": 29.16
+    },
+    {
+     "w": "citations",
+     "t0": 29.16,
+     "t1": 29.84
+    },
+    {
+     "w": "à",
+     "t0": 29.84,
+     "t1": 30.14
+    },
+    {
+     "w": "retenir",
+     "t0": 30.14,
+     "t1": 30.56
+    }
+   ],
+   "segments": [
+    {
+     "file": "audio/voice/processed/V08.wav",
+     "at": 22.28,
+     "dur": 8.273
+    }
+   ]
+  },
+  {
+   "id": "V09",
+   "text": "Des flashcards, qui reviennent au bon moment.",
+   "at": 31.009999999999998,
+   "dur": 2.679,
+   "end": 33.689,
+   "words": [
+    {
+     "w": "des",
+     "t0": 31.01,
+     "t1": 31.51
+    },
+    {
+     "w": "flashcards",
+     "t0": 31.51,
+     "t1": 32.15
+    },
+    {
+     "w": "qui",
+     "t0": 32.15,
+     "t1": 32.57
+    },
+    {
+     "w": "reviennent",
+     "t0": 32.57,
+     "t1": 32.95
+    },
+    {
+     "w": "au",
+     "t0": 32.95,
+     "t1": 33.23
+    },
+    {
+     "w": "bon",
+     "t0": 33.23,
+     "t1": 33.35
+    },
+    {
+     "w": "moment",
+     "t0": 33.35,
+     "t1": 33.63
+    }
+   ],
+   "segments": [
+    {
+     "file": "audio/voice/processed/V09.wav",
+     "at": 31.01,
+     "dur": 2.679
+    }
+   ]
+  },
+  {
+   "id": "V10",
+   "text": "Des QCM corrigés, et expliqués.",
+   "at": 34.03,
+   "dur": 3.249,
+   "end": 37.279,
+   "words": [
+    {
+     "w": "des",
+     "t0": 34.03,
+     "t1": 34.55
+    },
+    {
+     "w": "qcm",
+     "t0": 34.55,
+     "t1": 35.69
+    },
+    {
+     "w": "corrigés",
+     "t0": 35.69,
+     "t1": 36.47
+    },
+    {
+     "w": "et",
+     "t0": 36.47,
+     "t1": 36.93
+    },
+    {
+     "w": "expliqués",
+     "t0": 36.93,
+     "t1": 37.29
+    }
+   ],
+   "segments": [
+    {
+     "file": "audio/voice/processed/V10.wav",
+     "at": 34.03,
+     "dur": 3.249
+    }
+   ]
+  },
+  {
+   "id": "V11",
+   "text": "Et une frise, pour relier les œuvres… de Rabelais à Arendt.",
+   "at": 37.74,
+   "dur": 4.737,
+   "end": 42.477,
+   "words": [
+    {
+     "w": "et",
+     "t0": 37.74,
+     "t1": 38.46
+    },
+    {
+     "w": "une",
+     "t0": 38.46,
+     "t1": 38.84
+    },
+    {
+     "w": "frise",
+     "t0": 38.84,
+     "t1": 39.24
+    },
+    {
+     "w": "pour",
+     "t0": 39.24,
+     "t1": 39.6
+    },
+    {
+     "w": "relier",
+     "t0": 39.6,
+     "t1": 40.28
+    },
+    {
+     "w": "les",
+     "t0": 40.28,
+     "t1": 40.64
+    },
+    {
+     "w": "œuvres",
+     "t0": 40.64,
+     "t1": 41.28
+    },
+    {
+     "w": "de",
+     "t0": 41.28,
+     "t1": 41.56
+    },
+    {
+     "w": "rabelais",
+     "t0": 41.56,
+     "t1": 41.96
+    },
+    {
+     "w": "à",
+     "t0": 41.96,
+     "t1": 42.14
+    },
+    {
+     "w": "arendt",
+     "t0": 42.14,
+     "t1": 42.46
+    }
+   ],
+   "segments": [
+    {
+     "file": "audio/voice/processed/V11.wav",
+     "at": 37.74,
+     "dur": 4.737
+    }
+   ]
+  },
+  {
+   "id": "V12",
+   "text": "C'est gratuit, sans compte. Ta progression reste sur ton appareil.",
+   "at": 43.36,
+   "dur": 4.757,
+   "end": 48.117,
+   "words": [
+    {
+     "w": "c",
+     "t0": 43.36,
+     "t1": 43.36
+    },
+    {
+     "w": "est",
+     "t0": 43.36,
+     "t1": 43.9
+    },
+    {
+     "w": "gratuit",
+     "t0": 43.9,
+     "t1": 44.34
+    },
+    {
+     "w": "sans",
+     "t0": 44.62,
+     "t1": 44.62
+    },
+    {
+     "w": "compte",
+     "t0": 44.62,
+     "t1": 45.06
+    },
+    {
+     "w": "ta",
+     "t0": 45.54,
+     "t1": 45.7
+    },
+    {
+     "w": "progression",
+     "t0": 45.7,
+     "t1": 46.44
+    },
+    {
+     "w": "reste",
+     "t0": 46.44,
+     "t1": 47.12
+    },
+    {
+     "w": "sur",
+     "t0": 47.12,
+     "t1": 47.44
+    },
+    {
+     "w": "ton",
+     "t0": 47.44,
+     "t1": 47.62
+    },
+    {
+     "w": "appareil",
+     "t0": 47.62,
+     "t1": 48.16
+    }
+   ],
+   "segments": [
+    {
+     "file": "audio/voice/processed/V12.wav",
+     "at": 43.36,
+     "dur": 4.757
+    }
+   ]
+  },
+  {
+   "id": "V13",
+   "text": "Pensé en TG1, pour toute la classe.",
+   "at": 48.86,
+   "dur": 2.9,
+   "end": 51.76,
+   "words": [
+    {
+     "w": "pensé",
+     "t0": 48.86,
+     "t1": 49.52
+    },
+    {
+     "w": "en",
+     "t0": 49.52,
+     "t1": 49.76
+    },
+    {
+     "w": "tg1",
+     "t0": 49.76,
+     "t1": 50.52
+    },
+    {
+     "w": "pour",
+     "t0": 50.52,
+     "t1": 50.86
+    },
+    {
+     "w": "toute",
+     "t0": 50.86,
+     "t1": 51.04
+    },
+    {
+     "w": "la",
+     "t0": 51.04,
+     "t1": 51.28
+    },
+    {
+     "w": "classe",
+     "t0": 51.28,
+     "t1": 51.58
+    }
+   ],
+   "segments": [
+    {
+     "file": "audio/voice/processed/V13.wav",
+     "at": 48.86,
+     "dur": 2.9
+    }
+   ]
+  },
+  {
+   "id": "V14",
+   "text": "Le Cahier d'HLP. Tout pour réviser, au même endroit.",
+   "at": 52.98,
+   "dur": 4.198,
+   "end": 57.178,
+   "words": [
+    {
+     "w": "le",
+     "t0": 52.98,
+     "t1": 53.38
+    },
+    {
+     "w": "cahier",
+     "t0": 53.38,
+     "t1": 53.92
+    },
+    {
+     "w": "d",
+     "t0": 53.92,
+     "t1": 54.12
+    },
+    {
+     "w": "hlp",
+     "t0": 54.12,
+     "t1": 54.74
+    },
+    {
+     "w": "tout",
+     "t0": 55.2,
+     "t1": 55.32
+    },
+    {
+     "w": "pour",
+     "t0": 55.32,
+     "t1": 55.64
+    },
+    {
+     "w": "réviser",
+     "t0": 55.64,
+     "t1": 56.34
+    },
+    {
+     "w": "au",
+     "t0": 56.34,
+     "t1": 56.56
+    },
+    {
+     "w": "même",
+     "t0": 56.56,
+     "t1": 56.7
+    },
+    {
+     "w": "endroit",
+     "t0": 56.7,
+     "t1": 57.02
+    }
+   ],
+   "segments": [
+    {
+     "file": "audio/voice/processed/V14.wav",
+     "at": 52.98,
+     "dur": 4.198
+    }
+   ]
+  }
+ ],
+ "marks": {
+  "n1": 1.333,
+  "n2": 2.0,
+  "n3": 2.667,
+  "n4": 3.333,
+  "q_start": 3.98,
+  "q_souviens": 4.54,
+  "q_tout": 5.56,
+  "q_end": 5.74,
+  "v3_start": 6.29,
+  "v3_rentree": 7.49,
+  "v3_textes": 8.41,
+  "v3_accum": 9.19,
+  "v3_end": 9.69,
+  "v4_feuilles": 10.6,
+  "v4_notes": 11.52,
+  "v4_citations": 12.32,
+  "v4_end": 12.9,
+  "v5_tout": 13.2,
+  "v5_part": 14.14,
+  "v5_mais": 14.91,
+  "v5_ou": 15.21,
+  "v5_end": 15.49,
+  "v6_start": 17.34,
+  "v6_tout": 18.52,
+  "v6_rassemble": 18.66,
+  "v6_end": 19.2,
+  "v7_start": 19.45,
+  "v7_cahier": 20.15,
+  "v7_hlp": 20.59,
+  "v7_end": 20.93,
+  "v8_start": 22.28,
+  "v8_texte": 22.88,
+  "v8_classe": 23.76,
+  "v8_fiche": 24.66,
+  "v8_auteur": 25.6,
+  "v8_epoque": 26.26,
+  "v8_essentiel": 27.08,
+  "v8_cinq": 27.88,
+  "v8_citations": 29.16,
+  "v8_retenir": 30.14,
+  "v8_end": 30.56,
+  "v9_start": 31.01,
+  "v9_flash": 31.51,
+  "v9_reviennent": 32.57,
+  "v9_moment": 33.35,
+  "v9_end": 33.63,
+  "v10_start": 34.03,
+  "v10_qcm": 34.55,
+  "v10_corriges": 35.69,
+  "v10_expliques": 36.93,
+  "v10_end": 37.29,
+  "v11_start": 37.74,
+  "v11_frise": 38.84,
+  "v11_relier": 39.6,
+  "v11_oeuvres": 40.64,
+  "v11_rabelais": 41.56,
+  "v11_arendt": 42.14,
+  "v11_end": 42.46,
+  "v12_start": 43.36,
+  "v12_gratuit": 43.9,
+  "v12_compte": 44.62,
+  "v12_progression": 45.7,
+  "v12_appareil": 47.62,
+  "v12_end": 48.16,
+  "v13_start": 48.86,
+  "v13_tg1": 49.76,
+  "v13_classe": 51.28,
+  "v13_end": 51.58,
+  "v14_start": 52.98,
+  "v14_cahier": 53.38,
+  "v14_tout": 55.2,
+  "v14_reviser": 55.64,
+  "v14_endroit": 56.7,
+  "v14_end": 57.02,
+  "shutter": 16.99,
+  "capture": 58.47,
+  "end": 62.42
+ }
+}

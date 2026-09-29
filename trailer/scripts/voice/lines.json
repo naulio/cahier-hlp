@@ -1,0 +1,103 @@
+{
+ "_doc": "Script de la voix off. 'text' = orthographe exacte ; 'tts' = graphie envoyée au moteur (sigles épelés). 'at' = début sur la timeline (s) : nombre = ancre (souvent une mesure à 90 BPM), '+x' = x s après la fin de la réplique précédente, liste = une position par segment (répliques découpées).",
+ "style_prompt": "Voix française naturelle d'un jeune adulte. Ton calme, articulé, légèrement chaleureux, comme la narration d'un lancement de produit sobre. Pas de ton publicitaire, pas d'emphase exagérée. Débit posé.",
+ "lines": [
+  {
+   "id": "V01",
+   "at": [
+    1.333,
+    2.0,
+    2.667,
+    3.333
+   ],
+   "text": "Rabelais. Rousseau. Flaubert. Hugo.",
+   "tts": "Rabelais. Rousseau. Flaubert. Hugo.",
+   "split": true,
+   "_note": "Découpée aux silences : chaque nom est posé sur un temps (90 BPM)."
+  },
+  {
+   "id": "V02",
+   "at": 3.98,
+   "text": "Tu te souviens de tout ?",
+   "tts": "Tu te souviens de tout ?"
+  },
+  {
+   "id": "V03",
+   "at": "+0.55",
+   "text": "Depuis la rentrée, les textes s'accumulent.",
+   "tts": "Depuis la rentrée, les textes s'accumulent."
+  },
+  {
+   "id": "V04",
+   "at": "+0.35",
+   "text": "Les feuilles, les notes, les citations…",
+   "tts": "Les feuilles, les notes, les citations..."
+  },
+  {
+   "id": "V05a",
+   "at": "+0.3",
+   "text": "Tout est quelque part.",
+   "tts": "Tout est quelque part."
+  },
+  {
+   "id": "V05b",
+   "at": "+0.45",
+   "text": "Mais où ?",
+   "tts": "Mais où ?"
+  },
+  {
+   "id": "V06",
+   "at": "@shutter+0.35",
+   "text": "Alors on a tout rassemblé…",
+   "tts": "Alors, on a tout rassemblé..."
+  },
+  {
+   "id": "V07",
+   "at": "+0.25",
+   "text": "dans le Cahier d'HLP.",
+   "tts": "dans le Cahier d'hache-elle-pé."
+  },
+  {
+   "id": "V08",
+   "at": "+1.35",
+   "text": "Pour chaque texte vu en classe, une fiche claire : l'auteur, l'époque, l'essentiel en cinq points, les citations à retenir.",
+   "tts": "Pour chaque texte vu en classe, une fiche claire : l'auteur, l'époque, l'essentiel en cinq points, les citations à retenir."
+  },
+  {
+   "id": "V09",
+   "at": "+0.45",
+   "text": "Des flashcards, qui reviennent au bon moment.",
+   "tts": "Des flashcards, qui reviennent au bon moment."
+  },
+  {
+   "id": "V10",
+   "at": "+0.4",
+   "text": "Des QCM corrigés, et expliqués.",
+   "tts": "Des Q C M corrigés, et expliqués."
+  },
+  {
+   "id": "V11",
+   "at": "+0.45",
+   "text": "Et une frise, pour relier les œuvres… de Rabelais à Arendt.",
+   "tts": "Et une frise, pour relier les œuvres... de Rabelais à Arendt."
+  },
+  {
+   "id": "V12",
+   "at": "+0.9",
+   "text": "C'est gratuit, sans compte. Ta progression reste sur ton appareil.",
+   "tts": "C'est gratuit, sans compte. Ta progression reste sur ton appareil."
+  },
+  {
+   "id": "V13",
+   "at": "+0.7",
+   "text": "Pensé en TG1, pour toute la classe.",
+   "tts": "Pensé en té-gé-un... pour toute la classe."
+  },
+  {
+   "id": "V14",
+   "at": "+1.4",
+   "text": "Le Cahier d'HLP. Tout pour réviser, au même endroit.",
+   "tts": "Le Cahier d'hache-elle-pé. Tout pour réviser, au même endroit."
+  }
+ ]
+}

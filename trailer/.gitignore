@@ -1,0 +1,12 @@
+# Rendus intermédiaires et fichiers régénérables (voir README « Reproduire »)
+renders/
+assets/instruments/
+audio/voice/takes/
+audio/voice/processed/
+audio/music/*.wav
+audio/mix/*.wav
+audio/sfx/*.wav
+logs/qa/*/frames/
+__pycache__/
+*.pyc
+source/lab/
