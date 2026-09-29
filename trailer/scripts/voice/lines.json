@@ -3,32 +3,19 @@
  "style_prompt": "Voix française naturelle d'un jeune adulte. Ton calme, articulé, légèrement chaleureux, comme la narration d'un lancement de produit sobre. Pas de ton publicitaire, pas d'emphase exagérée. Débit posé.",
  "lines": [
   {
-   "id": "V01a",
-   "at": 0.75,
-   "onset": true,
-   "text": "Rabelais.",
-   "tts": "Rabelais..."
-  },
-  {
-   "id": "V01b",
-   "at": 1.5,
-   "onset": true,
-   "text": "Rousseau.",
-   "tts": "Rousseau..."
-  },
-  {
-   "id": "V01c",
-   "at": 2.25,
-   "onset": true,
-   "text": "Flaubert.",
-   "tts": "Flaubert..."
-  },
-  {
-   "id": "V01d",
-   "at": 3.0,
-   "onset": true,
-   "text": "Hugo.",
-   "tts": "Hugo."
+   "id": "V01",
+   "at": 0.6,
+   "split": 4,
+   "onsets": [
+    0.6,
+    1.45,
+    2.3,
+    3.15
+   ],
+   "text": "Rabelais. Rousseau. Flaubert. Hugo.",
+   "tts": "Rabelais... Rousseau... Flaubert... Hugo.",
+   "tts_google": "Rabelais… Rousseau… Flaubert… Hugo.",
+   "takes": 6
   },
   {
    "id": "V02",
@@ -73,8 +60,9 @@
   {
    "id": "V08",
    "at": "+1.35",
-   "text": "Chaque texte vu en classe a sa fiche : l'essentiel en cinq points, les citations clés.",
-   "tts": "Chaque texte vu en classe a sa fiche : l'essentiel en cinq points, les citations clés."
+   "text": "Pour chaque texte vu en classe, une fiche : l'essentiel en cinq points, les citations clés.",
+   "tts": "Pour chaque texte vu en classe, une fiche : l'essentiel en cinq points, les citations clés.",
+   "takes": 5
   },
   {
    "id": "V09",
@@ -110,17 +98,26 @@
   {
    "id": "V13",
    "at": "+0.7",
-   "text": "Fait en TG1, par l'un d'entre nous. Pour toute la classe.",
-   "tts": "Fait en té-gé-un, par l'un d'entre nous. Pour toute la classe.",
-   "tts_google": "Fait en TG1, par l'un d'entre nous. Pour toute la classe.",
-   "takes": 5
+   "text": "Imaginé en TG1, par l'un d'entre nous. Pour toute la classe.",
+   "tts": "Imaginé en té-gé-un, par l'un d'entre nous... Pour toute la classe.",
+   "tts_google": "Imaginé en TG1, par l'un d'entre nous. Pour toute la classe.",
+   "takes": 6,
+   "split": 2,
+   "gaps": [
+    0.3
+   ]
   },
   {
    "id": "V14",
    "at": "+1.4",
    "text": "Le Cahier d'HLP. Tout est là.",
-   "tts": "Le Cahier d'hache-elle-pé. Tout est là.",
-   "tts_google": "Le Cahier d'HLP. Tout est là."
+   "tts": "Le Cahier d'hache-elle-pé... Tout est là.",
+   "tts_google": "Le Cahier d'HLP… Tout est là.",
+   "split": 2,
+   "gaps": [
+    0.45
+   ],
+   "takes": 5
   }
  ],
  "_history": {
@@ -130,6 +127,9 @@
    "V12": "C'est gratuit, sans compte. Ta progression reste sur ton appareil.",
    "V13": "Pensé en TG1, pour toute la classe.",
    "V14": "Le Cahier d'HLP. Tout pour réviser, au même endroit."
-  }
+  },
+  "v2_noms_separes": "V01a–V01d (un nom par réplique) : abandonné, Kyutai lit mal un mot isolé (« Brabeulet », « Égout »).",
+  "v2_V08": "Chaque texte vu en classe a sa fiche : l'essentiel en cinq points, les citations clés.  (entendu « s'affiche » par Whisper sur toutes les prises)",
+  "v2_V13": "Fait en TG1, par l'un d'entre nous. Pour toute la classe.  (« Fait en » entendu « Faites en » / « Fâte »)"
  }
 }

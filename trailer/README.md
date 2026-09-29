@@ -41,7 +41,7 @@ trailer/
 ```
 pip install numpy scipy soundfile pedalboard pyloudnorm librosa faster-whisper playwright pillow moshi gtts
 sh scripts/audio/get_piano.sh      # samples du piano (1,2 Go, non versionnés)
-make all                           # voix → timeline → musique → sfx → mix → rendu → export
+make all                           # voix → timeline → sfx → musique → mix → rendu → export
 ```
 Chromium : `CHROME=/chemin/vers/chrome` si besoin (par défaut celui de Playwright).
 
@@ -50,17 +50,17 @@ Chromium : `CHROME=/chemin/vers/chrome` si besoin (par défaut celui de Playwrig
 `scripts/voice/generate_voice.py` choisit le moteur automatiquement (`--provider auto`) :
 
 1. **Gemini TTS** (Google) si la variable d'environnement `GEMINI_API_KEY` existe
-   (modèle `GEMINI_TTS_MODEL`, défaut `gemini-2.5-flash-preview-tts` ; voix `GEMINI_TTS_VOICE`, défaut `Iapetus`) ;
-2. **Google Cloud Text-to-Speech** (voix Chirp 3 HD) si `GOOGLE_TTS_API_KEY` existe ;
+   (modèle `GEMINI_TTS_MODEL`, défaut `gemini-2.5-flash-preview-tts` ; voix `GEMINI_TTS_VOICE`, défaut `Achird`) ;
+2. **Google Cloud Text-to-Speech** (voix Chirp 3 HD, `GOOGLE_TTS_VOICE`, défaut `fr-FR-Chirp3-HD-Achird`) si `GOOGLE_TTS_API_KEY` existe ;
 3. sinon **Kyutai TTS 1.6B** en local (modèle CC-BY 4.0, voix de référence CC0).
 
 Aucune clé Google n'était disponible pendant la production : la voix actuelle vient de Kyutai TTS.
 Pour passer à Google, ajouter la clé comme variable d'environnement (jamais dans le code), puis
-`make voice timeline music sfx mix video export` : la synchro, la musique et les effets suivent
+`make voice timeline sfx music mix video export` : la synchro, la musique et les effets suivent
 automatiquement les nouveaux horaires des mots. Les conditions d'accès gratuites des API Google
 évoluent : vérifier les quotas en vigueur avant usage.
 
 ## Changer le nom du produit
 
 Le nom est centralisé dans `source/data/content.js` (`brand`) et dans le mot-symbole de
-`source/scenes/app.js` (`wordmark`). La voix off le prononce dans `scripts/voice/lines.json` (V07, V14).
+`source/lib/brand.js` (`wordmark`). La voix off le prononce dans `scripts/voice/lines.json` (V06, V14 ; champ `tts` pour Kyutai, `tts_google` pour Google).

@@ -190,9 +190,9 @@ def score(m, line=None):
     s += max(0, 2.2 - f0) * 0.8           # too flat = robotic
     s += max(0, f0 - 5.0) * 0.5           # too wild = over-acted
     nwords = len(m.get("transcript", "").split())
-    if nwords >= 4:                       # le débit n'a pas de sens sur deux mots
+    if nwords >= 4 and not (line and line.get("onsets")):   # pas de débit sur deux mots ni sur une liste de noms
         wpm = m.get("words_per_min_speech", 170)
-        s += max(0, wpm - 205) / 40       # rushed
+        s += max(0, wpm - 205) / 20       # rushed (la QA v1 a relevé des répliques pressées)
         s += max(0, 130 - wpm) / 40       # dragging
     med = m.get("f0_median_hz")
     if med:                               # pas de saut de registre entre répliques

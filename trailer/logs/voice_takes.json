@@ -2798,155 +2798,211 @@
   "provider": "kyutai",
   "voice": "unmute-prod-website_fabieng-enhanced-v2.wav",
   "text": "Des QCM corrigés, et expliqués.",
-  "best": "/home/user/cahier-hlp/trailer/audio/voice/takes/V10_kyutai_d256b93dea.wav",
+  "best": "/home/user/cahier-hlp/trailer/audio/voice/takes/V10_kyutai_5671b11ecb.wav",
   "takes": [
    {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V10_kyutai_728531fab3.wav",
-    "duration_s": 2.99,
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V10_kyutai_5fdd8349ea.wav",
+    "duration_s": 3.05,
     "transcript": "Des QCM corrigés et expliqués.",
     "wer": 0.0,
-    "mean_word_prob": 0.783,
-    "words_per_min_speech": 136.4,
+    "mean_word_prob": 0.771,
+    "words_per_min_speech": 137.0,
     "peak_dbfs": -7.65,
-    "f0_median_hz": 142.3,
+    "f0_median_hz": 142.7,
     "f0_std_st": 3.81,
     "f0_range_p5_p95_st": 11.0,
-    "voiced_ratio": 0.627,
-    "speech_time_s": 2.2,
+    "voiced_ratio": 0.613,
+    "speech_time_s": 2.19,
     "pauses_ge_180ms": 1,
     "mean_pause_s": 0.22,
-    "score": 0.868,
+    "score": 0.916,
     "seed": 1000,
     "words": [
      {
       "w": "Des",
       "t0": 0.0,
-      "t1": 0.5,
-      "p": 0.194
+      "t1": 0.52,
+      "p": 0.144
      },
      {
       "w": "QCM",
-      "t0": 0.5,
-      "t1": 1.54,
-      "p": 0.931
+      "t0": 0.52,
+      "t1": 1.56,
+      "p": 0.919
      },
      {
       "w": "corrigés",
-      "t0": 1.54,
+      "t0": 1.56,
       "t1": 2.2,
-      "p": 0.909
+      "p": 0.884
      },
      {
       "w": "et",
       "t0": 2.2,
-      "t1": 2.7,
-      "p": 0.896
+      "t1": 2.72,
+      "p": 0.924
      },
      {
       "w": "expliqués.",
-      "t0": 2.7,
-      "t1": 3.06,
+      "t0": 2.72,
+      "t1": 3.1,
       "p": 0.984
      }
     ]
    },
    {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V10_kyutai_21e4271d38.wav",
-    "duration_s": 2.81,
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V10_kyutai_6945d361ca.wav",
+    "duration_s": 2.88,
     "transcript": "Des QCM corrigés et expliqués.",
     "wer": 0.0,
-    "mean_word_prob": 0.826,
+    "mean_word_prob": 0.83,
     "words_per_min_speech": 130.4,
     "peak_dbfs": -2.79,
     "f0_median_hz": 148.6,
     "f0_std_st": 3.21,
     "f0_range_p5_p95_st": 9.6,
-    "voiced_ratio": 0.733,
+    "voiced_ratio": 0.715,
     "speech_time_s": 2.3,
     "pauses_ge_180ms": 0,
     "mean_pause_s": 0.0,
-    "score": 0.696,
+    "score": 1.147,
     "seed": 8919,
     "words": [
      {
       "w": "Des",
       "t0": 0.0,
-      "t1": 0.48,
-      "p": 0.343
+      "t1": 0.54,
+      "p": 0.357
      },
      {
       "w": "QCM",
-      "t0": 0.48,
-      "t1": 1.32,
-      "p": 0.919
+      "t0": 0.54,
+      "t1": 1.4,
+      "p": 0.928
      },
      {
       "w": "corrigés",
-      "t0": 1.32,
-      "t1": 1.98,
-      "p": 0.901
+      "t0": 1.4,
+      "t1": 2.02,
+      "p": 0.894
      },
      {
       "w": "et",
-      "t0": 1.98,
-      "t1": 2.4,
-      "p": 0.978
+      "t0": 2.02,
+      "t1": 2.48,
+      "p": 0.983
      },
      {
       "w": "expliqués.",
-      "t0": 2.4,
-      "t1": 2.82,
+      "t0": 2.48,
+      "t1": 2.88,
       "p": 0.989
      }
     ]
    },
    {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V10_kyutai_d256b93dea.wav",
-    "duration_s": 3.09,
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V10_kyutai_5671b11ecb.wav",
+    "duration_s": 3.16,
     "transcript": "Des QCM corrigés et expliqués.",
     "wer": 0.0,
-    "mean_word_prob": 0.833,
+    "mean_word_prob": 0.824,
     "words_per_min_speech": 130.4,
     "peak_dbfs": -6.71,
     "f0_median_hz": 144.4,
     "f0_std_st": 3.37,
     "f0_range_p5_p95_st": 9.9,
-    "voiced_ratio": 0.628,
+    "voiced_ratio": 0.614,
     "speech_time_s": 2.3,
     "pauses_ge_180ms": 0,
     "mean_pause_s": 0.0,
-    "score": 0.668,
+    "score": 0.774,
     "seed": 16838,
     "words": [
      {
       "w": "Des",
       "t0": 0.0,
-      "t1": 0.5,
-      "p": 0.339
+      "t1": 0.54,
+      "p": 0.298
      },
      {
       "w": "QCM",
-      "t0": 0.5,
-      "t1": 1.58,
-      "p": 0.964
+      "t0": 0.54,
+      "t1": 1.64,
+      "p": 0.959
      },
      {
       "w": "corrigés",
-      "t0": 1.58,
-      "t1": 2.32,
-      "p": 0.883
+      "t0": 1.64,
+      "t1": 2.38,
+      "p": 0.882
      },
      {
       "w": "et",
-      "t0": 2.32,
-      "t1": 2.7,
-      "p": 0.989
+      "t0": 2.38,
+      "t1": 2.8,
+      "p": 0.99
      },
      {
       "w": "expliqués.",
-      "t0": 2.7,
-      "t1": 3.1,
+      "t0": 2.8,
+      "t1": 3.18,
       "p": 0.991
+     }
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V10_kyutai_287adde3a0.wav",
+    "duration_s": 3.46,
+    "transcript": "DQ, C, M, corriger et expliquer.",
+    "wer": 1.0,
+    "mean_word_prob": 0.731,
+    "words_per_min_speech": 141.5,
+    "peak_dbfs": -5.38,
+    "f0_median_hz": 139.8,
+    "f0_std_st": 3.96,
+    "f0_range_p5_p95_st": 13.94,
+    "voiced_ratio": 0.561,
+    "speech_time_s": 2.12,
+    "pauses_ge_180ms": 2,
+    "mean_pause_s": 0.395,
+    "score": 11.076,
+    "seed": 24757,
+    "words": [
+     {
+      "w": "DQ,",
+      "t0": 0.0,
+      "t1": 0.86,
+      "p": 0.84
+     },
+     {
+      "w": "C,",
+      "t0": 1.3,
+      "t1": 1.48,
+      "p": 0.57
+     },
+     {
+      "w": "M,",
+      "t0": 1.7,
+      "t1": 2.02,
+      "p": 0.962
+     },
+     {
+      "w": "corriger",
+      "t0": 2.06,
+      "t1": 2.66,
+      "p": 0.598
+     },
+     {
+      "w": "et",
+      "t0": 2.66,
+      "t1": 3.08,
+      "p": 0.427
+     },
+     {
+      "w": "expliquer.",
+      "t0": 3.08,
+      "t1": 3.36,
+      "p": 0.989
      }
     ]
    }
@@ -2956,313 +3012,313 @@
   "provider": "kyutai",
   "voice": "unmute-prod-website_fabieng-enhanced-v2.wav",
   "text": "Et une frise, pour relier les œuvres… de Rabelais à Arendt.",
-  "best": "/home/user/cahier-hlp/trailer/audio/voice/takes/V11_kyutai_a458b8d24a.wav",
+  "best": "/home/user/cahier-hlp/trailer/audio/voice/takes/V11_kyutai_ea28369590.wav",
   "takes": [
    {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V11_kyutai_deeb2711e7.wav",
-    "duration_s": 4.15,
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V11_kyutai_f7d3fb759b.wav",
+    "duration_s": 4.22,
     "transcript": "et une frise pour relier les oeuvres de Rabelais à Arantes.",
     "wer": 0.091,
-    "mean_word_prob": 0.9,
+    "mean_word_prob": 0.893,
     "words_per_min_speech": 193.5,
     "peak_dbfs": -3.5,
     "f0_median_hz": 113.3,
     "f0_std_st": 2.41,
     "f0_range_p5_p95_st": 7.4,
-    "voiced_ratio": 0.844,
+    "voiced_ratio": 0.83,
     "speech_time_s": 3.41,
     "pauses_ge_180ms": 0,
     "mean_pause_s": 0.0,
-    "score": 1.31,
+    "score": 1.428,
     "seed": 1000,
     "words": [
      {
       "w": "et",
       "t0": 0.0,
-      "t1": 0.3,
-      "p": 0.69
+      "t1": 0.34,
+      "p": 0.691
      },
      {
       "w": "une",
-      "t0": 0.3,
-      "t1": 0.62,
+      "t0": 0.34,
+      "t1": 0.66,
       "p": 0.991
      },
      {
       "w": "frise",
-      "t0": 0.62,
-      "t1": 1.1,
-      "p": 0.98
+      "t0": 0.66,
+      "t1": 1.14,
+      "p": 0.978
      },
      {
       "w": "pour",
-      "t0": 1.1,
-      "t1": 1.46,
-      "p": 0.952
+      "t0": 1.14,
+      "t1": 1.52,
+      "p": 0.945
      },
      {
       "w": "relier",
-      "t0": 1.46,
-      "t1": 1.86,
-      "p": 0.995
+      "t0": 1.52,
+      "t1": 1.9,
+      "p": 0.994
      },
      {
       "w": "les",
-      "t0": 1.86,
-      "t1": 2.14,
+      "t0": 1.9,
+      "t1": 2.2,
       "p": 0.994
      },
      {
       "w": "oeuvres",
-      "t0": 2.14,
-      "t1": 2.82,
+      "t0": 2.2,
+      "t1": 2.86,
       "p": 0.876
      },
      {
       "w": "de",
-      "t0": 2.82,
-      "t1": 3.1,
+      "t0": 2.86,
+      "t1": 3.16,
       "p": 0.994
      },
      {
       "w": "Rabelais",
-      "t0": 3.1,
-      "t1": 3.68,
-      "p": 0.891
+      "t0": 3.16,
+      "t1": 3.72,
+      "p": 0.867
      },
      {
       "w": "à",
-      "t0": 3.68,
-      "t1": 3.84,
-      "p": 0.98
+      "t0": 3.72,
+      "t1": 3.9,
+      "p": 0.983
      },
      {
       "w": "Arantes.",
-      "t0": 3.84,
-      "t1": 4.08,
-      "p": 0.557
+      "t0": 3.9,
+      "t1": 4.14,
+      "p": 0.513
      }
     ]
    },
    {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V11_kyutai_a9785bb101.wav",
-    "duration_s": 4.02,
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V11_kyutai_7c7a6de37f.wav",
+    "duration_s": 4.09,
     "transcript": "et une frise pour relier les œuvres de Rabelais à Arantes.",
     "wer": 0.091,
-    "mean_word_prob": 0.898,
+    "mean_word_prob": 0.895,
     "words_per_min_speech": 192.4,
     "peak_dbfs": -3.22,
     "f0_median_hz": 125.3,
     "f0_std_st": 3.16,
     "f0_range_p5_p95_st": 10.32,
-    "voiced_ratio": 0.871,
+    "voiced_ratio": 0.856,
     "speech_time_s": 3.43,
     "pauses_ge_180ms": 0,
     "mean_pause_s": 0.0,
-    "score": 1.318,
+    "score": 1.33,
     "seed": 8919,
     "words": [
      {
       "w": "et",
       "t0": 0.0,
-      "t1": 0.24,
-      "p": 0.699
+      "t1": 0.3,
+      "p": 0.664
      },
      {
       "w": "une",
-      "t0": 0.24,
-      "t1": 0.56,
-      "p": 0.992
+      "t0": 0.3,
+      "t1": 0.6,
+      "p": 0.993
      },
      {
       "w": "frise",
-      "t0": 0.56,
-      "t1": 0.98,
-      "p": 0.987
+      "t0": 0.6,
+      "t1": 1.04,
+      "p": 0.982
      },
      {
       "w": "pour",
-      "t0": 0.98,
-      "t1": 1.32,
-      "p": 0.944
+      "t0": 1.04,
+      "t1": 1.38,
+      "p": 0.96
      },
      {
       "w": "relier",
-      "t0": 1.32,
-      "t1": 1.78,
+      "t0": 1.38,
+      "t1": 1.84,
       "p": 0.996
      },
      {
       "w": "les",
-      "t0": 1.78,
-      "t1": 2.04,
-      "p": 0.997
+      "t0": 1.84,
+      "t1": 2.1,
+      "p": 0.998
      },
      {
       "w": "œuvres",
-      "t0": 2.04,
-      "t1": 2.68,
-      "p": 0.891
+      "t0": 2.1,
+      "t1": 2.74,
+      "p": 0.894
      },
      {
       "w": "de",
-      "t0": 2.68,
-      "t1": 2.98,
+      "t0": 2.74,
+      "t1": 3.02,
       "p": 0.994
      },
      {
       "w": "Rabelais",
-      "t0": 2.98,
-      "t1": 3.44,
-      "p": 0.881
+      "t0": 3.02,
+      "t1": 3.48,
+      "p": 0.857
      },
      {
       "w": "à",
-      "t0": 3.44,
-      "t1": 3.62,
-      "p": 0.992
+      "t0": 3.48,
+      "t1": 3.68,
+      "p": 0.993
      },
      {
       "w": "Arantes.",
-      "t0": 3.62,
-      "t1": 3.92,
-      "p": 0.501
+      "t0": 3.68,
+      "t1": 3.98,
+      "p": 0.517
      }
     ]
    },
    {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V11_kyutai_c6bcfc8c25.wav",
-    "duration_s": 4.56,
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V11_kyutai_ea28369590.wav",
+    "duration_s": 4.63,
     "transcript": "et une frise pour relier les oeuvres de Rabelais à Arendt.",
     "wer": 0.0,
-    "mean_word_prob": 0.895,
-    "words_per_min_speech": 191.9,
+    "mean_word_prob": 0.9,
+    "words_per_min_speech": 191.3,
     "peak_dbfs": -1.23,
     "f0_median_hz": 130.5,
     "f0_std_st": 3.85,
     "f0_range_p5_p95_st": 10.88,
-    "voiced_ratio": 0.757,
-    "speech_time_s": 3.44,
+    "voiced_ratio": 0.746,
+    "speech_time_s": 3.45,
     "pauses_ge_180ms": 1,
     "mean_pause_s": 0.42,
-    "score": 0.42,
+    "score": 0.4,
     "seed": 16838,
     "words": [
      {
       "w": "et",
       "t0": 0.0,
-      "t1": 0.32,
-      "p": 0.603
+      "t1": 0.36,
+      "p": 0.631
      },
      {
       "w": "une",
-      "t0": 0.32,
-      "t1": 0.68,
-      "p": 0.984
+      "t0": 0.36,
+      "t1": 0.74,
+      "p": 0.987
      },
      {
       "w": "frise",
-      "t0": 0.68,
-      "t1": 1.22,
-      "p": 0.97
+      "t0": 0.74,
+      "t1": 1.14,
+      "p": 0.978
      },
      {
       "w": "pour",
-      "t0": 1.22,
-      "t1": 1.64,
-      "p": 0.678
+      "t0": 1.14,
+      "t1": 1.68,
+      "p": 0.72
      },
      {
       "w": "relier",
-      "t0": 1.64,
-      "t1": 2.08,
+      "t0": 1.68,
+      "t1": 2.12,
       "p": 0.991
      },
      {
       "w": "les",
-      "t0": 2.08,
-      "t1": 2.38,
+      "t0": 2.12,
+      "t1": 2.44,
       "p": 0.998
      },
      {
       "w": "oeuvres",
-      "t0": 2.38,
-      "t1": 3.0,
-      "p": 0.875
+      "t0": 2.44,
+      "t1": 3.04,
+      "p": 0.869
      },
      {
       "w": "de",
-      "t0": 3.0,
-      "t1": 3.28,
-      "p": 0.996
+      "t0": 3.04,
+      "t1": 3.34,
+      "p": 0.995
      },
      {
       "w": "Rabelais",
-      "t0": 3.28,
-      "t1": 3.86,
-      "p": 0.89
+      "t0": 3.34,
+      "t1": 3.92,
+      "p": 0.864
      },
      {
       "w": "à",
-      "t0": 3.86,
-      "t1": 4.08,
-      "p": 0.991
+      "t0": 3.92,
+      "t1": 4.14,
+      "p": 0.989
      },
      {
       "w": "Arendt.",
-      "t0": 4.08,
-      "t1": 4.58,
-      "p": 0.873
+      "t0": 4.14,
+      "t1": 4.64,
+      "p": 0.88
      }
     ]
    },
    {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V11_kyutai_a458b8d24a.wav",
-    "duration_s": 4.5,
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V11_kyutai_924ba91efb.wav",
+    "duration_s": 4.52,
     "transcript": "et une frise pour relier les oeuvres de Rabelais à Arendt.",
     "wer": 0.0,
-    "mean_word_prob": 0.902,
+    "mean_word_prob": 0.898,
     "words_per_min_speech": 187.5,
     "peak_dbfs": -1.0,
-    "f0_median_hz": 121.4,
-    "f0_std_st": 3.53,
-    "f0_range_p5_p95_st": 11.1,
-    "voiced_ratio": 0.763,
+    "f0_median_hz": 120.7,
+    "f0_std_st": 3.54,
+    "f0_range_p5_p95_st": 11.11,
+    "voiced_ratio": 0.748,
     "speech_time_s": 3.52,
     "pauses_ge_180ms": 1,
-    "mean_pause_s": 0.42,
-    "score": 0.392,
+    "mean_pause_s": 0.43,
+    "score": 0.408,
     "seed": 24757,
     "words": [
      {
       "w": "et",
       "t0": 0.0,
       "t1": 0.68,
-      "p": 0.588
+      "p": 0.582
      },
      {
       "w": "une",
       "t0": 0.68,
       "t1": 1.04,
-      "p": 0.983
+      "p": 0.984
      },
      {
       "w": "frise",
       "t0": 1.04,
       "t1": 1.44,
-      "p": 0.974
+      "p": 0.971
      },
      {
       "w": "pour",
       "t0": 1.44,
       "t1": 1.76,
-      "p": 0.816
+      "p": 0.82
      },
      {
       "w": "relier",
       "t0": 1.76,
       "t1": 2.42,
-      "p": 0.991
+      "p": 0.992
      },
      {
       "w": "les",
@@ -3274,7 +3330,7 @@
       "w": "oeuvres",
       "t0": 2.76,
       "t1": 3.36,
-      "p": 0.901
+      "p": 0.907
      },
      {
       "w": "de",
@@ -3285,20 +3341,20 @@
      {
       "w": "Rabelais",
       "t0": 3.62,
-      "t1": 4.02,
-      "p": 0.812
+      "t1": 4.0,
+      "p": 0.771
      },
      {
       "w": "à",
-      "t0": 4.02,
-      "t1": 4.2,
-      "p": 0.971
+      "t0": 4.0,
+      "t1": 4.18,
+      "p": 0.96
      },
      {
       "w": "Arendt.",
-      "t0": 4.2,
+      "t0": 4.18,
       "t1": 4.48,
-      "p": 0.901
+      "p": 0.905
      }
     ]
    }
@@ -3307,263 +3363,253 @@
  "V12": {
   "provider": "kyutai",
   "voice": "unmute-prod-website_fabieng-enhanced-v2.wav",
-  "text": "C'est gratuit, sans compte. Ta progression reste sur ton appareil.",
-  "best": "/home/user/cahier-hlp/trailer/audio/voice/takes/V12_kyutai_b8a187241f.wav",
+  "text": "Gratuit, sans compte, même sur ton téléphone.",
+  "best": "/home/user/cahier-hlp/trailer/audio/voice/takes/V12_kyutai_c7557dcf13.wav",
   "takes": [
    {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V12_kyutai_b8a187241f.wav",
-    "duration_s": 4.52,
-    "transcript": "C'est gratuit, sans compte, ta progression reste sur ton appareil.",
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V12_kyutai_e5f8b280b5.wav",
+    "duration_s": 2.79,
+    "transcript": "gratuit, sans compte, même sur ton téléphone.",
     "wer": 0.0,
-    "mean_word_prob": 0.97,
-    "words_per_min_speech": 193.0,
-    "peak_dbfs": -2.32,
-    "f0_median_hz": 136.3,
-    "f0_std_st": 4.84,
-    "f0_range_p5_p95_st": 15.43,
-    "voiced_ratio": 0.611,
-    "speech_time_s": 3.42,
+    "mean_word_prob": 0.921,
+    "words_per_min_speech": 211.1,
+    "peak_dbfs": -4.3,
+    "f0_median_hz": 129.4,
+    "f0_std_st": 2.22,
+    "f0_range_p5_p95_st": 7.6,
+    "voiced_ratio": 0.625,
+    "speech_time_s": 1.99,
     "pauses_ge_180ms": 1,
-    "mean_pause_s": 0.62,
-    "score": 0.12,
+    "mean_pause_s": 0.33,
+    "score": 0.468,
     "seed": 1000,
     "words": [
      {
-      "w": "C",
-      "t0": 0.0,
-      "t1": 0.0,
-      "p": 0.779
-     },
-     {
-      "w": "'est",
-      "t0": 0.0,
-      "t1": 0.5,
-      "p": 0.999
-     },
-     {
       "w": "gratuit,",
-      "t0": 0.5,
-      "t1": 0.92,
-      "p": 0.994
+      "t0": 0.18,
+      "t1": 0.66,
+      "p": 0.499
      },
      {
       "w": "sans",
-      "t0": 1.2,
-      "t1": 1.2,
-      "p": 0.966
-     },
-     {
-      "w": "compte,",
-      "t0": 1.2,
-      "t1": 1.58,
-      "p": 0.975
-     },
-     {
-      "w": "ta",
-      "t0": 2.08,
-      "t1": 2.22,
-      "p": 0.971
-     },
-     {
-      "w": "progression",
-      "t0": 2.22,
-      "t1": 2.94,
-      "p": 0.999
-     },
-     {
-      "w": "reste",
-      "t0": 2.94,
-      "t1": 3.56,
-      "p": 0.993
-     },
-     {
-      "w": "sur",
-      "t0": 3.56,
-      "t1": 3.86,
-      "p": 0.997
-     },
-     {
-      "w": "ton",
-      "t0": 3.86,
-      "t1": 4.04,
-      "p": 0.997
-     },
-     {
-      "w": "appareil.",
-      "t0": 4.04,
-      "t1": 4.56,
-      "p": 0.999
-     }
-    ]
-   },
-   {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V12_kyutai_d68654fab9.wav",
-    "duration_s": 3.89,
-    "transcript": "C'est gratuit, sans compte. Ta progression reste sur ton appareil.",
-    "wer": 0.0,
-    "mean_word_prob": 0.967,
-    "words_per_min_speech": 262.9,
-    "peak_dbfs": -1.74,
-    "f0_median_hz": 121.4,
-    "f0_std_st": 2.78,
-    "f0_range_p5_p95_st": 10.34,
-    "voiced_ratio": 0.527,
-    "speech_time_s": 2.51,
-    "pauses_ge_180ms": 2,
-    "mean_pause_s": 0.445,
-    "score": 1.579,
-    "seed": 8919,
-    "words": [
-     {
-      "w": "C",
-      "t0": 0.0,
-      "t1": 0.0,
-      "p": 0.741
-     },
-     {
-      "w": "'est",
-      "t0": 0.0,
-      "t1": 0.44,
-      "p": 0.999
-     },
-     {
-      "w": "gratuit,",
-      "t0": 0.44,
-      "t1": 0.84,
-      "p": 0.995
-     },
-     {
-      "w": "sans",
-      "t0": 1.18,
-      "t1": 1.3,
-      "p": 0.991
-     },
-     {
-      "w": "compte.",
-      "t0": 1.3,
-      "t1": 1.64,
-      "p": 0.948
-     },
-     {
-      "w": "Ta",
-      "t0": 2.14,
-      "t1": 2.24,
-      "p": 0.981
-     },
-     {
-      "w": "progression",
-      "t0": 2.24,
-      "t1": 2.66,
-      "p": 0.999
-     },
-     {
-      "w": "reste",
-      "t0": 2.66,
-      "t1": 3.02,
-      "p": 0.991
-     },
-     {
-      "w": "sur",
-      "t0": 3.02,
-      "t1": 3.24,
-      "p": 0.997
-     },
-     {
-      "w": "ton",
-      "t0": 3.24,
-      "t1": 3.4,
-      "p": 0.997
-     },
-     {
-      "w": "appareil.",
-      "t0": 3.4,
-      "t1": 3.88,
-      "p": 0.999
-     }
-    ]
-   },
-   {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V12_kyutai_90d7dce481.wav",
-    "duration_s": 4.24,
-    "transcript": "C'est gratuit, sans compte, ta progression reste sur ton appareil.",
-    "wer": 0.0,
-    "mean_word_prob": 0.966,
-    "words_per_min_speech": 205.0,
-    "peak_dbfs": -6.34,
-    "f0_median_hz": 131.6,
-    "f0_std_st": 3.35,
-    "f0_range_p5_p95_st": 11.2,
-    "voiced_ratio": 0.587,
-    "speech_time_s": 3.22,
-    "pauses_ge_180ms": 1,
-    "mean_pause_s": 0.53,
-    "score": 0.136,
-    "seed": 16838,
-    "words": [
-     {
-      "w": "C",
-      "t0": 0.0,
-      "t1": 0.2,
-      "p": 0.712
-     },
-     {
-      "w": "'est",
-      "t0": 0.2,
-      "t1": 0.44,
-      "p": 0.999
-     },
-     {
-      "w": "gratuit,",
-      "t0": 0.44,
-      "t1": 0.84,
-      "p": 0.995
-     },
-     {
-      "w": "sans",
-      "t0": 1.14,
-      "t1": 1.26,
-      "p": 0.99
-     },
-     {
-      "w": "compte,",
-      "t0": 1.26,
-      "t1": 1.66,
-      "p": 0.971
-     },
-     {
-      "w": "ta",
-      "t0": 2.12,
-      "t1": 2.24,
-      "p": 0.973
-     },
-     {
-      "w": "progression",
-      "t0": 2.24,
-      "t1": 2.84,
-      "p": 0.999
-     },
-     {
-      "w": "reste",
-      "t0": 2.84,
-      "t1": 3.26,
+      "t0": 0.88,
+      "t1": 1.0,
       "p": 0.996
      },
      {
+      "w": "compte,",
+      "t0": 1.0,
+      "t1": 1.46,
+      "p": 0.975
+     },
+     {
+      "w": "même",
+      "t0": 1.72,
+      "t1": 1.88,
+      "p": 0.992
+     },
+     {
       "w": "sur",
-      "t0": 3.26,
-      "t1": 3.54,
-      "p": 0.998
+      "t0": 1.88,
+      "t1": 2.1,
+      "p": 0.996
      },
      {
       "w": "ton",
-      "t0": 3.54,
-      "t1": 3.74,
+      "t0": 2.1,
+      "t1": 2.22,
+      "p": 0.988
+     },
+     {
+      "w": "téléphone.",
+      "t0": 2.22,
+      "t1": 2.62,
+      "p": 0.999
+     }
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V12_kyutai_f832e2d7fa.wav",
+    "duration_s": 2.35,
+    "transcript": "Gratuit, sans compte, même sur ton téléphone.",
+    "wer": 0.0,
+    "mean_word_prob": 0.958,
+    "words_per_min_speech": 214.3,
+    "peak_dbfs": -6.17,
+    "f0_median_hz": 141.9,
+    "f0_std_st": 4.14,
+    "f0_range_p5_p95_st": 15.09,
+    "voiced_ratio": 0.745,
+    "speech_time_s": 1.96,
+    "pauses_ge_180ms": 0,
+    "mean_pause_s": 0.0,
+    "score": 0.401,
+    "seed": 8919,
+    "words": [
+     {
+      "w": "Gratuit,",
+      "t0": 0.3,
+      "t1": 0.68,
+      "p": 0.767
+     },
+     {
+      "w": "sans",
+      "t0": 0.86,
+      "t1": 0.98,
+      "p": 0.996
+     },
+     {
+      "w": "compte,",
+      "t0": 0.98,
+      "t1": 1.26,
+      "p": 0.966
+     },
+     {
+      "w": "même",
+      "t0": 1.36,
+      "t1": 1.5,
+      "p": 0.994
+     },
+     {
+      "w": "sur",
+      "t0": 1.5,
+      "t1": 1.7,
+      "p": 0.995
+     },
+     {
+      "w": "ton",
+      "t0": 1.7,
+      "t1": 1.82,
+      "p": 0.986
+     },
+     {
+      "w": "téléphone.",
+      "t0": 1.82,
+      "t1": 2.18,
+      "p": 0.999
+     }
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V12_kyutai_c7557dcf13.wav",
+    "duration_s": 2.93,
+    "transcript": "Gratuit, sans compte, même sur ton téléphone.",
+    "wer": 0.0,
+    "mean_word_prob": 0.953,
+    "words_per_min_speech": 205.9,
+    "peak_dbfs": -5.99,
+    "f0_median_hz": 137.8,
+    "f0_std_st": 3.64,
+    "f0_range_p5_p95_st": 11.47,
+    "voiced_ratio": 0.558,
+    "speech_time_s": 2.04,
+    "pauses_ge_180ms": 1,
+    "mean_pause_s": 0.47,
+    "score": 0.211,
+    "seed": 16838,
+    "words": [
+     {
+      "w": "Gratuit,",
+      "t0": 0.14,
+      "t1": 0.74,
+      "p": 0.714
+     },
+     {
+      "w": "sans",
+      "t0": 0.98,
+      "t1": 1.1,
       "p": 0.997
      },
      {
-      "w": "appareil.",
-      "t0": 3.74,
-      "t1": 4.3,
+      "w": "compte,",
+      "t0": 1.1,
+      "t1": 1.6,
+      "p": 0.983
+     },
+     {
+      "w": "même",
+      "t0": 1.98,
+      "t1": 2.12,
+      "p": 0.994
+     },
+     {
+      "w": "sur",
+      "t0": 2.12,
+      "t1": 2.34,
+      "p": 0.996
+     },
+     {
+      "w": "ton",
+      "t0": 2.34,
+      "t1": 2.44,
+      "p": 0.989
+     },
+     {
+      "w": "téléphone.",
+      "t0": 2.44,
+      "t1": 2.8,
+      "p": 0.999
+     }
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V12_kyutai_09015e0886.wav",
+    "duration_s": 2.61,
+    "transcript": "Gratuit, sans compte, même sur ton téléphone.",
+    "wer": 0.0,
+    "mean_word_prob": 0.957,
+    "words_per_min_speech": 232.0,
+    "peak_dbfs": -5.15,
+    "f0_median_hz": 157.0,
+    "f0_std_st": 4.44,
+    "f0_range_p5_p95_st": 16.33,
+    "voiced_ratio": 0.557,
+    "speech_time_s": 1.81,
+    "pauses_ge_180ms": 1,
+    "mean_pause_s": 0.45,
+    "score": 2.075,
+    "seed": 24757,
+    "words": [
+     {
+      "w": "Gratuit,",
+      "t0": 0.12,
+      "t1": 0.64,
+      "p": 0.762
+     },
+     {
+      "w": "sans",
+      "t0": 0.8,
+      "t1": 0.86,
+      "p": 0.995
+     },
+     {
+      "w": "compte,",
+      "t0": 0.86,
+      "t1": 1.28,
+      "p": 0.973
+     },
+     {
+      "w": "même",
+      "t0": 1.7,
+      "t1": 1.82,
+      "p": 0.987
+     },
+     {
+      "w": "sur",
+      "t0": 1.82,
+      "t1": 2.0,
+      "p": 0.994
+     },
+     {
+      "w": "ton",
+      "t0": 2.0,
+      "t1": 2.12,
+      "p": 0.988
+     },
+     {
+      "w": "téléphone.",
+      "t0": 2.12,
+      "t1": 2.46,
       "p": 0.999
      }
     ]
@@ -3573,254 +3619,490 @@
  "V13": {
   "provider": "kyutai",
   "voice": "unmute-prod-website_fabieng-enhanced-v2.wav",
-  "text": "Pensé en TG1, pour toute la classe.",
-  "best": "/home/user/cahier-hlp/trailer/audio/voice/takes/V13_kyutai_fbb216e6fb.wav",
+  "text": "Fait en TG1, par l'un d'entre nous. Pour toute la classe.",
+  "best": "/home/user/cahier-hlp/trailer/audio/voice/takes/V13_kyutai_302d15e198.wav",
   "takes": [
    {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V13_kyutai_fbb216e6fb.wav",
-    "duration_s": 2.55,
-    "transcript": "Pensez en TG1 pour toute la classe.",
-    "wer": 0.0,
-    "mean_word_prob": 0.941,
-    "words_per_min_speech": 247.1,
-    "peak_dbfs": -6.4,
-    "f0_median_hz": 133.9,
-    "f0_std_st": 2.3,
-    "f0_range_p5_p95_st": 7.78,
-    "voiced_ratio": 0.566,
-    "speech_time_s": 1.7,
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V13_kyutai_24f95f92bf.wav",
+    "duration_s": 3.84,
+    "transcript": "Fâte en TG1 par l'un d'entre nous, pour toute la classe.",
+    "wer": 0.077,
+    "mean_word_prob": 0.899,
+    "words_per_min_speech": 327.7,
+    "peak_dbfs": -6.18,
+    "f0_median_hz": 130.1,
+    "f0_std_st": 2.92,
+    "f0_range_p5_p95_st": 10.56,
+    "voiced_ratio": 0.56,
+    "speech_time_s": 2.38,
     "pauses_ge_180ms": 1,
-    "mean_pause_s": 0.3,
-    "score": 1.288,
+    "mean_pause_s": 0.65,
+    "score": 4.242,
     "seed": 1000,
     "words": [
      {
-      "w": "Pensez",
-      "t0": 0.04,
-      "t1": 0.58,
-      "p": 0.916
+      "w": "Fâte",
+      "t0": 0.06,
+      "t1": 0.46,
+      "p": 0.372
      },
      {
       "w": "en",
-      "t0": 0.58,
-      "t1": 0.78,
-      "p": 0.967
+      "t0": 0.46,
+      "t1": 0.66,
+      "p": 0.767
      },
      {
       "w": "TG1",
-      "t0": 0.78,
-      "t1": 1.5,
-      "p": 0.84
+      "t0": 0.66,
+      "t1": 1.26,
+      "p": 0.826
      },
      {
-      "w": "pour",
-      "t0": 1.5,
-      "t1": 1.76,
-      "p": 0.876
+      "w": "par",
+      "t0": 1.26,
+      "t1": 1.6,
+      "p": 0.908
      },
      {
-      "w": "toute",
-      "t0": 1.76,
-      "t1": 1.92,
+      "w": "l",
+      "t0": 1.6,
+      "t1": 1.72,
+      "p": 0.945
+     },
+     {
+      "w": "'un",
+      "t0": 1.72,
+      "t1": 1.82,
       "p": 0.993
      },
      {
-      "w": "la",
-      "t0": 1.92,
-      "t1": 2.12,
-      "p": 0.994
+      "w": "d",
+      "t0": 1.82,
+      "t1": 1.9,
+      "p": 0.997
      },
      {
-      "w": "classe.",
-      "t0": 2.12,
-      "t1": 2.4,
-      "p": 0.998
-     }
-    ]
-   },
-   {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V13_kyutai_b383efa75c.wav",
-    "duration_s": 2.56,
-    "transcript": "Pensez en TG1 pour toute la classe.",
-    "wer": 0.0,
-    "mean_word_prob": 0.954,
-    "words_per_min_speech": 269.2,
-    "peak_dbfs": -6.24,
-    "f0_median_hz": 150.3,
-    "f0_std_st": 3.8,
-    "f0_range_p5_p95_st": 10.72,
-    "voiced_ratio": 0.529,
-    "speech_time_s": 1.56,
-    "pauses_ge_180ms": 1,
-    "mean_pause_s": 0.25,
-    "score": 1.789,
-    "seed": 8919,
-    "words": [
-     {
-      "w": "Pensez",
-      "t0": 0.0,
-      "t1": 0.5,
-      "p": 0.935
+      "w": "'entre",
+      "t0": 1.9,
+      "t1": 2.2,
+      "p": 0.995
      },
      {
-      "w": "en",
-      "t0": 0.5,
-      "t1": 0.68,
+      "w": "nous,",
+      "t0": 2.2,
+      "t1": 2.66,
+      "p": 0.938
+     },
+     {
+      "w": "pour",
+      "t0": 3.06,
+      "t1": 3.16,
+      "p": 0.968
+     },
+     {
+      "w": "toute",
+      "t0": 3.16,
+      "t1": 3.28,
       "p": 0.987
      },
      {
-      "w": "TG1",
-      "t0": 0.68,
-      "t1": 1.38,
-      "p": 0.837
-     },
-     {
-      "w": "pour",
-      "t0": 1.38,
-      "t1": 1.72,
-      "p": 0.929
-     },
-     {
-      "w": "toute",
-      "t0": 1.72,
-      "t1": 1.92,
-      "p": 0.993
-     },
-     {
       "w": "la",
-      "t0": 1.92,
-      "t1": 2.14,
-      "p": 0.997
-     },
-     {
-      "w": "classe.",
-      "t0": 2.14,
-      "t1": 2.4,
-      "p": 0.999
-     }
-    ]
-   },
-   {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V13_kyutai_241f4f976f.wav",
-    "duration_s": 2.42,
-    "transcript": "Pensez en TG1 pour toute la classe.",
-    "wer": 0.0,
-    "mean_word_prob": 0.956,
-    "words_per_min_speech": 260.9,
-    "peak_dbfs": -4.34,
-    "f0_median_hz": 153.8,
-    "f0_std_st": 3.09,
-    "f0_range_p5_p95_st": 9.76,
-    "voiced_ratio": 0.599,
-    "speech_time_s": 1.61,
-    "pauses_ge_180ms": 1,
-    "mean_pause_s": 0.25,
-    "score": 1.573,
-    "seed": 16838,
-    "words": [
-     {
-      "w": "Pensez",
-      "t0": 0.0,
-      "t1": 0.52,
-      "p": 0.923
-     },
-     {
-      "w": "en",
-      "t0": 0.52,
-      "t1": 0.74,
-      "p": 0.991
-     },
-     {
-      "w": "TG1",
-      "t0": 0.74,
-      "t1": 1.32,
-      "p": 0.878
-     },
-     {
-      "w": "pour",
-      "t0": 1.32,
-      "t1": 1.66,
-      "p": 0.914
-     },
-     {
-      "w": "toute",
-      "t0": 1.66,
-      "t1": 1.84,
-      "p": 0.993
-     },
-     {
-      "w": "la",
-      "t0": 1.84,
-      "t1": 2.04,
-      "p": 0.997
-     },
-     {
-      "w": "classe.",
-      "t0": 2.04,
-      "t1": 2.26,
-      "p": 0.999
-     }
-    ]
-   },
-   {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V13_kyutai_1d34908733.wav",
-    "duration_s": 2.4,
-    "transcript": "Pensez en TG1 pour toute la classe.",
-    "wer": 0.0,
-    "mean_word_prob": 0.955,
-    "words_per_min_speech": 276.3,
-    "peak_dbfs": -0.0,
-    "f0_median_hz": 186.1,
-    "f0_std_st": 4.54,
-    "f0_range_p5_p95_st": 13.02,
-    "voiced_ratio": 0.494,
-    "speech_time_s": 1.52,
-    "pauses_ge_180ms": 1,
-    "mean_pause_s": 0.2,
-    "score": 1.963,
-    "seed": 24757,
-    "words": [
-     {
-      "w": "Pensez",
-      "t0": 0.0,
-      "t1": 0.52,
-      "p": 0.921
-     },
-     {
-      "w": "en",
-      "t0": 0.52,
-      "t1": 0.7,
-      "p": 0.992
-     },
-     {
-      "w": "TG1",
-      "t0": 0.7,
-      "t1": 1.3,
-      "p": 0.839
-     },
-     {
-      "w": "pour",
-      "t0": 1.3,
-      "t1": 1.62,
-      "p": 0.944
-     },
-     {
-      "w": "toute",
-      "t0": 1.62,
-      "t1": 1.82,
-      "p": 0.992
-     },
-     {
-      "w": "la",
-      "t0": 1.82,
-      "t1": 2.02,
+      "t0": 3.28,
+      "t1": 3.48,
       "p": 0.996
      },
      {
       "w": "classe.",
-      "t0": 2.02,
-      "t1": 2.28,
+      "t0": 3.48,
+      "t1": 3.68,
+      "p": 0.996
+     }
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V13_kyutai_302d15e198.wav",
+    "duration_s": 4.36,
+    "transcript": "fait en TG1 par l'un d'entre nous, pour toute la classe.",
+    "wer": 0.0,
+    "mean_word_prob": 0.922,
+    "words_per_min_speech": 303.5,
+    "peak_dbfs": -6.58,
+    "f0_median_hz": 142.7,
+    "f0_std_st": 4.16,
+    "f0_range_p5_p95_st": 13.08,
+    "voiced_ratio": 0.541,
+    "speech_time_s": 2.57,
+    "pauses_ge_180ms": 2,
+    "mean_pause_s": 0.46,
+    "score": 2.774,
+    "seed": 8919,
+    "words": [
+     {
+      "w": "fait",
+      "t0": 0.0,
+      "t1": 0.46,
+      "p": 0.33
+     },
+     {
+      "w": "en",
+      "t0": 0.46,
+      "t1": 0.86,
+      "p": 0.948
+     },
+     {
+      "w": "TG1",
+      "t0": 0.86,
+      "t1": 1.44,
+      "p": 0.852
+     },
+     {
+      "w": "par",
+      "t0": 1.44,
+      "t1": 1.78,
+      "p": 0.955
+     },
+     {
+      "w": "l",
+      "t0": 1.78,
+      "t1": 1.86,
+      "p": 0.99
+     },
+     {
+      "w": "'un",
+      "t0": 1.86,
+      "t1": 2.04,
+      "p": 0.997
+     },
+     {
+      "w": "d",
+      "t0": 2.04,
+      "t1": 2.18,
+      "p": 0.997
+     },
+     {
+      "w": "'entre",
+      "t0": 2.18,
+      "t1": 2.44,
+      "p": 0.994
+     },
+     {
+      "w": "nous,",
+      "t0": 2.44,
+      "t1": 2.9,
+      "p": 0.948
+     },
+     {
+      "w": "pour",
+      "t0": 3.34,
+      "t1": 3.52,
+      "p": 0.991
+     },
+     {
+      "w": "toute",
+      "t0": 3.52,
+      "t1": 3.66,
+      "p": 0.992
+     },
+     {
+      "w": "la",
+      "t0": 3.66,
+      "t1": 3.9,
+      "p": 0.997
+     },
+     {
+      "w": "classe.",
+      "t0": 3.9,
+      "t1": 4.16,
       "p": 0.998
+     }
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V13_kyutai_bf6584d804.wav",
+    "duration_s": 3.99,
+    "transcript": "Faites en TG1 par l'un d'entre nous. Pour toute la classe.",
+    "wer": 0.077,
+    "mean_word_prob": 0.954,
+    "words_per_min_speech": 319.7,
+    "peak_dbfs": -4.17,
+    "f0_median_hz": 127.1,
+    "f0_std_st": 2.35,
+    "f0_range_p5_p95_st": 7.58,
+    "voiced_ratio": 0.583,
+    "speech_time_s": 2.44,
+    "pauses_ge_180ms": 2,
+    "mean_pause_s": 0.435,
+    "score": 3.822,
+    "seed": 16838,
+    "words": [
+     {
+      "w": "Faites",
+      "t0": 0.2,
+      "t1": 0.6,
+      "p": 0.819
+     },
+     {
+      "w": "en",
+      "t0": 0.6,
+      "t1": 0.76,
+      "p": 0.908
+     },
+     {
+      "w": "TG1",
+      "t0": 0.76,
+      "t1": 1.34,
+      "p": 0.838
+     },
+     {
+      "w": "par",
+      "t0": 1.34,
+      "t1": 1.74,
+      "p": 0.963
+     },
+     {
+      "w": "l",
+      "t0": 1.74,
+      "t1": 1.86,
+      "p": 0.964
+     },
+     {
+      "w": "'un",
+      "t0": 1.86,
+      "t1": 1.98,
+      "p": 0.995
+     },
+     {
+      "w": "d",
+      "t0": 1.98,
+      "t1": 2.12,
+      "p": 0.996
+     },
+     {
+      "w": "'entre",
+      "t0": 2.12,
+      "t1": 2.34,
+      "p": 0.997
+     },
+     {
+      "w": "nous.",
+      "t0": 2.34,
+      "t1": 2.78,
+      "p": 0.974
+     },
+     {
+      "w": "Pour",
+      "t0": 3.14,
+      "t1": 3.32,
+      "p": 0.972
+     },
+     {
+      "w": "toute",
+      "t0": 3.32,
+      "t1": 3.46,
+      "p": 0.984
+     },
+     {
+      "w": "la",
+      "t0": 3.46,
+      "t1": 3.66,
+      "p": 0.997
+     },
+     {
+      "w": "classe.",
+      "t0": 3.66,
+      "t1": 3.86,
+      "p": 0.997
+     }
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V13_kyutai_d5e8f339d9.wav",
+    "duration_s": 4.14,
+    "transcript": "Fattant TG1 par l'un d'entre nous, pour toute la classe.",
+    "wer": 0.154,
+    "mean_word_prob": 0.911,
+    "words_per_min_speech": 314.5,
+    "peak_dbfs": -5.73,
+    "f0_median_hz": 151.2,
+    "f0_std_st": 3.45,
+    "f0_range_p5_p95_st": 12.02,
+    "voiced_ratio": 0.577,
+    "speech_time_s": 2.48,
+    "pauses_ge_180ms": 2,
+    "mean_pause_s": 0.45,
+    "score": 5.341,
+    "seed": 24757,
+    "words": [
+     {
+      "w": "Fattant",
+      "t0": 0.54,
+      "t1": 0.98,
+      "p": 0.515
+     },
+     {
+      "w": "TG1",
+      "t0": 0.98,
+      "t1": 1.42,
+      "p": 0.769
+     },
+     {
+      "w": "par",
+      "t0": 1.42,
+      "t1": 1.78,
+      "p": 0.915
+     },
+     {
+      "w": "l",
+      "t0": 1.78,
+      "t1": 1.88,
+      "p": 0.888
+     },
+     {
+      "w": "'un",
+      "t0": 1.88,
+      "t1": 2.04,
+      "p": 0.974
+     },
+     {
+      "w": "d",
+      "t0": 2.04,
+      "t1": 2.2,
+      "p": 0.987
+     },
+     {
+      "w": "'entre",
+      "t0": 2.2,
+      "t1": 2.44,
+      "p": 0.993
+     },
+     {
+      "w": "nous,",
+      "t0": 2.44,
+      "t1": 3.0,
+      "p": 0.938
+     },
+     {
+      "w": "pour",
+      "t0": 3.36,
+      "t1": 3.46,
+      "p": 0.973
+     },
+     {
+      "w": "toute",
+      "t0": 3.46,
+      "t1": 3.6,
+      "p": 0.989
+     },
+     {
+      "w": "la",
+      "t0": 3.6,
+      "t1": 3.8,
+      "p": 0.996
+     },
+     {
+      "w": "classe.",
+      "t0": 3.8,
+      "t1": 4.0,
+      "p": 0.998
+     }
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V13_kyutai_0cfb701434.wav",
+    "duration_s": 4.28,
+    "transcript": "Faites en TG1 par l'un d'entre nous, pour toute la classe.",
+    "wer": 0.077,
+    "mean_word_prob": 0.951,
+    "words_per_min_speech": 336.2,
+    "peak_dbfs": -3.93,
+    "f0_median_hz": 137.8,
+    "f0_std_st": 5.06,
+    "f0_range_p5_p95_st": 17.84,
+    "voiced_ratio": 0.478,
+    "speech_time_s": 2.32,
+    "pauses_ge_180ms": 3,
+    "mean_pause_s": 0.367,
+    "score": 4.276,
+    "seed": 32676,
+    "words": [
+     {
+      "w": "Faites",
+      "t0": 0.0,
+      "t1": 0.52,
+      "p": 0.787
+     },
+     {
+      "w": "en",
+      "t0": 0.52,
+      "t1": 0.64,
+      "p": 0.908
+     },
+     {
+      "w": "TG1",
+      "t0": 0.64,
+      "t1": 1.26,
+      "p": 0.862
+     },
+     {
+      "w": "par",
+      "t0": 1.26,
+      "t1": 1.64,
+      "p": 0.929
+     },
+     {
+      "w": "l",
+      "t0": 1.64,
+      "t1": 1.76,
+      "p": 0.971
+     },
+     {
+      "w": "'un",
+      "t0": 1.76,
+      "t1": 1.86,
+      "p": 0.996
+     },
+     {
+      "w": "d",
+      "t0": 1.86,
+      "t1": 1.92,
+      "p": 0.999
+     },
+     {
+      "w": "'entre",
+      "t0": 1.92,
+      "t1": 2.24,
+      "p": 0.998
+     },
+     {
+      "w": "nous,",
+      "t0": 2.24,
+      "t1": 2.76,
+      "p": 0.958
+     },
+     {
+      "w": "pour",
+      "t0": 3.22,
+      "t1": 3.34,
+      "p": 0.978
+     },
+     {
+      "w": "toute",
+      "t0": 3.34,
+      "t1": 3.52,
+      "p": 0.981
+     },
+     {
+      "w": "la",
+      "t0": 3.52,
+      "t1": 3.78,
+      "p": 0.997
+     },
+     {
+      "w": "classe.",
+      "t0": 3.78,
+      "t1": 4.14,
+      "p": 0.997
      }
     ]
    }
@@ -3829,246 +4111,254 @@
  "V14": {
   "provider": "kyutai",
   "voice": "unmute-prod-website_fabieng-enhanced-v2.wav",
-  "text": "Le Cahier d'HLP. Tout pour réviser, au même endroit.",
-  "best": "/home/user/cahier-hlp/trailer/audio/voice/takes/V14_kyutai_de74156387.wav",
+  "text": "Le Cahier d'HLP. Tout est là.",
+  "best": "/home/user/cahier-hlp/trailer/audio/voice/takes/V14_kyutai_dc91379d3b.wav",
   "takes": [
    {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V14_kyutai_b72ab54203.wav",
-    "duration_s": 3.28,
-    "transcript": "Le cahier d'HLP, tout pour réviser au même endroit.",
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V14_kyutai_519a4f3035.wav",
+    "duration_s": 1.98,
+    "transcript": "Le cahier d'HLP. Tout est là.",
     "wer": 0.0,
-    "mean_word_prob": 0.969,
-    "words_per_min_speech": 243.9,
-    "peak_dbfs": -2.79,
-    "f0_median_hz": 141.1,
-    "f0_std_st": 3.47,
-    "f0_range_p5_p95_st": 12.1,
-    "voiced_ratio": 0.781,
-    "speech_time_s": 2.46,
+    "mean_word_prob": 0.954,
+    "words_per_min_speech": 318.2,
+    "peak_dbfs": -6.07,
+    "f0_median_hz": 112.0,
+    "f0_std_st": 1.22,
+    "f0_range_p5_p95_st": 3.64,
+    "voiced_ratio": 0.437,
+    "speech_time_s": 1.32,
     "pauses_ge_180ms": 1,
-    "mean_pause_s": 0.33,
-    "score": 1.097,
+    "mean_pause_s": 0.37,
+    "score": 4.047,
     "seed": 1000,
     "words": [
      {
       "w": "Le",
       "t0": 0.0,
-      "t1": 0.34,
-      "p": 0.851
+      "t1": 0.4,
+      "p": 0.828
      },
      {
       "w": "cahier",
-      "t0": 0.34,
-      "t1": 0.62,
-      "p": 0.974
+      "t0": 0.4,
+      "t1": 0.66,
+      "p": 0.966
      },
      {
       "w": "d",
-      "t0": 0.62,
+      "t0": 0.66,
       "t1": 0.8,
-      "p": 0.971
+      "p": 0.953
      },
      {
-      "w": "'HLP,",
+      "w": "'HLP.",
       "t0": 0.8,
       "t1": 1.24,
-      "p": 0.958
+      "p": 0.943
      },
      {
-      "w": "tout",
-      "t0": 1.5,
-      "t1": 1.62,
-      "p": 0.983
+      "w": "Tout",
+      "t0": 1.46,
+      "t1": 1.64,
+      "p": 0.996
      },
      {
-      "w": "pour",
-      "t0": 1.62,
-      "t1": 1.84,
+      "w": "est",
+      "t0": 1.64,
+      "t1": 1.82,
+      "p": 0.997
+     },
+     {
+      "w": "là.",
+      "t0": 1.82,
+      "t1": 1.94,
       "p": 0.994
-     },
-     {
-      "w": "réviser",
-      "t0": 1.84,
-      "t1": 2.54,
-      "p": 0.986
-     },
-     {
-      "w": "au",
-      "t0": 2.54,
-      "t1": 2.78,
-      "p": 0.973
-     },
-     {
-      "w": "même",
-      "t0": 2.78,
-      "t1": 2.92,
-      "p": 0.998
-     },
-     {
-      "w": "endroit.",
-      "t0": 2.92,
-      "t1": 3.2,
-      "p": 0.998
      }
     ]
    },
    {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V14_kyutai_de74156387.wav",
-    "duration_s": 3.99,
-    "transcript": "Le cahier d'HLP, tout pour réviser au même endroit.",
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V14_kyutai_88147030ca.wav",
+    "duration_s": 2.27,
+    "transcript": "Le cahier d'HLP, tout est là.",
     "wer": 0.0,
-    "mean_word_prob": 0.958,
-    "words_per_min_speech": 198.7,
-    "peak_dbfs": -3.35,
-    "f0_median_hz": 123.5,
-    "f0_std_st": 3.11,
-    "f0_range_p5_p95_st": 10.42,
-    "voiced_ratio": 0.692,
-    "speech_time_s": 3.02,
+    "mean_word_prob": 0.943,
+    "words_per_min_speech": 293.7,
+    "peak_dbfs": -3.84,
+    "f0_median_hz": 134.3,
+    "f0_std_st": 3.13,
+    "f0_range_p5_p95_st": 9.38,
+    "voiced_ratio": 0.467,
+    "speech_time_s": 1.43,
     "pauses_ge_180ms": 1,
-    "mean_pause_s": 0.61,
-    "score": 0.168,
+    "mean_pause_s": 0.53,
+    "score": 2.446,
     "seed": 8919,
     "words": [
      {
       "w": "Le",
       "t0": 0.0,
-      "t1": 0.38,
-      "p": 0.786
+      "t1": 0.42,
+      "p": 0.859
      },
      {
       "w": "cahier",
-      "t0": 0.38,
-      "t1": 0.86,
-      "p": 0.97
+      "t0": 0.42,
+      "t1": 0.96,
+      "p": 0.958
      },
      {
       "w": "d",
-      "t0": 0.86,
-      "t1": 1.08,
-      "p": 0.959
+      "t0": 0.96,
+      "t1": 1.12,
+      "p": 0.867
      },
      {
       "w": "'HLP,",
-      "t0": 1.08,
-      "t1": 1.62,
-      "p": 0.947
+      "t0": 1.12,
+      "t1": 1.52,
+      "p": 0.942
      },
      {
       "w": "tout",
-      "t0": 2.14,
+      "t0": 1.92,
+      "t1": 1.96,
+      "p": 0.984
+     },
+     {
+      "w": "est",
+      "t0": 1.96,
+      "t1": 2.12,
+      "p": 0.996
+     },
+     {
+      "w": "là.",
+      "t0": 2.12,
       "t1": 2.24,
-      "p": 0.979
-     },
-     {
-      "w": "pour",
-      "t0": 2.24,
-      "t1": 2.48,
-      "p": 0.99
-     },
-     {
-      "w": "réviser",
-      "t0": 2.48,
-      "t1": 3.2,
-      "p": 0.971
-     },
-     {
-      "w": "au",
-      "t0": 3.2,
-      "t1": 3.38,
-      "p": 0.983
-     },
-     {
-      "w": "même",
-      "t0": 3.38,
-      "t1": 3.54,
-      "p": 0.999
-     },
-     {
-      "w": "endroit.",
-      "t0": 3.54,
-      "t1": 3.84,
-      "p": 0.997
+      "p": 0.992
      }
     ]
    },
    {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V14_kyutai_0ed7c9ab58.wav",
-    "duration_s": 3.49,
-    "transcript": "Le cahier d'HLP, tout pour réviser au même endroit.",
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V14_kyutai_dc91379d3b.wav",
+    "duration_s": 2.31,
+    "transcript": "Le cahier d'HLP, tout est là.",
     "wer": 0.0,
-    "mean_word_prob": 0.954,
-    "words_per_min_speech": 227.3,
-    "peak_dbfs": -4.26,
-    "f0_median_hz": 123.2,
-    "f0_std_st": 4.17,
-    "f0_range_p5_p95_st": 12.65,
-    "voiced_ratio": 0.697,
-    "speech_time_s": 2.64,
+    "mean_word_prob": 0.958,
+    "words_per_min_speech": 256.1,
+    "peak_dbfs": -4.41,
+    "f0_median_hz": 118.6,
+    "f0_std_st": 2.1,
+    "f0_range_p5_p95_st": 7.06,
+    "voiced_ratio": 0.681,
+    "speech_time_s": 1.64,
     "pauses_ge_180ms": 1,
-    "mean_pause_s": 0.42,
-    "score": 0.742,
+    "mean_pause_s": 0.35,
+    "score": 1.526,
     "seed": 16838,
     "words": [
      {
       "w": "Le",
       "t0": 0.0,
-      "t1": 0.46,
-      "p": 0.7
+      "t1": 0.56,
+      "p": 0.857
      },
      {
       "w": "cahier",
-      "t0": 0.46,
-      "t1": 0.78,
-      "p": 0.977
+      "t0": 0.56,
+      "t1": 0.88,
+      "p": 0.975
      },
      {
       "w": "d",
-      "t0": 0.78,
-      "t1": 0.94,
-      "p": 0.982
+      "t0": 0.88,
+      "t1": 1.02,
+      "p": 0.954
      },
      {
       "w": "'HLP,",
-      "t0": 0.94,
-      "t1": 1.38,
-      "p": 0.935
+      "t0": 1.02,
+      "t1": 1.48,
+      "p": 0.955
      },
      {
       "w": "tout",
-      "t0": 1.74,
-      "t1": 1.84,
-      "p": 0.987
-     },
-     {
-      "w": "pour",
-      "t0": 1.84,
-      "t1": 2.1,
-      "p": 0.996
-     },
-     {
-      "w": "réviser",
-      "t0": 2.1,
-      "t1": 2.72,
+      "t0": 1.86,
+      "t1": 1.88,
       "p": 0.98
      },
      {
-      "w": "au",
-      "t0": 2.72,
-      "t1": 2.94,
-      "p": 0.986
+      "w": "est",
+      "t0": 1.88,
+      "t1": 2.06,
+      "p": 0.997
      },
      {
-      "w": "même",
-      "t0": 2.94,
-      "t1": 3.12,
-      "p": 0.999
+      "w": "là.",
+      "t0": 2.06,
+      "t1": 2.26,
+      "p": 0.987
+     }
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V14_kyutai_fed5152c20.wav",
+    "duration_s": 2.15,
+    "transcript": "Le cahier d'HLP. Tout est là.",
+    "wer": 0.0,
+    "mean_word_prob": 0.954,
+    "words_per_min_speech": 293.7,
+    "peak_dbfs": -4.67,
+    "f0_median_hz": 123.9,
+    "f0_std_st": 1.91,
+    "f0_range_p5_p95_st": 7.03,
+    "voiced_ratio": 0.428,
+    "speech_time_s": 1.43,
+    "pauses_ge_180ms": 1,
+    "mean_pause_s": 0.44,
+    "score": 2.634,
+    "seed": 24757,
+    "words": [
+     {
+      "w": "Le",
+      "t0": 0.0,
+      "t1": 0.42,
+      "p": 0.883
      },
      {
-      "w": "endroit.",
-      "t0": 3.12,
-      "t1": 3.4,
-      "p": 0.999
+      "w": "cahier",
+      "t0": 0.42,
+      "t1": 0.72,
+      "p": 0.965
+     },
+     {
+      "w": "d",
+      "t0": 0.72,
+      "t1": 0.9,
+      "p": 0.957
+     },
+     {
+      "w": "'HLP.",
+      "t0": 0.9,
+      "t1": 1.4,
+      "p": 0.885
+     },
+     {
+      "w": "Tout",
+      "t0": 1.78,
+      "t1": 1.78,
+      "p": 0.998
+     },
+     {
+      "w": "est",
+      "t0": 1.78,
+      "t1": 1.96,
+      "p": 0.997
+     },
+     {
+      "w": "là.",
+      "t0": 1.96,
+      "t1": 2.12,
+      "p": 0.995
      }
     ]
    }

@@ -34,7 +34,7 @@ END_TAIL = CAPTURE_AFTER + 4.2   # Polaroid final, légende, fondu
 
 # alias -> (line, word of the script, occurrence)  | "start"/"end" of a line
 ALIASES = {
-    "n1": ("V01a", "start", 0), "n2": ("V01b", "start", 0), "n3": ("V01c", "start", 0), "n4": ("V01d", "start", 0),
+    "n1": ("V01", "@part", 0), "n2": ("V01", "@part", 1), "n3": ("V01", "@part", 2), "n4": ("V01", "@part", 3),
     "q_start": ("V02", "start", 0), "q_souviens": ("V02", "souviens", 0), "q_tout": ("V02", "tout", 0), "q_end": ("V02", "end", 0),
     "v3_start": ("V03", "start", 0), "v3_rentree": ("V03", "rentrée", 0), "v3_textes": ("V03", "textes", 0),
     "v3_accum": ("V03", "accumulent", 0), "v3_end": ("V03", "end", 0),
@@ -162,10 +162,15 @@ def main(model="small"):
             cuts = proc[lid]["cuts_s"]
             edges = [0.0] + cuts + [dur]
             gaps = line.get("gaps", [0.0] * len(cuts))
+            onsets = line.get("onsets")                # attaque de chaque segment à un instant donné (les noms du hook)
             segs, starts, t = [], [], at
             for k in range(len(edges) - 1):
                 f = VO_DIR / f"{lid}_{k + 1}.wav"
                 d = sf.info(str(f)).frames / sf.info(str(f)).samplerate
+                if onsets:
+                    y, sr = sf.read(str(f), always_2d=True)
+                    env = abs(y.mean(1))
+                    t = onsets[k] - float((env > env.max() * 0.08).argmax()) / sr
                 segs.append({"file": str(f.relative_to(ROOT)), "at": round(t, 3), "dur": round(d, 3)})
                 starts.append(t)
                 t += d + (gaps[k] if k < len(gaps) else 0.0)
@@ -178,7 +183,7 @@ def main(model="small"):
             segs = [{"file": str(wav.relative_to(ROOT)), "at": round(at, 3), "dur": round(dur, 3)}]
             wl = [{"w": r, "t0": round(at + a, 3), "t1": round(at + b, 3)} for r, (a, b) in zip(ref, tt)]
             end = at + dur
-        placed.append({"id": lid, "text": line["text"], "at": round(segs[0]["at"], 3), "dur": round(end - segs[0]["at"], 3),
+        placed.append({"id": lid, "text": line["text"], "onsets": line.get("onsets"), "at": round(segs[0]["at"], 3), "dur": round(end - segs[0]["at"], 3),
                        "end": round(end, 3), "words": wl, "segments": segs})
         prev_end = wl[-1]["t1"]
         if lid == "V05":
@@ -187,7 +192,9 @@ def main(model="small"):
     # speech start/end = first/last word (not file edges)
     for alias, (lid, word, occ) in ALIASES.items():
         p = by[lid]
-        if word == "start":
+        if word == "@part":
+            marks[alias] = p["onsets"][occ]
+        elif word == "start":
             marks[alias] = p["words"][0]["t0"]
         elif word == "end":
             marks[alias] = p["words"][-1]["t1"]
