@@ -38,7 +38,26 @@ def wer(ref, hyp):
     return errs / max(1, len(ref))
 
 
+def joined_score(y, cuts, parts):
+    """Les morceaux remis bout à bout avec 0,35 s de silence (comme dans le film) doivent redonner le texte :
+    Whisper invente sur un mot isolé de moins d'une seconde, pas sur une liste."""
+    edges = [0] + cuts + [len(y)]
+    gap = np.zeros((int(lib.SR * 0.35),) + y.shape[1:], np.float32)
+    seq = []
+    for a, b in zip(edges, edges[1:]):
+        seq += [lib.fade(y[a:b], 0.004, 0.02), gap]
+    with tempfile.NamedTemporaryFile(suffix=".wav") as tmp:
+        sf.write(tmp.name, np.concatenate(seq), lib.SR)
+        txt, words = transcribe(tmp.name, "medium")
+    ref = [w for p in parts for w in norm_words(p)]
+    ok = wer(ref, norm_words(txt)) <= 0.01
+    p = float(np.mean([x["p"] for x in words])) if words else 0.0
+    return (0 if ok else 10) + (1 - p) * len(parts), [txt]
+
+
 def pieces_score(y, cuts, parts):
+    if SPEC.get("join_check"):
+        return joined_score(y, cuts, parts)
     edges = [0] + cuts + [len(y)]
     heard, score = [], 0.0
     for k, (a, b) in enumerate(zip(edges, edges[1:])):
@@ -60,8 +79,12 @@ def gap_depth_db(y, cuts):
     return float(np.mean([peak - 20 * np.log10(r[c] + 1e-9) for c in cuts]))
 
 
+SPEC = {}
+
+
 def run(lid, log):
     spec = next(l for l in LINES if l["id"] == lid)
+    SPEC.clear(); SPEC.update(spec)
     n = int(spec["split"])
     parts = spec.get("parts") or norm_words(spec["text"])
     line_score = {t["file"]: t["score"] for t in log[lid]["takes"]}

@@ -20,42 +20,43 @@
     "Flaubert.",
     "Hugo."
    ],
-   "takes": 6
+   "takes": 6,
+   "join_check": true
   },
   {
    "id": "V02",
    "at": 3.98,
    "text": "Tu te souviens de tout ?",
    "tts": "Tu te souviens de tout ?",
-   "takes": 4
+   "takes": 3
   },
   {
    "id": "V03",
    "at": "+0.55",
    "text": "Depuis la rentrée, les textes s'accumulent.",
    "tts": "Depuis la rentrée, les textes s'accumulent.",
-   "takes": 4
+   "takes": 3
   },
   {
    "id": "V04",
    "at": "+0.35",
    "text": "Les feuilles, les notes, les citations…",
    "tts": "Les feuilles, les notes, les citations...",
-   "takes": 4
+   "takes": 3
   },
   {
    "id": "V05a",
    "at": "+0.3",
    "text": "Tout est quelque part.",
    "tts": "Tout est quelque part.",
-   "takes": 4
+   "takes": 3
   },
   {
    "id": "V05b",
    "at": "+0.45",
    "text": "Mais où ?",
    "tts": "Mais où ?",
-   "takes": 4
+   "takes": 3
   },
   {
    "id": "V06",
@@ -63,7 +64,7 @@
    "text": "Alors on a tout rassemblé…",
    "tts": "Alors, on a tout rassemblé...",
    "tts_google": "Alors on a tout rassemblé…",
-   "takes": 4
+   "takes": 3
   },
   {
    "id": "V07",
@@ -71,42 +72,42 @@
    "text": "dans le Cahier d'HLP.",
    "tts": "dans le Cahier d'hache-elle-pé.",
    "tts_google": "dans le Cahier d'HLP.",
-   "takes": 4
+   "takes": 3
   },
   {
    "id": "V08",
    "at": "+1.35",
    "text": "Pour chaque texte vu en classe, une fiche claire : l'auteur, l'époque, l'essentiel en cinq points, les citations à retenir.",
    "tts": "Pour chaque texte vu en classe, une fiche claire : l'auteur, l'époque, l'essentiel en cinq points, les citations à retenir.",
-   "takes": 4
+   "takes": 3
   },
   {
    "id": "V09",
    "at": "+0.45",
    "text": "Des flashcards, qui reviennent au bon moment.",
    "tts": "Des flashcards, qui reviennent au bon moment.",
-   "takes": 4
+   "takes": 3
   },
   {
    "id": "V10",
    "at": "+0.4",
    "text": "Des QCM corrigés, et expliqués.",
    "tts": "Des Q C M corrigés, et expliqués.",
-   "takes": 4
+   "takes": 3
   },
   {
    "id": "V11",
    "at": "+0.45",
    "text": "Et une frise, pour relier les œuvres… de Rabelais à Arendt.",
    "tts": "Et une frise, pour relier les œuvres... de Rabelais à Arendt.",
-   "takes": 4
+   "takes": 3
   },
   {
    "id": "V12",
    "at": "+0.9",
    "text": "C'est gratuit, sans compte. Ta progression reste sur ton appareil.",
    "tts": "C'est gratuit, sans compte. Ta progression reste sur ton appareil.",
-   "takes": 4
+   "takes": 3
   },
   {
    "id": "V13",
@@ -114,7 +115,7 @@
    "text": "Pensé en TG1, pour toute la classe.",
    "tts": "Pensé en té-gé-un... pour toute la classe.",
    "tts_google": "Pensé en TG1, pour toute la classe.",
-   "takes": 4
+   "takes": 3
   },
   {
    "id": "V14",
@@ -122,7 +123,7 @@
    "text": "Le Cahier d'HLP. Tout pour réviser, au même endroit.",
    "tts": "Le Cahier d'hache-elle-pé. Tout pour réviser, au même endroit.",
    "tts_google": "Le Cahier d'HLP. Tout pour réviser, au même endroit.",
-   "takes": 4
+   "takes": 3
   }
  ],
  "_history": {

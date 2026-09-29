@@ -21,7 +21,7 @@
     ["n1", "n2", "n3", "n4"].forEach((m, k) => {
       const land = M(m) - 0.26 + 0.22;                                     // la photo touche le bureau
       const pan = [-0.35, -0.12, 0.12, 0.35][k];
-      fx(M(m) - 0.26, "flash", { a: 0.42 + k * 0.05, d: 0.28, color: "255,246,228" });
+      fx(M(m) - 0.26, "flash", { a: 0.34 + k * 0.04, d: 0.18, color: "255,246,228" });
       fx(land, "punch", { a: 0.018 + k * 0.004, d: 0.4 });
       fx(land, "shake", { a: 2.5 + k, d: 0.25 });
       sd(M(m) - 0.28, "shutter_k1000", -12 + k * 0.5, pan);
