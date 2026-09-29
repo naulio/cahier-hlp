@@ -12,26 +12,27 @@ examen blanc, frise chronologique, mode oral… Gratuit, sans compte, sans publi
 dans le navigateur. Premier chapitre : « Éducation, transmission et émancipation » (Rabelais, Rousseau,
 Balzac, Flaubert, Hugo, Ferry, Péguy, Camus, Arendt).
 
-## ⚠️ Retour du commanditaire après la v2 — PRIORITAIRE sur tout le reste de ce brief
-Le commanditaire a vu la v1 et la v2. Son verdict, mot pour mot : « la v1 était mieux en tout point. […] la voix,
-longue, pas assez narrateur, et vraiment mauvaise. Manque de VFX et SFX, il faut captiver l'attention, le style
-motion avec moins de texture de la v1 est… 100× mieux. »
-Les évaluations précédentes ont poussé la v2 dans la mauvaise direction (plus de papier, de crayon, de textures,
-d'« artisanal », moins d'effets sonores). **Ne recommande plus cela.** Ce qu'il veut, et ce que tu dois noter :
-- **Captiver l'attention** du début à la fin : énergie, rythme, relances visuelles et sonores, moments « wow ».
-- **Style motion net et moderne de la v1** (interface claire, aplats, peu de textures, typographie propre) :
-  c'est la référence de style. Des textures lourdes, un look « fait main » terne ou lent sont des défauts.
-- **VFX** : transitions dynamiques et motivées (poussées de caméra, whip, zooms punchés sur le rythme, flashs,
-  halos et balayages de lumière, masques, vitesse variable, typographie cinétique forte, parallaxe). Absence
-  d'effets = défaut. Seule limite : rien de cheap, de néon/cyberpunk ou d'illisible.
-- **SFX riches et synchronisés** : whooshes, impacts, montées (risers), sub drops, clics d'interface, déclics…
-  Une bande-son dense est **souhaitée** tant qu'elle reste calée à l'image et sous la voix.
-- **Voix de narrateur** : présence, assurance, rythme soutenu, vraie narration de bande-annonce ; une voix lente,
-  étirée, plate ou « lecture » est un défaut majeur. Durée totale serrée (≈ 55-60 s).
-- La **musique** doit porter l'énergie (montée, drops, relances), pas rester en retrait.
-Tout ce qui suit reste valable **sauf** là où cela contredit ce retour (en particulier : « pas un whoosh sur chaque
-animation », « interdits : particules, glitchs », « voix calme ») — le retour du commanditaire l'emporte.
-La **v1** (`logs/qa/v1/`) est la référence de style : compare la version évaluée à la v1 et dis si elle fait mieux.
+## ⚠️ Goût du commanditaire — PRIORITAIRE sur tout le reste de ce brief (recalé après la v3)
+Le commanditaire a vu la v1, la v2 et la v3. Ses verdicts servent d'**étalon** à ta note :
+
+| Version | Ce qu'elle était | Verdict du commanditaire |
+|---|---|---|
+| v1 | style motion net (interface claire, aplats), musique douce, bruitages discrets | **la meilleure** (« mieux en tout point ») |
+| v2 | papier, crayon, textures, look « fait main », voix lente | moins bien que la v1 sur tout ; voix « longue, pas narrateur, vraiment mauvaise » |
+| v3 | v1 + beaucoup de VFX (flashs, secousses, filés, reflets), ~150 bruitages, batterie, voix abaissée d'un demi-ton | **« horrible »** : « beaucoup trop de VFX et de SFX, je parlais de minuscules détails » ; veut une bande-son **sans batterie** ; la voix abaissée sonne « bizarre » |
+
+Ce que cela veut dire pour ta note :
+- La **v1 est la référence** : le style, le rythme, la musique et les bruitages de la v1 sont ce qu'il aime.
+- Les améliorations acceptées sont des **minuscules détails** : corrections, finitions presque invisibles.
+  **Toute densification d'effets, de bruitages, d'énergie « bande-annonce » ou d'une batterie est un défaut**, pas
+  un progrès. Ne recommande jamais d'ajouter des flashs, secousses, filés, drops, impacts ou percussions.
+- **Musique** : celle de la v1, **sans batterie** (piano, nappe, basse douce, arpège).
+- **Voix** : la voix « B » qu'il a choisie à l'audition pour son intonation, **telle quelle** (aucun changement de
+  hauteur). Juge sa lisibilité, son naturel, ses coupes — pas son écart à une « voix de bande-annonce ».
+- Lors de l'évaluation v3, les évaluateurs ont noté 6,5-7/10 et jugé la v3 meilleure que la v1 grâce à son énergie :
+  **c'était faux** par rapport au commanditaire (le brief de l'époque les y poussait). Ne refais pas cette erreur :
+  une version plus « chargée » que la v1 doit être notée plus bas qu'elle.
+Tout ce qui suit reste valable **sauf** là où cela contredit ce tableau — le goût du commanditaire l'emporte.
 
 ## Ce que le commanditaire exigeait au départ (résumé fidèle)
 - Trailer de **55 à 70 s** (idéal ~60 s), **4:3 paysage** (1440×1080), lisible sur ordinateur **et téléphone**.
@@ -65,8 +66,9 @@ La **v1** (`logs/qa/v1/`) est la référence de style : compare la version éval
 ## Barème (note sur 10)
 - **< 5** : raté, à refaire structurellement. **5 à < 8** : insuffisant, à corriger. **≥ 8** : bon / très bon.
 - Pour le hook, la voix, l'identité visuelle, le carton de fin et le sound design, la cible est **≥ 9**.
-- La note mesure **l'écart au résultat attendu par le commanditaire** (retour ci-dessus), pas ton goût personnel :
-  un trailer « sage » et bien fait mais qui ne captive pas ne dépasse pas 6.
+- La note mesure **l'écart au goût du commanditaire** (tableau ci-dessus), pas ton goût personnel.
+  Étalon : la v3 vaut environ 2/10 pour lui ; la v1 est sa référence. Une version fidèle à la v1 avec quelques
+  finitions invisibles et justes peut viser 8-9 ; toute surcharge fait perdre des points.
 
 ## Matériel (dossier de la version à évaluer, ex. `logs/qa/v1/`)
 Tu **ne peux pas regarder la vidéo en temps réel ni écouter l'audio**. Tu disposes de :

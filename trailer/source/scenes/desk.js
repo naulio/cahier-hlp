@@ -287,6 +287,7 @@
     C.feuilles.forEach((f, i) => {
       const s = sheets[f.id], [hx, hy, hr] = s.home;
       let x = hx, y = hy, r = hr, op = 1;
+      if (PRESENT.includes(f.id)) op = seg(t, q0 - 0.3, 0.25, E.linear);   // hors champ tant que la caméra est serrée (plus de bord de feuille à l'ouverture)
       if (!PRESENT.includes(f.id)) {
         const ta = M(arrivals[f.id]) + (offs[f.id] || 0) - 0.34;
         const e = seg(t, ta, 0.62, E.out);

@@ -60,7 +60,7 @@
     const hx = MN.x - A.x;
     const hdr = el("div", "", home, `<div class="eyebrow">Semestre 1 · La recherche de soi</div>
       <div style="font:400 42px/1.05 News;letter-spacing:-.02em;margin-top:14px;color:#1D1E1A">Éducation, transmission et émancipation</div>
-      <div style="font:400 15px/1 Sans;color:#6B6C61;margin-top:14px">9 textes · de Rabelais à Arendt</div>`);
+      <div style="font:400 15px/1 Sans;color:#6B6C61;margin-top:14px">9 auteurs · de Rabelais à Arendt</div>`);
     hdr.style.cssText = `position:absolute;left:${hx}px;top:48px`;
     home.hdr = hdr;
     C.textes.forEach((t, i) => {

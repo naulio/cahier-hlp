@@ -110,6 +110,45 @@ référence de style ; la note mesure l'écart au résultat attendu (un trailer 
 - **Technique** : flou de mouvement à 6-8 sous-images (plus d'images fantômes) ; limiteur attentif à la crête vraie
   (−14 LUFS, ≤ −1 dBTP).
 
-## v3
+## v3 — `renders/trailer_v3.mp4` (56,5 s)
 
-(évaluation en cours)
+**Verdict du commanditaire : « horrible »** — « beaucoup trop de VFX et de SFX, je parlais de minuscules
+détails » ; veut une bande-son **sans batterie** (celle de la v1) ; la voix abaissée d'un demi-ton sonne « bizarre ».
+
+### Notes des agents (5 sur 7 ; voix et français interrompus par la limite d'usage)
+
+| Agent | Note | v3 jugée par rapport à la v1 |
+|---|---|---|
+| Direction artistique | 6,5 | « légèrement mieux » (plus d'énergie) |
+| Motion / VFX | 6,5 | « mieux » ; demandait des filés et secousses plus forts |
+| Son / musique / mix | 7 (mix 7,5) | « mieux » : « SFX enfin audibles et denses » ; demandait +3 dB de musique et plus de batterie |
+| Montage / storytelling | 7 | « mieux » ; demandait des drops et des relances |
+| AI slop detector | 6,5 | « plus d'énergie, pas plus propre » (pops en rafale, reflets rectangulaires) |
+
+### Calibrage : les agents étaient mal réglés
+- **Sens du jugement inversé.** Les cinq ont préféré la v3 à la v1 ; le commanditaire préfère nettement la v1.
+- **Écart de note.** 6,5-7/10 contre un « horrible » (≈ 2/10) : environ 4 à 5 points trop haut.
+- **Surcharge non vue comme défaut principal.** Aucun agent ne l'a désignée ainsi. Plusieurs ont même demandé
+  plus d'effets (filés « de 900 px », secousses de 8 px, drops, batterie plus forte).
+- **Seuls points alignés, mais secondaires.** Le détecteur de « slop » et la direction artistique ont relevé
+  des effets « bon marché » (reflets en rectangle, voiles gris, rafales de pops).
+- **Batterie et demi-ton non signalés.** Personne n'a relevé la batterie ; la voix abaissée n'a pas été jugée,
+  l'agent voix ayant été interrompu.
+- **Cause principale : mon brief.** J'avais traduit « manque de VFX et SFX » par « plus d'effets » au lieu de
+  « minuscules détails », et le brief disait aux agents qu'une bande-son dense était souhaitée.
+- **Correctif.** Le brief (`logs/qa/BRIEF.md`) donne maintenant les verdicts du commanditaire sur v1, v2 et v3
+  comme **étalon** (v3 ≈ 2/10, v1 = référence). Il interdit de recommander toute densification. Il précise que la
+  musique est celle de la v1 sans batterie, et que la voix est la voix B telle quelle.
+
+### Modifications v3 → v4
+- **Bande-son de la v1** : partition de la v1 **sans batterie** ; bruitages et mixage de la v1 (62 sons) ; seul le
+  limiteur garde la correction de crête vraie.
+- **Voix B d'origine** : plus de décalage d'un demi-ton, égalisation légère de la v1.
+- **VFX réduits à 4 minuscules détails** : un reflet doux (bords fondus) sur le nom au logo et au carton ; deux
+  poussées de caméra de 0,8 % et 1,2 % (« tout », déclic). Plus de flashs, secousses, filés, halos.
+- Deux corrections relevées par les agents : « 9 auteurs » au lieu de « 9 textes » (il y a 10 textes pour 9
+  auteurs) ; plus de bord de feuille visible à l'ouverture.
+
+## v4
+
+(évaluation à venir)

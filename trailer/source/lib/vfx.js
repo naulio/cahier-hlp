@@ -29,7 +29,8 @@
     leakEl = el("div", "", layer);
     leakEl.style.cssText = "position:absolute;inset:-20%;mix-blend-mode:screen;opacity:0";
     sweepEl = el("div", "", layer);
-    sweepEl.style.cssText = "position:absolute;left:0;top:0;mix-blend-mode:overlay;opacity:0;overflow:hidden";
+    sweepEl.style.cssText = "position:absolute;left:0;top:0;mix-blend-mode:soft-light;opacity:0;overflow:hidden;"
+      + "-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 35%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 35%,transparent 100%)";
     sweepEl.bar = el("div", "", sweepEl);
     sweepEl.bar.style.cssText = "position:absolute;top:-50%;height:200%;width:34%;background:linear-gradient(100deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.95) 50%,rgba(255,255,255,0) 100%)";
     vigEl = el("div", "", layer);
