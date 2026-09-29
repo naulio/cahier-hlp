@@ -34,7 +34,7 @@ END_TAIL = CAPTURE_AFTER + 4.2   # Polaroid final, légende, fondu
 
 # alias -> (line, word of the script, occurrence)  | "start"/"end" of a line
 ALIASES = {
-    "n1": ("V01", "@part", 0), "n2": ("V01", "@part", 1), "n3": ("V01", "@part", 2), "n4": ("V01", "@part", 3),
+    "n1": ("V01a", "@part", 0), "n2": ("V01b", "@part", 0), "n3": ("V01c", "@part", 0), "n4": ("V01d", "@part", 0),
     "q_start": ("V02", "start", 0), "q_souviens": ("V02", "souviens", 0), "q_tout": ("V02", "tout", 0), "q_end": ("V02", "end", 0),
     "v3_start": ("V03", "start", 0), "v3_rentree": ("V03", "rentrée", 0), "v3_textes": ("V03", "textes", 0),
     "v3_accum": ("V03", "accumulent", 0), "v3_end": ("V03", "end", 0),
@@ -183,7 +183,7 @@ def main(model="small"):
             segs = [{"file": str(wav.relative_to(ROOT)), "at": round(at, 3), "dur": round(dur, 3)}]
             wl = [{"w": r, "t0": round(at + a, 3), "t1": round(at + b, 3)} for r, (a, b) in zip(ref, tt)]
             end = at + dur
-        placed.append({"id": lid, "text": line["text"], "onsets": line.get("onsets"), "at": round(segs[0]["at"], 3), "dur": round(end - segs[0]["at"], 3),
+        placed.append({"id": lid, "text": line["text"], "onsets": line.get("onsets") or ([float(line["at"])] if line.get("onset") else None), "at": round(segs[0]["at"], 3), "dur": round(end - segs[0]["at"], 3),
                        "end": round(end, 3), "words": wl, "segments": segs})
         prev_end = wl[-1]["t1"]
         if lid == "V05":

@@ -3,20 +3,44 @@
  "style_prompt": "Voix française naturelle d'un jeune adulte. Ton calme, articulé, légèrement chaleureux, comme la narration d'un lancement de produit sobre. Pas de ton publicitaire, pas d'emphase exagérée. Débit posé.",
  "lines": [
   {
-   "id": "V01",
+   "id": "V01a",
    "at": 0.6,
-   "split": 4,
-   "onsets": [
-    0.6,
-    1.45,
-    2.3,
-    3.15
-   ],
-   "text": "Rabelais. Rousseau. Flaubert. Hugo.",
-   "tts": "Rabelais... Rousseau... Flaubert... Hugo.",
-   "tts_google": "Rabelais… Rousseau… Flaubert… Hugo.",
-   "takes": 6,
-   "split_by": "words"
+   "onset": true,
+   "text": "Rabelais.",
+   "tts": "Rabelais, puis tout le reste.",
+   "tts_google": "Rabelais.",
+   "keep": "first",
+   "takes": 5
+  },
+  {
+   "id": "V01b",
+   "at": 1.45,
+   "onset": true,
+   "text": "Rousseau.",
+   "tts": "Rousseau, puis tout le reste.",
+   "tts_google": "Rousseau.",
+   "keep": "first",
+   "takes": 5
+  },
+  {
+   "id": "V01c",
+   "at": 2.3,
+   "onset": true,
+   "text": "Flaubert.",
+   "tts": "Flaubert, puis tout le reste.",
+   "tts_google": "Flaubert.",
+   "keep": "first",
+   "takes": 5
+  },
+  {
+   "id": "V01d",
+   "at": 3.15,
+   "onset": true,
+   "text": "Hugo.",
+   "tts": "Et puis, Hugo.",
+   "tts_google": "Hugo.",
+   "keep": "last",
+   "takes": 5
   },
   {
    "id": "V02",
@@ -144,6 +168,7 @@
   },
   "v2_noms_separes": "V01a–V01d (un nom par réplique) : abandonné, Kyutai lit mal un mot isolé (« Brabeulet », « Égout »).",
   "v2_V08": "Chaque texte vu en classe a sa fiche : l'essentiel en cinq points, les citations clés.  (entendu « s'affiche » par Whisper sur toutes les prises)",
-  "v2_V13": "Fait en TG1, par l'un d'entre nous. Pour toute la classe.  (« Fait en » entendu « Faites en » / « Fâte »)"
+  "v2_V13": "Fait en TG1, par l'un d'entre nous. Pour toute la classe.  (« Fait en » entendu « Faites en » / « Fâte »)",
+  "v2_V01_liste": "V01 « Rabelais. Rousseau. Flaubert. Hugo. » lu en liste puis découpé : noms trop liés (« Rabelais-rousse / ouf »), abandonné."
  }
 }

@@ -168,6 +168,43 @@ def trim(y, sr, pad_start=0.08, pad_end=0.14):
     return y
 
 
+def keep_word(y, sr, words, keep):
+    """Keep only the first (or last) word of a carrier sentence, cut in the pause next to it.
+
+    A name spoken alone is badly read by the local TTS (« Brabeulet », « Égout ») and a
+    list links the names together; inside a short sentence (« Rabelais, puis tout le
+    reste. ») it is read cleanly, with a continuation contour, and a pause follows it.
+    Returns (piece, pause_s, depth_db)."""
+    frame = int(sr * 0.01)
+    rms = np.sqrt(np.convolve(y ** 2, np.ones(frame) / frame, mode="same"))
+    lev = 20 * np.log10(rms + 1e-9)
+    peak = float(np.percentile(lev, 99))
+    if len(words) < 2:
+        return y, 0.0, 0.0
+    a, b = (words[0]["t1"], words[1]["t0"]) if keep == "first" else (words[-2]["t1"], words[-1]["t0"])
+    i0, i1 = int(max(0.0, a - 0.12) * sr), int(min(len(y) / sr, b + 0.12) * sr)
+    seg = lev[i0:i1]
+    low = seg < peak - 32
+    runs, k = [], 0
+    while k < len(low):
+        if low[k]:
+            j = k
+            while j < len(low) and low[j]:
+                j += 1
+            runs.append((k, j))
+            k = j
+        else:
+            k += 1
+    if runs:
+        r0, r1 = max(runs, key=lambda r: r[1] - r[0])
+        cut, pause = i0 + (r0 + r1) // 2, (r1 - r0) / sr
+    else:
+        cut, pause = i0 + int(np.argmin(seg)), 0.0
+    depth = peak - float(seg.min())
+    piece = y[:cut] if keep == "first" else y[cut:]
+    return trim(piece, sr), pause, depth
+
+
 def final_rise_st(path):
     """F0 slope over the last voiced 350 ms (semitones): > 0 = rising (question)."""
     import librosa
@@ -234,10 +271,15 @@ def main():
                 y = trim(y, sr)
                 sf.write(path, y, sr, subtype="PCM_24")
                 print(f"  {line['id']} take {k} {len(y)/sr:.2f}s audio in {time.time()-t0:.0f}s")
-            m, words = analyse(str(path), line["text"], a.whisper)
+            m, words = analyse(str(path), text if line.get("keep") else line["text"], a.whisper)
             if line.get("question"):
                 m["final_rise_st"] = round(final_rise_st(str(path)), 2)
             m["score"] = score(m, line)
+            if line.get("keep"):                 # seul le nom est gardé : il faut une vraie pause à côté
+                y0, sr0 = sf.read(str(path))
+                piece, pause, depth = keep_word(y0, sr0, words, line["keep"])
+                m["keep_pause_s"], m["keep_depth_db"] = round(pause, 3), round(depth, 1)
+                m["score"] = round(m["score"] + (4 if pause < 0.035 else 0) + max(0, 28 - depth) * 0.2, 3)
             m["seed"] = seed
             m["words"] = words
             results.append(m)
@@ -245,7 +287,10 @@ def main():
                   f"f0sd {m.get('f0_std_st')} wpm {m['words_per_min_speech']} | {m['transcript']}")
         best = min(results, key=lambda r: r["score"])
         y, sr = sf.read(best["file"])
+        if line.get("keep"):
+            y, _, _ = keep_word(y, sr, best["words"], line["keep"])
         sf.write(BEST / f"{line['id']}.wav", y, sr, subtype="PCM_24")
+        log = json.loads(LOG.read_text()) if LOG.exists() else {}     # relu : un autre outil a pu l'écrire entre-temps
         log[line["id"]] = {"provider": prov, "voice": voice_id, "text": line["text"], "best": best["file"],
                            "takes": results}
         LOG.parent.mkdir(parents=True, exist_ok=True)

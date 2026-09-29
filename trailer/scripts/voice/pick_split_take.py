@@ -99,4 +99,7 @@ if __name__ == "__main__":
     log = json.loads(LOG.read_text())
     for lid in sys.argv[1:]:
         run(lid, log)
-    LOG.write_text(json.dumps(log, ensure_ascii=False, indent=1))
+    fresh = json.loads(LOG.read_text())          # relu : generate_voice.py a pu écrire d'autres répliques entre-temps
+    for lid in sys.argv[1:]:
+        fresh[lid] = log[lid]
+    LOG.write_text(json.dumps(fresh, ensure_ascii=False, indent=1))

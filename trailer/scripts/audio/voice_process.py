@@ -24,7 +24,7 @@ OUT.mkdir(parents=True, exist_ok=True)
 LINES = json.loads((ROOT / "scripts" / "voice" / "lines.json").read_text())
 TAKES_LOG = json.loads((ROOT / "logs" / "voice_takes.json").read_text())
 
-SPEED = {"default": 0.95, "V01": 0.97}
+SPEED = {"default": 0.95, "V01a": 1.0, "V01b": 1.0, "V01c": 1.0, "V01d": 1.0}
 TARGET_RMS_DB = -20.0
 
 chain = Pedalboard([
