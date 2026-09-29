@@ -1,135 +1,169 @@
 /* =====================================================================
    SCÈNE 8 · POUR TOUTE LA CLASSE
-   Respiration : fond vert profond, typographie éditoriale.
-   « C'est gratuit, sans compte. Ta progression reste sur ton appareil. »
-   puis « Pensé en TG1, pour toute la classe. » : le téléphone rejoint
-   sa place dans le plan de classe ; toutes les tables s'allument.
+   Une page Seyès. « Gratuit. Sans compte. » s’écrit à l’encre, le
+   téléphone se pose sur la page ; la caméra recule : un plan de classe
+   est dessiné au crayon ; le téléphone rejoint sa place, puis chaque
+   place est cochée, chacune par un stylo différent, à son rythme.
    ===================================================================== */
 (function () {
   "use strict";
-  const { E, seg, lerp, clamp, inv, el, svgEl, put, cue: M, spring, drift } = window.ENG;
-  const C = window.CONTENT;
+  const { E, seg, lerp, clamp, inv, el, svgEl, put, cue: M, spring } = window.ENG;
   const S = { name: "classe" };
-  S.t0 = () => M("v12_start") - 0.45;
+  S.t0 = () => M("v12_start") - 0.35;
   S.t1 = () => M("v14_start") - 0.29;
 
-  // plan de classe : 6 rangées × 3 paires de tables (36 places)
-  const ROWS = 6, PAIRS = 3, DW = 64, DH = 40, GAPX = 150, GAPY = 78;
-  const PX = 720 - ((PAIRS - 1) * GAPX * 1.55) / 2, PY = 330;
-  const seats = [];
-  for (let r = 0; r < ROWS; r++) for (let p = 0; p < PAIRS; p++) for (let s = 0; s < 2; s++) {
-    seats.push({ r, x: PX + p * GAPX * 1.55 + (s ? DW / 2 + 2 : -DW / 2 - 2), y: PY + r * GAPY });
-  }
-  const MINE = 2 * PAIRS * 2 + 1 * 2 + 1;     // rangée 3, 2e paire, place de droite
+  // plan : 6 rangées × 3 tables de deux (36 places), coordonnées de la page (= écran quand la caméra est à 1)
+  const COLS = [560, 820, 1080], ROWS = [480, 570, 660, 750, 840, 930], TW = 176, TH = 54;
+  const INKS = ["#2F3B63", "#1D1E1A", "#2F5E3C", "#A8432F", "#4B3F7A", "#5B5A55", "#2F3B63", "#1D1E1A"];
+  const MINE = { r: 2, c: 1, s: 0 };
+  const rnd = (k => () => (k = (k * 16807) % 2147483647) / 2147483647)(42);
 
-  let root, bgk, words = [], caption, phone, plan, desks = [], board, planCap;
+  let root, cam, page, words = [], phone, svg, tables = [], seats = [], board, tg1, caption;
+
+  function wobblyRect(x, y, w, h) {
+    const j = () => ((rnd() - 0.5) * 3).toFixed(2);
+    return `M${x + +j()} ${y + +j()} L${x + w + +j()} ${y + +j()} L${x + w + +j()} ${y + h + +j()} L${x + +j()} ${y + h + +j()} Z`;
+  }
 
   S.build = function (stage) {
     root = el("div", "layer", stage);
-    bgk = el("div", "layer", root);
-    bgk.style.background = "radial-gradient(ellipse 90% 80% at 50% 45%, #414936, #2F3527)";
-    // typographie
-    const txt = [["Gratuit.", 0], ["Sans compte.", 1]];
-    txt.forEach(([w, k]) => {
-      const m = el("div", "abs", root, `<span class="mask"><span class="word">${w}</span></span>`);
-      m.style.cssText += `;left:130px;top:${300 + k * 118}px;font:400 104px/1.05 News;letter-spacing:-.03em;color:#F2EDE3;white-space:nowrap`;
-      m.inner = m.querySelector(".word");
-      words.push(m);
+    cam = el("div", "layer", root);
+    cam.style.overflow = "visible";
+    cam.style.transformOrigin = "0 0";
+    // la page Seyès (réglure : fines tous les 16 px, fortes tous les 64, verticales, marge rouge)
+    page = el("div", "layer", cam);
+    page.style.background = [
+      "linear-gradient(to right, transparent 149px, rgba(196,103,78,.55) 149px, rgba(196,103,78,.55) 151px, transparent 151px)",
+      "repeating-linear-gradient(to bottom, transparent 0 63px, rgba(122,146,172,.30) 63px 64px)",
+      "repeating-linear-gradient(to bottom, transparent 0 15px, rgba(122,146,172,.13) 15px 16px)",
+      "repeating-linear-gradient(to right, transparent 0 63px, rgba(122,146,172,.16) 63px 64px)",
+      "#F4F0E6 url(../assets/textures/paper_offwhite.png) center/1440px"].join(",");
+    // « Gratuit. Sans compte. » écrit à la main
+    [["Gratuit.", 190, 172], ["Sans compte.", 190, 268]].forEach(([w, x, y]) => {
+      const e = el("div", "abs", cam, w);
+      e.style.cssText += `;left:${x}px;top:${y}px;font:500 92px/1 Hand;color:#2F3B63;white-space:nowrap`;
+      words.push(e);
     });
-    caption = el("div", "abs mono", root, "Sans publicité · Rien n'est envoyé");
-    caption.style.cssText += ";left:134px;top:580px;font:500 15px/1 Mono;letter-spacing:.2em;color:#C9C8A8";
-    // téléphone
-    phone = el("div", "abs", root);
-    phone.style.cssText += ";left:930px;top:210px;width:300px;height:610px;border-radius:44px;background:#1D1E1A;padding:12px;box-shadow:0 30px 80px rgba(0,0,0,.35)";
-    phone.innerHTML = `<div style="width:100%;height:100%;border-radius:34px;background:#FBF8F2;overflow:hidden;position:relative">
-      <div style="position:absolute;left:50%;top:10px;width:84px;height:24px;margin-left:-42px;border-radius:12px;background:#1D1E1A"></div>
-      <div style="position:absolute;left:22px;top:58px;display:flex;align-items:center;gap:10px">${window.SCENES.find(s => s.name === "app").markSVG(28)}<span style="font:400 19px/1 News;letter-spacing:-.02em;color:#1D1E1A">Cahier d<span style="color:#C4674E">’</span>HLP</span></div>
-      <div class="eyebrow" style="position:absolute;left:22px;top:118px;font-size:10.5px">Ta progression</div>
-      <svg class="ring" viewBox="0 0 120 120" width="150" height="150" style="position:absolute;left:63px;top:146px">
-        <circle cx="60" cy="60" r="50" fill="none" stroke="#ECE7D8" stroke-width="10"/>
-        <circle class="ringc" cx="60" cy="60" r="50" fill="none" stroke="#5F6443" stroke-width="10" stroke-linecap="round" stroke-dasharray="314.16" stroke-dashoffset="314.16" transform="rotate(-90 60 60)"/>
-      </svg>
-      <div class="pct" style="position:absolute;left:0;right:0;top:200px;text-align:center;font:400 38px/1 News;color:#1D1E1A">0 %</div>
-      <div style="position:absolute;left:22px;right:22px;top:326px;padding:14px 16px;border-radius:14px;background:#F1ECE0;font:500 13.5px/1.3 Sans;color:#2B2C27">12 cartes à revoir<div style="font:400 12px/1 Mono;color:#7A7B6F;margin-top:6px;letter-spacing:.06em">AUJOURD'HUI</div></div>
-      <div style="position:absolute;left:22px;right:22px;top:410px;padding:14px 16px;border-radius:14px;background:#F1ECE0;font:500 13.5px/1.3 Sans;color:#2B2C27">Examen blanc<div style="font:400 12px/1 Mono;color:#7A7B6F;margin-top:6px;letter-spacing:.06em">20 QUESTIONS · 20 MIN</div></div>
-      <div style="position:absolute;left:22px;right:22px;bottom:24px;height:44px;border-radius:12px;background:#39402F;color:#F2EDE3;font:600 14px/44px Sans;text-align:center">Reprendre</div>
-    </div>`;
-    phone.ring = phone.querySelector(".ringc"); phone.pct = phone.querySelector(".pct");
-    // plan de classe
-    plan = el("div", "layer", root);
-    board = el("div", "abs", plan, `<span style="font:italic 400 38px/1 News;letter-spacing:.02em;color:#E9E4D6">TG1</span>`);
-    board.style.cssText += ";left:520px;top:188px;width:400px;height:62px;border-radius:8px;background:#23281E;box-shadow:inset 0 0 0 2px rgba(242,237,227,.14);display:flex;align-items:center;justify-content:center";
-    seats.forEach((s, i) => {
-      const d = el("div", "abs", plan);
-      d.style.cssText += `;left:${s.x - DW / 2}px;top:${s.y - DH / 2}px;width:${DW}px;height:${DH}px;border-radius:7px;background:rgba(242,237,227,.1);box-shadow:inset 0 0 0 1.5px rgba(242,237,227,.22)`;
-      const scr = el("div", "abs", d);
-      scr.style.cssText += ";left:22px;top:9px;width:20px;height:22px;border-radius:4px;background:#C9D07A;opacity:0";
-      desks.push({ d, scr, ...s, i });
-    });
-    planCap = el("div", "abs mono", plan, `${C.brand.lycee} · ${C.brand.classe} · ${C.brand.annee}`);
-    planCap.style.cssText += ";left:0;width:1440px;text-align:center;top:846px;font:500 15px/1 Mono;letter-spacing:.22em;color:#C9C8A8;text-transform:uppercase";
+    caption = el("div", "abs", cam, "TG1 · Lycée Notre-Dame · 2026–27");
+    caption.style.cssText += ";left:196px;top:392px;font:500 34px/1 Hand;color:#5B5A55;white-space:nowrap";
+    // plan au crayon
+    svg = svgEl("svg", { width: 1440, height: 1080, style: "position:absolute;left:0;top:0;overflow:visible" }, cam);
+    const brd = svgEl("path", { d: wobblyRect(690, 402, 260, 20), fill: "none", stroke: "#5B5A55", "stroke-width": 2.2, "stroke-linejoin": "round", opacity: 0.8, pathLength: 100, "stroke-dasharray": 100 }, svg);
+    board = { path: brd };
+    board.label = el("div", "abs", cam, "tableau");
+    board.label.style.cssText += ";left:690px;top:370px;width:260px;text-align:center;font:500 26px/1 Hand;color:#5B5A55";
+    tg1 = el("div", "abs", cam, "TG1");
+    tg1.style.cssText += ";left:990px;top:392px;font:600 40px/1 Hand;color:#A8432F";
+    tg1.ring = svgEl("path", { d: "M1066 408 C 1066 382, 986 378, 982 408 C 978 436, 1064 438, 1070 404", fill: "none", stroke: "#A8432F", "stroke-width": 2.4, "stroke-linecap": "round", pathLength: 100, "stroke-dasharray": 100 }, svg);
+    ROWS.forEach((y, r) => COLS.forEach((x, c) => {
+      const p = svgEl("path", { d: wobblyRect(x - TW / 2, y - TH / 2, TW, TH), fill: "rgba(91,90,85,0)", stroke: "#5B5A55", "stroke-width": 2, "stroke-linejoin": "round", opacity: 0.8, pathLength: 100, "stroke-dasharray": 100 }, svg);
+      const mid = svgEl("line", { x1: x, y1: y - TH / 2 + 8, x2: x, y2: y + TH / 2 - 8, stroke: "#5B5A55", "stroke-width": 1.2, opacity: 0 }, svg);
+      tables.push({ p, mid, x, y, r, c, d: rnd() * 0.25, d0: p.getAttribute("d") });
+      [0, 1].forEach(s => {
+        const sx = x + (s ? 1 : -1) * TW / 4, sy = y;
+        const tick = svgEl("path", { d: `M${sx - 13} ${sy + 1} L${sx - 4} ${sy + 11} L${sx + 15} ${sy - 12}`, fill: "none",
+          stroke: INKS[Math.floor(rnd() * INKS.length)], "stroke-width": (3.2 + rnd() * 1.2).toFixed(2), "stroke-linecap": "round", "stroke-linejoin": "round",
+          pathLength: 100, "stroke-dasharray": 100, "stroke-dashoffset": 100 }, svg);
+        seats.push({ tick, sx, sy, r, c, s, mine: r === MINE.r && c === MINE.c && s === MINE.s, d: rnd() });
+      });
+    }));
+    // le téléphone posé sur la page (écran de l’application, vue mobile)
+    phone = el("div", "abs", cam);
+    phone.style.cssText += ";left:0;top:0;width:124px;height:248px;border-radius:20px;background:#1D1E1A;padding:6px;box-shadow:0 2px 3px rgba(0,0,0,.25),0 14px 30px rgba(40,42,30,.28);transform-origin:62px 124px";
+    phone.innerHTML = `<div style="width:100%;height:100%;border-radius:15px;background:#FAF7F0;overflow:hidden;position:relative">
+      <div style="position:absolute;left:10px;top:16px;display:flex;align-items:center;gap:6px">${window.BRAND.markSVG(15, "phmark")}<span style="font:400 10.5px/1 News;color:#1D1E1A;white-space:nowrap">Cahier d<span style="color:#C4674E">’</span>HLP</span></div>
+      <div style="position:absolute;left:10px;right:10px;top:46px;height:84px;border-radius:4px;background:#FBF8F0;box-shadow:0 0 0 1px rgba(0,0,0,.06);background-image:linear-gradient(to bottom, transparent 20px, rgba(196,103,78,.5) 20px, rgba(196,103,78,.5) 21px, transparent 21px)">
+        <div style="position:absolute;left:0;right:0;top:36px;text-align:center;font:400 10px/1.2 News;color:#1D1E1A">Heure du lever<br>de Gargantua ?</div></div>
+      <div style="position:absolute;left:10px;right:10px;top:140px;display:flex;gap:5px">${[5, 4, 8, 3, 11].map(n => `<div style="flex:1;height:30px;border-radius:3px;background:#D6C19C;font:400 11px/30px News;text-align:center;color:#2E2518">${n}</div>`).join("")}</div>
+      <div style="position:absolute;left:10px;right:10px;bottom:12px;height:24px;border-radius:6px;background:#39402F;color:#F2EDE3;font:600 9.5px/24px Sans;text-align:center">Reprendre</div></div>`;
   };
 
   S.update = function (t) {
-    const t0 = S.t0(), gr = M("v12_gratuit"), co = M("v12_compte"), pr = M("v12_progression"), ap = M("v12_appareil");
-    const pe = M("v13_start"), tg = M("v13_tg1"), cl = M("v13_classe"), end = S.t1();
-    put(root, { op: seg(t, t0, 0.45, E.linear) });
-    // mots
+    const t0 = S.t0(), gr = M("v12_gratuit"), co = M("v12_compte"), tel = M("v12_telephone");
+    const v13 = M("v13_start"), nous = M("v13_nous"), cl = M("v13_classe"), v14 = M("v14_start");
+    // la page s’ouvre depuis le point « Arendt » de la frise
+    const [ax, ay] = window.SCENES.find(s => s.name === "frise").nodeXY(8);
+    const rv = seg(t, t0, 0.65, E.inOut);
+    root.style.clipPath = rv < 1 ? `circle(${(rv * 1900).toFixed(1)}px at ${ax}px ${ay}px)` : "none";
+    // caméra : plan serré sur le titre, puis recul sur toute la page
+    const pb = seg(t, v13 - 0.1, 1.3, E.inOut);
+    const z = lerp(1.55, 1.0, pb), fx = lerp(520, 720, pb), fy = lerp(330, 540, pb);
+    cam.style.transform = `translate(${(720 - fx * z).toFixed(2)}px, ${(540 - fy * z).toFixed(2)}px) scale(${z.toFixed(4)})`;
+    const out = seg(t, v14 - 0.85, 0.35);                       // tout s’efface sauf les tables
     [gr, co].forEach((tw, k) => {
-      const e = seg(t, tw - 0.12, 0.6, E.out);
-      put(words[k].inner, { y: (1 - e) * 120 });
-      const out = seg(t, pe - 0.35, 0.5, E.in);
-      put(words[k], { op: 1 - out, y: -out * 30 });
+      const e = seg(t, tw - 0.08, 0.55 + k * 0.15, E.inOut);
+      words[k].style.clipPath = `inset(-20% ${((1 - e) * 100).toFixed(1)}% -30% 0)`;
+      put(words[k], { op: 1 - out, r: -1.5 });
     });
-    put(caption, { op: seg(t, co + 0.45, 0.5) * (1 - seg(t, pe - 0.35, 0.4)) });
-    // téléphone
-    const phIn = seg(t, pr - 0.35, 0.7, E.emph);
-    const ring = seg(t, pr + 0.1, 1.4, E.inOut);
-    phone.ring.setAttribute("stroke-dashoffset", (314.16 * (1 - 0.52 * ring)).toFixed(2));
-    phone.pct.textContent = Math.round(52 * ring) + " %";
-    // le téléphone rejoint sa place dans le plan
-    const me = desks[MINE];
-    const toSeat = seg(t, pe - 0.15, 1.05, E.emph);
-    const px = lerp(930, me.x - 150, toSeat), py = lerp(210, me.y - 305, toSeat);
-    const ps = lerp(1, 0.07, toSeat);
-    phone.style.transformOrigin = "150px 305px";
-    put(phone, { x: lerp(40, 0, phIn) + (px - 930), y: py - 210, s: ps, op: phIn * (1 - seg(t, pe + 0.75, 0.25, E.linear)) });
-    // plan de classe
-    const plIn = seg(t, pe + 0.1, 0.8, E.out);
-    put(plan, { op: plIn });
-    desks.forEach(d => {
-      const di = seg(t, pe + 0.15 + d.r * 0.05, 0.5, E.out);
-      put(d.d, { op: di, y: (1 - di) * 10 });
-      // vague : les écrans s'allument depuis le tableau vers le fond, sur « toute la classe »
-      const wave = d.i === MINE ? seg(t, pe + 0.8, 0.3) : seg(t, cl - 0.35 + d.r * 0.075 + (d.i % 6) * 0.012, 0.35, E.out);
-      d.scr.style.opacity = wave.toFixed(3);
-      d.d.style.background = `rgba(242,237,227,${(0.1 + wave * 0.08).toFixed(3)})`;
-      d.scr.style.boxShadow = `0 0 ${(14 * wave).toFixed(1)}px rgba(201,208,122,${(0.55 * wave).toFixed(3)})`;
+    const cap = seg(t, v13 + 0.5, 0.6, E.inOut);
+    caption.style.clipPath = `inset(-20% ${((1 - cap) * 100).toFixed(1)}% -30% 0)`;
+    put(caption, { op: 1 - out });
+    // le téléphone : glisse sur la page, puis rejoint sa place
+    const pin = seg(t, tel - 0.4, 0.6, E.emph);
+    const mySeat = seats.find(s => s.mine);
+    const toSeat = seg(t, nous - 0.45, 0.8, E.emph);
+    const px = lerp(lerp(1600, 740, pin), mySeat.sx, toSeat), py = lerp(300, mySeat.sy, toSeat);
+    put(phone, { x: px - 62, y: py - 124, s: lerp(1, 0.26, toSeat), r: lerp(lerp(18, 7, pin), -8, toSeat), op: t >= tel - 0.4 ? 1 - out : 0 });
+    // plan au crayon : tableau, tables (dans l’ordre, avec un peu d’irrégularité)
+    const drawStart = v13 + 0.15, drawDur = Math.max(1.0, nous - v13);
+    board.path.setAttribute("stroke-dashoffset", (100 * (1 - seg(t, drawStart, 0.35, E.inOut))).toFixed(1));
+    board.path.style.opacity = (0.8 * (1 - out)).toFixed(3);
+    put(board.label, { op: seg(t, drawStart + 0.2, 0.3) * (1 - out) });
+    tg1.style.clipPath = `inset(-30% ${((1 - seg(t, M("v13_tg1") - 0.05, 0.35, E.inOut)) * 100).toFixed(1)}% -30% 0)`;
+    tg1.ring.setAttribute("stroke-dashoffset", (100 * (1 - seg(t, M("v13_tg1") + 0.3, 0.4, E.inOut))).toFixed(1));
+    put(tg1, { op: 1 - out });
+    tg1.ring.style.opacity = (1 - out).toFixed(3);
+    // relais : les trois tables d’une rangée glissent l’une vers l’autre et forment une barre
+    const merge = seg(t, v14 - 0.8, 0.5, E.inOut);
+    const x0 = COLS[0] - TW / 2, span = (COLS[2] + TW / 2 - x0) / 3;
+    tables.forEach(tb => {
+      const t1 = drawStart + 0.15 + (tb.r * 3 + tb.c) / 18 * drawDur * 0.8 + tb.d * 0.2;
+      if (merge > 0) {
+        const nx = lerp(tb.x - TW / 2, x0 + tb.c * span, merge), nw = lerp(TW, span + (tb.c < 2 ? 0.5 : 0), merge);
+        tb.p.setAttribute("d", `M${nx.toFixed(2)} ${tb.y - TH / 2} L${(nx + nw).toFixed(2)} ${tb.y - TH / 2} L${(nx + nw).toFixed(2)} ${tb.y + TH / 2} L${nx.toFixed(2)} ${tb.y + TH / 2} Z`);
+        tb.p.setAttribute("stroke-dashoffset", 0);
+      } else {
+        tb.p.setAttribute("d", tb.d0);
+        tb.p.setAttribute("stroke-dashoffset", (100 * (1 - seg(t, t1, 0.28, E.inOut))).toFixed(1));
+      }
+      tb.p.setAttribute("fill", `rgba(91,90,85,${(0.10 * merge).toFixed(3)})`);
+      tb.mid.style.opacity = (0.45 * seg(t, t1 + 0.2, 0.2) * (1 - merge)).toFixed(3);
     });
-    // les tables de chaque rangée se rejoignent : elles deviendront les lignes du logo
-    const v14s = M("v14_start");
-    const mm = seg(t, v14s - 0.8, 0.5, E.inOut);
-    if (mm > 0) {
-      const x0 = 421.5, x1 = 1018.5, cw = (x1 - x0) / (PAIRS * 2);
-      desks.forEach(d => {
-        const j = d.i % (PAIRS * 2);
-        const tx = x0 + j * cw;
-        d.d.style.left = lerp(d.x - DW / 2, tx, mm).toFixed(2) + "px";
-        d.d.style.width = lerp(DW, cw, mm).toFixed(2) + "px";
-        d.d.style.borderRadius = lerp(7, j === 0 ? 4 : 0, mm) + "px";
-        d.scr.style.opacity = (parseFloat(d.scr.style.opacity) * (1 - mm)).toFixed(3);
-        d.d.style.boxShadow = mm > 0.5 ? "none" : d.d.style.boxShadow;
-        d.d.style.background = `rgba(242,237,227,${lerp(0.18, 0.22, mm).toFixed(3)})`;
-      });
-    }
-    put(board, { op: seg(t, tg - 0.2, 0.5) * (1 - seg(t, v14s - 0.85, 0.35)), y: (1 - seg(t, tg - 0.2, 0.5)) * -10 });
-    put(planCap, { op: seg(t, cl + 0.2, 0.6) * (1 - seg(t, v14s - 0.85, 0.35)) });
-    // légère dérive de caméra (revient à 1 avant la fusion avec le logo)
-    const z = 1 + Math.sin(Math.PI * inv(pe, v14s - 0.8, t)) * 0.03;
-    plan.style.transformOrigin = "720px 520px";
-    plan.style.transform = `scale(${z.toFixed(4)})`;
+    // les coches : la mienne d’abord, puis toute la classe, stylo par stylo, sans métronome
+    seats.forEach(s => {
+      const ts = s.mine ? nous + 0.4 : cl - 0.32 + s.d * 1.05 + s.r * 0.03;
+      s.tick.setAttribute("stroke-dashoffset", (100 * (1 - seg(t, ts, 0.16 + s.d * 0.08, E.out))).toFixed(1));
+      s.tick.style.opacity = (1 - merge).toFixed(3);
+    });
+    // la réglure s’efface au moment du relais (le carton de fin est sur papier nu)
+    page.style.opacity = "1";
   };
-  S.blur = t => (t > M("v13_start") - 0.15 && t < M("v13_start") + 0.9 ? 2 : 1);
-  S.seatGeometry = () => ({ seats, ROWS, PAIRS, DW, DH });
+  S.blur = t => { const n = M("v13_nous"), tl = M("v12_telephone"); return (t > n - 0.45 && t < n + 0.4) || (t > tl - 0.4 && t < tl + 0.25) ? 6 : 1; };
+  S.geometry = () => ({ COLS, ROWS, TW, TH });
+  S.seatTimes = () => seats.map(s => ({ t: s.mine ? M("v13_nous") + 0.4 : M("v13_classe") - 0.32 + s.d * 1.05 + s.r * 0.03, x: s.sx }));
+  S.sounds = function () {
+    const out = [], v13 = M("v13_start"), nous = M("v13_nous");
+    const add = (t, sfx, g, p = 0, o = {}) => out.push(Object.assign({ t, sfx, g, p, scene: "classe" }, o));
+    add(S.t0(), "air_soft", -22);
+    add(M("v12_gratuit") - 0.06, "write_a", -21, -0.15);
+    add(M("v12_compte") - 0.06, "write_b", -21, 0.1);
+    add(M("v12_telephone") - 0.3, "paper_slide_6", -22, 0.3);
+    const drawStart = v13 + 0.15;
+    add(drawStart, "pen_stroke_2", -25, 0);                            // le tableau
+    add(drawStart + 0.3, "pencil_caption", -25, 0.1);                  // les tables, au crayon
+    add(M("v13_tg1") + 0.3, "marker_1", -23, -0.2);                    // « TG1 » entouré
+    // les coches : la mienne, puis quelques-unes de la classe (pas toutes : on entend un geste, pas un métronome)
+    const st = S.seatTimes().map((s, i) => ({ ...s, i })).sort((a, b) => a.t - b.t);
+    const mine = st.find(s => Math.abs(s.t - (nous + 0.4)) < 1e-6);
+    if (mine) add(mine.t + 0.02, "pen_stroke_4", -21, clamp((mine.x - 720) / 1400, -0.4, 0.4));
+    let last = -1, j = 0;
+    st.filter(s => s !== mine).forEach(s => {
+      if (s.t - last < 0.13 || j >= 8) return;
+      add(s.t + 0.02, ["pen_stroke_1", "pen_stroke_3", "pen_stroke_4"][j % 3], -25 - (j % 3), clamp((s.x - 720) / 1400, -0.4, 0.4));
+      last = s.t; j++;
+    });
+    return out;
+  };
+
   (window.SCENES = window.SCENES || []).push(S);
 })();

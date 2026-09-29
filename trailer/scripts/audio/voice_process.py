@@ -23,7 +23,7 @@ OUT = ROOT / "audio" / "voice" / "processed"
 OUT.mkdir(parents=True, exist_ok=True)
 LINES = json.loads((ROOT / "scripts" / "voice" / "lines.json").read_text())
 
-SPEED = {"default": 0.95, "V13": 0.88, "V05a": 0.92, "V07": 0.93, "V01": 1.0, "V05b": 0.95, "V08": 1.0}
+SPEED = {"default": 0.95, "V01a": 1.0, "V01b": 1.0, "V01c": 1.0, "V01d": 1.0}
 TARGET_RMS_DB = -20.0
 
 chain = Pedalboard([
@@ -31,6 +31,7 @@ chain = Pedalboard([
     LowShelfFilter(cutoff_frequency_hz=180, gain_db=-1.5),
     PeakFilter(cutoff_frequency_hz=320, gain_db=-1.5, q=1.0),
     PeakFilter(cutoff_frequency_hz=3200, gain_db=1.8, q=0.8),
+    PeakFilter(cutoff_frequency_hz=7000, gain_db=-2.5, q=1.2),     # dé-essage doux (sibilantes)
     HighShelfFilter(cutoff_frequency_hz=9500, gain_db=1.2),
     Compressor(threshold_db=-22, ratio=3.0, attack_ms=6, release_ms=90),
 ])
@@ -44,13 +45,12 @@ def speech_rms_db(y):
     return 20 * np.log10(np.sqrt(np.mean(act ** 2)) + 1e-9)
 
 
-def split_on_silence(y, n_parts, min_gap=0.06):
+def cut_points(y, n_parts, min_gap=0.06):
+    """Sample indices where to cut a line into n parts: middle of its longest internal silences."""
     fr = int(lib.SR * 0.01)
     m = y.mean(1)
     r = np.sqrt(np.convolve(m ** 2, np.ones(fr) / fr, "same"))
-    thr = np.max(r) * 0.04
-    act = r > thr
-    # find gaps (runs of silence)
+    act = r > np.max(r) * 0.04
     gaps, i = [], 0
     while i < len(act):
         if not act[i]:
@@ -62,19 +62,29 @@ def split_on_silence(y, n_parts, min_gap=0.06):
             i = j
         else:
             i += 1
-    gaps = sorted(gaps, key=lambda g: g[1] - g[0], reverse=True)[: n_parts - 1]
-    gaps.sort()
-    cuts = [0] + [(a + b) // 2 for a, b in gaps] + [len(y)]
-    parts = []
-    for a, b in zip(cuts, cuts[1:]):
-        seg = y[a:b]
-        on = np.argmax(np.abs(seg.mean(1)) > thr * 0.8)
-        seg = seg[max(0, on - int(0.02 * lib.SR)):]
-        parts.append(lib.fade(seg, 0.004, 0.03))
-    return parts
+    gaps = sorted(sorted(gaps, key=lambda g: g[1] - g[0], reverse=True)[: n_parts - 1])
+    return [(a + b) // 2 for a, b in gaps]
+
+
+def insert_pause(y, word, dur):
+    """Insert `dur` s of silence right after `word` (found with Whisper word timestamps)."""
+    import sys, tempfile
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from voice_metrics import transcribe, norm_words
+    with tempfile.NamedTemporaryFile(suffix=".wav") as tmp:
+        sf.write(tmp.name, y, lib.SR)
+        _, words = transcribe(tmp.name, "medium")
+    hit = next((w for w in words if norm_words(w["w"]) and norm_words(w["w"])[0] == norm_words(word)[0]), None)
+    if not hit:
+        print("  pause: mot introuvable", word)
+        return y
+    k = int((hit["t1"] + 0.03) * lib.SR)
+    sil = np.zeros((int(dur * lib.SR), 2), np.float32)
+    return np.concatenate([y[:k], sil, y[k:]])
 
 
 def main():
+    meta = {}
     for line in LINES["lines"]:
         lid = line["id"]
         y = lib.load(SRC / f"{lid}.wav")
@@ -87,14 +97,23 @@ def main():
         peak = np.max(np.abs(y))
         if peak > 0.89:
             y *= 0.89 / peak
-        y = lib.fade(y.astype(np.float32), 0.003, 0.04)
+        y = lib.fade(y.astype(np.float32), 0.01, 0.04)
+        for word, dur in line.get("pauses", []):
+            y = insert_pause(y, word, dur)
         sf.write(OUT / f"{lid}.wav", y, lib.SR, subtype="PCM_24")
+        info = {"dur": round(len(y) / lib.SR, 3), "speed": sp}
         if line.get("split"):
-            parts = split_on_silence(y, len(line["at"]))
-            for k, p in enumerate(parts, 1):
-                sf.write(OUT / f"{lid}_{k}.wav", p, lib.SR, subtype="PCM_24")
-            print(lid, "split", [round(len(p) / lib.SR, 2) for p in parts])
-        print(lid, f"x{sp}", round(len(y) / lib.SR, 2), "s")
+            cuts = cut_points(y, int(line["split"]))
+            edges = [0] + cuts + [len(y)]
+            for k, (a, b) in enumerate(zip(edges, edges[1:]), 1):
+                part = lib.fade(y[a:b], 0.004, 0.03)
+                part = part * lib.db(TARGET_RMS_DB - speech_rms_db(part))   # niveau égal entre segments
+                sf.write(OUT / f"{lid}_{k}.wav", part.astype(np.float32), lib.SR, subtype="PCM_24")
+            info["cuts_s"] = [round(c / lib.SR, 4) for c in cuts]
+            print(lid, "coupée en", len(edges) - 1, "à", info["cuts_s"])
+        meta[lid] = info
+        print(lid, f"x{sp}", info["dur"], "s")
+    (OUT / "processing.json").write_text(json.dumps(meta, indent=1))
 
 
 if __name__ == "__main__":

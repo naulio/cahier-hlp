@@ -1,0 +1,70 @@
+provider=kyutai voice=unmute-prod-website_fabieng-enhanced-v2.wav
+  V01a take 0 0.93s audio in 61s
+  V01a take 0: score 113.36 wer 11.0 p 0.492 f0sd 3.2 wpm 76.9 | Oubliez et abonnez-vous à notre chaîne pour plus de vidéos !
+  V01a take 1 0.74s audio in 10s
+  V01a take 1: score 21.6 wer 2.0 p 0.684 f0sd 1.78 wpm 100.0 | Rappelez-vous.
+  V01a take 2 1.03s audio in 10s
+  V01a take 2: score 13.64 wer 1.0 p 0.356 f0sd 0.87 wpm 89.6 | Brabeulet.
+  V01a take 3 0.66s audio in 9s
+  V01a take 3: score 21.852 wer 2.0 p 0.537 f0sd 2.96 wpm 113.2 | Vous rappelez ?
+V01a -> V01a_kyutai_b52cf90290.wav (score 13.64)
+  V01b take 0 1.04s audio in 10s
+  V01b take 0: score 2.857 wer 0.0 p 0.605 f0sd 1.37 wpm 58.8 | Rousseau...
+  V01b take 1 1.04s audio in 9s
+  V01b take 1: score 12.316 wer 1.0 p 0.421 f0sd 2.74 wpm 59.4 | Le Rousseau
+  V01b take 2 0.79s audio in 10s
+  V01b take 2: score 2.013 wer 0.0 p 0.604 f0sd 4.95 wpm 95.2 | Rousseau?
+  V01b take 3 0.95s audio in 9s
+  V01b take 3: score 17.341 wer 1.0 p 0.382 f0sd 3.06 wpm 85.7 | Le Rousseau...
+V01b -> V01b_kyutai_bbce1dc266.wav (score 2.013)
+  V01c take 0 1.04s audio in 10s
+  V01c take 0: score 12.576 wer 1.0 p 0.408 f0sd 1.94 wpm 59.4 | un Flaubert
+  V01c take 1 1.04s audio in 10s
+  V01c take 1: score 3.267 wer 0.0 p 0.78 f0sd 8.05 wpm 89.6 | Flaubert
+  V01c take 2 0.93s audio in 9s
+  V01c take 2: score 1.635 wer 0.0 p 0.668 f0sd 3.05 wpm 113.2 | Flaubert...
+  V01c take 3 0.84s audio in 10s
+  V01c take 3: score 1.961 wer 0.0 p 0.631 f0sd 3.93 wpm 120.0 | Flaubert ?
+V01c -> V01c_kyutai_564d940d41.wav (score 1.635)
+  V01d take 0 0.63s audio in 8s
+  V01d take 0: score 22.348 wer 2.0 p 0.413 f0sd 3.2 wpm 142.9 | You go.
+  V01d take 1 0.51s audio in 8s
+  V01d take 1: score 22.424 wer 2.0 p 0.394 f0sd 3.24 wpm 153.8 | Tu goûtes ?
+  V01d take 2 0.59s audio in 8s
+  V01d take 2: score 12.784 wer 1.0 p 0.304 f0sd 3.56 wpm 153.8 | Égout
+  V01d take 3 0.70s audio in 10s
+  V01d take 3: score 23.429 wer 2.0 p 0.499 f0sd 6.75 wpm 136.4 | Du goût.
+V01d -> V01d_kyutai_00045e41cf.wav (score 12.784)
+  V02 take 0 1.24s audio in 17s
+  V02 take 0: score 4.714 wer 0.0 p 0.932 f0sd 6.37 wpm 322.6 | Tu te souviens de tout ?
+  V02 take 1 2.07s audio in 18s
+  V02 take 1: score 0.51 wer 0.0 p 0.96 f0sd 3.44 wpm 219.0 | Tu te souviens de tout.
+  V02 take 2 1.54s audio in 14s
+  V02 take 2: score 3.974 wer 0.0 p 0.908 f0sd 7.51 wpm 288.5 | Tu te souviens de tout ?
+  V02 take 3 1.16s audio in 14s
+  V02 take 3: score 4.195 wer 0.0 p 0.947 f0sd 3.75 wpm 319.1 | Tu te souviens de tout ?
+  V02 take 4 1.59s audio in 18s
+  V02 take 4: score 5.664 wer 0.0 p 0.961 f0sd 3.8 wpm 294.1 | Tu te souviens de tout.
+V02 -> V02_kyutai_875deaf56a.wav (score 0.51)
+  V03 take 0 2.38s audio in 19s
+  V03 take 0: score 1.833 wer 0.0 p 0.994 f0sd 5.12 wpm 250.0 | Depuis la rentrée, les textes s'accumulent.
+  V03 take 1 2.33s audio in 19s
+  V03 take 1: score 0.586 wer 0.0 p 0.991 f0sd 2.64 wpm 227.0 | Depuis la rentrée, les textes s'accumulent.
+  V03 take 2 3.34s audio in 25s
+  V03 take 2: score 0.04 wer 0.0 p 0.99 f0sd 3.77 wpm 152.7 | Depuis la rentrée, les textes s'accumulent.
+  V03 take 3 2.30s audio in 19s
+  V03 take 3: score 3.285 wer 0.0 p 0.994 f0sd 4.42 wpm 256.1 | Depuis la rentrée, les textes s'accumulent.
+V03 -> V03_kyutai_ba405a8b4e.wav (score 0.04)
+  V04 take 0 2.36s audio in 19s
+  V04 take 0: score 1.769 wer 0.0 p 0.887 f0sd 2.88 wpm 257.7 | des photocopies, des notes, des post-it.
+  V04 take 1 2.68s audio in 20s
+  V04 take 1: score 0.792 wer 0.0 p 0.867 f0sd 4.54 wpm 215.4 | des photocopies, des notes, des post-it.
+  V04 take 2 2.73s audio in 22s
+  V04 take 2: score 0.572 wer 0.0 p 0.895 f0sd 3.38 wpm 211.1 | des photocopies, des notes, des post-it.
+  V04 take 3 2.37s audio in 19s
+  V04 take 3: score 3.124 wer 0.143 p 0.886 f0sd 3.39 wpm 254.5 | des photocopies, des notes, des post-its.
+V04 -> V04_kyutai_f4d75e8a19.wav (score 0.572)
+  V05 take 0 2.90s audio in 24s
+  V05 take 0: score 0.548 wer 0.0 p 0.863 f0sd 3.91 wpm 176.5 | Tout est quelque part, mais où ?
+  V05 take 1 2.47s audio in 19s
+  V05 take 1: score 0.9

@@ -25,7 +25,7 @@
       <div style="position:absolute;left:23px;top:44px;font:400 31px/1 News;letter-spacing:-.015em;color:#1D1E1A">${t.auteur}</div>
       <div style="position:absolute;left:24px;top:86px;right:20px;font:400 14.5px/1.3 Sans;color:#6B6C61;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${t.titre}</div>
       <div style="position:absolute;left:24px;right:64px;bottom:22px;height:4px;border-radius:4px;background:#ECE7D8"><div style="height:100%;width:${p}%;border-radius:4px;background:#5F6443"></div></div>
-      <div style="position:absolute;right:20px;bottom:16px;font:500 12px/1 Mono;color:#8A8B7C">${p}%</div>`;
+      <div style="position:absolute;right:20px;bottom:16px;font:500 12.5px/1 Mono;color:#8A8B7C;white-space:nowrap">${p}\u00a0%</div>`;
   }
 
   window.UI = { APP, MAIN, GRID, slot, cardHTML, PROGRESS };

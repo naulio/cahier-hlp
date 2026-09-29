@@ -1,0 +1,409 @@
+[
+ {
+  "t": -0.3,
+  "sfx": "paper_slide_6",
+  "g": -22,
+  "p": 0.3,
+  "scene": "classe"
+ },
+ {
+  "t": -0.14,
+  "sfx": "paper_slide_5",
+  "g": -20,
+  "p": -0.231,
+  "scene": "desk"
+ },
+ {
+  "t": -0.02,
+  "sfx": "paper_hit_1",
+  "g": -23,
+  "p": 0.45,
+  "scene": "desk"
+ },
+ {
+  "t": 0.14,
+  "sfx": "paper_hit_2",
+  "g": -24,
+  "p": -0.45,
+  "scene": "desk"
+ },
+ {
+  "t": 0.28,
+  "sfx": "paper_hit_3",
+  "g": -25,
+  "p": 0.158,
+  "scene": "desk"
+ },
+ {
+  "t": 0.37,
+  "sfx": "marker_1",
+  "g": -22,
+  "p": -0.1,
+  "scene": "desk"
+ },
+ {
+  "t": 0.42,
+  "sfx": "pen_stroke_4",
+  "g": -21,
+  "p": 0.04,
+  "scene": "classe"
+ },
+ {
+  "t": 1.313,
+  "sfx": "paper_hit_1",
+  "g": -14,
+  "p": -0.375,
+  "scene": "desk"
+ },
+ {
+  "t": 2.03,
+  "sfx": "paper_hit_3",
+  "g": -14.5,
+  "p": -0.125,
+  "scene": "desk"
+ },
+ {
+  "t": 2.617,
+  "sfx": "paper_hit_2",
+  "g": -15,
+  "p": 0.125,
+  "scene": "desk"
+ },
+ {
+  "t": 3.353,
+  "sfx": "paper_hit_1",
+  "g": -15.5,
+  "p": 0.375,
+  "scene": "desk"
+ },
+ {
+  "t": 5.41,
+  "sfx": "air_long",
+  "g": -17,
+  "p": 0,
+  "scene": "desk"
+ },
+ {
+  "t": 7.35,
+  "sfx": "paper_slide_2",
+  "g": -20,
+  "p": 0.5,
+  "scene": "desk"
+ },
+ {
+  "t": 9.05,
+  "sfx": "paper_slide_4",
+  "g": -21,
+  "p": 0.192,
+  "scene": "desk"
+ },
+ {
+  "t": 11.44,
+  "sfx": "pen_stroke_2",
+  "g": -21,
+  "p": 0.2,
+  "scene": "desk"
+ },
+ {
+  "t": 16.96,
+  "sfx": "shutter_k1000",
+  "g": -7,
+  "p": 0,
+  "scene": "desk"
+ },
+ {
+  "t": 17.09,
+  "sfx": "polaroid_eject",
+  "g": -14,
+  "p": 0,
+  "scene": "desk",
+  "len": 1.3,
+  "fade": 0.35
+ },
+ {
+  "t": 17.34,
+  "sfx": "paper_sweep",
+  "g": -18,
+  "p": 0,
+  "scene": "desk"
+ },
+ {
+  "t": 18.29,
+  "sfx": "card_tick_1",
+  "g": -25,
+  "p": -0.133,
+  "scene": "desk"
+ },
+ {
+  "t": 18.66,
+  "sfx": "card_tick_3",
+  "g": -26,
+  "p": 0.089,
+  "scene": "desk"
+ },
+ {
+  "t": 18.87,
+  "sfx": "card_tick_2",
+  "g": -25,
+  "p": 0.31,
+  "scene": "desk"
+ },
+ {
+  "t": 20.03,
+  "sfx": "pen_stroke_2",
+  "g": -25,
+  "p": 0,
+  "scene": "app"
+ },
+ {
+  "t": 21.28,
+  "sfx": "air_soft",
+  "g": -23,
+  "p": 0,
+  "scene": "app"
+ },
+ {
+  "t": 24.36,
+  "sfx": "ui_click",
+  "g": -17.5,
+  "p": 0.083,
+  "scene": "app"
+ },
+ {
+  "t": 24.46,
+  "sfx": "paper_slide_6",
+  "g": -27,
+  "p": 0,
+  "scene": "app"
+ },
+ {
+  "t": 30.09,
+  "sfx": "marker_2",
+  "g": -23,
+  "p": 0.1,
+  "scene": "app"
+ },
+ {
+  "t": 30.39,
+  "sfx": "write_a",
+  "g": -24,
+  "p": 0.15,
+  "scene": "app"
+ },
+ {
+  "t": 30.46,
+  "sfx": "ui_click",
+  "g": -17.5,
+  "p": -0.333,
+  "scene": "app"
+ },
+ {
+  "t": 31.76,
+  "sfx": "card_flip",
+  "g": -15,
+  "p": 0,
+  "scene": "app"
+ },
+ {
+  "t": 33.02,
+  "sfx": "ui_click",
+  "g": -17.5,
+  "p": 0.188,
+  "scene": "app"
+ },
+ {
+  "t": 33.4,
+  "sfx": "stamp",
+  "g": -14,
+  "p": 0.1,
+  "scene": "app"
+ },
+ {
+  "t": 33.48,
+  "sfx": "ui_click",
+  "g": -17.5,
+  "p": -0.333,
+  "scene": "app"
+ },
+ {
+  "t": 33.72,
+  "sfx": "wood_tock",
+  "g": -19,
+  "p": 0.1,
+  "scene": "app"
+ },
+ {
+  "t": 35.49,
+  "sfx": "ui_click",
+  "g": -16,
+  "p": 0.083,
+  "scene": "app"
+ },
+ {
+  "t": 37.24,
+  "sfx": "ui_click",
+  "g": -17.5,
+  "p": -0.333,
+  "scene": "app"
+ },
+ {
+  "t": 37.39,
+  "sfx": "marker_3",
+  "g": -22,
+  "p": -0.1,
+  "scene": "frise"
+ },
+ {
+  "t": 41.51,
+  "sfx": "write_b",
+  "g": -24,
+  "p": -0.2,
+  "scene": "frise",
+  "len": 0.8799999999999983,
+  "fade": 0.2
+ },
+ {
+  "t": 43.01,
+  "sfx": "air_soft",
+  "g": -22,
+  "p": 0,
+  "scene": "classe"
+ },
+ {
+  "t": 43.84,
+  "sfx": "write_a",
+  "g": -21,
+  "p": -0.15,
+  "scene": "classe"
+ },
+ {
+  "t": 44.56,
+  "sfx": "write_b",
+  "g": -21,
+  "p": 0.1,
+  "scene": "classe"
+ },
+ {
+  "t": 49.01,
+  "sfx": "pen_stroke_2",
+  "g": -25,
+  "p": 0,
+  "scene": "classe"
+ },
+ {
+  "t": 49.31,
+  "sfx": "pencil_caption",
+  "g": -25,
+  "p": 0.1,
+  "scene": "classe"
+ },
+ {
+  "t": 50.06,
+  "sfx": "marker_1",
+  "g": -23,
+  "p": -0.2,
+  "scene": "classe"
+ },
+ {
+  "t": 51.12,
+  "sfx": "pen_stroke_1",
+  "g": -25,
+  "p": 0.103,
+  "scene": "classe"
+ },
+ {
+  "t": 51.253,
+  "sfx": "pen_stroke_3",
+  "g": -26,
+  "p": 0.289,
+  "scene": "classe"
+ },
+ {
+  "t": 51.315,
+  "sfx": "pen_stroke_4",
+  "g": -27,
+  "p": 0.04,
+  "scene": "classe"
+ },
+ {
+  "t": 51.347,
+  "sfx": "pen_stroke_1",
+  "g": -25,
+  "p": -0.083,
+  "scene": "classe"
+ },
+ {
+  "t": 51.376,
+  "sfx": "pen_stroke_3",
+  "g": -26,
+  "p": 0.04,
+  "scene": "classe"
+ },
+ {
+  "t": 51.44,
+  "sfx": "pen_stroke_4",
+  "g": -27,
+  "p": -0.083,
+  "scene": "classe"
+ },
+ {
+  "t": 51.471,
+  "sfx": "pen_stroke_1",
+  "g": -25,
+  "p": -0.146,
+  "scene": "classe"
+ },
+ {
+  "t": 53.18,
+  "sfx": "paper_down",
+  "g": -21,
+  "p": 0,
+  "scene": "end"
+ },
+ {
+  "t": 53.2,
+  "sfx": "pen_stroke_2",
+  "g": -25,
+  "p": 0,
+  "scene": "end"
+ },
+ {
+  "t": 55.1,
+  "sfx": "marker_2",
+  "g": -21,
+  "p": 0,
+  "scene": "end"
+ },
+ {
+  "t": 58.44,
+  "sfx": "shutter_k1000",
+  "g": -8,
+  "p": 0,
+  "scene": "end"
+ },
+ {
+  "t": 58.59,
+  "sfx": "polaroid_eject",
+  "g": -14,
+  "p": 0,
+  "scene": "end",
+  "len": 1,
+  "fade": 0.3
+ },
+ {
+  "t": 59.57,
+  "sfx": "pencil_caption",
+  "g": -17,
+  "p": -0.05,
+  "scene": "end"
+ },
+ {
+  "t": 60.42,
+  "sfx": "write_b",
+  "g": -18,
+  "p": 0.05,
+  "scene": "end",
+  "len": 1.1,
+  "fade": 0.2
+ }
+]

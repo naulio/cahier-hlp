@@ -28,22 +28,23 @@ OUT_JS = ROOT / "source" / "data" / "cues.js"
 OUT_JSON = ROOT / "logs" / "timeline.json"
 VO_DIR = ROOT / "audio" / "voice" / "processed"
 
-SHUTTER_AFTER = 1.5   # s entre « Mais où ? » et le déclic
-END_TAIL = 5.4        # s après la dernière réplique (Polaroid final + fondu)
+SHUTTER_AFTER = 0.75  # s entre « Mais où ? » et le déclic (le viseur cherche dès « Tout est quelque part »)
+CAPTURE_AFTER = 2.6   # s entre la fin de la dernière réplique et le déclic final (adresse lisible)
+END_TAIL = CAPTURE_AFTER + 4.2   # Polaroid final, légende, fondu
 
 # alias -> (line, word of the script, occurrence)  | "start"/"end" of a line
 ALIASES = {
-    "n1": ("V01", "rabelais", 0), "n2": ("V01", "rousseau", 0), "n3": ("V01", "flaubert", 0), "n4": ("V01", "hugo", 0),
+    "n1": ("V01a", "start", 0), "n2": ("V01b", "start", 0), "n3": ("V01c", "start", 0), "n4": ("V01d", "start", 0),
     "q_start": ("V02", "start", 0), "q_souviens": ("V02", "souviens", 0), "q_tout": ("V02", "tout", 0), "q_end": ("V02", "end", 0),
     "v3_start": ("V03", "start", 0), "v3_rentree": ("V03", "rentrée", 0), "v3_textes": ("V03", "textes", 0),
     "v3_accum": ("V03", "accumulent", 0), "v3_end": ("V03", "end", 0),
-    "v4_feuilles": ("V04", "feuilles", 0), "v4_notes": ("V04", "notes", 0), "v4_citations": ("V04", "citations", 0), "v4_end": ("V04", "end", 0),
-    "v5_tout": ("V05a", "tout", 0), "v5_part": ("V05a", "part", 0), "v5_mais": ("V05b", "mais", 0), "v5_ou": ("V05b", "où", 0), "v5_end": ("V05b", "end", 0),
-    "v6_start": ("V06", "start", 0), "v6_tout": ("V06", "tout", 0), "v6_rassemble": ("V06", "rassemblé", 0), "v6_end": ("V06", "end", 0),
-    "v7_start": ("V07", "start", 0), "v7_cahier": ("V07", "cahier", 0), "v7_hlp": ("V07", "hlp", 0), "v7_end": ("V07", "end", 0),
+    "v4_photocopies": ("V04", "photocopies", 0), "v4_notes": ("V04", "notes", 0), "v4_postit": ("V04", "post-it", 0), "v4_end": ("V04", "end", 0),
+    "v5_tout": ("V05", "tout", 0), "v5_part": ("V05", "part", 0), "v5_mais": ("V05", "mais", 0), "v5_ou": ("V05", "où", 0), "v5_end": ("V05", "end", 0),
+    "v6_start": ("V06", "start", 0), "v6_tout": ("V06", "tout", 0), "v6_rassemble": ("V06", "rassemblé", 0),
+    "v7_start": ("V06", "dans", 0), "v7_cahier": ("V06", "cahier", 0), "v7_hlp": ("V06", "hlp", 0), "v7_end": ("V06", "end", 0),
     "v8_start": ("V08", "start", 0), "v8_texte": ("V08", "texte", 0), "v8_classe": ("V08", "classe", 0), "v8_fiche": ("V08", "fiche", 0),
-    "v8_auteur": ("V08", "auteur", 0), "v8_epoque": ("V08", "époque", 0), "v8_essentiel": ("V08", "essentiel", 0),
-    "v8_cinq": ("V08", "cinq", 0), "v8_citations": ("V08", "citations", 0), "v8_retenir": ("V08", "retenir", 0), "v8_end": ("V08", "end", 0),
+    "v8_essentiel": ("V08", "essentiel", 0), "v8_cinq": ("V08", "cinq", 0), "v8_citations": ("V08", "citations", 0),
+    "v8_retenir": ("V08", "clés", 0), "v8_end": ("V08", "end", 0),
     "v9_start": ("V09", "start", 0), "v9_flash": ("V09", "flashcards", 0), "v9_reviennent": ("V09", "reviennent", 0),
     "v9_moment": ("V09", "moment", 0), "v9_end": ("V09", "end", 0),
     "v10_start": ("V10", "start", 0), "v10_qcm": ("V10", "qcm", 0), "v10_corriges": ("V10", "corrigés", 0),
@@ -51,10 +52,11 @@ ALIASES = {
     "v11_start": ("V11", "start", 0), "v11_frise": ("V11", "frise", 0), "v11_relier": ("V11", "relier", 0),
     "v11_oeuvres": ("V11", "œuvres", 0), "v11_rabelais": ("V11", "rabelais", 0), "v11_arendt": ("V11", "arendt", 0), "v11_end": ("V11", "end", 0),
     "v12_start": ("V12", "start", 0), "v12_gratuit": ("V12", "gratuit", 0), "v12_compte": ("V12", "compte", 0),
-    "v12_progression": ("V12", "progression", 0), "v12_appareil": ("V12", "appareil", 0), "v12_end": ("V12", "end", 0),
-    "v13_start": ("V13", "start", 0), "v13_tg1": ("V13", "tg1", 0), "v13_classe": ("V13", "classe", 0), "v13_end": ("V13", "end", 0),
+    "v12_telephone": ("V12", "téléphone", 0), "v12_end": ("V12", "end", 0),
+    "v13_start": ("V13", "start", 0), "v13_tg1": ("V13", "tg1", 0), "v13_nous": ("V13", "nous", 0),
+    "v13_classe": ("V13", "classe", 0), "v13_end": ("V13", "end", 0),
     "v14_start": ("V14", "start", 0), "v14_cahier": ("V14", "cahier", 0), "v14_tout": ("V14", "tout", 0),
-    "v14_reviser": ("V14", "réviser", 0), "v14_endroit": ("V14", "endroit", 0), "v14_end": ("V14", "end", 0),
+    "v14_la": ("V14", "là", 0), "v14_end": ("V14", "end", 0),
 }
 
 
@@ -129,50 +131,58 @@ def main(model="small"):
     spec = json.loads(LINES.read_text())
     edit = json.loads(EDIT.read_text()) if EDIT.exists() else {}
     placed, marks = [], {}
+    marks_tmp = {}
     prev_end = 0.0
+    proc = json.loads((VO_DIR / "processing.json").read_text()) if (VO_DIR / "processing.json").exists() else {}
     for line in spec["lines"]:
         lid = line["id"]
         at = edit.get(lid, line["at"])
         ref = tokens(line["text"])
-        if line.get("split"):
-            segs, wl = [], []
-            for k, beat in enumerate(at, 1):
-                wav = VO_DIR / f"{lid}_{k}.wav"
-                info = sf.info(str(wav))
-                dur = info.frames / info.samplerate
-                y, sr = sf.read(str(wav), always_2d=True)
-                env = abs(y.mean(1))
-                onset = float((env > env.max() * 0.08).argmax()) / sr
-                start = float(beat) - onset            # l'attaque du mot tombe sur le temps
-                segs.append({"file": str(wav.relative_to(ROOT)), "at": round(start, 3), "dur": round(dur, 3)})
-                wl.append({"w": ref[k - 1], "t0": round(float(beat), 3), "t1": round(start + dur - 0.08, 3)})
-            end = segs[-1]["at"] + segs[-1]["dur"]
-            placed.append({"id": lid, "text": line["text"], "at": segs[0]["at"], "dur": round(end - segs[0]["at"], 3),
-                           "end": round(end, 3), "words": wl, "segments": segs})
-            prev_end = wl[-1]["t1"]
-            continue
         wav = VO_DIR / f"{lid}.wav"
         info = sf.info(str(wav))
         dur = info.frames / info.samplerate
         if isinstance(at, str) and at.startswith("+"):
             at = prev_end + float(at[1:])
         elif isinstance(at, str) and at.startswith("@shutter"):
-            v5 = next(p for p in placed if p["id"] == "V05b")
-            at = v5["words"][-1]["t1"] + SHUTTER_AFTER + float(at[len("@shutter"):] or 0)
+            at = marks_tmp["v5_end"] + SHUTTER_AFTER + float(at[len("@shutter"):] or 0)
         at = float(at)
+        if line.get("onset"):                          # l'attaque du mot tombe pile sur « at »
+            y, sr = sf.read(str(wav), always_2d=True)
+            env = abs(y.mean(1))
+            at -= float((env > env.max() * 0.08).argmax()) / sr
         _, words = transcribe(str(wav), model=model)
         hyp = hyp_tokens(words)
         for h in hyp:
             if h["tok"] in ("tg1", "tgi", "tg"):
                 h["tok"] = "tg1"
-            if h["tok"] == "pensez":
-                h["tok"] = "pensé"
             h["tok"] = h["tok"].replace("oe", "œ") if h["tok"].startswith("oeuvre") else h["tok"]
         tt = align(ref, hyp)
-        wl = [{"w": r, "t0": round(at + a, 3), "t1": round(at + b, 3)} for r, (a, b) in zip(ref, tt)]
-        placed.append({"id": lid, "text": line["text"], "at": at, "dur": round(dur, 3), "end": round(at + dur, 3),
-                       "words": wl, "segments": [{"file": str(wav.relative_to(ROOT)), "at": round(at, 3), "dur": round(dur, 3)}]})
+        if line.get("split"):
+            # segments placés l'un après l'autre avec les écarts demandés ; les mots suivent leur segment
+            cuts = proc[lid]["cuts_s"]
+            edges = [0.0] + cuts + [dur]
+            gaps = line.get("gaps", [0.0] * len(cuts))
+            segs, starts, t = [], [], at
+            for k in range(len(edges) - 1):
+                f = VO_DIR / f"{lid}_{k + 1}.wav"
+                d = sf.info(str(f)).frames / sf.info(str(f)).samplerate
+                segs.append({"file": str(f.relative_to(ROOT)), "at": round(t, 3), "dur": round(d, 3)})
+                starts.append(t)
+                t += d + (gaps[k] if k < len(gaps) else 0.0)
+            def place(x):
+                k = max(i for i in range(len(edges) - 1) if x >= edges[i] - 1e-6)
+                return starts[k] + (x - edges[k])
+            wl = [{"w": r, "t0": round(place(a), 3), "t1": round(place(b), 3)} for r, (a, b) in zip(ref, tt)]
+            end = segs[-1]["at"] + segs[-1]["dur"]
+        else:
+            segs = [{"file": str(wav.relative_to(ROOT)), "at": round(at, 3), "dur": round(dur, 3)}]
+            wl = [{"w": r, "t0": round(at + a, 3), "t1": round(at + b, 3)} for r, (a, b) in zip(ref, tt)]
+            end = at + dur
+        placed.append({"id": lid, "text": line["text"], "at": round(segs[0]["at"], 3), "dur": round(end - segs[0]["at"], 3),
+                       "end": round(end, 3), "words": wl, "segments": segs})
         prev_end = wl[-1]["t1"]
+        if lid == "V05":
+            marks_tmp["v5_end"] = wl[-1]["t1"]
     by = {p["id"]: p for p in placed}
     # speech start/end = first/last word (not file edges)
     for alias, (lid, word, occ) in ALIASES.items():
@@ -189,7 +199,7 @@ def main(model="small"):
     # derived marks
     marks["shutter"] = round(marks["v5_end"] + SHUTTER_AFTER, 3)   # le déclic, après la recherche du viseur
     DURATION = round(marks["v14_end"] + END_TAIL, 2)
-    marks["capture"] = round(marks["v14_end"] + 1.45, 3)
+    marks["capture"] = round(marks["v14_end"] + CAPTURE_AFTER, 3)
     marks["end"] = DURATION
     # overlaps check
     for a, b in zip(placed, placed[1:]):

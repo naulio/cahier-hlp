@@ -33,7 +33,8 @@
   "license": "CC0 1.0 (creativecommons.org/publicdomain/zero/1.0)",
   "query": "film camera shutter",
   "file": "shutter__734819.flac",
-  "retenu": true
+  "retenu": "False",
+  "note": "abandonné en v2 (un seul appareil : un Polaroid)"
  },
  "shutter__232130": {
   "id": "232130",
@@ -609,7 +610,8 @@
   "license": "CC0 1.0 (creativecommons.org/publicdomain/zero/1.0)",
   "query": "autofocus",
   "file": "autofocus__483381.flac",
-  "retenu": true
+  "retenu": "False",
+  "note": "abandonné en v2 (un seul appareil : un Polaroid)"
  },
  "autofocus__215156": {
   "id": "215156",
@@ -633,7 +635,8 @@
   "license": "CC0 1.0 (creativecommons.org/publicdomain/zero/1.0)",
   "query": "autofocus",
   "file": "autofocus__176539.flac",
-  "retenu": true
+  "retenu": "False",
+  "note": "abandonné en v2 (un seul appareil : un Polaroid)"
  },
  "autofocus__266753": {
   "id": "266753",

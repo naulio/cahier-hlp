@@ -38,26 +38,42 @@ REF_DIR = ROOT / "assets" / "voices_ref"
 
 KYUTAI_VOICE = os.environ.get("KYUTAI_VOICE", "unmute-prod-website_fabieng-enhanced-v2.wav")
 GEMINI_MODEL = os.environ.get("GEMINI_TTS_MODEL", "gemini-2.5-flash-preview-tts")
-GEMINI_VOICE = os.environ.get("GEMINI_TTS_VOICE", "Iapetus")
-CLOUD_VOICE = os.environ.get("GOOGLE_TTS_VOICE", "fr-FR-Chirp3-HD-Iapetus")
+GEMINI_VOICE = os.environ.get("GEMINI_TTS_VOICE", "Achird")
+CLOUD_VOICE = os.environ.get("GOOGLE_TTS_VOICE", "fr-FR-Chirp3-HD-Achird")
+REF_F0 = float(os.environ.get("VOICE_REF_F0", 128.0))   # registre médian de la voix (Hz)
 
 
 # ---------------------------------------------------------------- providers
+def _post(url, body, headers, tries=5):
+    """POST JSON with retries on 429/5xx (quota and transient errors)."""
+    import urllib.error
+    for k in range(tries):
+        req = urllib.request.Request(url, data=json.dumps(body).encode(), headers=headers)
+        try:
+            with urllib.request.urlopen(req, timeout=120) as r:
+                return json.load(r)
+        except urllib.error.HTTPError as e:
+            if e.code in (429, 500, 502, 503, 504) and k < tries - 1:
+                time.sleep(2 ** k * 2)
+                continue
+            raise
+
+
 def tts_gemini(text, style, seed):
     key = os.environ["GEMINI_API_KEY"]
     url = f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent"
     body = {
-        "contents": [{"parts": [{"text": f"{style}\n\nTexte à lire :\n{text}"}]}],
+        "contents": [{"parts": [{"text": f"{style} Lis uniquement le texte entre guillemets : « {text} »"}]}],
         "generationConfig": {
             "responseModalities": ["AUDIO"],
             "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": GEMINI_VOICE}}},
         },
     }
-    req = urllib.request.Request(url, data=json.dumps(body).encode(),
-                                 headers={"Content-Type": "application/json", "x-goog-api-key": key})
-    with urllib.request.urlopen(req, timeout=120) as r:
-        d = json.load(r)
-    part = d["candidates"][0]["content"]["parts"][0]["inlineData"]
+    d = _post(url, body, {"Content-Type": "application/json", "x-goog-api-key": key})
+    parts = d.get("candidates", [{}])[0].get("content", {}).get("parts", [])
+    part = next((p["inlineData"] for p in parts if "inlineData" in p), None)
+    if part is None:
+        raise RuntimeError(f"Gemini TTS : pas d'audio dans la réponse ({str(d)[:300]})")
     pcm = np.frombuffer(base64.b64decode(part["data"]), dtype="<i2").astype(np.float32) / 32768
     sr = 24000
     mt = part.get("mimeType", "")
@@ -72,15 +88,12 @@ def tts_google_cloud(text, style, seed):
     body = {
         "input": {"text": text},
         "voice": {"languageCode": "fr-FR", "name": CLOUD_VOICE},
-        "audioConfig": {"audioEncoding": "LINEAR16", "sampleRateHertz": 24000, "speakingRate": 0.96},
+        "audioConfig": {"audioEncoding": "LINEAR16", "sampleRateHertz": 24000},
     }
-    req = urllib.request.Request(url, data=json.dumps(body).encode(),
-                                 headers={"Content-Type": "application/json", "X-Goog-Api-Key": key})
-    with urllib.request.urlopen(req, timeout=120) as r:
-        d = json.load(r)
-    raw = base64.b64decode(d["audioContent"])
-    pcm = np.frombuffer(raw[44:], dtype="<i2").astype(np.float32) / 32768  # skip WAV header
-    return pcm, 24000
+    import io
+    d = _post(url, body, {"Content-Type": "application/json", "X-Goog-Api-Key": key})
+    pcm, sr = sf.read(io.BytesIO(base64.b64decode(d["audioContent"])), dtype="float32")
+    return pcm, sr
 
 
 def tts_gtts(text, style, seed):
@@ -139,7 +152,7 @@ def pick_provider(name):
 
 
 # ---------------------------------------------------------------- helpers
-def trim(y, sr, pad_start=0.03, pad_end=0.12):
+def trim(y, sr, pad_start=0.08, pad_end=0.14):
     """Trim leading/trailing silence (keeps natural breath tails)."""
     frame = int(sr * 0.01)
     rms = np.sqrt(np.convolve(y ** 2, np.ones(frame) / frame, mode="same"))
@@ -149,19 +162,44 @@ def trim(y, sr, pad_start=0.03, pad_end=0.12):
         return y
     a = max(0, idx[0] - int(pad_start * sr))
     b = min(len(y), idx[-1] + int(pad_end * sr))
-    return y[a:b]
+    y = y[a:b].copy()
+    n = int(0.01 * sr)
+    y[:n] *= np.linspace(0, 1, n)          # fondu d'entrée de 10 ms : l'attaque reste intacte
+    return y
 
 
-def score(m):
+def final_rise_st(path):
+    """F0 slope over the last voiced 350 ms (semitones): > 0 = rising (question)."""
+    import librosa
+    y, sr = sf.read(path)
+    y = y.mean(1) if y.ndim > 1 else y
+    f0, v, _ = librosa.pyin(librosa.resample(y.astype(np.float32), orig_sr=sr, target_sr=16000), fmin=60, fmax=420,
+                            sr=16000, frame_length=1024, hop_length=160)
+    f = f0[v & ~np.isnan(f0)]
+    if len(f) < 12:
+        return 0.0
+    tail = f[-35:]
+    return float(12 * np.log2(np.median(tail[-8:]) / np.median(tail[:8])))
+
+
+def score(m, line=None):
     """Lower is better. Intelligibility first, then naturalness proxies."""
     s = m["wer"] * 10
     s += (1 - (m.get("mean_word_prob") or 0)) * 4
     f0 = m.get("f0_std_st", 0)
     s += max(0, 2.2 - f0) * 0.8           # too flat = robotic
     s += max(0, f0 - 5.0) * 0.5           # too wild = over-acted
-    wpm = m.get("words_per_min_speech", 170)
-    s += max(0, wpm - 205) / 40           # rushed
-    s += max(0, 130 - wpm) / 40           # dragging
+    nwords = len(m.get("transcript", "").split())
+    if nwords >= 4:                       # le débit n'a pas de sens sur deux mots
+        wpm = m.get("words_per_min_speech", 170)
+        s += max(0, wpm - 205) / 40       # rushed
+        s += max(0, 130 - wpm) / 40       # dragging
+    med = m.get("f0_median_hz")
+    if med:                               # pas de saut de registre entre répliques
+        s += max(0, abs(12 * np.log2(med / REF_F0)) - 2.0) * 0.8
+    if line and line.get("question"):
+        rise = m.get("final_rise_st", 0.0)
+        s += max(0, 2.0 - rise) * 0.4     # une question doit monter
     return round(s, 3)
 
 
@@ -170,7 +208,7 @@ def main():
     ap.add_argument("--provider", default=os.environ.get("VOICE_PROVIDER", "auto"))
     ap.add_argument("--takes", type=int, default=3)
     ap.add_argument("--only", nargs="*", help="line ids")
-    ap.add_argument("--whisper", default="small")
+    ap.add_argument("--whisper", default="medium")
     a = ap.parse_args()
     prov = pick_provider(a.provider)
     fn = PROVIDERS[prov]
@@ -184,18 +222,22 @@ def main():
         if a.only and line["id"] not in a.only:
             continue
         results = []
-        for k in range(a.takes):
+        text = line.get("tts_google", line["text"]) if prov in ("gemini", "google-cloud") else line["tts"]
+        n_takes = 1 if prov == "google-cloud" else line.get("takes", a.takes)   # Cloud TTS est déterministe
+        for k in range(n_takes):
             seed = 1000 + k * 7919
-            h = hashlib.sha1(f"{prov}|{voice_id}|{line['tts']}|{seed}".encode()).hexdigest()[:10]
+            h = hashlib.sha1(f"{prov}|{voice_id}|{text}|{seed}|trim2".encode()).hexdigest()[:10]
             path = TAKES / f"{line['id']}_{prov}_{h}.wav"
             if not path.exists():
                 t0 = time.time()
-                y, sr = fn(line["tts"], spec["style_prompt"], seed)
+                y, sr = fn(text, spec["style_prompt"], seed)
                 y = trim(y, sr)
                 sf.write(path, y, sr, subtype="PCM_24")
                 print(f"  {line['id']} take {k} {len(y)/sr:.2f}s audio in {time.time()-t0:.0f}s")
             m, words = analyse(str(path), line["text"], a.whisper)
-            m["score"] = score(m)
+            if line.get("question"):
+                m["final_rise_st"] = round(final_rise_st(str(path)), 2)
+            m["score"] = score(m, line)
             m["seed"] = seed
             m["words"] = words
             results.append(m)

@@ -187,223 +187,278 @@
   "provider": "kyutai",
   "voice": "unmute-prod-website_fabieng-enhanced-v2.wav",
   "text": "Tu te souviens de tout ?",
-  "best": "/home/user/cahier-hlp/trailer/audio/voice/takes/V02_kyutai_98b9376bef.wav",
+  "best": "/home/user/cahier-hlp/trailer/audio/voice/takes/V02_kyutai_875deaf56a.wav",
   "takes": [
    {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V02_kyutai_b8f785a237.wav",
-    "duration_s": 1.17,
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V02_kyutai_a755336ef1.wav",
+    "duration_s": 1.24,
     "transcript": "Tu te souviens de tout ?",
     "wer": 0.0,
     "mean_word_prob": 0.932,
-    "words_per_min_speech": 326.1,
+    "words_per_min_speech": 322.6,
     "peak_dbfs": -9.95,
     "f0_median_hz": 107.5,
     "f0_std_st": 6.37,
     "f0_range_p5_p95_st": 19.45,
-    "voiced_ratio": 0.641,
-    "speech_time_s": 0.92,
+    "voiced_ratio": 0.605,
+    "speech_time_s": 0.93,
     "pauses_ge_180ms": 0,
     "mean_pause_s": 0.0,
-    "score": 3.985,
+    "final_rise_st": 18.5,
+    "score": 4.714,
     "seed": 1000,
     "words": [
      {
       "w": "Tu",
       "t0": 0.0,
-      "t1": 0.2,
-      "p": 0.8
+      "t1": 0.26,
+      "p": 0.804
      },
      {
       "w": "te",
-      "t0": 0.2,
-      "t1": 0.42,
-      "p": 0.999
-     },
-     {
-      "w": "souviens",
-      "t0": 0.42,
-      "t1": 0.72,
-      "p": 0.998
-     },
-     {
-      "w": "de",
-      "t0": 0.72,
-      "t1": 0.9,
-      "p": 0.996
-     },
-     {
-      "w": "tout",
-      "t0": 0.9,
-      "t1": 1.02,
-      "p": 0.984
-     },
-     {
-      "w": "?",
-      "t0": 1.02,
-      "t1": 1.74,
-      "p": 0.818
-     }
-    ]
-   },
-   {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V02_kyutai_98b9376bef.wav",
-    "duration_s": 2.0,
-    "transcript": "Tu te souviens de tout.",
-    "wer": 0.0,
-    "mean_word_prob": 0.959,
-    "words_per_min_speech": 219.0,
-    "peak_dbfs": -7.12,
-    "f0_median_hz": 138.6,
-    "f0_std_st": 3.44,
-    "f0_range_p5_p95_st": 9.59,
-    "voiced_ratio": 0.615,
-    "speech_time_s": 1.37,
-    "pauses_ge_180ms": 0,
-    "mean_pause_s": 0.0,
-    "score": 0.514,
-    "seed": 8919,
-    "words": [
-     {
-      "w": "Tu",
-      "t0": 0.0,
-      "t1": 0.24,
-      "p": 0.817
-     },
-     {
-      "w": "te",
-      "t0": 0.24,
-      "t1": 0.54,
+      "t0": 0.26,
+      "t1": 0.48,
       "p": 0.998
      },
      {
       "w": "souviens",
-      "t0": 0.54,
-      "t1": 1.12,
-      "p": 0.998
-     },
-     {
-      "w": "de",
-      "t0": 1.12,
-      "t1": 1.5,
-      "p": 0.993
-     },
-     {
-      "w": "tout.",
-      "t0": 1.5,
-      "t1": 1.66,
-      "p": 0.987
-     }
-    ]
-   },
-   {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V02_kyutai_703f6c4145.wav",
-    "duration_s": 1.47,
-    "transcript": "Tu te souviens de tout ?",
-    "wer": 0.0,
-    "mean_word_prob": 0.844,
-    "words_per_min_speech": 288.5,
-    "peak_dbfs": -9.43,
-    "f0_median_hz": 121.4,
-    "f0_std_st": 7.51,
-    "f0_range_p5_p95_st": 18.26,
-    "voiced_ratio": 0.642,
-    "speech_time_s": 1.04,
-    "pauses_ge_180ms": 0,
-    "mean_pause_s": 0.0,
-    "score": 3.966,
-    "seed": 16838,
-    "words": [
-     {
-      "w": "Tu",
-      "t0": 0.0,
-      "t1": 0.22,
-      "p": 0.206
-     },
-     {
-      "w": "te",
-      "t0": 0.22,
-      "t1": 0.44,
-      "p": 0.994
-     },
-     {
-      "w": "souviens",
-      "t0": 0.44,
-      "t1": 0.7,
-      "p": 0.999
-     },
-     {
-      "w": "de",
-      "t0": 0.7,
-      "t1": 0.9,
-      "p": 0.99
-     },
-     {
-      "w": "tout",
-      "t0": 0.9,
-      "t1": 1.12,
-      "p": 0.992
-     },
-     {
-      "w": "?",
-      "t0": 1.12,
-      "t1": 1.78,
-      "p": 0.882
-     }
-    ]
-   },
-   {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V02_kyutai_ca251c818c.wav",
-    "duration_s": 1.09,
-    "transcript": "Tu te souviens de tout ?",
-    "wer": 0.0,
-    "mean_word_prob": 0.94,
-    "words_per_min_speech": 319.1,
-    "peak_dbfs": -10.13,
-    "f0_median_hz": 105.1,
-    "f0_std_st": 3.75,
-    "f0_range_p5_p95_st": 11.29,
-    "voiced_ratio": 0.709,
-    "speech_time_s": 0.94,
-    "pauses_ge_180ms": 0,
-    "mean_pause_s": 0.0,
-    "score": 3.093,
-    "seed": 24757,
-    "words": [
-     {
-      "w": "Tu",
-      "t0": 0.0,
-      "t1": 0.22,
-      "p": 0.847
-     },
-     {
-      "w": "te",
-      "t0": 0.22,
-      "t1": 0.46,
-      "p": 0.998
-     },
-     {
-      "w": "souviens",
-      "t0": 0.46,
+      "t0": 0.48,
       "t1": 0.76,
       "p": 0.999
      },
      {
       "w": "de",
       "t0": 0.76,
-      "t1": 0.9,
+      "t1": 0.94,
       "p": 0.996
      },
      {
       "w": "tout",
-      "t0": 0.9,
-      "t1": 0.98,
+      "t0": 0.94,
+      "t1": 1.08,
+      "p": 0.985
+     },
+     {
+      "w": "?",
+      "t0": 1.08,
+      "t1": 1.8,
+      "p": 0.807
+     }
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V02_kyutai_875deaf56a.wav",
+    "duration_s": 2.07,
+    "transcript": "Tu te souviens de tout.",
+    "wer": 0.0,
+    "mean_word_prob": 0.96,
+    "words_per_min_speech": 219.0,
+    "peak_dbfs": -7.12,
+    "f0_median_hz": 138.6,
+    "f0_std_st": 3.44,
+    "f0_range_p5_p95_st": 9.59,
+    "voiced_ratio": 0.594,
+    "speech_time_s": 1.37,
+    "pauses_ge_180ms": 0,
+    "mean_pause_s": 0.0,
+    "final_rise_st": 9.0,
+    "score": 0.51,
+    "seed": 8919,
+    "words": [
+     {
+      "w": "Tu",
+      "t0": 0.0,
+      "t1": 0.28,
+      "p": 0.821
+     },
+     {
+      "w": "te",
+      "t0": 0.28,
+      "t1": 0.6,
+      "p": 0.998
+     },
+     {
+      "w": "souviens",
+      "t0": 0.6,
+      "t1": 1.2,
+      "p": 0.999
+     },
+     {
+      "w": "de",
+      "t0": 1.2,
+      "t1": 1.54,
+      "p": 0.993
+     },
+     {
+      "w": "tout.",
+      "t0": 1.54,
+      "t1": 1.72,
+      "p": 0.989
+     }
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V02_kyutai_c0b98e958e.wav",
+    "duration_s": 1.54,
+    "transcript": "Tu te souviens de tout ?",
+    "wer": 0.0,
+    "mean_word_prob": 0.908,
+    "words_per_min_speech": 288.5,
+    "peak_dbfs": -9.43,
+    "f0_median_hz": 121.4,
+    "f0_std_st": 7.51,
+    "f0_range_p5_p95_st": 18.26,
+    "voiced_ratio": 0.613,
+    "speech_time_s": 1.04,
+    "pauses_ge_180ms": 0,
+    "mean_pause_s": 0.0,
+    "final_rise_st": 1.34,
+    "score": 3.974,
+    "seed": 16838,
+    "words": [
+     {
+      "w": "Tu",
+      "t0": 0.0,
+      "t1": 0.28,
+      "p": 0.585
+     },
+     {
+      "w": "te",
+      "t0": 0.28,
+      "t1": 0.5,
+      "p": 0.993
+     },
+     {
+      "w": "souviens",
+      "t0": 0.5,
+      "t1": 0.74,
+      "p": 0.998
+     },
+     {
+      "w": "de",
+      "t0": 0.74,
+      "t1": 0.94,
+      "p": 0.989
+     },
+     {
+      "w": "tout",
+      "t0": 0.94,
+      "t1": 1.18,
+      "p": 0.993
+     },
+     {
+      "w": "?",
+      "t0": 1.18,
+      "t1": 1.42,
+      "p": 0.887
+     }
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V02_kyutai_aa12a00f19.wav",
+    "duration_s": 1.16,
+    "transcript": "Tu te souviens de tout ?",
+    "wer": 0.0,
+    "mean_word_prob": 0.947,
+    "words_per_min_speech": 319.1,
+    "peak_dbfs": -10.13,
+    "f0_median_hz": 105.1,
+    "f0_std_st": 3.75,
+    "f0_range_p5_p95_st": 11.29,
+    "voiced_ratio": 0.667,
+    "speech_time_s": 0.94,
+    "pauses_ge_180ms": 0,
+    "mean_pause_s": 0.0,
+    "final_rise_st": 10.45,
+    "score": 4.195,
+    "seed": 24757,
+    "words": [
+     {
+      "w": "Tu",
+      "t0": 0.0,
+      "t1": 0.26,
+      "p": 0.888
+     },
+     {
+      "w": "te",
+      "t0": 0.26,
+      "t1": 0.5,
+      "p": 0.998
+     },
+     {
+      "w": "souviens",
+      "t0": 0.5,
+      "t1": 0.82,
+      "p": 0.998
+     },
+     {
+      "w": "de",
+      "t0": 0.82,
+      "t1": 0.94,
+      "p": 0.996
+     },
+     {
+      "w": "tout",
+      "t0": 0.94,
+      "t1": 1.04,
       "p": 0.997
      },
      {
       "w": "?",
-      "t0": 0.98,
-      "t1": 1.66,
-      "p": 0.804
+      "t0": 1.04,
+      "t1": 1.68,
+      "p": 0.805
+     }
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V02_kyutai_f2ef128342.wav",
+    "duration_s": 1.59,
+    "transcript": "Tu te souviens de tout.",
+    "wer": 0.0,
+    "mean_word_prob": 0.961,
+    "words_per_min_speech": 294.1,
+    "peak_dbfs": -7.16,
+    "f0_median_hz": 142.7,
+    "f0_std_st": 3.8,
+    "f0_range_p5_p95_st": 11.6,
+    "voiced_ratio": 0.431,
+    "speech_time_s": 1.02,
+    "pauses_ge_180ms": 0,
+    "mean_pause_s": 0.0,
+    "final_rise_st": -6.2,
+    "score": 5.664,
+    "seed": 32676,
+    "words": [
+     {
+      "w": "Tu",
+      "t0": 0.0,
+      "t1": 0.34,
+      "p": 0.818
+     },
+     {
+      "w": "te",
+      "t0": 0.34,
+      "t1": 0.62,
+      "p": 0.998
+     },
+     {
+      "w": "souviens",
+      "t0": 0.62,
+      "t1": 1.0,
+      "p": 0.999
+     },
+     {
+      "w": "de",
+      "t0": 1.0,
+      "t1": 1.2,
+      "p": 0.997
+     },
+     {
+      "w": "tout.",
+      "t0": 1.2,
+      "t1": 1.38,
+      "p": 0.994
      }
     ]
    }
@@ -413,190 +468,252 @@
   "provider": "kyutai",
   "voice": "unmute-prod-website_fabieng-enhanced-v2.wav",
   "text": "Depuis la rentrée, les textes s'accumulent.",
-  "best": "/home/user/cahier-hlp/trailer/audio/voice/takes/V03_kyutai_96d6c8f18c.wav",
+  "best": "/home/user/cahier-hlp/trailer/audio/voice/takes/V03_kyutai_ba405a8b4e.wav",
   "takes": [
    {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V03_kyutai_83f94d016b.wav",
-    "duration_s": 2.31,
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V03_kyutai_646bd713f2.wav",
+    "duration_s": 2.38,
     "transcript": "Depuis la rentrée, les textes s'accumulent.",
     "wer": 0.0,
-    "mean_word_prob": 0.995,
+    "mean_word_prob": 0.994,
     "words_per_min_speech": 250.0,
     "peak_dbfs": -2.95,
     "f0_median_hz": 150.3,
     "f0_std_st": 5.12,
     "f0_range_p5_p95_st": 16.62,
-    "voiced_ratio": 0.766,
+    "voiced_ratio": 0.744,
     "speech_time_s": 1.68,
     "pauses_ge_180ms": 0,
     "mean_pause_s": 0.0,
-    "score": 1.205,
+    "score": 1.833,
     "seed": 1000,
     "words": [
      {
       "w": "Depuis",
       "t0": 0.0,
-      "t1": 0.4,
-      "p": 0.984
+      "t1": 0.44,
+      "p": 0.982
      },
      {
       "w": "la",
-      "t0": 0.4,
-      "t1": 0.58,
-      "p": 0.994
+      "t0": 0.44,
+      "t1": 0.64,
+      "p": 0.993
      },
      {
       "w": "rentrée,",
-      "t0": 0.58,
-      "t1": 0.96,
+      "t0": 0.64,
+      "t1": 1.0,
       "p": 0.998
      },
      {
       "w": "les",
-      "t0": 1.14,
-      "t1": 1.24,
-      "p": 0.992
+      "t0": 1.2,
+      "t1": 1.3,
+      "p": 0.989
      },
      {
       "w": "textes",
-      "t0": 1.24,
-      "t1": 1.62,
+      "t0": 1.3,
+      "t1": 1.68,
       "p": 0.997
      },
      {
       "w": "s",
-      "t0": 1.62,
-      "t1": 1.8,
+      "t0": 1.68,
+      "t1": 1.84,
       "p": 0.999
      },
      {
       "w": "'accumulent.",
-      "t0": 1.8,
+      "t0": 1.84,
+      "t1": 2.28,
+      "p": 0.998
+     }
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V03_kyutai_ac6fe4e22e.wav",
+    "duration_s": 2.33,
+    "transcript": "Depuis la rentrée, les textes s'accumulent.",
+    "wer": 0.0,
+    "mean_word_prob": 0.991,
+    "words_per_min_speech": 227.0,
+    "peak_dbfs": -8.4,
+    "f0_median_hz": 127.9,
+    "f0_std_st": 2.64,
+    "f0_range_p5_p95_st": 9.41,
+    "voiced_ratio": 0.773,
+    "speech_time_s": 1.85,
+    "pauses_ge_180ms": 0,
+    "mean_pause_s": 0.0,
+    "score": 0.586,
+    "seed": 8919,
+    "words": [
+     {
+      "w": "Depuis",
+      "t0": 0.0,
+      "t1": 0.58,
+      "p": 0.979
+     },
+     {
+      "w": "la",
+      "t0": 0.58,
+      "t1": 0.76,
+      "p": 0.982
+     },
+     {
+      "w": "rentrée,",
+      "t0": 0.76,
+      "t1": 1.16,
+      "p": 0.998
+     },
+     {
+      "w": "les",
+      "t0": 1.3,
+      "t1": 1.42,
+      "p": 0.995
+     },
+     {
+      "w": "textes",
+      "t0": 1.42,
+      "t1": 1.72,
+      "p": 0.988
+     },
+     {
+      "w": "s",
+      "t0": 1.72,
+      "t1": 1.86,
+      "p": 0.999
+     },
+     {
+      "w": "'accumulent.",
+      "t0": 1.86,
       "t1": 2.24,
       "p": 0.998
      }
     ]
    },
    {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V03_kyutai_34f5633e72.wav",
-    "duration_s": 2.26,
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V03_kyutai_ba405a8b4e.wav",
+    "duration_s": 3.34,
     "transcript": "Depuis la rentrée, les textes s'accumulent.",
     "wer": 0.0,
-    "mean_word_prob": 0.992,
-    "words_per_min_speech": 227.0,
-    "peak_dbfs": -8.4,
-    "f0_median_hz": 127.9,
-    "f0_std_st": 2.64,
-    "f0_range_p5_p95_st": 9.42,
-    "voiced_ratio": 0.792,
-    "speech_time_s": 1.85,
-    "pauses_ge_180ms": 0,
-    "mean_pause_s": 0.0,
-    "score": 0.582,
-    "seed": 8919,
-    "words": [
-     {
-      "w": "Depuis",
-      "t0": 0.0,
-      "t1": 0.52,
-      "p": 0.983
-     },
-     {
-      "w": "la",
-      "t0": 0.52,
-      "t1": 0.72,
-      "p": 0.985
-     },
-     {
-      "w": "rentrée,",
-      "t0": 0.72,
-      "t1": 1.12,
-      "p": 0.998
-     },
-     {
-      "w": "les",
-      "t0": 1.24,
-      "t1": 1.38,
-      "p": 0.994
-     },
-     {
-      "w": "textes",
-      "t0": 1.38,
-      "t1": 1.68,
-      "p": 0.989
-     },
-     {
-      "w": "s",
-      "t0": 1.68,
-      "t1": 1.8,
-      "p": 0.999
-     },
-     {
-      "w": "'accumulent.",
-      "t0": 1.8,
-      "t1": 2.18,
-      "p": 0.998
-     }
-    ]
-   },
-   {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V03_kyutai_96d6c8f18c.wav",
-    "duration_s": 3.29,
-    "transcript": "Depuis la rentrée, les textes s'accumulent.",
-    "wer": 0.0,
-    "mean_word_prob": 0.989,
-    "words_per_min_speech": 153.8,
+    "mean_word_prob": 0.99,
+    "words_per_min_speech": 152.7,
     "peak_dbfs": -3.99,
-    "f0_median_hz": 117.9,
+    "f0_median_hz": 117.3,
     "f0_std_st": 3.77,
-    "f0_range_p5_p95_st": 11.6,
-    "voiced_ratio": 0.761,
-    "speech_time_s": 2.73,
+    "f0_range_p5_p95_st": 11.61,
+    "voiced_ratio": 0.746,
+    "speech_time_s": 2.75,
     "pauses_ge_180ms": 0,
     "mean_pause_s": 0.0,
-    "score": 0.044,
+    "score": 0.04,
     "seed": 16838,
     "words": [
      {
       "w": "Depuis",
       "t0": 0.0,
-      "t1": 0.84,
-      "p": 0.964
+      "t1": 0.86,
+      "p": 0.965
      },
      {
       "w": "la",
-      "t0": 0.84,
-      "t1": 1.14,
-      "p": 0.976
+      "t0": 0.86,
+      "t1": 1.16,
+      "p": 0.978
      },
      {
       "w": "rentrée,",
-      "t0": 1.14,
-      "t1": 1.68,
+      "t0": 1.16,
+      "t1": 1.7,
       "p": 0.998
      },
      {
       "w": "les",
-      "t0": 1.9,
-      "t1": 2.02,
-      "p": 0.991
+      "t0": 1.94,
+      "t1": 2.06,
+      "p": 0.993
      },
      {
       "w": "textes",
-      "t0": 2.02,
-      "t1": 2.6,
+      "t0": 2.06,
+      "t1": 2.62,
       "p": 0.997
      },
      {
       "w": "s",
-      "t0": 2.6,
-      "t1": 2.76,
+      "t0": 2.62,
+      "t1": 2.8,
       "p": 0.999
      },
      {
       "w": "'accumulent.",
-      "t0": 2.76,
-      "t1": 3.22,
+      "t0": 2.8,
+      "t1": 3.26,
+      "p": 0.998
+     }
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V03_kyutai_162427ec81.wav",
+    "duration_s": 2.3,
+    "transcript": "Depuis la rentrée, les textes s'accumulent.",
+    "wer": 0.0,
+    "mean_word_prob": 0.994,
+    "words_per_min_speech": 256.1,
+    "peak_dbfs": -3.15,
+    "f0_median_hz": 165.8,
+    "f0_std_st": 4.42,
+    "f0_range_p5_p95_st": 16.55,
+    "voiced_ratio": 0.726,
+    "speech_time_s": 1.64,
+    "pauses_ge_180ms": 0,
+    "mean_pause_s": 0.0,
+    "score": 3.285,
+    "seed": 24757,
+    "words": [
+     {
+      "w": "Depuis",
+      "t0": 0.0,
+      "t1": 0.42,
+      "p": 0.98
+     },
+     {
+      "w": "la",
+      "t0": 0.42,
+      "t1": 0.6,
+      "p": 0.995
+     },
+     {
+      "w": "rentrée,",
+      "t0": 0.6,
+      "t1": 1.02,
+      "p": 0.997
+     },
+     {
+      "w": "les",
+      "t0": 1.16,
+      "t1": 1.28,
+      "p": 0.994
+     },
+     {
+      "w": "textes",
+      "t0": 1.28,
+      "t1": 1.66,
+      "p": 0.997
+     },
+     {
+      "w": "s",
+      "t0": 1.66,
+      "t1": 1.82,
+      "p": 0.999
+     },
+     {
+      "w": "'accumulent.",
+      "t0": 1.82,
+      "t1": 2.24,
       "p": 0.998
      }
     ]
@@ -606,180 +723,254 @@
  "V04": {
   "provider": "kyutai",
   "voice": "unmute-prod-website_fabieng-enhanced-v2.wav",
-  "text": "Les feuilles, les notes, les citations…",
-  "best": "/home/user/cahier-hlp/trailer/audio/voice/takes/V04_kyutai_5836e866e3.wav",
+  "text": "Des photocopies, des notes, des post-it…",
+  "best": "/home/user/cahier-hlp/trailer/audio/voice/takes/V04_kyutai_f4d75e8a19.wav",
   "takes": [
    {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V04_kyutai_cfc73679c7.wav",
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V04_kyutai_1622cd01cc.wav",
     "duration_s": 2.36,
-    "transcript": "Les feuilles, les notes, les citations ?",
+    "transcript": "des photocopies, des notes, des post-it.",
     "wer": 0.0,
-    "mean_word_prob": 0.85,
-    "words_per_min_speech": 189.5,
-    "peak_dbfs": -4.47,
-    "f0_median_hz": 137.4,
-    "f0_std_st": 3.59,
-    "f0_range_p5_p95_st": 9.95,
-    "voiced_ratio": 0.802,
-    "speech_time_s": 1.9,
+    "mean_word_prob": 0.887,
+    "words_per_min_speech": 257.7,
+    "peak_dbfs": -3.65,
+    "f0_median_hz": 129.4,
+    "f0_std_st": 2.88,
+    "f0_range_p5_p95_st": 9.46,
+    "voiced_ratio": 0.603,
+    "speech_time_s": 1.63,
     "pauses_ge_180ms": 0,
     "mean_pause_s": 0.0,
-    "score": 0.6,
+    "score": 1.769,
     "seed": 1000,
     "words": [
      {
-      "w": "Les",
-      "t0": 0.0,
-      "t1": 0.32,
-      "p": 0.576
+      "w": "des",
+      "t0": 0.12,
+      "t1": 0.56,
+      "p": 0.634
      },
      {
-      "w": "feuilles,",
-      "t0": 0.32,
-      "t1": 0.88,
+      "w": "photocopies,",
+      "t0": 0.56,
+      "t1": 1.0,
+      "p": 0.97
+     },
+     {
+      "w": "des",
+      "t0": 1.12,
+      "t1": 1.2,
       "p": 0.996
      },
      {
-      "w": "les",
-      "t0": 1.12,
-      "t1": 1.22,
+      "w": "notes,",
+      "t0": 1.2,
+      "t1": 1.44,
+      "p": 1.0
+     },
+     {
+      "w": "des",
+      "t0": 1.64,
+      "t1": 1.74,
       "p": 0.992
      },
      {
-      "w": "notes,",
-      "t0": 1.22,
-      "t1": 1.46,
-      "p": 0.998
-     },
-     {
-      "w": "les",
-      "t0": 1.64,
-      "t1": 1.74,
-      "p": 0.995
-     },
-     {
-      "w": "citations",
+      "w": "post",
       "t0": 1.74,
-      "t1": 2.22,
-      "p": 0.999
+      "t1": 2.0,
+      "p": 0.877
      },
      {
-      "w": "?",
-      "t0": 2.22,
-      "t1": 2.9,
-      "p": 0.397
+      "w": "-it.",
+      "t0": 2.0,
+      "t1": 2.2,
+      "p": 0.739
      }
     ]
    },
    {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V04_kyutai_7e753918b3.wav",
-    "duration_s": 2.42,
-    "transcript": "Les feuilles, les notes, les citations.",
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V04_kyutai_9f74295240.wav",
+    "duration_s": 2.68,
+    "transcript": "des photocopies, des notes, des post-it.",
     "wer": 0.0,
-    "mean_word_prob": 0.902,
-    "words_per_min_speech": 233.8,
-    "peak_dbfs": -3.14,
-    "f0_median_hz": 138.6,
-    "f0_std_st": 3.08,
-    "f0_range_p5_p95_st": 9.5,
-    "voiced_ratio": 0.624,
-    "speech_time_s": 1.54,
-    "pauses_ge_180ms": 1,
-    "mean_pause_s": 0.45,
-    "score": 1.112,
+    "mean_word_prob": 0.867,
+    "words_per_min_speech": 215.4,
+    "peak_dbfs": -8.09,
+    "f0_median_hz": 125.3,
+    "f0_std_st": 4.54,
+    "f0_range_p5_p95_st": 13.42,
+    "voiced_ratio": 0.634,
+    "speech_time_s": 1.95,
+    "pauses_ge_180ms": 0,
+    "mean_pause_s": 0.0,
+    "score": 0.792,
     "seed": 8919,
     "words": [
      {
-      "w": "Les",
+      "w": "des",
       "t0": 0.0,
       "t1": 0.3,
-      "p": 0.438
+      "p": 0.61
      },
      {
-      "w": "feuilles,",
+      "w": "photocopies,",
       "t0": 0.3,
-      "t1": 0.82,
-      "p": 0.995
+      "t1": 0.98,
+      "p": 0.978
      },
      {
-      "w": "les",
-      "t0": 1.02,
-      "t1": 1.16,
-      "p": 0.992
-     },
-     {
-      "w": "notes,",
+      "w": "des",
       "t0": 1.16,
-      "t1": 1.46,
+      "t1": 1.28,
       "p": 0.998
      },
      {
-      "w": "les",
-      "t0": 1.82,
-      "t1": 1.98,
-      "p": 0.993
+      "w": "notes,",
+      "t0": 1.28,
+      "t1": 1.54,
+      "p": 0.999
      },
      {
-      "w": "citations.",
+      "w": "des",
+      "t0": 1.84,
+      "t1": 1.98,
+      "p": 0.991
+     },
+     {
+      "w": "post",
       "t0": 1.98,
-      "t1": 2.44,
-      "p": 0.999
+      "t1": 2.26,
+      "p": 0.749
+     },
+     {
+      "w": "-it.",
+      "t0": 2.26,
+      "t1": 2.5,
+      "p": 0.747
      }
     ]
    },
    {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V04_kyutai_5836e866e3.wav",
-    "duration_s": 2.78,
-    "transcript": "Les feuilles, les notes, les citations.",
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V04_kyutai_f4d75e8a19.wav",
+    "duration_s": 2.73,
+    "transcript": "des photocopies, des notes, des post-it.",
     "wer": 0.0,
-    "mean_word_prob": 0.922,
-    "words_per_min_speech": 167.4,
-    "peak_dbfs": -5.33,
-    "f0_median_hz": 144.4,
-    "f0_std_st": 3.04,
-    "f0_range_p5_p95_st": 9.7,
-    "voiced_ratio": 0.687,
-    "speech_time_s": 2.15,
-    "pauses_ge_180ms": 1,
-    "mean_pause_s": 0.18,
-    "score": 0.312,
+    "mean_word_prob": 0.895,
+    "words_per_min_speech": 211.1,
+    "peak_dbfs": -6.07,
+    "f0_median_hz": 140.7,
+    "f0_std_st": 3.38,
+    "f0_range_p5_p95_st": 11.82,
+    "voiced_ratio": 0.679,
+    "speech_time_s": 1.99,
+    "pauses_ge_180ms": 0,
+    "mean_pause_s": 0.0,
+    "score": 0.572,
     "seed": 16838,
     "words": [
      {
-      "w": "Les",
+      "w": "des",
       "t0": 0.0,
-      "t1": 0.5,
-      "p": 0.553
+      "t1": 0.44,
+      "p": 0.769
      },
      {
-      "w": "feuilles,",
-      "t0": 0.5,
-      "t1": 1.06,
-      "p": 0.992
+      "w": "photocopies,",
+      "t0": 0.44,
+      "t1": 1.14,
+      "p": 0.961
      },
      {
-      "w": "les",
-      "t0": 1.24,
-      "t1": 1.42,
+      "w": "des",
+      "t0": 1.32,
+      "t1": 1.44,
+      "p": 0.997
+     },
+     {
+      "w": "notes,",
+      "t0": 1.44,
+      "t1": 1.74,
+      "p": 0.999
+     },
+     {
+      "w": "des",
+      "t0": 2.0,
+      "t1": 2.14,
+      "p": 0.993
+     },
+     {
+      "w": "post",
+      "t0": 2.14,
+      "t1": 2.4,
+      "p": 0.808
+     },
+     {
+      "w": "-it.",
+      "t0": 2.4,
+      "t1": 2.62,
+      "p": 0.741
+     }
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V04_kyutai_a510e8c7da.wav",
+    "duration_s": 2.37,
+    "transcript": "des photocopies, des notes, des post-its.",
+    "wer": 0.143,
+    "mean_word_prob": 0.886,
+    "words_per_min_speech": 254.5,
+    "peak_dbfs": -0.0,
+    "f0_median_hz": 130.1,
+    "f0_std_st": 3.39,
+    "f0_range_p5_p95_st": 10.48,
+    "voiced_ratio": 0.651,
+    "speech_time_s": 1.65,
+    "pauses_ge_180ms": 0,
+    "mean_pause_s": 0.0,
+    "score": 3.124,
+    "seed": 24757,
+    "words": [
+     {
+      "w": "des",
+      "t0": 0.0,
+      "t1": 0.36,
+      "p": 0.495
+     },
+     {
+      "w": "photocopies,",
+      "t0": 0.36,
+      "t1": 0.94,
+      "p": 0.974
+     },
+     {
+      "w": "des",
+      "t0": 1.1,
+      "t1": 1.2,
       "p": 0.995
      },
      {
       "w": "notes,",
-      "t0": 1.42,
-      "t1": 1.74,
-      "p": 0.998
-     },
-     {
-      "w": "les",
-      "t0": 2.02,
-      "t1": 2.18,
-      "p": 0.996
-     },
-     {
-      "w": "citations.",
-      "t0": 2.18,
-      "t1": 2.72,
+      "t0": 1.2,
+      "t1": 1.5,
       "p": 0.999
+     },
+     {
+      "w": "des",
+      "t0": 1.7,
+      "t1": 1.8,
+      "p": 0.99
+     },
+     {
+      "w": "post",
+      "t0": 1.8,
+      "t1": 2.04,
+      "p": 0.931
+     },
+     {
+      "w": "-its.",
+      "t0": 2.04,
+      "t1": 2.28,
+      "p": 0.815
      }
     ]
    }
@@ -788,210 +979,546 @@
  "V05": {
   "provider": "kyutai",
   "voice": "unmute-prod-website_fabieng-enhanced-v2.wav",
-  "text": "Tout est quelque part. Mais où ?",
-  "best": "/home/user/cahier-hlp/trailer/audio/voice/takes/V05_kyutai_1ce025819e.wav",
+  "text": "Tout est quelque part… Mais où ?",
+  "best": "/home/user/cahier-hlp/trailer/audio/voice/takes/V05_kyutai_154e34cc30.wav",
   "takes": [
    {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V05_kyutai_1ce025819e.wav",
-    "duration_s": 2.11,
-    "transcript": "Tout est quelque part. Mais où ?",
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V05_kyutai_154e34cc30.wav",
+    "duration_s": 2.9,
+    "transcript": "Tout est quelque part, mais où ?",
     "wer": 0.0,
-    "mean_word_prob": 0.845,
-    "words_per_min_speech": 313.0,
-    "peak_dbfs": -7.77,
-    "f0_median_hz": 151.2,
-    "f0_std_st": 4.74,
-    "f0_range_p5_p95_st": 13.55,
-    "voiced_ratio": 0.583,
-    "speech_time_s": 1.15,
+    "mean_word_prob": 0.863,
+    "words_per_min_speech": 176.5,
+    "peak_dbfs": -9.21,
+    "f0_median_hz": 125.7,
+    "f0_std_st": 3.91,
+    "f0_range_p5_p95_st": 10.7,
+    "voiced_ratio": 0.701,
+    "speech_time_s": 2.04,
     "pauses_ge_180ms": 1,
-    "mean_pause_s": 0.54,
-    "score": 3.32,
+    "mean_pause_s": 0.26,
+    "final_rise_st": 13.15,
+    "score": 0.548,
     "seed": 1000,
     "words": [
      {
       "w": "Tout",
       "t0": 0.0,
-      "t1": 0.16,
-      "p": 0.53
+      "t1": 0.32,
+      "p": 0.879
      },
      {
       "w": "est",
-      "t0": 0.16,
-      "t1": 0.44,
-      "p": 0.891
+      "t0": 0.32,
+      "t1": 0.58,
+      "p": 0.985
      },
      {
       "w": "quelque",
-      "t0": 0.44,
-      "t1": 0.68,
-      "p": 0.994
+      "t0": 0.58,
+      "t1": 0.96,
+      "p": 0.955
      },
      {
-      "w": "part.",
-      "t0": 0.68,
-      "t1": 1.16,
-      "p": 0.997
+      "w": "part,",
+      "t0": 0.96,
+      "t1": 1.46,
+      "p": 0.987
      },
      {
-      "w": "Mais",
-      "t0": 1.52,
-      "t1": 1.8,
-      "p": 0.908
+      "w": "mais",
+      "t0": 1.72,
+      "t1": 2.28,
+      "p": 0.99
      },
      {
       "w": "où",
-      "t0": 1.8,
-      "t1": 1.94,
-      "p": 0.894
+      "t0": 2.28,
+      "t1": 2.68,
+      "p": 0.509
      },
      {
       "w": "?",
-      "t0": 1.94,
-      "t1": 2.08,
-      "p": 0.699
+      "t0": 2.68,
+      "t1": 3.48,
+      "p": 0.734
      }
     ]
    },
    {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V05_kyutai_44df17b3fa.wav",
-    "duration_s": 1.68,
-    "transcript": "Tout est quelque part. Mais où ?",
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V05_kyutai_616c174091.wav",
+    "duration_s": 2.47,
+    "transcript": "Tout est quelque part, mais où ?",
     "wer": 0.0,
-    "mean_word_prob": 0.915,
-    "words_per_min_speech": 342.9,
-    "peak_dbfs": -9.01,
-    "f0_median_hz": 115.9,
-    "f0_std_st": 4.06,
-    "f0_range_p5_p95_st": 14.14,
-    "voiced_ratio": 0.554,
-    "speech_time_s": 1.05,
+    "mean_word_prob": 0.882,
+    "words_per_min_speech": 210.5,
+    "peak_dbfs": -4.61,
+    "f0_median_hz": 146.9,
+    "f0_std_st": 4.0,
+    "f0_range_p5_p95_st": 12.32,
+    "voiced_ratio": 0.591,
+    "speech_time_s": 1.71,
     "pauses_ge_180ms": 1,
-    "mean_pause_s": 0.42,
-    "score": 3.787,
+    "mean_pause_s": 0.44,
+    "final_rise_st": 4.5,
+    "score": 0.917,
     "seed": 8919,
     "words": [
      {
       "w": "Tout",
       "t0": 0.0,
-      "t1": 0.14,
-      "p": 0.766
+      "t1": 0.28,
+      "p": 0.849
      },
      {
       "w": "est",
-      "t0": 0.14,
-      "t1": 0.3,
-      "p": 0.991
-     },
-     {
-      "w": "quelque",
-      "t0": 0.3,
-      "t1": 0.44,
-      "p": 0.994
-     },
-     {
-      "w": "part.",
-      "t0": 0.44,
-      "t1": 0.82,
-      "p": 0.995
-     },
-     {
-      "w": "Mais",
-      "t0": 1.12,
-      "t1": 1.34,
+      "t0": 0.28,
+      "t1": 0.42,
       "p": 0.985
      },
      {
+      "w": "quelque",
+      "t0": 0.42,
+      "t1": 0.74,
+      "p": 0.987
+     },
+     {
+      "w": "part,",
+      "t0": 0.74,
+      "t1": 1.12,
+      "p": 0.994
+     },
+     {
+      "w": "mais",
+      "t0": 1.48,
+      "t1": 1.66,
+      "p": 0.971
+     },
+     {
       "w": "où",
-      "t0": 1.34,
-      "t1": 1.52,
-      "p": 0.948
+      "t0": 1.66,
+      "t1": 2.06,
+      "p": 0.803
      },
      {
       "w": "?",
-      "t0": 1.52,
-      "t1": 1.64,
-      "p": 0.728
+      "t0": 2.06,
+      "t1": 2.43,
+      "p": 0.586
      }
     ]
    },
    {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V05_kyutai_55c1834644.wav",
-    "duration_s": 2.83,
-    "transcript": "tout et quelque part. Mais où ? Mais où ?",
-    "wer": 0.5,
-    "mean_word_prob": 0.758,
-    "words_per_min_speech": 236.8,
-    "peak_dbfs": -4.49,
-    "f0_median_hz": 127.5,
-    "f0_std_st": 5.17,
-    "f0_range_p5_p95_st": 13.85,
-    "voiced_ratio": 0.479,
-    "speech_time_s": 1.52,
-    "pauses_ge_180ms": 3,
-    "mean_pause_s": 0.35,
-    "score": 6.848,
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V05_kyutai_1fca25e742.wav",
+    "duration_s": 3.14,
+    "transcript": "Tout est quelque part, mais aussi de la paga...",
+    "wer": 0.667,
+    "mean_word_prob": 0.821,
+    "words_per_min_speech": 139.5,
+    "peak_dbfs": -6.33,
+    "f0_median_hz": 130.9,
+    "f0_std_st": 4.09,
+    "f0_range_p5_p95_st": 12.3,
+    "voiced_ratio": 0.72,
+    "speech_time_s": 2.58,
+    "pauses_ge_180ms": 1,
+    "mean_pause_s": 0.28,
+    "final_rise_st": 11.55,
+    "score": 7.386,
     "seed": 16838,
     "words": [
      {
-      "w": "tout",
+      "w": "Tout",
       "t0": 0.0,
-      "t1": 0.2,
-      "p": 0.357
+      "t1": 0.44,
+      "p": 0.498
      },
      {
-      "w": "et",
-      "t0": 0.2,
-      "t1": 0.62,
-      "p": 0.413
+      "w": "est",
+      "t0": 0.44,
+      "t1": 0.76,
+      "p": 0.82
      },
      {
       "w": "quelque",
-      "t0": 0.62,
-      "t1": 0.78,
-      "p": 0.992
+      "t0": 0.76,
+      "t1": 1.1,
+      "p": 0.99
      },
      {
-      "w": "part.",
-      "t0": 0.78,
-      "t1": 1.2,
-      "p": 0.996
-     },
-     {
-      "w": "Mais",
-      "t0": 1.58,
+      "w": "part,",
+      "t0": 1.1,
       "t1": 1.74,
-      "p": 0.958
+      "p": 0.99
      },
      {
-      "w": "où",
-      "t0": 1.74,
-      "t1": 2.0,
-      "p": 0.838
+      "w": "mais",
+      "t0": 1.8,
+      "t1": 2.16,
+      "p": 0.987
      },
      {
-      "w": "?",
-      "t0": 2.0,
+      "w": "aussi",
+      "t0": 2.16,
+      "t1": 2.54,
+      "p": 0.911
+     },
+     {
+      "w": "de",
+      "t0": 2.54,
+      "t1": 2.66,
+      "p": 0.912
+     },
+     {
+      "w": "la",
+      "t0": 2.66,
+      "t1": 2.82,
+      "p": 0.962
+     },
+     {
+      "w": "paga...",
+      "t0": 2.82,
+      "t1": 3.2,
+      "p": 0.319
+     }
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V05_kyutai_db810f2afe.wav",
+    "duration_s": 3.36,
+    "transcript": "Tout est quelque part, mais aussi dans la portine.",
+    "wer": 0.667,
+    "mean_word_prob": 0.866,
+    "words_per_min_speech": 131.4,
+    "peak_dbfs": -6.73,
+    "f0_median_hz": 108.5,
+    "f0_std_st": 4.29,
+    "f0_range_p5_p95_st": 13.16,
+    "voiced_ratio": 0.726,
+    "speech_time_s": 2.74,
+    "pauses_ge_180ms": 1,
+    "mean_pause_s": 0.18,
+    "final_rise_st": -4.26,
+    "score": 10.399,
+    "seed": 24757,
+    "words": [
+     {
+      "w": "Tout",
+      "t0": 0.0,
+      "t1": 0.32,
+      "p": 0.823
+     },
+     {
+      "w": "est",
+      "t0": 0.32,
+      "t1": 1.0,
+      "p": 0.983
+     },
+     {
+      "w": "quelque",
+      "t0": 1.0,
+      "t1": 1.46,
+      "p": 0.888
+     },
+     {
+      "w": "part,",
+      "t0": 1.46,
+      "t1": 2.02,
+      "p": 0.987
+     },
+     {
+      "w": "mais",
+      "t0": 2.08,
       "t1": 2.42,
-      "p": 0.347
+      "p": 0.991
      },
      {
-      "w": "Mais",
+      "w": "aussi",
       "t0": 2.42,
-      "t1": 2.6,
-      "p": 0.933
+      "t1": 2.78,
+      "p": 0.63
      },
      {
-      "w": "où",
-      "t0": 2.6,
-      "t1": 2.8,
+      "w": "dans",
+      "t0": 2.78,
+      "t1": 2.92,
+      "p": 0.639
+     },
+     {
+      "w": "la",
+      "t0": 2.92,
+      "t1": 3.08,
       "p": 0.984
      },
      {
+      "w": "portine.",
+      "t0": 3.08,
+      "t1": 3.34,
+      "p": 0.872
+     }
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V05_kyutai_badd7dc4f0.wav",
+    "duration_s": 3.02,
+    "transcript": "Tout est quelque part, mais aussi de la programe...",
+    "wer": 0.667,
+    "mean_word_prob": 0.863,
+    "words_per_min_speech": 148.1,
+    "peak_dbfs": -5.39,
+    "f0_median_hz": 146.5,
+    "f0_std_st": 4.8,
+    "f0_range_p5_p95_st": 14.75,
+    "voiced_ratio": 0.739,
+    "speech_time_s": 2.43,
+    "pauses_ge_180ms": 1,
+    "mean_pause_s": 0.27,
+    "final_rise_st": 9.85,
+    "score": 7.488,
+    "seed": 32676,
+    "words": [
+     {
+      "w": "Tout",
+      "t0": 0.0,
+      "t1": 0.28,
+      "p": 0.867
+     },
+     {
+      "w": "est",
+      "t0": 0.28,
+      "t1": 0.5,
+      "p": 0.98
+     },
+     {
+      "w": "quelque",
+      "t0": 0.5,
+      "t1": 0.84,
+      "p": 0.986
+     },
+     {
+      "w": "part,",
+      "t0": 0.84,
+      "t1": 1.4,
+      "p": 0.99
+     },
+     {
+      "w": "mais",
+      "t0": 1.58,
+      "t1": 1.84,
+      "p": 0.991
+     },
+     {
+      "w": "aussi",
+      "t0": 1.84,
+      "t1": 2.22,
+      "p": 0.743
+     },
+     {
+      "w": "de",
+      "t0": 2.22,
+      "t1": 2.36,
+      "p": 0.793
+     },
+     {
+      "w": "la",
+      "t0": 2.36,
+      "t1": 2.62,
+      "p": 0.992
+     },
+     {
+      "w": "programe...",
+      "t0": 2.62,
+      "t1": 3.24,
+      "p": 0.426
+     }
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V05_kyutai_c39c115e5c.wav",
+    "duration_s": 1.94,
+    "transcript": "Tout est quelque part, mais où ?",
+    "wer": 0.0,
+    "mean_word_prob": 0.914,
+    "words_per_min_speech": 281.2,
+    "peak_dbfs": -6.47,
+    "f0_median_hz": 146.0,
+    "f0_std_st": 3.04,
+    "f0_range_p5_p95_st": 9.83,
+    "voiced_ratio": 0.656,
+    "speech_time_s": 1.28,
+    "pauses_ge_180ms": 0,
+    "mean_pause_s": 0.0,
+    "final_rise_st": 4.4,
+    "score": 2.471,
+    "seed": 40595,
+    "words": [
+     {
+      "w": "Tout",
+      "t0": 0.0,
+      "t1": 0.32,
+      "p": 0.874
+     },
+     {
+      "w": "est",
+      "t0": 0.32,
+      "t1": 0.56,
+      "p": 0.984
+     },
+     {
+      "w": "quelque",
+      "t0": 0.56,
+      "t1": 0.94,
+      "p": 0.991
+     },
+     {
+      "w": "part,",
+      "t0": 0.94,
+      "t1": 1.3,
+      "p": 0.991
+     },
+     {
+      "w": "mais",
+      "t0": 1.48,
+      "t1": 1.58,
+      "p": 0.992
+     },
+     {
+      "w": "où",
+      "t0": 1.58,
+      "t1": 1.78,
+      "p": 0.963
+     },
+     {
       "w": "?",
-      "t0": 2.8,
-      "t1": 2.8,
-      "p": 0.762
+      "t0": 1.78,
+      "t1": 2.52,
+      "p": 0.6
+     }
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V05_kyutai_7b646d1cba.wav",
+    "duration_s": 2.34,
+    "transcript": "Tout est quelque part, mais où ?",
+    "wer": 0.0,
+    "mean_word_prob": 0.893,
+    "words_per_min_speech": 262.8,
+    "peak_dbfs": -4.1,
+    "f0_median_hz": 127.5,
+    "f0_std_st": 3.57,
+    "f0_range_p5_p95_st": 11.99,
+    "voiced_ratio": 0.587,
+    "speech_time_s": 1.37,
+    "pauses_ge_180ms": 1,
+    "mean_pause_s": 0.39,
+    "final_rise_st": -3.53,
+    "score": 4.085,
+    "seed": 48514,
+    "words": [
+     {
+      "w": "Tout",
+      "t0": 0.0,
+      "t1": 0.38,
+      "p": 0.749
+     },
+     {
+      "w": "est",
+      "t0": 0.38,
+      "t1": 0.7,
+      "p": 0.872
+     },
+     {
+      "w": "quelque",
+      "t0": 0.7,
+      "t1": 1.06,
+      "p": 0.955
+     },
+     {
+      "w": "part,",
+      "t0": 1.06,
+      "t1": 1.54,
+      "p": 0.983
+     },
+     {
+      "w": "mais",
+      "t0": 1.9,
+      "t1": 2.0,
+      "p": 0.989
+     },
+     {
+      "w": "où",
+      "t0": 2.0,
+      "t1": 2.26,
+      "p": 0.944
+     },
+     {
+      "w": "?",
+      "t0": 2.26,
+      "t1": 2.92,
+      "p": 0.761
+     }
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V05_kyutai_89102095d7.wav",
+    "duration_s": 2.41,
+    "transcript": "Tout est quelque part, mais où ?",
+    "wer": 0.0,
+    "mean_word_prob": 0.922,
+    "words_per_min_speech": 262.8,
+    "peak_dbfs": -7.38,
+    "f0_median_hz": 140.3,
+    "f0_std_st": 4.66,
+    "f0_range_p5_p95_st": 14.71,
+    "voiced_ratio": 0.57,
+    "speech_time_s": 1.37,
+    "pauses_ge_180ms": 1,
+    "mean_pause_s": 0.6,
+    "final_rise_st": 12.7,
+    "score": 1.757,
+    "seed": 56433,
+    "words": [
+     {
+      "w": "Tout",
+      "t0": 0.0,
+      "t1": 0.38,
+      "p": 0.805
+     },
+     {
+      "w": "est",
+      "t0": 0.38,
+      "t1": 0.6,
+      "p": 0.99
+     },
+     {
+      "w": "quelque",
+      "t0": 0.6,
+      "t1": 0.98,
+      "p": 0.993
+     },
+     {
+      "w": "part,",
+      "t0": 0.98,
+      "t1": 1.5,
+      "p": 0.991
+     },
+     {
+      "w": "mais",
+      "t0": 1.98,
+      "t1": 2.12,
+      "p": 0.984
+     },
+     {
+      "w": "où",
+      "t0": 2.12,
+      "t1": 2.32,
+      "p": 0.957
+     },
+     {
+      "w": "?",
+      "t0": 2.32,
+      "t1": 2.75,
+      "p": 0.736
      }
     ]
    }
@@ -1000,156 +1527,406 @@
  "V06": {
   "provider": "kyutai",
   "voice": "unmute-prod-website_fabieng-enhanced-v2.wav",
-  "text": "Alors on a tout rassemblé…",
-  "best": "/home/user/cahier-hlp/trailer/audio/voice/takes/V06_kyutai_7412fd026d.wav",
+  "text": "Alors on a tout rassemblé… dans le Cahier d'HLP.",
+  "best": "/home/user/cahier-hlp/trailer/audio/voice/takes/V06_kyutai_f920262d49.wav",
   "takes": [
    {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V06_kyutai_d1e9744254.wav",
-    "duration_s": 1.58,
-    "transcript": "Alors, on a tout rassemblé.",
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V06_kyutai_998d00ac44.wav",
+    "duration_s": 3.07,
+    "transcript": "Alors, on a tout rassemblé dans le cahier d'HLP.",
     "wer": 0.0,
-    "mean_word_prob": 0.976,
-    "words_per_min_speech": 252.1,
-    "peak_dbfs": -1.73,
-    "f0_median_hz": 136.3,
-    "f0_std_st": 4.2,
-    "f0_range_p5_p95_st": 14.24,
-    "voiced_ratio": 0.69,
-    "speech_time_s": 1.19,
+    "mean_word_prob": 0.974,
+    "words_per_min_speech": 250.0,
+    "peak_dbfs": -0.0,
+    "f0_median_hz": 116.6,
+    "f0_std_st": 4.1,
+    "f0_range_p5_p95_st": 12.97,
+    "voiced_ratio": 0.721,
+    "speech_time_s": 2.4,
     "pauses_ge_180ms": 1,
-    "mean_pause_s": 0.18,
-    "score": 1.273,
+    "mean_pause_s": 0.26,
+    "score": 1.229,
     "seed": 1000,
     "words": [
      {
       "w": "Alors,",
       "t0": 0.0,
-      "t1": 0.32,
-      "p": 0.934
+      "t1": 0.38,
+      "p": 0.924
      },
      {
       "w": "on",
-      "t0": 0.62,
-      "t1": 0.68,
-      "p": 0.997
+      "t0": 0.68,
+      "t1": 0.7,
+      "p": 0.995
      },
      {
       "w": "a",
-      "t0": 0.68,
-      "t1": 0.86,
-      "p": 0.992
+      "t0": 0.7,
+      "t1": 0.94,
+      "p": 0.991
      },
      {
       "w": "tout",
-      "t0": 0.86,
-      "t1": 0.98,
-      "p": 0.963
+      "t0": 0.94,
+      "t1": 1.06,
+      "p": 0.981
      },
      {
-      "w": "rassemblé.",
-      "t0": 0.98,
-      "t1": 1.5,
-      "p": 0.996
+      "w": "rassemblé",
+      "t0": 1.06,
+      "t1": 1.82,
+      "p": 0.994
+     },
+     {
+      "w": "dans",
+      "t0": 1.82,
+      "t1": 2.1,
+      "p": 0.945
+     },
+     {
+      "w": "le",
+      "t0": 2.1,
+      "t1": 2.28,
+      "p": 0.995
+     },
+     {
+      "w": "cahier",
+      "t0": 2.28,
+      "t1": 2.46,
+      "p": 0.973
+     },
+     {
+      "w": "d",
+      "t0": 2.46,
+      "t1": 2.62,
+      "p": 0.973
+     },
+     {
+      "w": "'HLP.",
+      "t0": 2.62,
+      "t1": 2.92,
+      "p": 0.973
      }
     ]
    },
    {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V06_kyutai_7412fd026d.wav",
-    "duration_s": 1.92,
-    "transcript": "Alors, on a tout rassemblé.",
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V06_kyutai_f920262d49.wav",
+    "duration_s": 3.34,
+    "transcript": "Alors, on a tout rassemblé dans le cahier d'HLP.",
     "wer": 0.0,
-    "mean_word_prob": 0.972,
-    "words_per_min_speech": 181.8,
-    "peak_dbfs": -3.37,
-    "f0_median_hz": 128.2,
-    "f0_std_st": 3.79,
-    "f0_range_p5_p95_st": 13.5,
-    "voiced_ratio": 0.86,
-    "speech_time_s": 1.65,
+    "mean_word_prob": 0.98,
+    "words_per_min_speech": 227.3,
+    "peak_dbfs": -2.39,
+    "f0_median_hz": 122.8,
+    "f0_std_st": 4.27,
+    "f0_range_p5_p95_st": 14.24,
+    "voiced_ratio": 0.743,
+    "speech_time_s": 2.64,
     "pauses_ge_180ms": 0,
     "mean_pause_s": 0.0,
-    "score": 0.112,
+    "score": 0.638,
     "seed": 8919,
     "words": [
      {
       "w": "Alors,",
       "t0": 0.0,
-      "t1": 0.34,
-      "p": 0.898
+      "t1": 0.44,
+      "p": 0.944
      },
      {
       "w": "on",
-      "t0": 0.64,
-      "t1": 0.74,
-      "p": 0.996
+      "t0": 0.7,
+      "t1": 0.76,
+      "p": 0.998
      },
      {
       "w": "a",
-      "t0": 0.74,
+      "t0": 0.76,
       "t1": 1.12,
-      "p": 0.993
+      "p": 0.992
      },
      {
       "w": "tout",
       "t0": 1.12,
-      "t1": 1.26,
-      "p": 0.977
+      "t1": 1.3,
+      "p": 0.984
      },
      {
-      "w": "rassemblé.",
-      "t0": 1.26,
-      "t1": 1.78,
-      "p": 0.995
+      "w": "rassemblé",
+      "t0": 1.3,
+      "t1": 2.1,
+      "p": 0.996
+     },
+     {
+      "w": "dans",
+      "t0": 2.1,
+      "t1": 2.38,
+      "p": 0.99
+     },
+     {
+      "w": "le",
+      "t0": 2.38,
+      "t1": 2.56,
+      "p": 0.998
+     },
+     {
+      "w": "cahier",
+      "t0": 2.56,
+      "t1": 2.72,
+      "p": 0.961
+     },
+     {
+      "w": "d",
+      "t0": 2.72,
+      "t1": 2.88,
+      "p": 0.987
+     },
+     {
+      "w": "'HLP.",
+      "t0": 2.88,
+      "t1": 3.18,
+      "p": 0.949
      }
     ]
    },
    {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V06_kyutai_23ab5d2112.wav",
-    "duration_s": 1.62,
-    "transcript": "Alors, on a tout rassemblé.",
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V06_kyutai_9e410cbb03.wav",
+    "duration_s": 2.96,
+    "transcript": "Alors, on a tout rassemblé dans le cahier d'HLP.",
     "wer": 0.0,
-    "mean_word_prob": 0.972,
+    "mean_word_prob": 0.981,
     "words_per_min_speech": 240.0,
-    "peak_dbfs": -5.2,
-    "f0_median_hz": 120.7,
-    "f0_std_st": 2.91,
-    "f0_range_p5_p95_st": 9.84,
-    "voiced_ratio": 0.724,
-    "speech_time_s": 1.25,
+    "peak_dbfs": -2.75,
+    "f0_median_hz": 125.7,
+    "f0_std_st": 3.88,
+    "f0_range_p5_p95_st": 13.24,
+    "voiced_ratio": 0.798,
+    "speech_time_s": 2.5,
     "pauses_ge_180ms": 0,
     "mean_pause_s": 0.0,
-    "score": 0.987,
+    "score": 0.951,
     "seed": 16838,
     "words": [
      {
       "w": "Alors,",
       "t0": 0.0,
-      "t1": 0.3,
-      "p": 0.905
+      "t1": 0.38,
+      "p": 0.939
      },
      {
       "w": "on",
-      "t0": 0.56,
-      "t1": 0.62,
+      "t0": 0.6,
+      "t1": 0.66,
+      "p": 0.998
+     },
+     {
+      "w": "a",
+      "t0": 0.66,
+      "t1": 0.92,
+      "p": 0.994
+     },
+     {
+      "w": "tout",
+      "t0": 0.92,
+      "t1": 1.08,
+      "p": 0.987
+     },
+     {
+      "w": "rassemblé",
+      "t0": 1.08,
+      "t1": 1.74,
+      "p": 0.995
+     },
+     {
+      "w": "dans",
+      "t0": 1.74,
+      "t1": 1.94,
+      "p": 0.993
+     },
+     {
+      "w": "le",
+      "t0": 1.94,
+      "t1": 2.12,
+      "p": 0.997
+     },
+     {
+      "w": "cahier",
+      "t0": 2.12,
+      "t1": 2.34,
+      "p": 0.97
+     },
+     {
+      "w": "d",
+      "t0": 2.34,
+      "t1": 2.46,
+      "p": 0.975
+     },
+     {
+      "w": "'HLP.",
+      "t0": 2.46,
+      "t1": 2.82,
+      "p": 0.958
+     }
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V06_kyutai_b76c4d3425.wav",
+    "duration_s": 3.28,
+    "transcript": "Alors, on a tout rassemblé dans le cahier d'HLP.",
+    "wer": 0.0,
+    "mean_word_prob": 0.982,
+    "words_per_min_speech": 246.9,
+    "peak_dbfs": -1.51,
+    "f0_median_hz": 129.4,
+    "f0_std_st": 4.0,
+    "f0_range_p5_p95_st": 13.25,
+    "voiced_ratio": 0.693,
+    "speech_time_s": 2.43,
+    "pauses_ge_180ms": 1,
+    "mean_pause_s": 0.31,
+    "score": 1.12,
+    "seed": 24757,
+    "words": [
+     {
+      "w": "Alors,",
+      "t0": 0.0,
+      "t1": 0.38,
+      "p": 0.929
+     },
+     {
+      "w": "on",
+      "t0": 0.76,
+      "t1": 0.8,
+      "p": 0.997
+     },
+     {
+      "w": "a",
+      "t0": 0.8,
+      "t1": 1.02,
+      "p": 0.994
+     },
+     {
+      "w": "tout",
+      "t0": 1.02,
+      "t1": 1.16,
+      "p": 0.988
+     },
+     {
+      "w": "rassemblé",
+      "t0": 1.16,
+      "t1": 1.9,
+      "p": 0.995
+     },
+     {
+      "w": "dans",
+      "t0": 1.9,
+      "t1": 2.28,
+      "p": 0.989
+     },
+     {
+      "w": "le",
+      "t0": 2.28,
+      "t1": 2.5,
+      "p": 0.996
+     },
+     {
+      "w": "cahier",
+      "t0": 2.5,
+      "t1": 2.74,
+      "p": 0.983
+     },
+     {
+      "w": "d",
+      "t0": 2.74,
+      "t1": 2.86,
+      "p": 0.986
+     },
+     {
+      "w": "'HLP.",
+      "t0": 2.86,
+      "t1": 3.18,
+      "p": 0.959
+     }
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V06_kyutai_01af2b7c33.wav",
+    "duration_s": 3.2,
+    "transcript": "Alors, on a tout rassemblé dans le cahier d'HLP.",
+    "wer": 0.0,
+    "mean_word_prob": 0.963,
+    "words_per_min_speech": 254.2,
+    "peak_dbfs": 0.0,
+    "f0_median_hz": 133.9,
+    "f0_std_st": 4.21,
+    "f0_range_p5_p95_st": 13.2,
+    "voiced_ratio": 0.791,
+    "speech_time_s": 2.36,
+    "pauses_ge_180ms": 1,
+    "mean_pause_s": 0.34,
+    "score": 1.378,
+    "seed": 32676,
+    "words": [
+     {
+      "w": "Alors,",
+      "t0": 0.0,
+      "t1": 0.48,
+      "p": 0.927
+     },
+     {
+      "w": "on",
+      "t0": 0.9,
+      "t1": 0.96,
       "p": 0.994
      },
      {
       "w": "a",
-      "t0": 0.62,
-      "t1": 0.8,
-      "p": 0.995
+      "t0": 0.96,
+      "t1": 1.18,
+      "p": 0.99
      },
      {
       "w": "tout",
-      "t0": 0.8,
-      "t1": 0.98,
-      "p": 0.97
+      "t0": 1.18,
+      "t1": 1.26,
+      "p": 0.964
      },
      {
-      "w": "rassemblé.",
-      "t0": 0.98,
-      "t1": 1.52,
-      "p": 0.996
+      "w": "rassemblé",
+      "t0": 1.26,
+      "t1": 1.98,
+      "p": 0.977
+     },
+     {
+      "w": "dans",
+      "t0": 1.98,
+      "t1": 2.26,
+      "p": 0.986
+     },
+     {
+      "w": "le",
+      "t0": 2.26,
+      "t1": 2.44,
+      "p": 0.994
+     },
+     {
+      "w": "cahier",
+      "t0": 2.44,
+      "t1": 2.64,
+      "p": 0.98
+     },
+     {
+      "w": "d",
+      "t0": 2.64,
+      "t1": 2.8,
+      "p": 0.862
+     },
+     {
+      "w": "'HLP.",
+      "t0": 2.8,
+      "t1": 3.08,
+      "p": 0.958
      }
     ]
    }
@@ -1316,462 +2093,446 @@
  "V08": {
   "provider": "kyutai",
   "voice": "unmute-prod-website_fabieng-enhanced-v2.wav",
-  "text": "Pour chaque texte vu en classe, une fiche claire : l'auteur, l'époque, l'essentiel en cinq points, les citations à retenir.",
-  "best": "/home/user/cahier-hlp/trailer/audio/voice/takes/V08_kyutai_753a94af58.wav",
+  "text": "Chaque texte vu en classe a sa fiche : l'essentiel en cinq points, les citations clés.",
+  "best": "/home/user/cahier-hlp/trailer/audio/voice/takes/V08_kyutai_79918c2eec.wav",
   "takes": [
    {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V08_kyutai_753a94af58.wav",
-    "duration_s": 8.27,
-    "transcript": "Pour chaque texte vu en classe, une fiche claire l'auteur, l'époque, l'essentiel en cinq points, les citations à retenir.",
-    "wer": 0.0,
-    "mean_word_prob": 0.954,
-    "words_per_min_speech": 217.1,
-    "peak_dbfs": -5.64,
-    "f0_median_hz": 129.4,
-    "f0_std_st": 3.56,
-    "f0_range_p5_p95_st": 11.39,
-    "voiced_ratio": 0.632,
-    "speech_time_s": 6.08,
-    "pauses_ge_180ms": 4,
-    "mean_pause_s": 0.287,
-    "score": 0.487,
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V08_kyutai_782004e699.wav",
+    "duration_s": 5.64,
+    "transcript": "Chaque texte vu en classe s'affiche l'essentiel en cinq points, les citations clés.",
+    "wer": 0.188,
+    "mean_word_prob": 0.919,
+    "words_per_min_speech": 214.8,
+    "peak_dbfs": -3.17,
+    "f0_median_hz": 155.6,
+    "f0_std_st": 3.57,
+    "f0_range_p5_p95_st": 10.5,
+    "voiced_ratio": 0.605,
+    "speech_time_s": 4.47,
+    "pauses_ge_180ms": 1,
+    "mean_pause_s": 0.35,
+    "score": 3.553,
     "seed": 1000,
     "words": [
      {
-      "w": "Pour",
+      "w": "Chaque",
       "t0": 0.0,
-      "t1": 0.26,
-      "p": 0.859
-     },
-     {
-      "w": "chaque",
-      "t0": 0.26,
-      "t1": 0.6,
-      "p": 0.999
-     },
-     {
-      "w": "texte",
-      "t0": 0.6,
-      "t1": 1.1,
-      "p": 0.992
-     },
-     {
-      "w": "vu",
-      "t0": 1.1,
-      "t1": 1.18,
-      "p": 0.911
-     },
-     {
-      "w": "en",
-      "t0": 1.18,
-      "t1": 1.48,
-      "p": 0.998
-     },
-     {
-      "w": "classe,",
-      "t0": 1.48,
-      "t1": 1.86,
-      "p": 0.994
-     },
-     {
-      "w": "une",
-      "t0": 2.24,
-      "t1": 2.36,
-      "p": 0.985
-     },
-     {
-      "w": "fiche",
-      "t0": 2.36,
-      "t1": 2.84,
-      "p": 0.997
-     },
-     {
-      "w": "claire",
-      "t0": 2.84,
-      "t1": 3.2,
-      "p": 0.721
-     },
-     {
-      "w": "l",
-      "t0": 3.2,
-      "t1": 3.3,
-      "p": 0.978
-     },
-     {
-      "w": "'auteur,",
-      "t0": 3.3,
-      "t1": 3.66,
-      "p": 0.994
-     },
-     {
-      "w": "l",
-      "t0": 3.92,
-      "t1": 3.98,
-      "p": 0.992
-     },
-     {
-      "w": "'époque,",
-      "t0": 3.98,
-      "t1": 4.32,
-      "p": 0.997
-     },
-     {
-      "w": "l",
-      "t0": 4.78,
-      "t1": 4.78,
-      "p": 0.986
-     },
-     {
-      "w": "'essentiel",
-      "t0": 4.78,
-      "t1": 5.34,
-      "p": 0.988
-     },
-     {
-      "w": "en",
-      "t0": 5.34,
-      "t1": 5.6,
-      "p": 0.974
-     },
-     {
-      "w": "cinq",
-      "t0": 5.6,
-      "t1": 5.98,
-      "p": 0.694
-     },
-     {
-      "w": "points,",
-      "t0": 5.98,
-      "t1": 6.24,
-      "p": 0.97
-     },
-     {
-      "w": "les",
-      "t0": 6.72,
-      "t1": 6.88,
-      "p": 0.972
-     },
-     {
-      "w": "citations",
-      "t0": 6.88,
-      "t1": 7.56,
-      "p": 0.999
-     },
-     {
-      "w": "à",
-      "t0": 7.56,
-      "t1": 7.86,
-      "p": 0.985
-     },
-     {
-      "w": "retenir.",
-      "t0": 7.86,
-      "t1": 8.28,
-      "p": 0.999
-     }
-    ]
-   },
-   {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V08_kyutai_2b1960f677.wav",
-    "duration_s": 7.56,
-    "transcript": "Pour chaque texte vu en classe, une fiche claire l'auteur, l'époque, l'essentiel en cinq points, les citations à retenir.",
-    "wer": 0.0,
-    "mean_word_prob": 0.941,
-    "words_per_min_speech": 224.1,
-    "peak_dbfs": -2.06,
-    "f0_median_hz": 138.6,
-    "f0_std_st": 2.67,
-    "f0_range_p5_p95_st": 8.3,
-    "voiced_ratio": 0.647,
-    "speech_time_s": 5.89,
-    "pauses_ge_180ms": 3,
-    "mean_pause_s": 0.32,
-    "score": 0.714,
-    "seed": 8919,
-    "words": [
-     {
-      "w": "Pour",
-      "t0": 0.0,
-      "t1": 0.24,
-      "p": 0.82
-     },
-     {
-      "w": "chaque",
-      "t0": 0.24,
-      "t1": 0.54,
-      "p": 0.999
-     },
-     {
-      "w": "texte",
-      "t0": 0.54,
-      "t1": 0.94,
-      "p": 0.993
-     },
-     {
-      "w": "vu",
-      "t0": 0.94,
-      "t1": 1.04,
-      "p": 0.835
-     },
-     {
-      "w": "en",
-      "t0": 1.04,
-      "t1": 1.3,
-      "p": 0.998
-     },
-     {
-      "w": "classe,",
-      "t0": 1.3,
-      "t1": 1.72,
-      "p": 0.994
-     },
-     {
-      "w": "une",
-      "t0": 2.14,
-      "t1": 2.34,
-      "p": 0.979
-     },
-     {
-      "w": "fiche",
-      "t0": 2.34,
-      "t1": 2.7,
-      "p": 0.998
-     },
-     {
-      "w": "claire",
-      "t0": 2.7,
-      "t1": 3.12,
-      "p": 0.948
-     },
-     {
-      "w": "l",
-      "t0": 3.12,
-      "t1": 3.26,
-      "p": 0.644
-     },
-     {
-      "w": "'auteur,",
-      "t0": 3.26,
-      "t1": 3.64,
-      "p": 0.993
-     },
-     {
-      "w": "l",
-      "t0": 3.86,
-      "t1": 3.9,
-      "p": 0.998
-     },
-     {
-      "w": "'époque,",
-      "t0": 3.9,
-      "t1": 4.28,
-      "p": 0.997
-     },
-     {
-      "w": "l",
-      "t0": 4.6,
-      "t1": 4.66,
-      "p": 0.988
-     },
-     {
-      "w": "'essentiel",
-      "t0": 4.66,
-      "t1": 5.2,
-      "p": 0.989
-     },
-     {
-      "w": "en",
-      "t0": 5.2,
-      "t1": 5.38,
-      "p": 0.931
-     },
-     {
-      "w": "cinq",
-      "t0": 5.38,
-      "t1": 5.68,
-      "p": 0.657
-     },
-     {
-      "w": "points,",
-      "t0": 5.68,
-      "t1": 5.96,
-      "p": 0.971
-     },
-     {
-      "w": "les",
-      "t0": 6.24,
-      "t1": 6.36,
-      "p": 0.979
-     },
-     {
-      "w": "citations",
-      "t0": 6.36,
-      "t1": 6.84,
-      "p": 0.999
-     },
-     {
-      "w": "à",
-      "t0": 6.84,
-      "t1": 7.08,
-      "p": 0.996
-     },
-     {
-      "w": "retenir.",
-      "t0": 7.08,
-      "t1": 7.58,
-      "p": 0.999
-     }
-    ]
-   },
-   {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V08_kyutai_bb5c0fc2eb.wav",
-    "duration_s": 6.72,
-    "transcript": "Pour chaque texte vu en classe, une fiche claire l'auteur, l'époque, l'essentiel en 5 points, les citations à retenir.",
-    "wer": 0.045,
-    "mean_word_prob": 0.953,
-    "words_per_min_speech": 277.3,
-    "peak_dbfs": -3.59,
-    "f0_median_hz": 127.9,
-    "f0_std_st": 4.0,
-    "f0_range_p5_p95_st": 13.1,
-    "voiced_ratio": 0.6,
-    "speech_time_s": 4.76,
-    "pauses_ge_180ms": 4,
-    "mean_pause_s": 0.35,
-    "score": 2.446,
-    "seed": 16838,
-    "words": [
-     {
-      "w": "Pour",
-      "t0": 0.0,
-      "t1": 0.5,
-      "p": 0.902
-     },
-     {
-      "w": "chaque",
-      "t0": 0.5,
-      "t1": 0.74,
-      "p": 0.999
-     },
-     {
-      "w": "texte",
-      "t0": 0.74,
-      "t1": 1.12,
-      "p": 0.993
-     },
-     {
-      "w": "vu",
-      "t0": 1.12,
-      "t1": 1.16,
-      "p": 0.904
-     },
-     {
-      "w": "en",
-      "t0": 1.16,
-      "t1": 1.42,
-      "p": 0.997
-     },
-     {
-      "w": "classe,",
-      "t0": 1.42,
-      "t1": 1.8,
-      "p": 0.992
-     },
-     {
-      "w": "une",
-      "t0": 2.2,
-      "t1": 2.3,
-      "p": 0.988
-     },
-     {
-      "w": "fiche",
-      "t0": 2.3,
-      "t1": 2.54,
-      "p": 0.995
-     },
-     {
-      "w": "claire",
-      "t0": 2.54,
-      "t1": 2.74,
-      "p": 0.896
-     },
-     {
-      "w": "l",
-      "t0": 2.74,
-      "t1": 2.82,
-      "p": 0.919
-     },
-     {
-      "w": "'auteur,",
-      "t0": 2.82,
-      "t1": 3.18,
-      "p": 0.993
-     },
-     {
-      "w": "l",
-      "t0": 3.4,
-      "t1": 3.48,
-      "p": 0.996
-     },
-     {
-      "w": "'époque,",
-      "t0": 3.48,
-      "t1": 3.8,
-      "p": 0.996
-     },
-     {
-      "w": "l",
-      "t0": 4.2,
-      "t1": 4.26,
-      "p": 0.983
-     },
-     {
-      "w": "'essentiel",
-      "t0": 4.26,
-      "t1": 4.66,
-      "p": 0.989
-     },
-     {
-      "w": "en",
-      "t0": 4.66,
-      "t1": 4.84,
-      "p": 0.988
-     },
-     {
-      "w": "5",
-      "t0": 4.84,
-      "t1": 5.08,
-      "p": 0.492
-     },
-     {
-      "w": "points,",
-      "t0": 5.08,
-      "t1": 5.34,
+      "t1": 0.44,
       "p": 0.964
      },
      {
-      "w": "les",
-      "t0": 5.68,
-      "t1": 5.8,
-      "p": 0.976
+      "w": "texte",
+      "t0": 0.44,
+      "t1": 0.98,
+      "p": 0.993
      },
      {
-      "w": "citations",
-      "t0": 5.8,
-      "t1": 6.14,
-      "p": 0.999
+      "w": "vu",
+      "t0": 0.98,
+      "t1": 1.12,
+      "p": 0.706
      },
      {
-      "w": "à",
-      "t0": 6.14,
-      "t1": 6.34,
+      "w": "en",
+      "t0": 1.12,
+      "t1": 1.4,
+      "p": 0.998
+     },
+     {
+      "w": "classe",
+      "t0": 1.4,
+      "t1": 1.86,
+      "p": 0.992
+     },
+     {
+      "w": "s",
+      "t0": 1.86,
+      "t1": 2.14,
+      "p": 0.734
+     },
+     {
+      "w": "'affiche",
+      "t0": 2.14,
+      "t1": 2.6,
       "p": 0.997
      },
      {
-      "w": "retenir.",
-      "t0": 6.34,
-      "t1": 6.72,
+      "w": "l",
+      "t0": 2.6,
+      "t1": 2.76,
+      "p": 0.979
+     },
+     {
+      "w": "'essentiel",
+      "t0": 2.76,
+      "t1": 3.42,
+      "p": 0.994
+     },
+     {
+      "w": "en",
+      "t0": 3.42,
+      "t1": 3.76,
+      "p": 0.976
+     },
+     {
+      "w": "cinq",
+      "t0": 3.76,
+      "t1": 4.06,
+      "p": 0.65
+     },
+     {
+      "w": "points,",
+      "t0": 4.06,
+      "t1": 4.44,
+      "p": 0.972
+     },
+     {
+      "w": "les",
+      "t0": 4.78,
+      "t1": 4.92,
+      "p": 0.989
+     },
+     {
+      "w": "citations",
+      "t0": 4.92,
+      "t1": 5.36,
+      "p": 0.998
+     },
+     {
+      "w": "clés.",
+      "t0": 5.36,
+      "t1": 5.64,
+      "p": 0.839
+     }
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V08_kyutai_063e472939.wav",
+    "duration_s": 6.53,
+    "transcript": "Chaque texte vu en classe s'affiche l'essentiel en cinq points, les citations clés.",
+    "wer": 0.188,
+    "mean_word_prob": 0.896,
+    "words_per_min_speech": 201.7,
+    "peak_dbfs": -2.93,
+    "f0_median_hz": 138.6,
+    "f0_std_st": 3.16,
+    "f0_range_p5_p95_st": 10.16,
+    "voiced_ratio": 0.596,
+    "speech_time_s": 4.76,
+    "pauses_ge_180ms": 2,
+    "mean_pause_s": 0.385,
+    "score": 2.296,
+    "seed": 8919,
+    "words": [
+     {
+      "w": "Chaque",
+      "t0": 0.0,
+      "t1": 0.66,
+      "p": 0.942
+     },
+     {
+      "w": "texte",
+      "t0": 0.66,
+      "t1": 1.34,
+      "p": 0.992
+     },
+     {
+      "w": "vu",
+      "t0": 1.34,
+      "t1": 1.56,
+      "p": 0.849
+     },
+     {
+      "w": "en",
+      "t0": 1.56,
+      "t1": 1.96,
+      "p": 0.995
+     },
+     {
+      "w": "classe",
+      "t0": 1.96,
+      "t1": 2.5,
+      "p": 0.992
+     },
+     {
+      "w": "s",
+      "t0": 2.5,
+      "t1": 3.22,
+      "p": 0.18
+     },
+     {
+      "w": "'affiche",
+      "t0": 3.22,
+      "t1": 3.64,
+      "p": 0.996
+     },
+     {
+      "w": "l",
+      "t0": 3.64,
+      "t1": 3.82,
+      "p": 0.97
+     },
+     {
+      "w": "'essentiel",
+      "t0": 3.82,
+      "t1": 4.36,
+      "p": 0.995
+     },
+     {
+      "w": "en",
+      "t0": 4.36,
+      "t1": 4.6,
+      "p": 0.993
+     },
+     {
+      "w": "cinq",
+      "t0": 4.6,
+      "t1": 4.86,
+      "p": 0.812
+     },
+     {
+      "w": "points,",
+      "t0": 4.86,
+      "t1": 5.22,
+      "p": 0.956
+     },
+     {
+      "w": "les",
+      "t0": 5.54,
+      "t1": 5.72,
+      "p": 0.967
+     },
+     {
+      "w": "citations",
+      "t0": 5.72,
+      "t1": 6.2,
+      "p": 0.998
+     },
+     {
+      "w": "clés.",
+      "t0": 6.2,
+      "t1": 6.5,
+      "p": 0.804
+     }
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V08_kyutai_79918c2eec.wav",
+    "duration_s": 6.26,
+    "transcript": "Chaque texte vu en classe affiche l'essentiel en cinq points, les citations clés.",
+    "wer": 0.188,
+    "mean_word_prob": 0.916,
+    "words_per_min_speech": 199.2,
+    "peak_dbfs": -2.8,
+    "f0_median_hz": 141.1,
+    "f0_std_st": 3.05,
+    "f0_range_p5_p95_st": 9.5,
+    "voiced_ratio": 0.569,
+    "speech_time_s": 4.82,
+    "pauses_ge_180ms": 1,
+    "mean_pause_s": 0.38,
+    "score": 2.216,
+    "seed": 16838,
+    "words": [
+     {
+      "w": "Chaque",
+      "t0": 0.0,
+      "t1": 0.58,
+      "p": 0.968
+     },
+     {
+      "w": "texte",
+      "t0": 0.58,
+      "t1": 1.16,
+      "p": 0.994
+     },
+     {
+      "w": "vu",
+      "t0": 1.16,
+      "t1": 1.3,
+      "p": 0.896
+     },
+     {
+      "w": "en",
+      "t0": 1.3,
+      "t1": 1.62,
+      "p": 0.998
+     },
+     {
+      "w": "classe",
+      "t0": 1.62,
+      "t1": 2.06,
+      "p": 0.993
+     },
+     {
+      "w": "affiche",
+      "t0": 2.06,
+      "t1": 3.18,
+      "p": 0.773
+     },
+     {
+      "w": "l",
+      "t0": 3.18,
+      "t1": 3.34,
+      "p": 0.829
+     },
+     {
+      "w": "'essentiel",
+      "t0": 3.34,
+      "t1": 3.96,
+      "p": 0.997
+     },
+     {
+      "w": "en",
+      "t0": 3.96,
+      "t1": 4.18,
+      "p": 0.987
+     },
+     {
+      "w": "cinq",
+      "t0": 4.18,
+      "t1": 4.48,
+      "p": 0.743
+     },
+     {
+      "w": "points,",
+      "t0": 4.48,
+      "t1": 4.8,
+      "p": 0.938
+     },
+     {
+      "w": "les",
+      "t0": 5.32,
+      "t1": 5.48,
+      "p": 0.974
+     },
+     {
+      "w": "citations",
+      "t0": 5.48,
+      "t1": 5.96,
+      "p": 0.998
+     },
+     {
+      "w": "clés.",
+      "t0": 5.96,
+      "t1": 6.3,
+      "p": 0.735
+     }
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V08_kyutai_b47ae74db4.wav",
+    "duration_s": 4.41,
+    "transcript": "Chaque texte vu en classe, ça s'affiche l'essentiel en cinq points, les citations clés.",
+    "wer": 0.188,
+    "mean_word_prob": 0.938,
+    "words_per_min_speech": 288.3,
+    "peak_dbfs": -2.95,
+    "f0_median_hz": 146.0,
+    "f0_std_st": 3.46,
+    "f0_range_p5_p95_st": 10.4,
+    "voiced_ratio": 0.567,
+    "speech_time_s": 3.33,
+    "pauses_ge_180ms": 1,
+    "mean_pause_s": 0.47,
+    "score": 4.433,
+    "seed": 24757,
+    "words": [
+     {
+      "w": "Chaque",
+      "t0": 0.0,
+      "t1": 0.44,
+      "p": 0.954
+     },
+     {
+      "w": "texte",
+      "t0": 0.44,
+      "t1": 0.76,
+      "p": 0.996
+     },
+     {
+      "w": "vu",
+      "t0": 0.76,
+      "t1": 0.86,
+      "p": 0.905
+     },
+     {
+      "w": "en",
+      "t0": 0.86,
+      "t1": 1.12,
       "p": 0.999
+     },
+     {
+      "w": "classe,",
+      "t0": 1.12,
+      "t1": 1.34,
+      "p": 0.989
+     },
+     {
+      "w": "ça",
+      "t0": 1.36,
+      "t1": 1.54,
+      "p": 0.893
+     },
+     {
+      "w": "s",
+      "t0": 1.54,
+      "t1": 1.6,
+      "p": 0.996
+     },
+     {
+      "w": "'affiche",
+      "t0": 1.6,
+      "t1": 1.96,
+      "p": 0.998
+     },
+     {
+      "w": "l",
+      "t0": 1.96,
+      "t1": 2.1,
+      "p": 0.953
+     },
+     {
+      "w": "'essentiel",
+      "t0": 2.1,
+      "t1": 2.52,
+      "p": 0.995
+     },
+     {
+      "w": "en",
+      "t0": 2.52,
+      "t1": 2.72,
+      "p": 0.993
+     },
+     {
+      "w": "cinq",
+      "t0": 2.72,
+      "t1": 2.92,
+      "p": 0.617
+     },
+     {
+      "w": "points,",
+      "t0": 2.92,
+      "t1": 3.26,
+      "p": 0.96
+     },
+     {
+      "w": "les",
+      "t0": 3.62,
+      "t1": 3.74,
+      "p": 0.973
+     },
+     {
+      "w": "citations",
+      "t0": 3.74,
+      "t1": 4.16,
+      "p": 0.998
+     },
+     {
+      "w": "clés.",
+      "t0": 4.16,
+      "t1": 4.4,
+      "p": 0.782
      }
     ]
    }
@@ -1781,191 +2542,253 @@
   "provider": "kyutai",
   "voice": "unmute-prod-website_fabieng-enhanced-v2.wav",
   "text": "Des flashcards, qui reviennent au bon moment.",
-  "best": "/home/user/cahier-hlp/trailer/audio/voice/takes/V09_kyutai_b284b47aa0.wav",
+  "best": "/home/user/cahier-hlp/trailer/audio/voice/takes/V09_kyutai_5958e3955f.wav",
   "takes": [
    {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V09_kyutai_90cae390a8.wav",
-    "duration_s": 2.18,
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V09_kyutai_c23d9b47fa.wav",
+    "duration_s": 2.25,
     "transcript": "Des flashcards qui reviennent au bon moment.",
     "wer": 0.0,
-    "mean_word_prob": 0.879,
+    "mean_word_prob": 0.903,
     "words_per_min_speech": 237.3,
     "peak_dbfs": -2.96,
     "f0_median_hz": 134.7,
     "f0_std_st": 3.71,
     "f0_range_p5_p95_st": 11.02,
-    "voiced_ratio": 0.821,
+    "voiced_ratio": 0.796,
     "speech_time_s": 1.77,
     "pauses_ge_180ms": 0,
     "mean_pause_s": 0.0,
-    "score": 1.292,
+    "score": 1.196,
     "seed": 1000,
     "words": [
      {
       "w": "Des",
       "t0": 0.0,
-      "t1": 0.32,
-      "p": 0.544
+      "t1": 0.38,
+      "p": 0.67
      },
      {
       "w": "flashcards",
-      "t0": 0.32,
-      "t1": 0.84,
-      "p": 0.797
+      "t0": 0.38,
+      "t1": 0.92,
+      "p": 0.798
      },
      {
       "w": "qui",
-      "t0": 0.84,
-      "t1": 1.2,
-      "p": 0.823
+      "t0": 0.92,
+      "t1": 1.26,
+      "p": 0.865
      },
      {
       "w": "reviennent",
-      "t0": 1.2,
-      "t1": 1.56,
+      "t0": 1.26,
+      "t1": 1.62,
       "p": 0.998
      },
      {
       "w": "au",
-      "t0": 1.56,
-      "t1": 1.68,
-      "p": 0.997
+      "t0": 1.62,
+      "t1": 1.74,
+      "p": 0.995
      },
      {
       "w": "bon",
-      "t0": 1.68,
-      "t1": 1.84,
+      "t0": 1.74,
+      "t1": 1.9,
       "p": 0.998
      },
      {
       "w": "moment.",
-      "t0": 1.84,
-      "t1": 2.08,
+      "t0": 1.9,
+      "t1": 2.16,
       "p": 0.999
      }
     ]
    },
    {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V09_kyutai_d6e89e168a.wav",
-    "duration_s": 2.63,
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V09_kyutai_7e62d0a4f5.wav",
+    "duration_s": 2.7,
     "transcript": "Des flashcards qui reviennent au bon moment.",
     "wer": 0.0,
-    "mean_word_prob": 0.912,
+    "mean_word_prob": 0.911,
     "words_per_min_speech": 210.0,
     "peak_dbfs": -2.08,
     "f0_median_hz": 141.1,
     "f0_std_st": 3.91,
     "f0_range_p5_p95_st": 12.3,
-    "voiced_ratio": 0.758,
+    "voiced_ratio": 0.742,
     "speech_time_s": 2.0,
     "pauses_ge_180ms": 1,
     "mean_pause_s": 0.35,
-    "score": 0.477,
+    "score": 0.481,
     "seed": 8919,
     "words": [
      {
       "w": "Des",
       "t0": 0.0,
-      "t1": 0.3,
-      "p": 0.611
+      "t1": 0.34,
+      "p": 0.557
      },
      {
       "w": "flashcards",
-      "t0": 0.3,
-      "t1": 0.78,
-      "p": 0.842
+      "t0": 0.34,
+      "t1": 0.84,
+      "p": 0.876
      },
      {
       "w": "qui",
-      "t0": 0.78,
-      "t1": 1.36,
-      "p": 0.946
+      "t0": 0.84,
+      "t1": 1.42,
+      "p": 0.961
      },
      {
       "w": "reviennent",
-      "t0": 1.36,
-      "t1": 1.84,
+      "t0": 1.42,
+      "t1": 1.9,
       "p": 0.998
      },
      {
       "w": "au",
-      "t0": 1.84,
-      "t1": 2.08,
-      "p": 0.991
+      "t0": 1.9,
+      "t1": 2.14,
+      "p": 0.993
      },
      {
       "w": "bon",
-      "t0": 2.08,
-      "t1": 2.3,
+      "t0": 2.14,
+      "t1": 2.34,
       "p": 0.995
      },
      {
       "w": "moment.",
-      "t0": 2.3,
-      "t1": 2.56,
+      "t0": 2.34,
+      "t1": 2.6,
       "p": 0.999
      }
     ]
    },
    {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V09_kyutai_b284b47aa0.wav",
-    "duration_s": 2.55,
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V09_kyutai_5958e3955f.wav",
+    "duration_s": 2.62,
     "transcript": "Des flashcards qui reviennent au bon moment.",
     "wer": 0.0,
-    "mean_word_prob": 0.916,
+    "mean_word_prob": 0.926,
     "words_per_min_speech": 195.3,
     "peak_dbfs": -3.51,
     "f0_median_hz": 137.4,
     "f0_std_st": 3.37,
     "f0_range_p5_p95_st": 9.98,
-    "voiced_ratio": 0.831,
+    "voiced_ratio": 0.809,
     "speech_time_s": 2.15,
     "pauses_ge_180ms": 0,
     "mean_pause_s": 0.0,
-    "score": 0.336,
+    "score": 0.296,
     "seed": 16838,
     "words": [
      {
       "w": "Des",
       "t0": 0.0,
-      "t1": 0.5,
-      "p": 0.643
+      "t1": 0.54,
+      "p": 0.685
      },
      {
       "w": "flashcards",
-      "t0": 0.5,
-      "t1": 1.1,
-      "p": 0.808
+      "t0": 0.54,
+      "t1": 1.14,
+      "p": 0.836
      },
      {
       "w": "qui",
-      "t0": 1.1,
-      "t1": 1.48,
-      "p": 0.97
+      "t0": 1.14,
+      "t1": 1.52,
+      "p": 0.971
      },
      {
       "w": "reviennent",
-      "t0": 1.48,
-      "t1": 1.84,
+      "t0": 1.52,
+      "t1": 1.9,
       "p": 0.998
      },
      {
       "w": "au",
-      "t0": 1.84,
-      "t1": 2.1,
+      "t0": 1.9,
+      "t1": 2.12,
       "p": 0.997
      },
      {
       "w": "bon",
-      "t0": 2.1,
-      "t1": 2.24,
-      "p": 0.999
+      "t0": 2.12,
+      "t1": 2.28,
+      "p": 0.998
      },
      {
       "w": "moment.",
-      "t0": 2.24,
-      "t1": 2.48,
+      "t0": 2.28,
+      "t1": 2.54,
+      "p": 0.999
+     }
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V09_kyutai_5c8b681d40.wav",
+    "duration_s": 2.1,
+    "transcript": "Des flashcards qui reviennent au bon moment.",
+    "wer": 0.0,
+    "mean_word_prob": 0.913,
+    "words_per_min_speech": 240.0,
+    "peak_dbfs": -7.27,
+    "f0_median_hz": 131.6,
+    "f0_std_st": 2.94,
+    "f0_range_p5_p95_st": 9.76,
+    "voiced_ratio": 0.801,
+    "speech_time_s": 1.75,
+    "pauses_ge_180ms": 0,
+    "mean_pause_s": 0.0,
+    "score": 1.223,
+    "seed": 24757,
+    "words": [
+     {
+      "w": "Des",
+      "t0": 0.0,
+      "t1": 0.38,
+      "p": 0.632
+     },
+     {
+      "w": "flashcards",
+      "t0": 0.38,
+      "t1": 0.9,
+      "p": 0.787
+     },
+     {
+      "w": "qui",
+      "t0": 0.9,
+      "t1": 1.26,
+      "p": 0.983
+     },
+     {
+      "w": "reviennent",
+      "t0": 1.26,
+      "t1": 1.54,
       "p": 0.998
+     },
+     {
+      "w": "au",
+      "t0": 1.54,
+      "t1": 1.64,
+      "p": 0.996
+     },
+     {
+      "w": "bon",
+      "t0": 1.64,
+      "t1": 1.78,
+      "p": 0.997
+     },
+     {
+      "w": "moment.",
+      "t0": 1.78,
+      "t1": 2.0,
+      "p": 0.999
      }
     ]
    }
@@ -3571,6 +4394,586 @@
       "t0": 1.14,
       "t1": 1.66,
       "p": 0.431
+     }
+    ]
+   }
+  ]
+ },
+ "V01a": {
+  "provider": "kyutai",
+  "voice": "unmute-prod-website_fabieng-enhanced-v2.wav",
+  "text": "Rabelais.",
+  "best": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01a_kyutai_b52cf90290.wav",
+  "takes": [
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01a_kyutai_8a7805c989.wav",
+    "duration_s": 0.93,
+    "transcript": "Oubliez et abonnez-vous à notre chaîne pour plus de vidéos !",
+    "wer": 11.0,
+    "mean_word_prob": 0.492,
+    "words_per_min_speech": 76.9,
+    "peak_dbfs": -6.24,
+    "f0_median_hz": 127.1,
+    "f0_std_st": 3.2,
+    "f0_range_p5_p95_st": 8.9,
+    "voiced_ratio": 0.872,
+    "speech_time_s": 0.78,
+    "pauses_ge_180ms": 0,
+    "mean_pause_s": 0.0,
+    "score": 113.36,
+    "seed": 1000,
+    "words": [
+     {
+      "w": "Oubliez",
+      "t0": 0.0,
+      "t1": 0.74,
+      "p": 0.503
+     },
+     {
+      "w": "et",
+      "t0": 0.74,
+      "t1": 0.98,
+      "p": 0.058
+     },
+     {
+      "w": "abonnez",
+      "t0": 0.98,
+      "t1": 1.48,
+      "p": 0.715
+     },
+     {
+      "w": "-vous",
+      "t0": 1.48,
+      "t1": 1.48,
+      "p": 0.89
+     },
+     {
+      "w": "à",
+      "t0": 1.48,
+      "t1": 1.5,
+      "p": 0.365
+     },
+     {
+      "w": "notre",
+      "t0": 1.5,
+      "t1": 1.5,
+      "p": 0.205
+     },
+     {
+      "w": "chaîne",
+      "t0": 1.5,
+      "t1": 1.5,
+      "p": 0.932
+     },
+     {
+      "w": "pour",
+      "t0": 1.5,
+      "t1": 1.5,
+      "p": 0.259
+     },
+     {
+      "w": "plus",
+      "t0": 1.5,
+      "t1": 1.5,
+      "p": 0.457
+     },
+     {
+      "w": "de",
+      "t0": 1.5,
+      "t1": 1.5,
+      "p": 0.644
+     },
+     {
+      "w": "vidéos",
+      "t0": 1.5,
+      "t1": 1.5,
+      "p": 0.642
+     },
+     {
+      "w": "!",
+      "t0": 1.5,
+      "t1": 1.5,
+      "p": 0.239
+     }
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01a_kyutai_748666deb6.wav",
+    "duration_s": 0.74,
+    "transcript": "Rappelez-vous.",
+    "wer": 2.0,
+    "mean_word_prob": 0.684,
+    "words_per_min_speech": 100.0,
+    "peak_dbfs": -3.87,
+    "f0_median_hz": 121.7,
+    "f0_std_st": 1.78,
+    "f0_range_p5_p95_st": 5.57,
+    "voiced_ratio": 0.865,
+    "speech_time_s": 0.6,
+    "pauses_ge_180ms": 0,
+    "mean_pause_s": 0.0,
+    "score": 21.6,
+    "seed": 8919,
+    "words": [
+     {
+      "w": "Rappelez",
+      "t0": 0.0,
+      "t1": 0.64,
+      "p": 0.529
+     },
+     {
+      "w": "-vous.",
+      "t0": 0.64,
+      "t1": 0.94,
+      "p": 0.839
+     }
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01a_kyutai_b52cf90290.wav",
+    "duration_s": 1.03,
+    "transcript": "Brabeulet.",
+    "wer": 1.0,
+    "mean_word_prob": 0.356,
+    "words_per_min_speech": 89.6,
+    "peak_dbfs": -6.87,
+    "f0_median_hz": 127.1,
+    "f0_std_st": 0.87,
+    "f0_range_p5_p95_st": 2.8,
+    "voiced_ratio": 0.68,
+    "speech_time_s": 0.67,
+    "pauses_ge_180ms": 0,
+    "mean_pause_s": 0.0,
+    "score": 13.64,
+    "seed": 16838,
+    "words": [
+     {
+      "w": "Brabeulet.",
+      "t0": 0.0,
+      "t1": 0.78,
+      "p": 0.356
+     }
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01a_kyutai_2391c2a97d.wav",
+    "duration_s": 0.66,
+    "transcript": "Vous rappelez ?",
+    "wer": 2.0,
+    "mean_word_prob": 0.537,
+    "words_per_min_speech": 113.2,
+    "peak_dbfs": -5.06,
+    "f0_median_hz": 127.1,
+    "f0_std_st": 2.96,
+    "f0_range_p5_p95_st": 8.4,
+    "voiced_ratio": 0.848,
+    "speech_time_s": 0.53,
+    "pauses_ge_180ms": 0,
+    "mean_pause_s": 0.0,
+    "score": 21.852,
+    "seed": 24757,
+    "words": [
+     {
+      "w": "Vous",
+      "t0": 0.0,
+      "t1": 0.18,
+      "p": 0.158
+     },
+     {
+      "w": "rappelez",
+      "t0": 0.18,
+      "t1": 0.54,
+      "p": 0.727
+     },
+     {
+      "w": "?",
+      "t0": 0.54,
+      "t1": 0.92,
+      "p": 0.727
+     }
+    ]
+   }
+  ]
+ },
+ "V01b": {
+  "provider": "kyutai",
+  "voice": "unmute-prod-website_fabieng-enhanced-v2.wav",
+  "text": "Rousseau.",
+  "best": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01b_kyutai_bbce1dc266.wav",
+  "takes": [
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01b_kyutai_5172f452e0.wav",
+    "duration_s": 1.04,
+    "transcript": "Rousseau...",
+    "wer": 0.0,
+    "mean_word_prob": 0.605,
+    "words_per_min_speech": 58.8,
+    "peak_dbfs": -8.12,
+    "f0_median_hz": 109.1,
+    "f0_std_st": 1.37,
+    "f0_range_p5_p95_st": 4.0,
+    "voiced_ratio": 0.914,
+    "speech_time_s": 1.02,
+    "pauses_ge_180ms": 0,
+    "mean_pause_s": 0.0,
+    "score": 2.857,
+    "seed": 1000,
+    "words": [
+     {
+      "w": "Rousseau...",
+      "t0": 0.0,
+      "t1": 1.14,
+      "p": 0.605
+     }
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01b_kyutai_a7bbc56cca.wav",
+    "duration_s": 1.04,
+    "transcript": "Le Rousseau",
+    "wer": 1.0,
+    "mean_word_prob": 0.421,
+    "words_per_min_speech": 59.4,
+    "peak_dbfs": -7.57,
+    "f0_median_hz": 116.6,
+    "f0_std_st": 2.74,
+    "f0_range_p5_p95_st": 8.66,
+    "voiced_ratio": 0.905,
+    "speech_time_s": 1.01,
+    "pauses_ge_180ms": 0,
+    "mean_pause_s": 0.0,
+    "score": 12.316,
+    "seed": 8919,
+    "words": [
+     {
+      "w": "Le",
+      "t0": 0.0,
+      "t1": 0.26,
+      "p": 0.062
+     },
+     {
+      "w": "Rousseau",
+      "t0": 0.26,
+      "t1": 1.04,
+      "p": 0.78
+     }
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01b_kyutai_bbce1dc266.wav",
+    "duration_s": 0.79,
+    "transcript": "Rousseau?",
+    "wer": 0.0,
+    "mean_word_prob": 0.604,
+    "words_per_min_speech": 95.2,
+    "peak_dbfs": -7.22,
+    "f0_median_hz": 148.2,
+    "f0_std_st": 4.95,
+    "f0_range_p5_p95_st": 12.39,
+    "voiced_ratio": 0.775,
+    "speech_time_s": 0.63,
+    "pauses_ge_180ms": 0,
+    "mean_pause_s": 0.0,
+    "score": 2.013,
+    "seed": 16838,
+    "words": [
+     {
+      "w": "Rousseau?",
+      "t0": 0.0,
+      "t1": 0.7,
+      "p": 0.604
+     }
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01b_kyutai_cd38e7a2d2.wav",
+    "duration_s": 0.95,
+    "transcript": "Le Rousseau...",
+    "wer": 1.0,
+    "mean_word_prob": 0.382,
+    "words_per_min_speech": 85.7,
+    "peak_dbfs": -6.36,
+    "f0_median_hz": 204.2,
+    "f0_std_st": 3.06,
+    "f0_range_p5_p95_st": 7.77,
+    "voiced_ratio": 0.705,
+    "speech_time_s": 0.7,
+    "pauses_ge_180ms": 0,
+    "mean_pause_s": 0.0,
+    "score": 17.341,
+    "seed": 24757,
+    "words": [
+     {
+      "w": "Le",
+      "t0": 0.0,
+      "t1": 0.2,
+      "p": 0.094
+     },
+     {
+      "w": "Rousseau...",
+      "t0": 0.2,
+      "t1": 1.1,
+      "p": 0.669
+     }
+    ]
+   }
+  ]
+ },
+ "V01c": {
+  "provider": "kyutai",
+  "voice": "unmute-prod-website_fabieng-enhanced-v2.wav",
+  "text": "Flaubert.",
+  "best": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01c_kyutai_564d940d41.wav",
+  "takes": [
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01c_kyutai_38855101a9.wav",
+    "duration_s": 1.04,
+    "transcript": "un Flaubert",
+    "wer": 1.0,
+    "mean_word_prob": 0.408,
+    "words_per_min_speech": 59.4,
+    "peak_dbfs": -5.55,
+    "f0_median_hz": 130.9,
+    "f0_std_st": 1.94,
+    "f0_range_p5_p95_st": 5.94,
+    "voiced_ratio": 0.886,
+    "speech_time_s": 1.01,
+    "pauses_ge_180ms": 0,
+    "mean_pause_s": 0.0,
+    "score": 12.576,
+    "seed": 1000,
+    "words": [
+     {
+      "w": "un",
+      "t0": 0.0,
+      "t1": 0.24,
+      "p": 0.103
+     },
+     {
+      "w": "Flaubert",
+      "t0": 0.24,
+      "t1": 0.76,
+      "p": 0.713
+     }
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01c_kyutai_899fa98bd5.wav",
+    "duration_s": 1.04,
+    "transcript": "Flaubert",
+    "wer": 0.0,
+    "mean_word_prob": 0.78,
+    "words_per_min_speech": 89.6,
+    "peak_dbfs": -7.63,
+    "f0_median_hz": 152.9,
+    "f0_std_st": 8.05,
+    "f0_range_p5_p95_st": 21.02,
+    "voiced_ratio": 0.752,
+    "speech_time_s": 0.67,
+    "pauses_ge_180ms": 0,
+    "mean_pause_s": 0.0,
+    "score": 3.267,
+    "seed": 8919,
+    "words": [
+     {
+      "w": "Flaubert",
+      "t0": 0.0,
+      "t1": 0.76,
+      "p": 0.78
+     }
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01c_kyutai_564d940d41.wav",
+    "duration_s": 0.93,
+    "transcript": "Flaubert...",
+    "wer": 0.0,
+    "mean_word_prob": 0.668,
+    "words_per_min_speech": 113.2,
+    "peak_dbfs": -7.35,
+    "f0_median_hz": 146.9,
+    "f0_std_st": 3.05,
+    "f0_range_p5_p95_st": 8.81,
+    "voiced_ratio": 0.638,
+    "speech_time_s": 0.53,
+    "pauses_ge_180ms": 0,
+    "mean_pause_s": 0.0,
+    "score": 1.635,
+    "seed": 16838,
+    "words": [
+     {
+      "w": "Flaubert...",
+      "t0": 0.0,
+      "t1": 1.04,
+      "p": 0.668
+     }
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01c_kyutai_8859c89b27.wav",
+    "duration_s": 0.84,
+    "transcript": "Flaubert ?",
+    "wer": 0.0,
+    "mean_word_prob": 0.631,
+    "words_per_min_speech": 120.0,
+    "peak_dbfs": -7.75,
+    "f0_median_hz": 148.8,
+    "f0_std_st": 3.93,
+    "f0_range_p5_p95_st": 9.6,
+    "voiced_ratio": 0.31,
+    "speech_time_s": 0.5,
+    "pauses_ge_180ms": 0,
+    "mean_pause_s": 0.0,
+    "score": 1.961,
+    "seed": 24757,
+    "words": [
+     {
+      "w": "Flaubert",
+      "t0": 0.0,
+      "t1": 0.62,
+      "p": 0.79
+     },
+     {
+      "w": "?",
+      "t0": 0.62,
+      "t1": 1.14,
+      "p": 0.472
+     }
+    ]
+   }
+  ]
+ },
+ "V01d": {
+  "provider": "kyutai",
+  "voice": "unmute-prod-website_fabieng-enhanced-v2.wav",
+  "text": "Hugo.",
+  "best": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01d_kyutai_00045e41cf.wav",
+  "takes": [
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01d_kyutai_f30820ceb9.wav",
+    "duration_s": 0.63,
+    "transcript": "You go.",
+    "wer": 2.0,
+    "mean_word_prob": 0.413,
+    "words_per_min_speech": 142.9,
+    "peak_dbfs": -9.81,
+    "f0_median_hz": 114.6,
+    "f0_std_st": 3.2,
+    "f0_range_p5_p95_st": 9.54,
+    "voiced_ratio": 0.703,
+    "speech_time_s": 0.42,
+    "pauses_ge_180ms": 0,
+    "mean_pause_s": 0.0,
+    "score": 22.348,
+    "seed": 1000,
+    "words": [
+     {
+      "w": "You",
+      "t0": 0.0,
+      "t1": 0.36,
+      "p": 0.357
+     },
+     {
+      "w": "go.",
+      "t0": 0.36,
+      "t1": 0.52,
+      "p": 0.469
+     }
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01d_kyutai_448d339702.wav",
+    "duration_s": 0.51,
+    "transcript": "Tu goûtes ?",
+    "wer": 2.0,
+    "mean_word_prob": 0.394,
+    "words_per_min_speech": 153.8,
+    "peak_dbfs": -13.76,
+    "f0_median_hz": 115.2,
+    "f0_std_st": 3.24,
+    "f0_range_p5_p95_st": 8.24,
+    "voiced_ratio": 0.846,
+    "speech_time_s": 0.39,
+    "pauses_ge_180ms": 0,
+    "mean_pause_s": 0.0,
+    "score": 22.424,
+    "seed": 8919,
+    "words": [
+     {
+      "w": "Tu",
+      "t0": 0.0,
+      "t1": 0.24,
+      "p": 0.073
+     },
+     {
+      "w": "goûtes",
+      "t0": 0.24,
+      "t1": 0.74,
+      "p": 0.469
+     },
+     {
+      "w": "?",
+      "t0": 0.74,
+      "t1": 1.08,
+      "p": 0.641
+     }
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01d_kyutai_00045e41cf.wav",
+    "duration_s": 0.59,
+    "transcript": "Égout",
+    "wer": 1.0,
+    "mean_word_prob": 0.304,
+    "words_per_min_speech": 153.8,
+    "peak_dbfs": -9.28,
+    "f0_median_hz": 127.9,
+    "f0_std_st": 3.56,
+    "f0_range_p5_p95_st": 10.1,
+    "voiced_ratio": 0.695,
+    "speech_time_s": 0.39,
+    "pauses_ge_180ms": 0,
+    "mean_pause_s": 0.0,
+    "score": 12.784,
+    "seed": 16838,
+    "words": [
+     {
+      "w": "Égout",
+      "t0": 0.0,
+      "t1": 0.56,
+      "p": 0.304
+     }
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01d_kyutai_04a8119a4c.wav",
+    "duration_s": 0.7,
+    "transcript": "Du goût.",
+    "wer": 2.0,
+    "mean_word_prob": 0.499,
+    "words_per_min_speech": 136.4,
+    "peak_dbfs": -9.83,
+    "f0_median_hz": 149.5,
+    "f0_std_st": 6.75,
+    "f0_range_p5_p95_st": 16.68,
+    "voiced_ratio": 0.69,
+    "speech_time_s": 0.44,
+    "pauses_ge_180ms": 0,
+    "mean_pause_s": 0.0,
+    "score": 23.429,
+    "seed": 24757,
+    "words": [
+     {
+      "w": "Du",
+      "t0": 0.0,
+      "t1": 0.32,
+      "p": 0.21
+     },
+     {
+      "w": "goût.",
+      "t0": 0.32,
+      "t1": 0.64,
+      "p": 0.789
      }
     ]
    }

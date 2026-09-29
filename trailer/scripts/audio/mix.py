@@ -4,8 +4,8 @@ Priorities: 1) the voice, always intelligible; 2) music present but under it
 (sidechain ducking driven by the voice); 3) sound design felt, never in front.
 Master: EBU R128 loudness -14 LUFS integrated, limiter ceiling -1 dBTP.
 
-SFX cues are computed from the same timeline marks as the animation (the
-formulas mirror source/scenes/*.js; keep them together when editing).
+SFX cues are declared by the scenes themselves (sounds() in source/scenes/*.js,
+same timing formulas as the animation) and exported by scripts/export_cues.py.
 Outputs audio/mix/{trailer_mix,stem_voice,stem_music,stem_sfx}.wav, logs/sfx_cues.json
 """
 import json
@@ -34,77 +34,22 @@ for line in TL["lines"]:
 vbuf = lib.fx(voice.buf, Reverb(room_size=0.18, damping=0.7, wet_level=0.05, dry_level=1.0, width=0.6))[: len(voice.buf)]
 
 # ------------------------------------------------------------------ SFX
-cues = []
-
-
-def S(name, t, g=0.0, p=0.0):
-    cues.append({"t": round(t, 3), "sfx": name, "gain_db": g, "pan": p})
-
-
+# Les repères viennent des scènes elles-mêmes (window.soundCues → scripts/export_cues.py) :
+# un bruitage = un geste à l'image, avec la même formule de temps que l'animation.
+cues = json.loads((ROOT / "logs" / "sfx_cues_anim.json").read_text())
 sh = M["shutter"]
-# hook : chaque Polaroid qui tombe (impact 0.04 s après la syllabe)
-for k, x in enumerate([-0.35, -0.12, 0.12, 0.35]):
-    S(f"paper_hit_{k % 3 + 1}", M[f"n{k + 1}"] + 0.035, -13 - k * 0.5, x)
-S("room_tone", 0.0, -30)
-S("air_long", M["q_tout"] - 0.15, -14)
-# les feuilles arrivent (glissé, puis petit impact), sans en sonoriser chacune
-arr = [("v3_rentree", 0, 0.5), ("v3_textes", 0, -0.4), ("v3_accum", 0, 0.3), ("v4_feuilles", 0, -0.5), ("v4_notes", -0.25, 0.1)]
-for k, (m, off, p) in enumerate(arr):
-    ta = M[m] + off - 0.34
-    S(f"paper_slide_{k % 6 + 1}", ta + 0.05, -16, p)
-    S(f"paper_hit_{(k + 1) % 3 + 1}", ta + 0.5, -21, p)
-S("paper_slide_6", M["v3_accum"] + 0.3 - 0.34, -17, -0.6)
-# notes au stylo, surligneur sur les citations
-for k in range(3):
-    S(f"pen_stroke_{k + 2}", M["v4_notes"] - 0.1 + k * 0.22, -15, 0.3 - k * 0.3)
-for k in range(2):
-    S(f"marker_{k + 1}", M["v4_citations"] - 0.05 + k * 0.18, -17, -0.2 + k * 0.4)
-# « Mais où ? » : le viseur cherche (moteur AF), puis verrouille (bip)
-for k in range(3):
-    S(f"af_motor_{k + 1}", M["v5_mais"] + 0.05 + k * 0.62, -13, [-0.4, 0.4, -0.1][k])
-S("af_beep", sh - 0.35, -21)
-# le déclic
-S("shutter_k1000", sh - 0.03, -4)
-S("film_advance", sh + 0.42, -14, 0.2)
-S("paper_sweep", sh + 0.3, -13)
-for i in range(9):
-    S(f"card_tick_{i % 3 + 1}", sh + 0.35 + i * 0.075 + 0.78, -23, -0.4 + 0.1 * i)
-# l'application
-build = M["v7_end"] + 0.35
-S("air_soft", build - 0.05, -20)
-clicks = [M["v8_fiche"] - 0.28, M["v9_start"] - 0.55 - 0.08, M["v9_reviennent"] + 0.05 - 0.05,
-          M["v10_start"] - 0.5 - 0.08, M["v10_corriges"] - 0.18]
-for c in clicks:
-    S("ui_click", c, -15)
-S("air_soft", M["v8_fiche"] - 0.28 + 0.12, -22)
-for k in range(3):
-    S("ui_tick", M["v8_epoque"] - 0.08 + k * 0.1, -22)
-S("marker_3", M["v8_retenir"] - 0.05, -22)
-for m in ("v9_start", "v10_start"):
-    S("air_soft", M[m] - 0.5, -22)
-S("card_flip", M["v9_flash"] + 0.62, -13)
-S("wood_tock", M["v9_reviennent"] + 0.05 + 0.12 + 0.62, -16)
-S("ui_tick", M["v9_moment"] - 0.2, -20)
-S("air_soft", M["v10_expliques"] - 0.05, -24)
-# frise
-S("marker_3", M["v11_frise"] - 0.25, -21)
-S("air_soft", M["v11_rabelais"] + 0.05, -22)
-# classe
-S("air_soft", M["v13_start"] - 0.15, -21)
-# fin : les rangées se rejoignent, le logo, puis le Polaroid final
-S("air_soft", M["v14_start"] - 0.8, -21)
-S("shutter_k1000", M["capture"] - 0.03, -6)
-S("polaroid_eject", M["capture"] + 0.12, -7)
-S("pencil_caption", M["capture"] + 1.05, -14)
-
 sfx = Track(DUR)
 for c in cues:
     x = lib.load(SFX / f"{c['sfx']}.wav")
-    if c["sfx"] == "room_tone":           # lit d'ambiance jusqu'au déclic, en fondu
-        n = lib.seconds(sh + 0.1)
-        x = np.concatenate([x] * 3)[:n]
-        x = lib.fade(x, 1.5, 0.12)
-    sfx.add(x, c["t"], c["gain_db"], c["pan"])
+    if c.get("len"):                        # coupe (éjection du Polaroid, trait long) avec fondu
+        x = x[: lib.seconds(c["len"])]
+        x = lib.fade(x, 0.003, c.get("fade", 0.2))
+    sfx.add(x, c["t"], c["g"], c["p"])
+# lit d'ambiance (pièce calme) jusqu'au déclic, en fondu : le bureau « existe », puis on entre dans l'écran
+rt = lib.load(SFX / "room_tone.wav")
+rt = lib.fade(np.concatenate([rt] * 3)[: lib.seconds(sh + 0.1)], 1.5, 0.12)
+sfx.add(rt, 0.0, -30)
+cues.append({"t": 0.0, "sfx": "room_tone", "g": -30, "p": 0, "scene": "desk", "len": round(sh + 0.1, 2)})
 sbuf = lib.fx(sfx.buf, Reverb(room_size=0.25, damping=0.6, wet_level=0.08, dry_level=1.0))[: len(sfx.buf)]
 
 # ------------------------------------------------------------------ musique + ducking
@@ -125,6 +70,9 @@ for i in range(len(act)):
 DUCK = 5.0
 MUSIC_GAIN = -2.0
 music *= (db(MUSIC_GAIN) * db(-DUCK * g))[:, None]
+# bruitages sous la voix : aigus adoucis (pas de conflit avec les sifflantes) et 2 dB plus bas
+sl = lib.filt(sbuf, "lowpass", 5500, order=2)
+sbuf = (sbuf * (1 - g)[:, None] + sl * g[:, None]) * db(-2.0 * g)[:, None]
 
 # ------------------------------------------------------------------ bus et master
 VOICE_GAIN, SFX_GAIN = 0.0, -2.0
@@ -146,7 +94,7 @@ tp = lib.true_peak_db(mix)
 for name, x in (("stem_voice", vbus), ("stem_music", music), ("stem_sfx", sbus)):
     lib.sf.write(str(OUT / f"{name}.wav"), (x * db(gain)).astype(np.float32), SR, subtype="PCM_24")
 lib.sf.write(str(OUT / "trailer_mix.wav"), mix.astype(np.float32), SR, subtype="PCM_24")
-(ROOT / "logs" / "sfx_cues.json").write_text(json.dumps(cues, ensure_ascii=False, indent=1))
+(ROOT / "logs" / "sfx_cues.json").write_text(json.dumps(sorted(cues, key=lambda c: c["t"]), ensure_ascii=False, indent=1))
 report = {"integrated_lufs": round(float(final), 2), "true_peak_dbtp": round(float(tp), 2), "max_gain_reduction_db": round(gr, 2), "gain_applied_db": round(float(gain), 2),
           "voice_lufs": round(float(meter.integrated_loudness(vbus * db(gain))), 2),
           "music_lufs": round(float(meter.integrated_loudness(music * db(gain))), 2),

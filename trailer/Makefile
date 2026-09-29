@@ -2,22 +2,23 @@
 PY ?= python3
 VERSION ?= final
 
-all: voice timeline music sfx mix video export
+all: voice timeline sfx music mix video export
 
 voice:            ## voix off : génération TTS (Google si clé, sinon Kyutai local) + choix des prises
-	$(PY) scripts/voice/generate_voice.py --takes 3 --whisper medium
+	$(PY) scripts/voice/generate_voice.py --takes 4 --whisper medium
 	cd scripts/audio && $(PY) voice_process.py
 
 timeline:         ## placement des répliques + repères de synchro -> source/data/cues.js
 	$(PY) scripts/build_timeline.py medium
 
-music:            ## partition générée (nécessite scripts/audio/get_piano.sh une fois)
+music:            ## partition générée (après sfx : percussions de papier ; piano via scripts/audio/get_piano.sh)
 	cd scripts/audio && $(PY) music.py
 
 sfx:              ## bibliothèque d'effets (sons CC0 découpés + sons procéduraux)
 	cd scripts/audio && $(PY) sfx.py
 
-mix:              ## mixage, ducking, mastering -14 LUFS
+mix:              ## repères des bruitages (déclarés par les scènes) puis mixage, ducking, mastering -14 LUFS
+	$(PY) scripts/export_cues.py
 	cd scripts/audio && $(PY) mix.py
 
 video:            ## rendu image par image (Chromium headless)

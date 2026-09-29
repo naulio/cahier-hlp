@@ -28,6 +28,9 @@
     return n;
   };
 
+  /* Bruitages déclarés par les scènes (mêmes formules que l'image) : lus par scripts/export_cues.py. */
+  window.soundCues = () => scenes.flatMap(s => (s.sounds ? s.sounds() : [])).sort((a, b) => a.t - b.t);
+
   /* Attendre que polices et images soient prêtes (rendu déterministe). */
   window.ready = (async function () {
     await document.fonts.ready;

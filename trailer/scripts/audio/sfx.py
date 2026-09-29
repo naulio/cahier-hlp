@@ -74,6 +74,9 @@ for k in range(4):
     cut("pen_write__751055", k + 1, f"pen_stroke_{k + 1}", thr=0.08, hp=200)
 y, ev = events("pen_write__277312", thr=0.05, min_gap=0.12)
 save("pencil_caption", y[ev[0][0]:ev[-1][1]], "pen_write__277312", note="toutes les traces", hp=200)
+w = y[ev[0][0]:ev[-1][1]]
+save("write_a", lib.fade(w[: lib.seconds(0.62)].copy(), 0.004, 0.12), "pen_write__277312", note="un mot écrit (début)", hp=200)
+save("write_b", lib.fade(w[lib.seconds(0.28):].copy(), 0.02, 0.1), "pen_write__277312", note="un mot écrit (suite)", hp=200)
 for k in range(3):
     cut("highlighter__351145", k + 1, f"marker_{k + 1}", thr=0.05, hp=250)
 cut("card_flip__84322", 0, "card_flip", thr=0.03, min_gap=0.15, hp=150)
@@ -81,17 +84,8 @@ cut("card_flip__84322", 0, "card_flip", thr=0.03, min_gap=0.15, hp=150)
 # ------------------------------------------------ appareil photo
 y, ev = events("shutter__579883", thr=0.03, min_gap=0.08)
 save("shutter_k1000", y[ev[0][0]:ev[-1][1] + int(0.08 * SR)], "shutter__579883", note="Pentax K1000", hp=80)
-y, ev = events("shutter__734819", thr=0.03, min_gap=0.06)
-adv = [e for e in ev if e[0] / SR > 1.0]
-save("film_advance", y[adv[0][0]:adv[-1][1]], "shutter__734819", note="levier d'avance du film", hp=120) if adv else None
 y, ev = events("polaroid__755841", thr=0.03, min_gap=0.3)
 save("polaroid_eject", y[ev[0][0]:ev[-1][1]], "polaroid__755841", note="moteur d'éjection", hp=90)
-y, ev = events("autofocus__176539", thr=0.1, min_gap=0.03)
-for k in range(3):
-    a, b = ev[(k * 2 + 1) % len(ev)]
-    save(f"af_motor_{k + 1}", y[a:b], "autofocus__176539", note=f"rafale {k * 2 + 2}", hp=300)
-y, _ = events("autofocus__483381")
-save("af_beep", y[: int(0.14 * SR)], "autofocus__483381", note="bip de mise au point (début)", hp=500)
 y = lib.load(SRC / META["room_tone__565535"]["file"])
 save("room_tone", y, "room_tone__565535", peak_db=-12, hp=40)
 
@@ -118,6 +112,24 @@ def wood(f=620):
 
 
 save("wood_tock", wood(), note="carte qui tombe dans la boîte", hp=120)
+
+
+def stamp():
+    """Tampon encreur : bruit sourd du manche + claquement du caoutchouc sur le papier."""
+    n = lib.seconds(0.22)
+    t = np.arange(n) / SR
+    thump = np.sin(2 * np.pi * (95 + 60 * np.exp(-t / 0.02)) * t) * lib.exp_env(n, 0.045)
+    slap = lib.filt(rng.standard_normal(n).astype(np.float32), "bandpass", [600, 4200]) * lib.exp_env(n, 0.012) * 0.55
+    y, ev = events("paper_sheet__560353")
+    a, b = ev[1]
+    hit = y[a:b]
+    hit = (hit.mean(1) if hit.ndim > 1 else hit)[:n]
+    x = thump * 0.9 + slap
+    x[: len(hit)] += hit / max(1e-6, np.abs(hit).max()) * 0.5
+    return lib.st(x)
+
+
+save("stamp", stamp(), "paper_sheet__560353", note="tampon encreur (procédural + impact de feuille)", hp=45)
 for k, f in enumerate([900, 980, 1060]):
     save(f"card_tick_{k + 1}", wood(f)[: lib.seconds(0.08)], note="carte qui se range", hp=300, peak_db=-6)
 
