@@ -10,3 +10,4 @@ logs/qa/*/frames/
 __pycache__/
 *.pyc
 source/lab/
+logs/*.log
