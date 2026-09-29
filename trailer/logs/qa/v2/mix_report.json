@@ -1,0 +1,10 @@
+{
+ "integrated_lufs": -14.01,
+ "true_peak_dbtp": -1.27,
+ "max_gain_reduction_db": -1.84,
+ "gain_applied_db": 0.29,
+ "voice_lufs": -12.87,
+ "music_lufs": -22.83,
+ "sfx_cues": 58,
+ "duration_s": 65.23
+}

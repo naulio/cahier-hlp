@@ -82,8 +82,10 @@ subprocess.run([sys.executable, str(ROOT / "scripts/audio/plot_audio.py"), str(Q
                 *[str(ROOT / f"audio/music/{f}") for f in ("score.wav", "stem_piano.wav", "stem_keys.wav", "stem_pad.wav",
                                                           "stem_bass.wav", "stem_perc.wav", "stem_texture.wav")]], check=True)
 takes = json.loads((ROOT / "logs" / "voice_takes.json").read_text())
+current = [l["id"] for l in json.loads((ROOT / "scripts/voice/lines.json").read_text())["lines"]]
 vm = []
-for lid, d in takes.items():
+for lid in current:                      # seulement les répliques du script actuel
+    d = takes[lid]
     best = next(t for t in d["takes"] if t["file"] == d["best"]) if any(t["file"] == d["best"] for t in d["takes"]) else d["takes"][0]
     vm.append({k: best.get(k) for k in ("wer", "mean_word_prob", "f0_median_hz", "f0_std_st", "f0_range_p5_p95_st",
                                          "words_per_min_speech", "duration_s", "transcript")} | {"id": lid, "text": d["text"]})
