@@ -52,7 +52,10 @@ Chromium : `CHROME=/chemin/vers/chrome` si besoin (par défaut celui de Playwrig
 1. **Gemini TTS** (Google) si la variable d'environnement `GEMINI_API_KEY` existe
    (modèle `GEMINI_TTS_MODEL`, défaut `gemini-2.5-flash-preview-tts` ; voix `GEMINI_TTS_VOICE`, défaut `Achird`) ;
 2. **Google Cloud Text-to-Speech** (voix Chirp 3 HD, `GOOGLE_TTS_VOICE`, défaut `fr-FR-Chirp3-HD-Achird`) si `GOOGLE_TTS_API_KEY` existe ;
-3. sinon **Kyutai TTS 1.6B** en local (modèle CC-BY 4.0, voix de référence CC0).
+3. sinon **Kyutai TTS 1.6B** en local (modèle CC BY 4.0). Voix v3 : narrateur `cml-tts_fr_928_486_000075-0001_enhanced.wav`
+   (CML-TTS, CC BY 4.0), choisie après audition (`scripts/voice/audition.py`, `logs/voice_audition.json`) ;
+   autre voix : `KYUTAI_VOICE=<nom>` après `python3 scripts/voice/fetch_voices.py <chemin dans kyutai/tts-voices>`.
+   Modèle déjà en cache : `HF_HUB_OFFLINE=1` évite une attente réseau au démarrage.
 
 Aucune clé Google n'était disponible pendant la production : la voix actuelle vient de Kyutai TTS.
 Pour passer à Google, ajouter la clé comme variable d'environnement (jamais dans le code), puis

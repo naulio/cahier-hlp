@@ -37,11 +37,11 @@ BEST = ROOT / "audio" / "voice" / "lines"
 LOG = ROOT / "logs" / "voice_takes.json"
 REF_DIR = ROOT / "assets" / "voices_ref"
 
-KYUTAI_VOICE = os.environ.get("KYUTAI_VOICE", "cml-tts_fr_4482_3103_000063-0001_enhanced.wav")   # v3 : narrateur (CML-TTS, CC BY 4.0)
+KYUTAI_VOICE = os.environ.get("KYUTAI_VOICE", "cml-tts_fr_928_486_000075-0001_enhanced.wav")   # v3 : narrateur B, choisi par le commanditaire pour son intonation (CML-TTS, CC BY 4.0)
 GEMINI_MODEL = os.environ.get("GEMINI_TTS_MODEL", "gemini-2.5-flash-preview-tts")
 GEMINI_VOICE = os.environ.get("GEMINI_TTS_VOICE", "Achird")
 CLOUD_VOICE = os.environ.get("GOOGLE_TTS_VOICE", "fr-FR-Chirp3-HD-Achird")
-REF_F0 = float(os.environ.get("VOICE_REF_F0", 110))   # registre de référence de la voix (Hz) : v3 = narrateur 4482
+REF_F0 = float(os.environ.get("VOICE_REF_F0", 101))   # registre de référence de la voix (Hz) : v3 = narrateur 928
 
 
 # ---------------------------------------------------------------- providers
@@ -257,7 +257,7 @@ def score(m, line=None):
     nwords = len(m.get("transcript", "").split())
     if nwords >= 4 and not (line and line.get("onsets")):   # pas de débit sur deux mots ni sur une liste de noms
         wpm = m.get("words_per_min_speech", 170)
-        s += max(0, wpm - 265) / 20       # précipité (v3 : narrateur au débit soutenu, voulu par le commanditaire)
+        s += max(0, wpm - 290) / 20       # précipité (v3 : narrateur au débit soutenu, voulu par le commanditaire)
         s += max(0, 180 - wpm) / 20       # traînant (retour du commanditaire sur la v2 : « longue »)
     med = m.get("f0_median_hz")
     if med:                               # pas de saut de registre entre répliques

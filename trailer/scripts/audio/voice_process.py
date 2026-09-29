@@ -13,7 +13,7 @@ from pathlib import Path
 import numpy as np
 import soundfile as sf
 from pedalboard import (Compressor, HighpassFilter, HighShelfFilter, LowShelfFilter, Pedalboard,
-                        PeakFilter, time_stretch)
+                        PeakFilter, PitchShift, time_stretch)
 
 import lib
 
@@ -27,14 +27,17 @@ TAKES_LOG = json.loads((ROOT / "logs" / "voice_takes.json").read_text())
 SPEED = {"default": 1.0}   # v3 : débit naturel du narrateur, sans ralentissement (retour du commanditaire : « longue »)
 TARGET_RMS_DB = -20.0
 
+# v3 « narrateur cinéma » : la voix B (intonation choisie par le commanditaire) descendue d'un demi-ton
+# (timbre plus grave, proche de la voix C qu'il aimait), grave plus chaud, présence, compression plus ferme
+VOICE_SHIFT_ST = float(__import__("os").environ.get("VOICE_SHIFT_ST", -1.0))
 chain = Pedalboard([
-    HighpassFilter(cutoff_frequency_hz=80),
-    LowShelfFilter(cutoff_frequency_hz=180, gain_db=-1.5),
-    PeakFilter(cutoff_frequency_hz=320, gain_db=-1.5, q=1.0),
-    PeakFilter(cutoff_frequency_hz=3200, gain_db=1.8, q=0.8),
-    PeakFilter(cutoff_frequency_hz=7000, gain_db=-2.5, q=1.2),     # dé-essage doux (sibilantes)
-    HighShelfFilter(cutoff_frequency_hz=9500, gain_db=1.2),
-    Compressor(threshold_db=-22, ratio=3.0, attack_ms=6, release_ms=90),
+    HighpassFilter(cutoff_frequency_hz=70),
+    LowShelfFilter(cutoff_frequency_hz=160, gain_db=2.0),
+    PeakFilter(cutoff_frequency_hz=380, gain_db=-2.0, q=1.0),       # moins de « carton »
+    PeakFilter(cutoff_frequency_hz=3000, gain_db=2.2, q=0.8),       # présence
+    PeakFilter(cutoff_frequency_hz=7000, gain_db=-2.5, q=1.2),      # dé-essage doux (sibilantes)
+    HighShelfFilter(cutoff_frequency_hz=10000, gain_db=1.0),
+    Compressor(threshold_db=-24, ratio=3.5, attack_ms=5, release_ms=80),
 ])
 
 
@@ -128,6 +131,8 @@ def main():
         if abs(sp - 1) > 1e-3:
             y = time_stretch(y.T.copy(), lib.SR, stretch_factor=sp, high_quality=True,
                              transient_mode="smooth", preserve_formants=True).T
+        if abs(VOICE_SHIFT_ST) > 1e-3:
+            y = Pedalboard([PitchShift(semitones=VOICE_SHIFT_ST)])(y.T.copy(), lib.SR).T
         y = chain(y.T.copy(), lib.SR).T
         y = y * lib.db(TARGET_RMS_DB - speech_rms_db(y))
         peak = np.max(np.abs(y))

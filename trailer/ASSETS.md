@@ -10,17 +10,21 @@ images sont des portraits du domaine public.
   (https://archive.org/details/SalamanderGrandPianoV3). Échantillons rééchantillonnés et joués par
   `scripts/audio/music.py` ; non inclus dans le dépôt (`sh scripts/audio/get_piano.sh`).
 - **Moteur de voix** : *Kyutai TTS 1.6B* (`kyutai/tts-1.6b-en_fr`) — modèle sous **CC BY 4.0**, Kyutai.
-  Voix de référence `unmute-prod-website/fabieng-enhanced-v2` (dépôt `kyutai/tts-voices`, **CC0**).
+- **Voix du narrateur (v3)** : référence `cml-tts/fr/928_486_000075-0001_enhanced.wav` du dépôt
+  `kyutai/tts-voices`, tirée du jeu de données **CML-TTS** (lecteurs LibriVox), licence **CC BY 4.0**
+  (https://openslr.org/146/). Choisie par le commanditaire parmi 3 finalistes (audition : `audio/voice/audition/`).
+  v1-v2 : voix `unmute-prod-website/fabieng-enhanced-v2` (CC0), abandonnée.
 
 Texte de crédit proposé (description de la vidéo) :
-> Piano : Salamander Grand Piano V3 (Alexander Holm, CC BY 3.0). Voix de synthèse : Kyutai TTS (CC BY 4.0).
+> Piano : Salamander Grand Piano V3 (Alexander Holm, CC BY 3.0). Voix de synthèse : Kyutai TTS (CC BY 4.0),
+> voix de référence issue de CML-TTS (CC BY 4.0).
 > Bruitages : Freesound (CC0). Portraits : domaine public (Wikimedia Commons).
 
 ## Voix off
 
 | Élément | Source | Licence |
 |---|---|---|
-| Voix actuelle | Kyutai TTS 1.6B, local (CPU), voix CC0 ci-dessus ; prises choisies automatiquement (Whisper + prosodie) | CC BY 4.0 (modèle) / CC0 (voix) |
+| Voix actuelle (v3) | Kyutai TTS 1.6B, local (CPU), voix CML-TTS 928 ; prises choisies automatiquement (Whisper + prosodie) ; traitement « cinéma » (−1 demi-ton, égalisation, compression) | CC BY 4.0 (modèle et voix) |
 | Voix Google (prête, non utilisée faute de clé) | Gemini TTS ou Cloud Text-to-Speech (Chirp 3 HD), via `GEMINI_API_KEY` / `GOOGLE_TTS_API_KEY` | conditions Google Cloud |
 | Alignement | faster-whisper `medium` (vérification et repères de synchro uniquement) | MIT |
 
@@ -51,7 +55,9 @@ revérifiée à la source ; métadonnées complètes dans `audio/sfx/sources/sou
 | room_tone | Room tone, very quiet small apartment room | visionear | https://freesound.org/people/visionear/sounds/565535/ |
 
 Sons **procéduraux** (créés en code dans `scripts/audio/sfx.py`) : `ui_click`, `ui_tick`, `wood_tock`,
-`card_tick_1…3`, `air_soft`, `air_long`, et le corps du tampon `stamp`.
+`card_tick_1…3`, `air_soft`, `air_long`, et le corps du tampon `stamp` ; kit de bande-annonce v3
+(`scripts/audio/sfx_trailer.py`) : `whoosh_1…4`, `whoosh_long`, `impact_1…2`, `hit_small`, `riser_2`, `riser_4`,
+`sub_drop`, `shimmer`, `pop_1…3`, `fizz`, `reverse_swell`.
 
 Écartés : 40 autres enregistrements CC0 écoutés/mesurés puis rejetés (trop bruités, trop « cinéma »,
 ou appareils photo numériques) ; en v2, les sons d'autofocus et d'avance de film ont été retirés pour ne
@@ -83,12 +89,13 @@ seuls le titre et une référence apparaissent (pas de citation longue), conform
 | Police | Usage | Auteur |
 |---|---|---|
 | Newsreader (romain + italique) | titres éditoriaux, citations | Production Type |
+| EB Garamond (romain + italique) | textes imprimés sur les feuilles du bureau | Georg Duffner, Octavio Pardo |
 | Schibsted Grotesk | interface | Schibsted |
 | DM Mono | légendes, adresse | Colophon Foundry |
 | Caveat | écriture manuscrite | Impallari Type |
 
 ## Marque
 
-Symbole « c’ » (réglure Seyès, marge rouge, carré kaki) et logotype dessinés pour le trailer
-(`source/lib/brand.js`). Nom « Cahier d'HLP » : celui du site existant, centralisé dans
+Symbole (carré kaki, marge rouge, trois lignes) et logotype dessinés pour le trailer (`source/scenes/app.js`,
+style de la v1, retenu par le commanditaire). Nom « Cahier d'HLP » : celui du site existant, centralisé dans
 `source/data/content.js` (`brand`) pour pouvoir être remplacé.
