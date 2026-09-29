@@ -24,7 +24,7 @@ OUT.mkdir(parents=True, exist_ok=True)
 LINES = json.loads((ROOT / "scripts" / "voice" / "lines.json").read_text())
 TAKES_LOG = json.loads((ROOT / "logs" / "voice_takes.json").read_text())
 
-SPEED = {"default": 1.0}   # v3 : débit naturel du narrateur, sans ralentissement (retour du commanditaire : « longue »)
+SPEED = {"default": 1.0, "V02": 0.88, "V05b": 0.9}   # v3 : débit naturel du narrateur, sans ralentissement (retour du commanditaire : « longue »)
 TARGET_RMS_DB = -20.0
 
 # v3 « narrateur cinéma » : la voix B (intonation choisie par le commanditaire) descendue d'un demi-ton

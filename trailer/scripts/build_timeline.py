@@ -186,7 +186,7 @@ def main(model="small"):
         placed.append({"id": lid, "text": line["text"], "onsets": line.get("onsets") or ([float(line["at"])] if line.get("onset") else None), "at": round(segs[0]["at"], 3), "dur": round(end - segs[0]["at"], 3),
                        "end": round(end, 3), "words": wl, "segments": segs})
         prev_end = wl[-1]["t1"]
-        if lid == "V05":
+        if lid in ("V05", "V05b"):     # fin de « Mais où ? »
             marks_tmp["v5_end"] = wl[-1]["t1"]
     by = {p["id"]: p for p in placed}
     # speech start/end = first/last word (not file edges)

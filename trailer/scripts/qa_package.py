@@ -54,23 +54,23 @@ secs = [round(s + 0.5, 2) for s in range(int(dur))]
 for i in range(0, len(secs), 12):
     sheet(secs[i:i + 12], Q / f"contact_{i // 12 + 1:02d}_{secs[i]:.0f}s-{secs[min(i + 11, len(secs) - 1)]:.0f}s.jpg")
 # 2) taille téléphone (vidéo vue ~ 360 px de large)
-phone = [M["n2"] + 0.5, M["q_tout"] + 0.2, M["v4_postit"] + 0.6, M["v5_mais"] + 0.4, M["shutter"] + 1.8, M["v7_end"],
+phone = [M["n3"] + 0.5, M["q_tout"] + 0.2, M["v4_citations"] + 0.6, M["v5_mais"] + 0.4, M["shutter"] + 1.8, M["v7_end"],
          M["v8_essentiel"] + 1.0, M["v8_retenir"] + 0.8, M["v9_moment"] + 0.4, M["v10_expliques"] + 0.6, M["v11_arendt"] + 0.3,
-         M["v12_compte"] + 0.5, M["v12_telephone"] + 0.4, M["v13_classe"] + 1.0, M["v14_start"] + 0.2, M["v14_tout"] + 0.6,
-         M["end"] - 5.0, M["capture"] + 2.8, M["end"] - 0.6]
+         M["v12_compte"] + 0.5, M["v12_appareil"] + 0.4, M["v13_classe"] + 0.6, M["v14_start"] + 0.6, M["v14_endroit"] + 0.5,
+         M["capture"] - 0.2, M["capture"] + 2.6, M["end"] - 0.8]
 phone = [round(t, 2) for t in phone]
 sheet(phone, Q / "phone_size_360px.jpg", cols=5, tw=360)
 # 3) bandes à 10 i/s sur les moments clés
 KEY = {
-    "01_hook_polaroid_drop": M["n1"] - 0.35, "02_pullback_on_tout": M["q_tout"] - 0.1,
-    "03_accumulation": M["v4_postit"] - 0.3, "04_viewfinder_and_shutter": M["shutter"] - 0.7,
-    "05_morph_to_cards": M["shutter"] + 0.3, "06_logo_to_app": M["v7_end"] + 0.2,
-    "07_card_to_fiche": M["v8_fiche"] - 0.35, "08_flashcard_flip_box_stamp": M["v9_flash"] + 0.4,
-    "09_qcm_answer": M["v10_corriges"] - 0.4, "10_app_to_frise": M["v11_start"] - 0.6,
-    "11_frise_link": M["v11_rabelais"] - 0.3, "12_frise_to_page": M["v12_start"] - 0.5,
-    "13_phone_to_seat": M["v13_nous"] - 0.5, "14_class_ticks": M["v13_classe"] - 0.3,
-    "15_class_to_logo": M["v14_start"] - 1.0, "16_tagline": M["v14_tout"] - 0.3,
-    "17_polaroid_capture": M["capture"] - 0.1,
+    "01_hook_polaroid_flash": M["n1"] - 0.4, "02_pullback_on_tout": M["q_tout"] - 0.2,
+    "03_accumulation": M["v4_feuilles"] - 0.5, "04_viewfinder_and_shutter": M["shutter"] - 0.7,
+    "05_morph_to_cards": M["shutter"] + 0.3, "06_logo_reveal": M["v7_cahier"] - 0.3,
+    "07_logo_to_app_whip": M["v7_end"] + 0.25, "08_card_to_fiche": M["v8_fiche"] - 0.45,
+    "09_to_flashcards_whip": M["v9_start"] - 0.65, "10_flashcard_flip_box": M["v9_flash"] + 0.5,
+    "11_qcm_answer": M["v10_corriges"] - 0.4, "12_app_to_frise": M["v11_start"] - 0.4,
+    "13_frise_arc": M["v11_rabelais"] - 0.3, "14_gratuit_slam": M["v12_gratuit"] - 0.4,
+    "15_class_wave": M["v13_classe"] - 0.5, "16_class_to_logo": M["v14_start"] - 0.9,
+    "17_end_logo_hit": M["v14_start"] + 0.2, "18_polaroid_capture": M["capture"] - 0.1,
 }
 for name, t0 in KEY.items():
     sheet([round(t0 + k * 0.1, 3) for k in range(12)], Q / f"strip_{name}.jpg", cols=6, tw=320)
@@ -80,7 +80,7 @@ subprocess.run([sys.executable, str(ROOT / "scripts/audio/plot_audio.py"), str(Q
                 str(ROOT / "audio/mix/stem_music.wav"), str(ROOT / "audio/mix/stem_sfx.wav")], check=True)
 subprocess.run([sys.executable, str(ROOT / "scripts/audio/plot_audio.py"), str(Q / "audio_music_stems.png"),
                 *[str(ROOT / f"audio/music/{f}") for f in ("score.wav", "stem_piano.wav", "stem_keys.wav", "stem_pad.wav",
-                                                          "stem_bass.wav", "stem_perc.wav", "stem_texture.wav")]], check=True)
+                                                          "stem_bass.wav", "stem_drums.wav", "stem_arp.wav")]], check=True)
 takes = json.loads((ROOT / "logs" / "voice_takes.json").read_text())
 current = [l["id"] for l in json.loads((ROOT / "scripts/voice/lines.json").read_text())["lines"]]
 vm = []

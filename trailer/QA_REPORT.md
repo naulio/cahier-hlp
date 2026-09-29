@@ -80,6 +80,36 @@ Problèmes principaux et idées retenues : `logs/qa/v1/REVIEWS.md`.
 
 ---
 
-## v2
+## v2 — `renders/trailer_v2.mp4` (64,9 s)
 
-(à compléter après l'évaluation)
+**Verdict du commanditaire** (prioritaire sur toute note d'agent) : « la v1 était mieux en tout point » ; voix
+« longue, pas assez narrateur, et vraiment mauvaise » ; « manque de VFX et SFX, il faut captiver l'attention » ;
+« le style motion avec moins de texture de la v1 est… 100× mieux ».
+L'évaluation v2 par les 7 agents a été interrompue (limite d'usage, puis arrêt volontaire : leurs critères
+poussaient dans la mauvaise direction). Aucune note v2 n'est donc rapportée.
+
+**Leçon retenue** : les agents avaient poussé vers le « fait main » (papier, crayon, textures), moins de
+bruitages et une voix plus lente — l'inverse de ce que veut le commanditaire. Le brief des agents
+(`logs/qa/BRIEF.md`) commence désormais par son retour, mot pour mot, marqué prioritaire, et la v1 y est la
+référence de style ; la note mesure l'écart au résultat attendu (un trailer sage qui ne captive pas ≤ 6).
+
+### Modifications v2 → v3
+- **Retour à la v1** : scènes, interface nette, style de mouvement, frise, communauté, carton et musique de la v1
+  (corrections de texte de la v2 conservées : apostrophes, espaces insécables, titres exacts ; « Neuf auteurs »).
+- **Voix** : nouveau narrateur (voix B de l'audition, choisie par le commanditaire pour son intonation), débit
+  naturel sans ralentissement, traitement « cinéma » (−1 demi-ton, grave chaud, présence, compression) ;
+  durée totale 56,5 s au lieu de 64,9 s. Les quatre noms, réentendus ensemble : « Rabelais, Rousseau, Flaubert, Hugo. »
+- **VFX** (`source/lib/vfx.js`, `source/scenes/fx_track.js`) : flash sur chaque Polaroid, éclair blanc + séparation
+  des couleurs + secousse au déclic, poussées de caméra sur les temps forts, filés horizontaux entre les écrans,
+  halos chauds, reflets lumineux sur le logo et la citation, vignette de tension avant le déclic.
+- **SFX** : ~145 bruitages calés sur les mêmes instants que les effets : souffles, impacts, montées (4 s avant le
+  déclic, 2 s avant le nom), chutes graves, scintillements, pops d'interface, déclics d'appareil
+  (`scripts/audio/sfx_trailer.py`, tout en synthèse, + la bibliothèque CC0).
+- **Musique** : partition de la v1 avec caisse claire et batterie plus présentes, pulsation dès le problème,
+  la communauté garde le rythme, roulement vers le nom.
+- **Technique** : flou de mouvement à 6-8 sous-images (plus d'images fantômes) ; limiteur attentif à la crête vraie
+  (−14 LUFS, ≤ −1 dBTP).
+
+## v3
+
+(évaluation en cours)

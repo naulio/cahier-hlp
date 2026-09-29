@@ -84,9 +84,14 @@ mix = lib.fx(mix, Compressor(threshold_db=-12, ratio=1.5, attack_ms=30, release_
 meter = pyln.Meter(SR)
 # gain de sortie ajusté pour atteindre -14 LUFS après limitation (-1.2 dBFS, crête vraie vérifiée)
 gain = -14.0 - meter.integrated_loudness(mix)
-for _ in range(4):
-    out, gr = lib.limiter(mix * db(gain), ceiling_db=-1.3)
+ceiling = -1.3
+for _ in range(10):                     # loudness visée ET crête vraie ≤ -1 dBTP (impacts : crêtes entre échantillons)
+    out, gr = lib.limiter(mix * db(gain), ceiling_db=ceiling)
     final = meter.integrated_loudness(out)
+    tp = lib.true_peak_db(out)
+    if tp > -1.05:
+        ceiling -= max(0.2, tp + 1.05)
+        continue
     if abs(final + 14.0) < 0.1:
         break
     gain += -14.0 - final
