@@ -3,181 +3,269 @@
   "provider": "kyutai",
   "voice": "unmute-prod-website_fabieng-enhanced-v2.wav",
   "text": "Rabelais. Rousseau. Flaubert. Hugo.",
-  "best": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01_kyutai_c7969f6382.wav",
+  "best": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01_kyutai_32f386314c.wav",
   "takes": [
    {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01_kyutai_c7969f6382.wav",
-    "duration_s": 2.61,
-    "transcript": "Rabelais, Rousseau, Flaubert, Hugo",
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01_kyutai_8880491bf5.wav",
+    "duration_s": 3.11,
+    "transcript": "Rabelais, Rousseau, Flaubert, Hugo...",
     "wer": 0.0,
-    "mean_word_prob": 0.885,
-    "words_per_min_speech": 150.9,
-    "peak_dbfs": -7.09,
-    "f0_median_hz": 127.1,
-    "f0_std_st": 2.48,
-    "f0_range_p5_p95_st": 7.15,
-    "voiced_ratio": 0.595,
-    "speech_time_s": 1.59,
-    "pauses_ge_180ms": 3,
-    "mean_pause_s": 0.297,
-    "score": 0.46,
+    "mean_word_prob": 0.792,
+    "words_per_min_speech": 89.9,
+    "peak_dbfs": -4.74,
+    "f0_median_hz": 153.4,
+    "f0_std_st": 3.49,
+    "f0_range_p5_p95_st": 9.7,
+    "voiced_ratio": 0.833,
+    "speech_time_s": 2.67,
+    "pauses_ge_180ms": 0,
+    "mean_pause_s": 0.0,
+    "score": 1.739,
     "seed": 1000,
     "words": [
      {
       "w": "Rabelais,",
-      "t0": 0.16,
-      "t1": 0.76,
-      "p": 0.687
+      "t0": 0.0,
+      "t1": 0.78,
+      "p": 0.635
      },
      {
       "w": "Rousseau,",
-      "t0": 1.0,
-      "t1": 1.4,
-      "p": 0.95
+      "t0": 0.94,
+      "t1": 1.44,
+      "p": 0.973
      },
      {
       "w": "Flaubert,",
-      "t0": 1.7,
-      "t1": 2.08,
-      "p": 0.95
+      "t0": 1.62,
+      "t1": 2.1,
+      "p": 0.957
      },
      {
-      "w": "Hugo",
-      "t0": 2.36,
-      "t1": 2.52,
-      "p": 0.955
+      "w": "Hugo...",
+      "t0": 2.42,
+      "t1": 3.68,
+      "p": 0.602
      }
     ]
    },
    {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01_kyutai_96ecc90b6a.wav",
-    "duration_s": 2.75,
-    "transcript": "Rousseau, Flaubert, Hugo.",
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01_kyutai_a3f1390d8b.wav",
+    "duration_s": 2.88,
+    "transcript": "Ravelet, Rousseau, Flaubert, Hugo...",
     "wer": 0.25,
-    "mean_word_prob": 0.789,
-    "words_per_min_speech": 111.6,
-    "peak_dbfs": -1.41,
-    "f0_median_hz": 122.8,
-    "f0_std_st": 2.87,
-    "f0_range_p5_p95_st": 9.14,
-    "voiced_ratio": 0.772,
-    "speech_time_s": 2.15,
-    "pauses_ge_180ms": 1,
-    "mean_pause_s": 0.24,
-    "score": 3.804,
+    "mean_word_prob": 0.763,
+    "words_per_min_speech": 92.3,
+    "peak_dbfs": -4.29,
+    "f0_median_hz": 147.7,
+    "f0_std_st": 3.24,
+    "f0_range_p5_p95_st": 9.22,
+    "voiced_ratio": 0.862,
+    "speech_time_s": 2.6,
+    "pauses_ge_180ms": 0,
+    "mean_pause_s": 0.0,
+    "score": 3.831,
     "seed": 8919,
     "words": [
      {
+      "w": "Ravelet,",
+      "t0": 0.0,
+      "t1": 0.68,
+      "p": 0.532
+     },
+     {
       "w": "Rousseau,",
-      "t0": 0.72,
-      "t1": 1.44,
-      "p": 0.493
+      "t0": 0.84,
+      "t1": 1.4,
+      "p": 0.955
      },
      {
       "w": "Flaubert,",
-      "t0": 1.64,
+      "t0": 1.58,
       "t1": 2.12,
-      "p": 0.939
+      "p": 0.964
      },
      {
-      "w": "Hugo.",
-      "t0": 2.32,
-      "t1": 2.56,
-      "p": 0.935
+      "w": "Hugo...",
+      "t0": 2.34,
+      "t1": 3.46,
+      "p": 0.6
      }
     ]
    },
    {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01_kyutai_5d5b3d73b9.wav",
-    "duration_s": 2.7,
-    "transcript": "Aura Bellet, Rousseau, Flaubert, Hugo",
-    "wer": 0.5,
-    "mean_word_prob": 0.781,
-    "words_per_min_speech": 135.6,
-    "peak_dbfs": -5.13,
-    "f0_median_hz": 115.2,
-    "f0_std_st": 2.35,
-    "f0_range_p5_p95_st": 8.1,
-    "voiced_ratio": 0.656,
-    "speech_time_s": 1.77,
-    "pauses_ge_180ms": 3,
-    "mean_pause_s": 0.263,
-    "score": 5.876,
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01_kyutai_4a776ed85d.wav",
+    "duration_s": 2.62,
+    "transcript": "Rabelais, Rousseau, Flaubert, Hugo.",
+    "wer": 0.0,
+    "mean_word_prob": 0.859,
+    "words_per_min_speech": 101.3,
+    "peak_dbfs": -4.28,
+    "f0_median_hz": 122.8,
+    "f0_std_st": 2.14,
+    "f0_range_p5_p95_st": 7.2,
+    "voiced_ratio": 0.882,
+    "speech_time_s": 2.37,
+    "pauses_ge_180ms": 0,
+    "mean_pause_s": 0.0,
+    "score": 0.612,
     "seed": 16838,
     "words": [
      {
-      "w": "Aura",
-      "t0": 0.0,
-      "t1": 0.3,
-      "p": 0.46
-     },
-     {
-      "w": "Bellet,",
-      "t0": 0.3,
-      "t1": 0.7,
-      "p": 0.592
-     },
-     {
-      "w": "Rousseau,",
-      "t0": 1.0,
-      "t1": 1.44,
-      "p": 0.952
-     },
-     {
-      "w": "Flaubert,",
-      "t0": 1.68,
-      "t1": 2.12,
-      "p": 0.945
-     },
-     {
-      "w": "Hugo",
-      "t0": 2.38,
-      "t1": 2.58,
-      "p": 0.956
-     }
-    ]
-   },
-   {
-    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01_kyutai_5a012bda20.wav",
-    "duration_s": 2.53,
-    "transcript": "Rabelais, Rousseau, Flaubert, Hugo.",
-    "wer": 0.0,
-    "mean_word_prob": 0.848,
-    "words_per_min_speech": 160.0,
-    "peak_dbfs": -5.2,
-    "f0_median_hz": 113.3,
-    "f0_std_st": 2.0,
-    "f0_range_p5_p95_st": 6.5,
-    "voiced_ratio": 0.543,
-    "speech_time_s": 1.5,
-    "pauses_ge_180ms": 3,
-    "mean_pause_s": 0.3,
-    "score": 0.768,
-    "seed": 24757,
-    "words": [
-     {
       "w": "Rabelais,",
-      "t0": 0.16,
-      "t1": 0.78,
-      "p": 0.592
+      "t0": 0.0,
+      "t1": 0.72,
+      "p": 0.645
      },
      {
       "w": "Rousseau,",
-      "t0": 1.04,
-      "t1": 1.42,
-      "p": 0.917
+      "t0": 0.92,
+      "t1": 1.46,
+      "p": 0.943
      },
      {
       "w": "Flaubert,",
       "t0": 1.64,
-      "t1": 2.0,
+      "t1": 2.12,
+      "p": 0.933
+     },
+     {
+      "w": "Hugo.",
+      "t0": 2.36,
+      "t1": 2.5,
+      "p": 0.916
+     }
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01_kyutai_5a11bce704.wav",
+    "duration_s": 2.63,
+    "transcript": "Brabelet, Rousseau, Flaubert, Hugo.",
+    "wer": 0.25,
+    "mean_word_prob": 0.823,
+    "words_per_min_speech": 100.0,
+    "peak_dbfs": -7.19,
+    "f0_median_hz": 110.0,
+    "f0_std_st": 1.28,
+    "f0_range_p5_p95_st": 3.74,
+    "voiced_ratio": 0.811,
+    "speech_time_s": 2.4,
+    "pauses_ge_180ms": 0,
+    "mean_pause_s": 0.0,
+    "score": 4.443,
+    "seed": 24757,
+    "words": [
+     {
+      "w": "Brabelet,",
+      "t0": 0.0,
+      "t1": 0.68,
+      "p": 0.418
+     },
+     {
+      "w": "Rousseau,",
+      "t0": 0.78,
+      "t1": 1.4,
+      "p": 0.968
+     },
+     {
+      "w": "Flaubert,",
+      "t0": 1.58,
+      "t1": 2.04,
       "p": 0.958
      },
      {
       "w": "Hugo.",
-      "t0": 2.26,
-      "t1": 2.4,
-      "p": 0.926
+      "t0": 2.3,
+      "t1": 2.46,
+      "p": 0.946
+     }
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01_kyutai_93248c5a62.wav",
+    "duration_s": 2.72,
+    "transcript": "Brabelet, Rousseau, Flaubert, Hugo.",
+    "wer": 0.25,
+    "mean_word_prob": 0.823,
+    "words_per_min_speech": 103.4,
+    "peak_dbfs": -5.04,
+    "f0_median_hz": 157.4,
+    "f0_std_st": 2.88,
+    "f0_range_p5_p95_st": 7.28,
+    "voiced_ratio": 0.842,
+    "speech_time_s": 2.32,
+    "pauses_ge_180ms": 0,
+    "mean_pause_s": 0.0,
+    "score": 4.472,
+    "seed": 32676,
+    "words": [
+     {
+      "w": "Brabelet,",
+      "t0": 0.0,
+      "t1": 0.76,
+      "p": 0.434
+     },
+     {
+      "w": "Rousseau,",
+      "t0": 0.9,
+      "t1": 1.42,
+      "p": 0.978
+     },
+     {
+      "w": "Flaubert,",
+      "t0": 1.62,
+      "t1": 2.14,
+      "p": 0.967
+     },
+     {
+      "w": "Hugo.",
+      "t0": 2.42,
+      "t1": 2.58,
+      "p": 0.914
+     }
+    ]
+   },
+   {
+    "file": "/home/user/cahier-hlp/trailer/audio/voice/takes/V01_kyutai_32f386314c.wav",
+    "duration_s": 2.53,
+    "transcript": "Rabelais, Rousseau, Flaubert, Hugo.",
+    "wer": 0.0,
+    "mean_word_prob": 0.89,
+    "words_per_min_speech": 112.7,
+    "peak_dbfs": -6.72,
+    "f0_median_hz": 118.6,
+    "f0_std_st": 2.28,
+    "f0_range_p5_p95_st": 7.28,
+    "voiced_ratio": 0.823,
+    "speech_time_s": 2.13,
+    "pauses_ge_180ms": 0,
+    "mean_pause_s": 0.0,
+    "score": 0.44,
+    "seed": 40595,
+    "words": [
+     {
+      "w": "Rabelais,",
+      "t0": 0.0,
+      "t1": 0.72,
+      "p": 0.76
+     },
+     {
+      "w": "Rousseau,",
+      "t0": 0.82,
+      "t1": 1.26,
+      "p": 0.919
+     },
+     {
+      "w": "Flaubert,",
+      "t0": 1.4,
+      "t1": 1.86,
+      "p": 0.964
+     },
+     {
+      "w": "Hugo.",
+      "t0": 2.16,
+      "t1": 2.38,
+      "p": 0.916
      }
     ]
    }
@@ -205,7 +293,7 @@
     "pauses_ge_180ms": 0,
     "mean_pause_s": 0.0,
     "final_rise_st": 18.5,
-    "score": 4.714,
+    "score": 7.654,
     "seed": 1000,
     "words": [
      {
@@ -262,7 +350,7 @@
     "pauses_ge_180ms": 0,
     "mean_pause_s": 0.0,
     "final_rise_st": 9.0,
-    "score": 0.51,
+    "score": 0.86,
     "seed": 8919,
     "words": [
      {
@@ -313,7 +401,7 @@
     "pauses_ge_180ms": 0,
     "mean_pause_s": 0.0,
     "final_rise_st": 1.34,
-    "score": 3.974,
+    "score": 6.062,
     "seed": 16838,
     "words": [
      {
@@ -370,7 +458,7 @@
     "pauses_ge_180ms": 0,
     "mean_pause_s": 0.0,
     "final_rise_st": 10.45,
-    "score": 4.195,
+    "score": 7.047,
     "seed": 24757,
     "words": [
      {
@@ -427,7 +515,7 @@
     "pauses_ge_180ms": 0,
     "mean_pause_s": 0.0,
     "final_rise_st": -6.2,
-    "score": 5.664,
+    "score": 7.891,
     "seed": 32676,
     "words": [
      {
@@ -485,7 +573,7 @@
     "speech_time_s": 1.68,
     "pauses_ge_180ms": 0,
     "mean_pause_s": 0.0,
-    "score": 1.833,
+    "score": 2.958,
     "seed": 1000,
     "words": [
      {
@@ -547,7 +635,7 @@
     "speech_time_s": 1.85,
     "pauses_ge_180ms": 0,
     "mean_pause_s": 0.0,
-    "score": 0.586,
+    "score": 1.136,
     "seed": 8919,
     "words": [
      {
@@ -671,7 +759,7 @@
     "speech_time_s": 1.64,
     "pauses_ge_180ms": 0,
     "mean_pause_s": 0.0,
-    "score": 3.285,
+    "score": 4.563,
     "seed": 24757,
     "words": [
      {
@@ -741,7 +829,7 @@
     "speech_time_s": 1.63,
     "pauses_ge_180ms": 0,
     "mean_pause_s": 0.0,
-    "score": 1.769,
+    "score": 3.087,
     "seed": 1000,
     "words": [
      {
@@ -803,7 +891,7 @@
     "speech_time_s": 1.95,
     "pauses_ge_180ms": 0,
     "mean_pause_s": 0.0,
-    "score": 0.792,
+    "score": 1.052,
     "seed": 8919,
     "words": [
      {
@@ -865,7 +953,7 @@
     "speech_time_s": 1.99,
     "pauses_ge_180ms": 0,
     "mean_pause_s": 0.0,
-    "score": 0.572,
+    "score": 0.725,
     "seed": 16838,
     "words": [
      {
@@ -927,7 +1015,7 @@
     "speech_time_s": 1.65,
     "pauses_ge_180ms": 0,
     "mean_pause_s": 0.0,
-    "score": 3.124,
+    "score": 4.361,
     "seed": 24757,
     "words": [
      {
@@ -1061,7 +1149,7 @@
     "pauses_ge_180ms": 1,
     "mean_pause_s": 0.44,
     "final_rise_st": 4.5,
-    "score": 0.917,
+    "score": 1.054,
     "seed": 8919,
     "words": [
      {
@@ -1349,7 +1437,7 @@
     "pauses_ge_180ms": 0,
     "mean_pause_s": 0.0,
     "final_rise_st": 4.4,
-    "score": 2.471,
+    "score": 4.376,
     "seed": 40595,
     "words": [
      {
@@ -1412,7 +1500,7 @@
     "pauses_ge_180ms": 1,
     "mean_pause_s": 0.39,
     "final_rise_st": -3.53,
-    "score": 4.085,
+    "score": 5.53,
     "seed": 48514,
     "words": [
      {
@@ -1475,7 +1563,7 @@
     "pauses_ge_180ms": 1,
     "mean_pause_s": 0.6,
     "final_rise_st": 12.7,
-    "score": 1.757,
+    "score": 3.202,
     "seed": 56433,
     "words": [
      {
@@ -1545,7 +1633,7 @@
     "speech_time_s": 2.4,
     "pauses_ge_180ms": 1,
     "mean_pause_s": 0.26,
-    "score": 1.229,
+    "score": 2.354,
     "seed": 1000,
     "words": [
      {
@@ -1625,7 +1713,7 @@
     "speech_time_s": 2.64,
     "pauses_ge_180ms": 0,
     "mean_pause_s": 0.0,
-    "score": 0.638,
+    "score": 1.195,
     "seed": 8919,
     "words": [
      {
@@ -1705,7 +1793,7 @@
     "speech_time_s": 2.5,
     "pauses_ge_180ms": 0,
     "mean_pause_s": 0.0,
-    "score": 0.951,
+    "score": 1.826,
     "seed": 16838,
     "words": [
      {
@@ -1785,7 +1873,7 @@
     "speech_time_s": 2.43,
     "pauses_ge_180ms": 1,
     "mean_pause_s": 0.31,
-    "score": 1.12,
+    "score": 2.167,
     "seed": 24757,
     "words": [
      {
@@ -1865,7 +1953,7 @@
     "speech_time_s": 2.36,
     "pauses_ge_180ms": 1,
     "mean_pause_s": 0.34,
-    "score": 1.378,
+    "score": 2.608,
     "seed": 32676,
     "words": [
      {

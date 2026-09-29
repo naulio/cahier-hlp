@@ -208,7 +208,11 @@ def main(model="small"):
     DURATION = round(marks["v14_end"] + END_TAIL, 2)
     marks["capture"] = round(marks["v14_end"] + CAPTURE_AFTER, 3)
     marks["end"] = DURATION
-    # overlaps check
+    # overlaps check (entre répliques, et entre segments d'une même réplique découpée)
+    for p in placed:
+        for a, b in zip(p["segments"], p["segments"][1:]):
+            if b["at"] < a["at"] + a["dur"] - 0.03:
+                print(f"ATTENTION segments de {p['id']} qui se chevauchent : {a['at'] + a['dur']:.2f} > {b['at']:.2f}")
     for a, b in zip(placed, placed[1:]):
         if b["at"] < a["end"] - 0.05:
             print(f"ATTENTION chevauchement {a['id']} ({a['end']:.2f}) / {b['id']} ({b['at']:.2f})")

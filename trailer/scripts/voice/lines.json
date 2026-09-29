@@ -15,7 +15,8 @@
    "text": "Rabelais. Rousseau. Flaubert. Hugo.",
    "tts": "Rabelais... Rousseau... Flaubert... Hugo.",
    "tts_google": "Rabelais… Rousseau… Flaubert… Hugo.",
-   "takes": 6
+   "takes": 6,
+   "split_by": "words"
   },
   {
    "id": "V02",

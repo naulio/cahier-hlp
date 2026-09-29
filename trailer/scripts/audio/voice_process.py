@@ -22,6 +22,7 @@ SRC = ROOT / "audio" / "voice" / "lines"
 OUT = ROOT / "audio" / "voice" / "processed"
 OUT.mkdir(parents=True, exist_ok=True)
 LINES = json.loads((ROOT / "scripts" / "voice" / "lines.json").read_text())
+TAKES_LOG = json.loads((ROOT / "logs" / "voice_takes.json").read_text())
 
 SPEED = {"default": 0.95, "V01": 0.97}
 TARGET_RMS_DB = -20.0
@@ -66,6 +67,28 @@ def cut_points(y, n_parts, min_gap=0.06):
     return [(a + b) // 2 for a, b in gaps]
 
 
+def cut_points_words(y, n_parts):
+    """Cut between words (Whisper timestamps), at the quietest 10 ms inside each word gap.
+    For lists read without real silences (the four names of the hook)."""
+    import sys, tempfile
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from voice_metrics import transcribe
+    with tempfile.NamedTemporaryFile(suffix=".wav") as tmp:
+        sf.write(tmp.name, y, lib.SR)
+        _, words = transcribe(tmp.name, "medium")
+    if len(words) < n_parts:
+        raise SystemExit(f"découpe : {len(words)} mots pour {n_parts} segments")
+    fr = int(lib.SR * 0.01)
+    m = y.mean(1)
+    r = np.sqrt(np.convolve(m ** 2, np.ones(fr) / fr, "same"))
+    cuts = []
+    for a, b in zip(words[: n_parts - 1], words[1:n_parts]):
+        i0, i1 = int((a["t1"] - 0.04) * lib.SR), int((b["t0"] + 0.04) * lib.SR)
+        i0, i1 = max(0, i0), min(len(r) - 1, max(i1, i0 + fr))
+        cuts.append(i0 + int(np.argmin(r[i0:i1])))
+    return cuts
+
+
 def insert_pause(y, word, dur):
     """Insert `dur` s of silence right after `word` (found with Whisper word timestamps)."""
     import sys, tempfile
@@ -103,7 +126,12 @@ def main():
         sf.write(OUT / f"{lid}.wav", y, lib.SR, subtype="PCM_24")
         info = {"dur": round(len(y) / lib.SR, 3), "speed": sp}
         if line.get("split"):
-            cuts = cut_points(y, int(line["split"]))
+            chk = TAKES_LOG.get(lid, {}).get("split_check")
+            win = next((c for c in chk or [] if c["file"] == TAKES_LOG[lid]["best"]), None)
+            if win:      # découpe validée par scripts/voice/pick_split_take.py (chaque morceau réentendu seul)
+                cuts = [int(c / sp * lib.SR) for c in win["cuts_s"]]
+            else:
+                cuts = (cut_points_words if line.get("split_by") == "words" else cut_points)(y, int(line["split"]))
             edges = [0] + cuts + [len(y)]
             for k, (a, b) in enumerate(zip(edges, edges[1:]), 1):
                 part = lib.fade(y[a:b], 0.004, 0.03)
