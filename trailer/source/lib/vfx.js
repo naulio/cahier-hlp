@@ -100,10 +100,13 @@
       }
     }
     // caméra globale : poussée + secousse + filé
-    const s = 1 + punch;
+    // léger zoom de compensation : un décalage (filé, secousse) ne doit jamais découvrir le bord de l'image
+    const tx = sx + whipX;
+    const cover = Math.max((Math.abs(tx) + whip * 38 * 2.5) * 2 / W, Math.abs(sy) * 2 / H) * 1.1;   // + traîne du flou du filé
+    const s = 1 + punch + cover;
     stage.style.transformOrigin = "720px 540px";
-    stage.style.transform = (s !== 1 || sx || sy || whipX)
-      ? `translate(${(sx + whipX).toFixed(2)}px,${sy.toFixed(2)}px) scale(${s.toFixed(4)})` : "none";
+    stage.style.transform = (s !== 1 || tx || sy)
+      ? `translate(${tx.toFixed(2)}px,${sy.toFixed(2)}px) scale(${s.toFixed(4)})` : "none";
     const filters = [];
     if (whip > 0.02) {
       document.getElementById("fx-whip-b").setAttribute("stdDeviation", `${(whip * 38).toFixed(1)} 0`);
