@@ -89,8 +89,9 @@ Le code source des scènes est dans `source/` (JS) et le pipeline dans `scripts/
 Pour l'audio, dis clairement ce que tu déduis des données et ce que tu ne peux pas vérifier sans écoute.
 
 ## Version à évaluer
-Le dossier indiqué dans ta mission (ex. `logs/qa/v2/`). Pour une version ≥ 2, `logs/qa/v1/REVIEWS.md` résume
-les critiques de la version précédente et ce qui a été changé (`QA_REPORT.md`). Juge d'abord la nouvelle
+Le dossier indiqué dans ta mission (ex. `logs/qa/v5/`). Les rapports de la version précédente sont dans
+`logs/qa/v<n-1>/review_*.md` et ce qui a été changé depuis est listé dans `QA_REPORT.md` (section
+« Modifications v<n-1> → v<n> »). Juge d'abord la nouvelle
 version **pour elle-même**, puis dis brièvement quels problèmes signalés sont réglés, lesquels persistent,
 et ce que la correction a abîmé. `voice_takes.json` détaille toutes les prises de voix et leurs mesures
 (dont `_names_check` : les quatre noms du hook réentendus ensemble).

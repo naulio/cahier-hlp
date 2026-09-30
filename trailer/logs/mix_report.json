@@ -1,10 +1,10 @@
 {
- "integrated_lufs": -14.07,
- "true_peak_dbtp": -1.25,
- "max_gain_reduction_db": -3.25,
- "gain_applied_db": 0.12,
- "voice_lufs": -12.86,
- "music_lufs": -23.39,
- "sfx_cues": 62,
- "duration_s": 56.72
+ "integrated_lufs": -14.01,
+ "true_peak_dbtp": -1.23,
+ "max_gain_reduction_db": -2.62,
+ "gain_applied_db": 0.41,
+ "voice_lufs": -12.56,
+ "music_lufs": -23.93,
+ "sfx_cues": 60,
+ "duration_s": 60.35
 }

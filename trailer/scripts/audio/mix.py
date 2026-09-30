@@ -39,8 +39,11 @@ vbuf = lib.fx(voice.buf, Reverb(room_size=0.18, damping=0.7, wet_level=0.05, dry
 cues = []
 
 
-def S(name, t, g=0.0, p=0.0):
-    cues.append({"t": round(t, 3), "sfx": name, "gain_db": g, "pan": p})
+def S(name, t, g=0.0, p=0.0, lpf=None):
+    c = {"t": round(t, 3), "sfx": name, "gain_db": g, "pan": p}
+    if lpf:
+        c["lpf"] = lpf                    # v5 : adoucit les aigus (sifflantes de la voix au même moment)
+    cues.append(c)
 
 
 sh = M["shutter"]
@@ -53,37 +56,36 @@ S("air_long", M["q_tout"] - 0.15, -14)
 arr = [("v3_rentree", 0, 0.5), ("v3_textes", 0, -0.4), ("v3_accum", 0, 0.3), ("v4_feuilles", 0, -0.5), ("v4_notes", -0.25, 0.1)]
 for k, (m, off, p) in enumerate(arr):
     ta = M[m] + off - 0.34
-    S(f"paper_slide_{k % 6 + 1}", ta + 0.05, -16, p)
+    S(f"paper_slide_{k % 6 + 1}", ta + 0.05, -19, p, lpf=5000)
     S(f"paper_hit_{(k + 1) % 3 + 1}", ta + 0.5, -21, p)
-S("paper_slide_6", M["v3_accum"] + 0.3 - 0.34, -17, -0.6)
 # notes au stylo, surligneur sur les citations
 for k in range(3):
     S(f"pen_stroke_{k + 2}", M["v4_notes"] - 0.1 + k * 0.22, -15, 0.3 - k * 0.3)
 for k in range(2):
-    S(f"marker_{k + 1}", M["v4_citations"] - 0.05 + k * 0.18, -17, -0.2 + k * 0.4)
+    S(f"marker_{k + 1}", M["v4_citations"] - 0.05 + k * 0.18, -20, -0.2 + k * 0.4, lpf=5000)
 # « Mais où ? » : le viseur cherche (moteur AF), puis verrouille (bip)
 for k in range(3):
-    S(f"af_motor_{k + 1}", M["v5_mais"] + 0.05 + k * 0.62, -13, [-0.4, 0.4, -0.1][k])
+    S(f"af_motor_{k + 1}", M["v5_mais"] + 0.05 + k * 0.62, -17, [-0.4, 0.4, -0.1][k])
 S("af_beep", sh - 0.35, -21)
 # le déclic
 S("shutter_k1000", sh - 0.03, -4)
 S("film_advance", sh + 0.42, -14, 0.2)
 S("paper_sweep", sh + 0.3, -13)
-for i in range(9):
-    S(f"card_tick_{i % 3 + 1}", sh + 0.35 + i * 0.075 + 0.78, -23, -0.4 + 0.1 * i)
+JIT = [(0.004, 0.8), (-0.011, -1.5), (0.013, 0.4), (-0.006, 1.7), (0.009, -0.9), (-0.014, 1.1), (0.002, -1.8), (0.012, 0.6), (-0.008, -0.3)]
+for i in range(9):                        # v5 : léger décalage ±15 ms / ±2 dB (fixe), moins mécanique
+    S(f"card_tick_{i % 3 + 1}", sh + 0.35 + i * 0.075 + 0.78 + JIT[i][0], -23 + JIT[i][1], -0.4 + 0.1 * i)
 # l'application
 build = M["v7_end"] + 0.35
 S("air_soft", build - 0.05, -20)
 clicks = [M["v8_fiche"] - 0.28, M["v9_start"] - 0.55 - 0.08, M["v9_reviennent"] + 0.05 - 0.05,
           M["v10_start"] - 0.5 - 0.08, M["v10_corriges"] - 0.18]
-for c in clicks:
-    S("ui_click", c, -15)
+for i, c in enumerate(clicks):
+    S("ui_click", c, -20 if i == 3 else -15)   # v5 : le clic de navigation vers le QCM, plus discret
 S("air_soft", M["v8_fiche"] - 0.28 + 0.12, -22)
 for k in range(3):
     S("ui_tick", M["v8_epoque"] - 0.08 + k * 0.1, -22)
 S("marker_3", M["v8_retenir"] - 0.05, -22)
-for m in ("v9_start", "v10_start"):
-    S("air_soft", M[m] - 0.5, -22)
+S("air_soft", M["v9_start"] - 0.5, -22)
 S("card_flip", M["v9_flash"] + 0.62, -13)
 S("wood_tock", M["v9_reviennent"] + 0.05 + 0.12 + 0.62, -16)
 S("ui_tick", M["v9_moment"] - 0.2, -20)
@@ -97,11 +99,13 @@ S("air_soft", M["v13_start"] - 0.15, -21)
 S("air_soft", M["v14_start"] - 0.8, -21)
 S("shutter_k1000", M["capture"] - 0.03, -6)
 S("polaroid_eject", M["capture"] + 0.12, -7)
-S("pencil_caption", M["capture"] + 1.05, -14)
+S("pencil_caption", M["capture"] + 1.05, -18)
 
 sfx = Track(DUR)
 for c in cues:
     x = lib.load(SFX / f"{c['sfx']}.wav")
+    if c.get("lpf"):
+        x = lib.filt(x, "lowpass", c["lpf"])
     if c["sfx"] == "room_tone":           # lit d'ambiance jusqu'au déclic, en fondu
         n = lib.seconds(sh + 0.1)
         x = np.concatenate([x] * 3)[:n]
@@ -125,7 +129,7 @@ for i in range(len(act)):
     v = a_up * v + (1 - a_up) * act[i] if act[i] > v else a_dn * v + (1 - a_dn) * act[i]
     g[i] = v
 DUCK = 5.0
-MUSIC_GAIN = -2.0
+MUSIC_GAIN = -3.0
 music *= (db(MUSIC_GAIN) * db(-DUCK * g))[:, None]
 
 # ------------------------------------------------------------------ bus et master

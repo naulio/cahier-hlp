@@ -62,15 +62,15 @@ phone = [round(t, 2) for t in phone]
 sheet(phone, Q / "phone_size_360px.jpg", cols=5, tw=360)
 # 3) bandes à 10 i/s sur les moments clés
 KEY = {
-    "01_hook_polaroid_flash": M["n1"] - 0.4, "02_pullback_on_tout": M["q_tout"] - 0.2,
+    "01_hook_polaroids": M["n1"] - 0.4, "02_question_tout": M["q_tout"] - 0.2,
     "03_accumulation": M["v4_feuilles"] - 0.5, "04_viewfinder_and_shutter": M["shutter"] - 0.7,
     "05_morph_to_cards": M["shutter"] + 0.3, "06_logo_reveal": M["v7_cahier"] - 0.3,
-    "07_logo_to_app_whip": M["v7_end"] + 0.25, "08_card_to_fiche": M["v8_fiche"] - 0.45,
-    "09_to_flashcards_whip": M["v9_start"] - 0.65, "10_flashcard_flip_box": M["v9_flash"] + 0.5,
+    "07_logo_to_app": M["v7_end"] + 0.25, "08_card_to_fiche": M["v8_fiche"] - 0.45,
+    "09_to_flashcards": M["v9_start"] - 0.65, "10_flashcard_flip_box": M["v9_flash"] + 0.5,
     "11_qcm_answer": M["v10_corriges"] - 0.4, "12_app_to_frise": M["v11_start"] - 0.4,
-    "13_frise_arc": M["v11_rabelais"] - 0.3, "14_gratuit_slam": M["v12_gratuit"] - 0.4,
+    "13_frise_arc": M["v11_rabelais"] - 0.1, "14_gratuit": M["v12_gratuit"] - 0.4,
     "15_class_wave": M["v13_classe"] - 0.5, "16_class_to_logo": M["v14_start"] - 0.9,
-    "17_end_logo_hit": M["v14_start"] + 0.2, "18_polaroid_capture": M["capture"] - 0.1,
+    "17_end_logo": M["v14_start"] + 0.2, "18_polaroid_capture": M["capture"] - 0.1,
 }
 for name, t0 in KEY.items():
     sheet([round(t0 + k * 0.1, 3) for k in range(12)], Q / f"strip_{name}.jpg", cols=6, tw=320)

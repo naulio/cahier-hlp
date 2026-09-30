@@ -136,11 +136,12 @@ P("A6", M["v7_hlp"], vel=34, dur=1.4, gain=-7, pan_=-0.2)
 # =====================================================================
 g1 = G + 2 * BAR
 brk = M["v12_start"] + 0.3               # respiration : un peu après « C'est gratuit »
+brk = g1 + round((brk - g1) / (BAR / 2)) * BAR / 2  # v5 : calée sur un temps fort (1 ou 3), plus de double attaque
 GROOVE = [(["F3", "A3", "C4", "E4"], "F1", ["F2", "C3", "A3", "E4"], ["F4", "A4", "C5", "E5"]),
           (["E3", "G3", "A3", "C4"], "A1", ["A2", "E3", "G3", "C4"], ["E4", "A4", "C5", "G5"]),
           (["D3", "F3", "A3", "C4"], "D2", ["D2", "A2", "F3", "C4"], ["D4", "F4", "A4", "C5"]),
           (["D3", "F3", "A3", "Bb3"], "Bb1", ["Bb1", "F2", "D3", "A3"], ["D4", "F4", "A4", "D5"])]
-nb = int(np.ceil((brk - g1) / BAR))
+nb = int(np.ceil((brk - g1) / BAR - 1e-6))
 for b in range(nb):
     bar0 = g1 + b * BAR
     keys, bn, padn, arp = GROOVE[b % 4]
@@ -148,7 +149,8 @@ for b in range(nb):
     lift = 1.0 if bar0 >= M["v11_start"] - BAR * 0.5 else 0.0
     chord_pad(padn, bar0, end_bar - bar0 + 0.1, level=0.1 + 0.03 * lift, cutoff=1800 + 1400 * lift, attack=0.25, release=0.6)
     P(keys, bar0, vel=46 + 6 * lift, dur=BEAT * 1.5, gain=-3)
-    P(keys, bar0 + BEAT * 2.5, vel=40, dur=BEAT * 1.2, gain=-6)
+    if bar0 + BEAT * 2.5 < brk - 0.1:     # v5 : rien ne déborde sur la respiration
+        P(keys, bar0 + BEAT * 2.5, vel=40, dur=BEAT * 1.2, gain=-6)
     # basse syncopée
     for (pos, d) in ((0, 1.4), (1.5, 0.45), (2.5, 1.2)):
         tt = bar0 + pos * BEAT
@@ -175,7 +177,8 @@ for b in range(nb):
     if lift:
         mel = ["A5", "G5", "F5", "E5"] if b % 2 == 0 else ["D5", "F5", "A5", "C6"]
         for k, nm in enumerate(mel):
-            P(nm, bar0 + k * BEAT, vel=54, dur=BEAT * 1.6, gain=-2, pan_=0.1)
+            if bar0 + k * BEAT < brk - 0.1:
+                P(nm, bar0 + k * BEAT, vel=54, dur=BEAT * 1.6, gain=-2, pan_=0.1)
 
 # « corrigés » : deux notes au piano pour la bonne réponse
 P("C6", M["v10_corriges"] - 0.14, vel=46, dur=0.6, gain=-5)
@@ -219,7 +222,7 @@ motif = [("A4", tag[0]["t0"]), ("C5", tag[2]["t0"]), ("D5", tag[3]["t0"] if len(
          ("E5", tag[4]["t0"]), ("F5", tag[5]["t0"])]
 for k, (nm, t) in enumerate(motif):
     P(nm, t - 0.01, vel=48 + (8 if k == 4 else 0), dur=3.5 if k == 4 else 1.2, gain=-2 if k == 4 else -4, rel=2.0)
-P(["C6", "F6"], M["capture"] + 1.9, vel=32, dur=3.0, gain=-8, rel=2.5)
+P(["C6", "F6"], M["capture"] + 1.9, vel=32, dur=3.0, gain=-5, rel=2.5)   # v5 : +3 dB, audibles
 
 # =====================================================================
 # texture : souffle de bande très discret, qui disparaît au déclic

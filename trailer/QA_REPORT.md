@@ -178,16 +178,19 @@ aucun ajout d'effet, et ne proposent que des retraits, des corrections et des du
   - plus de fondus enchaînés entre les écrans de l'app ;
   - la fiche est cadrée moins serré ;
   - la question du QCM est là dès l'arrivée ;
-  - l'arc de la frise passe au-dessus des photos.
+  - l'arc rouge « de Rabelais à Arendt » passe au-dessus de la frise : il sort de derrière le Polaroid de
+    Rabelais et ne croise plus aucun nom, aucune photo ni aucune étiquette de siècle ; il se pose sur Arendt
+    au moment où le nom est dit et tient environ 1 s.
 - **Durées** : on rend du temps de lecture aux moments clés : question du hook, réponse de la flashcard,
-  explication du QCM, classe allumée, adresse.
+  explication du QCM, classe allumée, adresse. Durée totale : 56,4 s → 60,3 s (cible du brief : ~60 s).
 - **Voix** :
   - prise de « dans le Cahier d'HLP » à l'attaque propre ;
   - pause déplacée avant « dans » ;
   - silence réduit dans « de Rabelais à Arendt » ;
   - courte pause après « HLP » dans la phrase finale.
 - **Son** :
-  - la respiration musicale démarre sur la barre de mesure (plus de double attaque) ;
+  - la respiration musicale démarre sur un temps fort, pile sur « C'est gratuit » (plus de double attaque :
+    aucune note du groove ne déborde dessus) ;
   - musique −1 dB ;
   - bruitages de l'accumulation −3 dB et adoucis dans les aigus ;
   - un souffle retiré sur « au bon moment » ;

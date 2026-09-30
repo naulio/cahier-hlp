@@ -39,7 +39,9 @@
       const p = svgEl("path", { d: `M${a} ${Y - 10} C ${a + 30} ${Y - h - 12}, ${b - 30} ${Y - h - 12}, ${b} ${Y - 10}`, fill: "none", stroke: "#8C8F66", "stroke-width": 1.8, "stroke-dasharray": "300", "stroke-dashoffset": "300", "stroke-linecap": "round" }, svg);
       arcs.push(p);
     }
-    bigArc = svgEl("path", { d: `M${xs[0]} ${Y + 12} C ${xs[0] + 200} ${Y + 400}, ${xs[8] - 200} ${Y + 400}, ${xs[8]} ${Y + 12}`, fill: "none", stroke: "#C4674E", "stroke-width": 2.4, "stroke-dasharray": "2000", "stroke-dashoffset": "2000", "stroke-linecap": "round" }, svg);
+    // v5 : l'arc « de Rabelais à Arendt » passe au-dessus de la frise (sort de derrière le Polaroid de Rabelais,
+    // passe au-dessus de Hugo) : il ne croise plus aucun nom ni aucune photo
+    bigArc = svgEl("path", { d: `M${xs[0]} ${Y - 12} C ${xs[0] + 40} ${Y - 317}, ${xs[8] - 40} ${Y - 317}, ${xs[8]} ${Y - 12}`, fill: "none", stroke: "#C4674E", "stroke-width": 2.4, "stroke-dasharray": "1400", "stroke-dashoffset": "1400", "stroke-linecap": "round" }, svg);
     C.textes.forEach((t, i) => {
       const up = i % 2 === 0;
       const n = el("div", "abs", world);
@@ -87,7 +89,7 @@
     });
     // « relier » : les arcs se tracent
     arcs.forEach((a, i) => a.setAttribute("stroke-dashoffset", (300 * (1 - seg(t, rel - 0.1 + i * 0.07, 0.5, E.inOut))).toFixed(1)));
-    bigArc.setAttribute("stroke-dashoffset", (2000 * (1 - seg(t, rab + 0.05, are - rab + 0.35, E.inOut))).toFixed(1));
+    bigArc.setAttribute("stroke-dashoffset", (1400 * (1 - seg(t, rab + 0.05, (are - rab) * 0.85, E.inOut))).toFixed(1));   // se pose sur Arendt, puis tient ~1 s
     put(title, { op: seg(t, fr - 0.1, 0.5), y: (1 - seg(t, fr - 0.1, 0.5)) * 12 });
     // caméra : léger travelling gauche → droite, parallaxe des siècles
     const pan = E.inOut(inv(fr - 0.3, are + 0.8, t));
