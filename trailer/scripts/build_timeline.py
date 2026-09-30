@@ -91,6 +91,10 @@ def hyp_tokens(words):
             tok = NUM.get(tok, tok)
             if tok in ("q", "c", "m") or tok == "qcm":
                 tok = "qcm"
+            if tok == "dqcm":                  # v7 : Whisper colle « Des » à « QCM »
+                cut = t0 + (t1 - t0) * 0.3
+                out.append({"tok": "des", "t0": t0, "t1": cut})
+                t0, tok = cut, "qcm"
             out.append({"tok": tok, "t0": t0, "t1": t1})
     # merge "q c m" split
     merged = []
@@ -102,10 +106,18 @@ def hyp_tokens(words):
     return merged
 
 
+def key(w):
+    """Clé insensible aux homophones que Whisper confond (« corrigés »/« corrigé », « pensé »/« pensez »)."""
+    w = unicodedata.normalize("NFD", w)
+    w = "".join(c for c in w if unicodedata.category(c) != "Mn")
+    w = re.sub(r"(ez|er)$", "e", w)
+    return w[:-1] if len(w) > 3 and w.endswith("s") else w
+
+
 def align(ref, hyp):
     """Return [(t0,t1)] per ref token."""
-    ref_n = [r.replace("tg1", "tg1") for r in ref]
-    sm = difflib.SequenceMatcher(a=ref_n, b=[h["tok"] for h in hyp], autojunk=False)
+    ref_n = [key(r) for r in ref]
+    sm = difflib.SequenceMatcher(a=ref_n, b=[key(h["tok"]) for h in hyp], autojunk=False)
     times = [None] * len(ref)
     for tag, i1, i2, j1, j2 in sm.get_opcodes():
         if tag == "equal" or (tag == "replace" and (i2 - i1) == (j2 - j1)):
