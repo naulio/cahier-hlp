@@ -1,11 +1,22 @@
 # Trailer « Cahier d'HLP »
 
-Trailer de lancement (≈ 62 s, 4:3 paysage 1440×1080, H.264) du site de révision
+Trailer de lancement (≈ 61 s, 4:3 paysage 1440×1080, H.264) du site de révision
 [Cahier d'HLP](https://naulio.github.io/cahier-hlp/), fait pour la TG1 du lycée Notre-Dame.
 Tout est produit par du code, de façon reproductible : animation HTML/CSS rendue image par image,
 voix off par synthèse vocale, musique composée en Python, effets sonores CC0 + procéduraux, mixage.
 
 **Vidéo finale : `exports/cahier-hlp_trailer_4-3_1440x1080.mp4`**
+
+| Livrable (`exports/`) | Contenu |
+|---|---|
+| `cahier-hlp_trailer_4-3_1440x1080.mp4` | vidéo finale, H.264 + AAC 256 k, −14 LUFS, crête ≤ −1 dBTP |
+| `cahier-hlp_trailer_travail_960x720.mp4` | version de travail, plus légère, avec une piste de sous-titres : chaque réplique et le nom du plan en cours, horodatés |
+| `cahier-hlp_trailer_sous-titres.srt` | sous-titres de la voix off (diffusion sans le son, accessibilité) |
+| `audio/mix.flac`, `voix.flac`, `musique.flac`, `bruitages.flac` | mixage final et ses trois pistes (48 kHz) |
+
+Tout se régénère avec `make all deliver` (voir « Reproduire »). Le projet éditable, c'est ce dossier : chaque
+scène est un fichier JS, chaque réplique une ligne de `scripts/voice/lines.json`, chaque bruitage une ligne de
+`scripts/audio/mix.py`.
 
 | Document | Contenu |
 |---|---|
@@ -42,6 +53,7 @@ trailer/
 pip install numpy scipy soundfile pedalboard pyloudnorm librosa faster-whisper playwright pillow moshi gtts
 sh scripts/audio/get_piano.sh      # samples du piano (1,2 Go, non versionnés)
 make all                           # voix → timeline → sfx → musique → mix → rendu → export
+make deliver                       # livrables dans exports/ (vidéo finale, version de travail, .srt, FLAC)
 ```
 Chromium : `CHROME=/chemin/vers/chrome` si besoin (par défaut celui de Playwright).
 
