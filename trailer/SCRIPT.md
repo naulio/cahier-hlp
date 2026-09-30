@@ -85,8 +85,8 @@ v8_start          21.280
 v8_texte          22.020
 v8_classe         22.760
 v8_fiche          23.620
-v8_auteur         24.300
-v8_epoque         25.160
+v8_auteur         24.320
+v8_epoque         25.280
 v8_essentiel      26.060
 v8_cinq           26.880
 v8_citations      28.020
@@ -121,7 +121,7 @@ v13_classe        48.320
 v13_end           48.500
 v14_start         50.500
 v14_cahier        50.880
-v14_tout          52.640
+v14_tout          52.600
 v14_reviser       52.960
 v14_endroit       54.260
 v14_end           54.540

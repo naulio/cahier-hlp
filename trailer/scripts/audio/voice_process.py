@@ -206,10 +206,24 @@ def insert_pause(y, word, dur):
     # avec des fondus de 10 ms : plus de mot coupé ni de clic
     i = words.index(hit)
     nxt = words[i + 1]["t0"] if i + 1 < len(words) else hit["t1"] + 0.3
-    a, b = int((hit["t1"] - 0.05) * lib.SR), int((max(nxt, hit["t1"]) + 0.12) * lib.SR)
+    # v11 : on cherche le creux tout près de la fin du mot (−40 ms / +80 ms) : plus loin, on tombait dans
+    # l'occlusion d'une consonne du mot suivant (« l'é…poque »)
+    # on prend le plus long silence (seuil relatif : 30 dB sous le p90 de la réplique) entre −40 ms et +120 ms
+    # autour de la fin du mot, et on insère en son milieu
+    a, b = int((hit["t1"] - 0.04) * lib.SR), int((hit["t1"] + 0.12) * lib.SR)
     fr = int(lib.SR * 0.01)
     r = np.sqrt(np.convolve(y.mean(1) ** 2, np.ones(fr) / fr, "same"))
-    k = a + int(np.argmin(r[a:b])) if b > a else int(hit["t1"] * lib.SR)
+    rdb = 20 * np.log10(r + 1e-9)
+    thr = np.percentile(rdb[rdb > -80], 90) - 30
+    q = np.concatenate([[0], (rdb[a:b] < thr).astype(np.int8), [0]])
+    ed = np.flatnonzero(np.diff(q))
+    runs = list(zip(ed[::2], ed[1::2]))
+    if runs:
+        r0, r1 = max(runs, key=lambda ab: ab[1] - ab[0])
+        k = a + (r0 + r1) // 2
+    else:
+        k = a + int(np.argmin(r[a:b]))
+    print(f"    niveau au point d'insertion : {rdb[k]:.0f} dB (seuil {thr:.0f} dB)")
     head, tail = y[:k].copy(), y[k:].copy()
     head[-fr:] *= np.linspace(1, 0, fr)[:, None]
     tail[:fr] *= np.linspace(0, 1, fr)[:, None]

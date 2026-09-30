@@ -156,7 +156,8 @@ DUCK = 5.0
 MUSIC_GAIN = -3.0
 music *= (db(MUSIC_GAIN) * db(-DUCK * g))[:, None]
 # v9 : creux de musique très localisés sous deux mots qu'elle couvrait (« Tu », « Arendt »)
-for t0, t1, gdb in ((M["q_start"] - 0.03, M["q_start"] + 0.42, -4.0), (M["v11_arendt"] - 0.1, M["v11_arendt"] + 0.24, -3.0)):
+for t0, t1, gdb in ((M["q_start"] - 0.03, M["q_start"] + 0.42, -4.0), (M["v11_arendt"] - 0.1, M["v11_arendt"] + 0.24, -3.0),
+                    (M["v14_endroit"] - 0.3, M["v14_endroit"] + 0.45, -2.0)):   # v11 : « même endroit », dernier mot
     a, b, r = lib.seconds(t0), lib.seconds(t1), lib.seconds(0.03)
     r2 = lib.seconds(0.15)                   # v10 : retour lent (la musique ne remonte plus d'un coup)
     e = np.full(b - a, db(gdb), np.float32)
