@@ -1,0 +1,392 @@
+{
+ "_doc": "Script de la voix off. 'text' = orthographe exacte ; 'tts' = graphie pour Kyutai (sigles épelés) ; 'tts_google' = graphie pour Google (lit les sigles seul). 'at' : nombre = ancre (s) ; '+x' = x s après la fin de la réplique précédente ; '@shutter+x' = après le déclic. 'onset' : l'attaque du mot tombe sur 'at'. 'split' : réplique générée d'un seul tenant puis coupée à ses silences ('gaps' = écarts ajoutés). 'pauses' : silence inséré après un mot. 'question' : l'intonation finale doit monter. 'context' : le nom est vérifié replacé parmi les quatre (Whisper invente sur un mot isolé). 'keep' : seul le premier ('first') ou le dernier ('last') mot de la phrase porteuse 'tts' est gardé (noms du hook ; « Rablais » force la prononciation usuelle [ʁablɛ]). 'parts' : texte attendu de chaque morceau d'une réplique découpée (vérifié par scripts/voice/pick_split_take.py).",
+ "style_prompt": "Voix off de bande-annonce en français : narrateur jeune adulte, assuré, présent, chaleureux, rythme soutenu, phrases qui avancent. Pas de ton publicitaire criard, pas de lecture scolaire.",
+ "lines": [
+  {
+   "id": "V01",
+   "at": 1.333,
+   "text": "Rabelais. Rousseau. Flaubert. Hugo.",
+   "tts": "Rabelais. Rousseau. Flaubert. Hugo.",
+   "split": 4,
+   "onsets": [
+    1.333,
+    2.0,
+    2.667,
+    3.333
+   ],
+   "parts": [
+    "Rabelais.",
+    "Rousseau.",
+    "Flaubert.",
+    "Hugo."
+   ],
+   "takes": 6,
+   "join_check": true,
+   "part_gain": [
+    -1.0,
+    1.5,
+    0.0,
+    -1.5
+   ]
+  },
+  {
+   "id": "V02",
+   "at": 3.98,
+   "text": "Tu te souviens de tout ?",
+   "tts": "Tu te souviens de tout ?",
+   "takes": 3
+  },
+  {
+   "id": "V03",
+   "at": "+0.95",
+   "text": "Depuis la rentrée, les textes s'accumulent.",
+   "tts": "Depuis la rentrée, les textes s'accumulent.",
+   "takes": 3
+  },
+  {
+   "id": "V04",
+   "at": "+0.35",
+   "text": "Les feuilles, les notes, les citations…",
+   "tts": "Les feuilles, les notes, les citations...",
+   "takes": 3
+  },
+  {
+   "id": "V05a",
+   "at": "+0.3",
+   "text": "Tout est quelque part.",
+   "tts": "Tout est quelque part.",
+   "takes": 3
+  },
+  {
+   "id": "V05b",
+   "at": "+0.45",
+   "text": "Mais où ?",
+   "tts": "Mais où ?",
+   "takes": 3
+  },
+  {
+   "id": "V06",
+   "at": "@shutter+0.35",
+   "text": "Alors on a tout rassemblé…",
+   "tts": "Alors, on a tout rassemblé...",
+   "tts_google": "Alors on a tout rassemblé…",
+   "takes": 3,
+   "cap_pauses": [
+    [
+     "alors",
+     0.28
+    ]
+   ]
+  },
+  {
+   "id": "V07",
+   "at": "+0.3",
+   "text": "dans le Cahier d'HLP.",
+   "tts": "dans le Cahier d'hache-elle-pé.",
+   "tts_google": "dans le Cahier d'HLP.",
+   "takes": 3,
+   "prefer": "V07_kyutai_37d7ecc452.wav"
+  },
+  {
+   "id": "V08",
+   "at": "+1.35",
+   "text": "Pour chaque texte vu en classe, une fiche claire : l'auteur, l'époque, l'essentiel en cinq points, les citations à retenir.",
+   "tts": "Pour chaque texte vu en classe, une fiche claire : l'auteur, l'époque, l'essentiel en cinq points, les citations à retenir.",
+   "takes": 3,
+   "pauses": [
+    [
+     "claire",
+     0.15
+    ]
+   ]
+  },
+  {
+   "id": "V09",
+   "at": "+0.75",
+   "text": "Des flashcards, qui reviennent au bon moment.",
+   "tts": "Des flashcards, qui reviennent au bon moment.",
+   "takes": 3
+  },
+  {
+   "id": "V10",
+   "at": "+0.8",
+   "text": "Des QCM corrigés, et expliqués.",
+   "tts": "Des Q C M corrigés, et expliqués.",
+   "takes": 3
+  },
+  {
+   "id": "V11",
+   "at": "+1.05",
+   "text": "Et une frise, pour relier les œuvres… de Rabelais à Arendt.",
+   "tts": "Et une frise, pour relier les œuvres... de Rabelais à Arendt.",
+   "takes": 3,
+   "cap_pauses": [
+    [
+     "rabelais",
+     0.15
+    ]
+   ],
+   "word_gain": [
+    [
+     "arendt",
+     3.0
+    ]
+   ]
+  },
+  {
+   "id": "V12",
+   "at": "+1.2",
+   "text": "C'est gratuit, sans compte. Ta progression reste sur ton appareil.",
+   "tts": "C'est gratuit, sans compte. Ta progression reste sur ton appareil.",
+   "takes": 3
+  },
+  {
+   "id": "V13",
+   "at": "+0.7",
+   "text": "Pensé en TG1, pour toute la classe.",
+   "tts": "Pensé en té-gé-un... pour toute la classe.",
+   "tts_google": "Pensé en TG1, pour toute la classe.",
+   "takes": 3,
+   "word_gain": [
+    [
+     "classe",
+     3.0
+    ]
+   ]
+  },
+  {
+   "id": "V14",
+   "at": "+2.0",
+   "text": "Le Cahier d'HLP. Tout pour réviser, au même endroit.",
+   "tts": "Le Cahier d'hache-elle-pé. Tout pour réviser, au même endroit.",
+   "tts_google": "Le Cahier d'HLP. Tout pour réviser, au même endroit.",
+   "takes": 3,
+   "pauses": [
+    [
+     "hlp",
+     0.3
+    ]
+   ]
+  }
+ ],
+ "_history": {
+  "v1": {
+   "V04": "Les feuilles, les notes, les citations…",
+   "V08": "Pour chaque texte vu en classe, une fiche claire : l'auteur, l'époque, l'essentiel en cinq points, les citations à retenir.",
+   "V12": "C'est gratuit, sans compte. Ta progression reste sur ton appareil.",
+   "V13": "Pensé en TG1, pour toute la classe.",
+   "V14": "Le Cahier d'HLP. Tout pour réviser, au même endroit."
+  },
+  "v2_noms_separes": "V01a–V01d (un nom par réplique) : abandonné, Kyutai lit mal un mot isolé (« Brabeulet », « Égout »).",
+  "v2_V08": "Chaque texte vu en classe a sa fiche : l'essentiel en cinq points, les citations clés.  (entendu « s'affiche » par Whisper sur toutes les prises)",
+  "v2_V13": "Fait en TG1, par l'un d'entre nous. Pour toute la classe.  (« Fait en » entendu « Faites en » / « Fâte »)",
+  "v2_V01_liste": "V01 « Rabelais. Rousseau. Flaubert. Hugo. » lu en liste puis découpé : noms trop liés (« Rabelais-rousse / ouf »), abandonné.",
+  "v2_V01a_rablais": "« Rablais, puis tout le reste. » : lu « Rablé » / « Chablais », abandonné. « Rabelais, puis tout le reste. » : « Ra-beu-lais », entendu « Rabeulet ».",
+  "v2_lines": [
+   {
+    "id": "V01a",
+    "at": 0.6,
+    "onset": true,
+    "text": "Rabelais.",
+    "tts": "Rabelais...",
+    "carrier_text": "Rabelais.",
+    "tts_google": "Rabelais.",
+    "keep": "first",
+    "takes": 4,
+    "context": [
+     "V01a",
+     "V01b",
+     "V01c",
+     "V01d"
+    ],
+    "context_words": [
+     "rabelais",
+     "rousseau",
+     "flaubert",
+     "hugo"
+    ]
+   },
+   {
+    "id": "V01b",
+    "at": 1.45,
+    "onset": true,
+    "text": "Rousseau.",
+    "tts": "Rousseau, puis tout le reste.",
+    "tts_google": "Rousseau.",
+    "keep": "first",
+    "takes": 5,
+    "context": [
+     "V01a",
+     "V01b",
+     "V01c",
+     "V01d"
+    ],
+    "context_words": [
+     "rabelais",
+     "rousseau",
+     "flaubert",
+     "hugo"
+    ]
+   },
+   {
+    "id": "V01c",
+    "at": 2.3,
+    "onset": true,
+    "text": "Flaubert.",
+    "tts": "Flaubert, puis tout le reste.",
+    "tts_google": "Flaubert.",
+    "keep": "first",
+    "takes": 5,
+    "context": [
+     "V01a",
+     "V01b",
+     "V01c",
+     "V01d"
+    ],
+    "context_words": [
+     "rabelais",
+     "rousseau",
+     "flaubert",
+     "hugo"
+    ]
+   },
+   {
+    "id": "V01d",
+    "at": 3.15,
+    "onset": true,
+    "text": "Hugo.",
+    "tts": "Et puis, Hugo.",
+    "tts_google": "Hugo.",
+    "keep": "last",
+    "takes": 5,
+    "context": [
+     "V01a",
+     "V01b",
+     "V01c",
+     "V01d"
+    ],
+    "context_words": [
+     "rabelais",
+     "rousseau",
+     "flaubert",
+     "hugo"
+    ]
+   },
+   {
+    "id": "V02",
+    "at": "+0.45",
+    "text": "Tu te souviens de tout ?",
+    "tts": "Tu te souviens de tout ?",
+    "question": true,
+    "takes": 5
+   },
+   {
+    "id": "V03",
+    "at": "+0.8",
+    "text": "Depuis la rentrée, les textes s'accumulent.",
+    "tts": "Depuis la rentrée, les textes s'accumulent."
+   },
+   {
+    "id": "V04",
+    "at": "+0.35",
+    "text": "Des photocopies, des notes, des post-it…",
+    "tts": "Des photocopies, des notes, des post-it..."
+   },
+   {
+    "id": "V05",
+    "at": "+0.6",
+    "split": 2,
+    "gaps": [
+     0.55
+    ],
+    "text": "Tout est quelque part… Mais où ?",
+    "tts": "Tout est quelque part... Mais où ?",
+    "question": true,
+    "takes": 8,
+    "parts": [
+     "Tout est quelque part…",
+     "Mais où ?"
+    ]
+   },
+   {
+    "id": "V06",
+    "at": "@shutter+0.35",
+    "text": "Alors on a tout rassemblé… dans le Cahier d'HLP.",
+    "tts": "Alors, on a tout rassemblé... dans le Cahier d'hache-elle-pé.",
+    "tts_google": "Alors, on a tout rassemblé… dans le Cahier d'HLP.",
+    "takes": 5
+   },
+   {
+    "id": "V08",
+    "at": "+1.35",
+    "text": "Pour chaque texte vu en classe, une fiche : l'essentiel en cinq points, les citations clés.",
+    "tts": "Pour chaque texte vu en classe, une fiche : l'essentiel en cinq points, les citations clés.",
+    "takes": 5
+   },
+   {
+    "id": "V09",
+    "at": "+0.9",
+    "text": "Des flashcards, qui reviennent au bon moment.",
+    "tts": "Des flashcards, qui reviennent au bon moment."
+   },
+   {
+    "id": "V10",
+    "at": "+1.0",
+    "text": "Des QCM corrigés, et expliqués.",
+    "tts": "Des Q C M corrigés, et expliqués.",
+    "tts_google": "Des QCM corrigés, et expliqués."
+   },
+   {
+    "id": "V11",
+    "at": "+1.9",
+    "pauses": [
+     [
+      "œuvres",
+      0.3
+     ]
+    ],
+    "text": "Et une frise, pour relier les œuvres… de Rabelais à Arendt.",
+    "tts": "Et une frise, pour relier les œuvres... de Rabelais à Arendt."
+   },
+   {
+    "id": "V12",
+    "at": "+0.9",
+    "text": "Gratuit, sans compte, même sur ton téléphone.",
+    "tts": "Gratuit, sans compte, même sur ton téléphone."
+   },
+   {
+    "id": "V13",
+    "at": "+0.7",
+    "text": "Imaginé en TG1, par l'un d'entre nous. Pour toute la classe.",
+    "tts": "Imaginé en té-gé-un, par l'un d'entre nous... Pour toute la classe.",
+    "tts_google": "Imaginé en TG1, par l'un d'entre nous. Pour toute la classe.",
+    "takes": 6,
+    "split": 2,
+    "gaps": [
+     0.3
+    ],
+    "parts": [
+     "Imaginé en TG1, par l'un d'entre nous.",
+     "Pour toute la classe."
+    ],
+    "split_by": "words"
+   },
+   {
+    "id": "V14",
+    "at": "+1.4",
+    "text": "Le Cahier d'HLP. Tout est là.",
+    "tts": "Le Cahier d'hache-elle-pé... Tout est là.",
+    "tts_google": "Le Cahier d'HLP… Tout est là.",
+    "split": 2,
+    "gaps": [
+     0.45
+    ],
+    "takes": 5,
+    "parts": [
+     "Le Cahier d'HLP.",
+     "Tout est là."
+    ]
+   }
+  ]
+ }
+}
