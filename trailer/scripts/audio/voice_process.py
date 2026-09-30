@@ -210,7 +210,7 @@ def insert_pause(y, word, dur):
     # l'occlusion d'une consonne du mot suivant (« l'é…poque »)
     # on prend le plus long silence (seuil relatif : 30 dB sous le p90 de la réplique) entre −40 ms et +120 ms
     # autour de la fin du mot, et on insère en son milieu
-    a, b = int((hit["t1"] - 0.04) * lib.SR), int((hit["t1"] + 0.12) * lib.SR)
+    a, b = int(max(hit["t0"], hit["t1"] - 0.2) * lib.SR), int((hit["t1"] + 0.12) * lib.SR)   # v12 : Whisper finit parfois le mot après le silence
     fr = int(lib.SR * 0.01)
     r = np.sqrt(np.convolve(y.mean(1) ** 2, np.ones(fr) / fr, "same"))
     rdb = 20 * np.log10(r + 1e-9)
@@ -218,11 +218,12 @@ def insert_pause(y, word, dur):
     q = np.concatenate([[0], (rdb[a:b] < thr).astype(np.int8), [0]])
     ed = np.flatnonzero(np.diff(q))
     runs = list(zip(ed[::2], ed[1::2]))
-    if runs:
-        r0, r1 = max(runs, key=lambda ab: ab[1] - ab[0])
-        k = a + (r0 + r1) // 2
-    else:
-        k = a + int(np.argmin(r[a:b]))
+    runs = [ab for ab in runs if ab[1] - ab[0] >= int(0.04 * lib.SR)]   # v12 : un vrai silence, pas un creux de 10 ms
+    if not runs:
+        print(f"  pause après « {word} » refusée : aucun vrai silence après le mot")
+        return y
+    r0, r1 = max(runs, key=lambda ab: ab[1] - ab[0])
+    k = a + (r0 + r1) // 2
     print(f"    niveau au point d'insertion : {rdb[k]:.0f} dB (seuil {thr:.0f} dB)")
     head, tail = y[:k].copy(), y[k:].copy()
     head[-fr:] *= np.linspace(1, 0, fr)[:, None]

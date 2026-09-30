@@ -281,4 +281,5 @@ def limiter(x, ceiling_db=-1.2, lookahead=0.005, release=0.08):
         v = g[i] if g[i] < v else a * v + (1 - a) * g[i]
         out[i] = v
     y = x * out[:, None]
+    limiter.last_at = float(np.argmin(out) / SR)       # instant de la plus forte réduction (diagnostic)
     return y.astype(np.float32), float(20 * np.log10(out.min()))

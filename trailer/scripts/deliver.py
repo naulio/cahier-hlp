@@ -70,10 +70,22 @@ run("ffmpeg", "-loglevel", "error", "-y", "-i", final, "-i", wsrt, "-map", "0:v"
     "-c:s", "mov_text", "-metadata:s:s:0", "language=fre", "-movflags", "+faststart",
     EXP / "cahier-hlp_trailer_travail_960x720.mp4")
 
-# 4) pistes audio
-for src, dst in [("trailer_mix", "mix"), ("stem_voice", "voix"), ("stem_music", "musique"), ("stem_sfx", "bruitages")]:
-    run("ffmpeg", "-loglevel", "error", "-y", "-i", ROOT / "audio" / "mix" / f"{src}.wav", "-c:a", "flac",
-        "-sample_fmt", "s16", EXP / "audio" / f"{dst}.flac")
+# 4) pistes audio : le mixage tel quel ; les trois pistes (avant limiteur) avec une même marge, pour qu'aucune
+#    n'écrête en 24 bits (elles se remettent en place ensemble en leur rendant ce gain)
+import numpy as np
+import soundfile as sf
+run("ffmpeg", "-loglevel", "error", "-y", "-i", ROOT / "audio" / "mix" / "trailer_mix.wav", "-c:a", "flac",
+    "-sample_fmt", "s32", EXP / "audio" / "mix.flac")
+stems = {dst: sf.read(ROOT / "audio" / "mix" / f"{src}.wav") for src, dst in
+         [("stem_voice", "voix"), ("stem_music", "musique"), ("stem_sfx", "bruitages")]}
+peak = max(np.abs(y).max() for y, _ in stems.values())
+trim = min(1.0, 10 ** (-1 / 20) / peak)
+for dst, (y, sr) in stems.items():
+    sf.write(EXP / "audio" / f"{dst}.flac", (y * trim).astype(np.float32), sr, subtype="PCM_24")
+(EXP / "audio" / "LISEZMOI.txt").write_text(
+    "mix.flac : mixage final (−14 LUFS, crête vraie ≤ −1 dBTP).\n"
+    f"voix.flac, musique.flac, bruitages.flac : pistes avant limiteur, toutes abaissées de {-20 * np.log10(trim):.1f} dB\n"
+    "pour ne pas écrêter ; leur somme, remontée de ce gain puis limitée, redonne le mixage.\n", encoding="utf-8")
 
 for p in sorted(EXP.rglob("*")):
     if p.is_file():

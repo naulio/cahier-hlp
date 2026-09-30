@@ -426,4 +426,31 @@ déclic était bien faux (les cartes, avec un z-index propre, passaient au-dessu
 
 ## v11
 
+61,4 s. Sept évaluateurs, avec un verdict de livraison demandé à chacun.
+
+| Domaine | Note v11 | (v10) | Livrable ? |
+|---|---|---|---|
+| Direction artistique | 9 | 9 | oui (« le film de la v1, en plus propre ») |
+| Motion | 9,2 | 9 | oui |
+| Son / musique / mix | 9,2 (mix 9,1) | 9,1 | oui (« -lais à » enfin réglé ; pauses dans de vrais silences) |
+| Voix | 8 | 8,7 | **non** : la pause de « claire » tombait dans « l'au…teur » |
+| Montage / storytelling | 8,8 | 8,7 | oui |
+| Orthographe / français | 9,5 | 9,5 | oui |
+| AI slop detector | 8,7 | 8,6 | oui |
+
+**Vérification** : exact. La prise enchaîne « claire l'auteur » sans aucun silence ; la recherche élargie de la v11
+avait pris l'occlusion du /t/ pour un silence.
+
+### Modifications v11 → v12
+- **Voix** : plus de pause après « claire » (la prise n'en a pas) ; une pause n'est plus insérée que dans un vrai
+  silence d'au moins 40 ms, cherché de −200 ms à +120 ms autour de la fin du mot donnée par Whisper (qui finit
+  parfois le mot après le silence) : « l'auteur », « HLP » et « réviser » tombent dans des silences de −59 à −92 dB.
+- **Son** : creux de −3 dB sous « pour (relier) », qu'une note de piano masquait ; fondu de 50 ms sur la toute fin ;
+  baisses de gain calées sur les pics, sur 200 ms. Le rapport de mixage indique désormais où le limiteur travaille le
+  plus (2,2 dB au maximum, comme la v1, sur « à Arendt »).
+- **Livrables** : les pistes FLAC gardent une marge commune (plus d'écrêtage) ; `exports/audio/LISEZMOI.txt`.
+- Durée : 61,2 s.
+
+## v12
+
 (rendu en cours)

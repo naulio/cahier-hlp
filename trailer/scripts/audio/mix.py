@@ -43,10 +43,11 @@ for line in TL["lines"]:
 # v8-v9 : attaques qui faisaient le plus travailler le limiteur : gain réduit sur 120 ms centrées sur le pic RÉEL
 # de la voix autour du repère (le repère Whisper peut être en retard sur la syllabe, ex. « Ta » avant « progression »)
 for mk, g, lo, hi in (("v12_gratuit", -2.0, -0.2, 0.15), ("v12_progression", -2.0, -0.2, 0.15),
-                      ("v11_arendt", -1.5, -0.30, -0.12)):   # v10-v11 : le pic est sur « -lais à », avant « Arendt »
+                      ("v11_arendt", -1.5, -0.35, -0.03),    # v10-v12 : le pic est sur « -lais à », avant « Arendt »
+                      ("v8_start", -1.5, 0.35, 0.75)):        # v12 : « chaque »
     w0, w1 = lib.seconds(M[mk] + lo), lib.seconds(M[mk] + hi)
     pk = w0 + int(np.argmax(np.abs(voice.buf[w0:w1]).max(1)))
-    n, r = lib.seconds(0.12), lib.seconds(0.03)
+    n, r = lib.seconds(0.2), lib.seconds(0.03)              # v12 : 200 ms, la crête après réverbération peut être décalée
     a = pk - n // 2
     e = np.full(n, db(g), np.float32)
     e[-r:] = np.linspace(db(g), 1.0, r)
@@ -157,7 +158,8 @@ MUSIC_GAIN = -3.0
 music *= (db(MUSIC_GAIN) * db(-DUCK * g))[:, None]
 # v9 : creux de musique très localisés sous deux mots qu'elle couvrait (« Tu », « Arendt »)
 for t0, t1, gdb in ((M["q_start"] - 0.03, M["q_start"] + 0.42, -4.0), (M["v11_arendt"] - 0.1, M["v11_arendt"] + 0.24, -3.0),
-                    (M["v14_endroit"] - 0.3, M["v14_endroit"] + 0.45, -2.0)):   # v11 : « même endroit », dernier mot
+                    (M["v14_endroit"] - 0.3, M["v14_endroit"] + 0.45, -2.0),    # v11 : « même endroit », dernier mot
+                    (M["v11_relier"] - 0.24, M["v11_relier"] + 0.02, -3.0)):    # v12 : une note de piano couvrait « pour »
     a, b, r = lib.seconds(t0), lib.seconds(t1), lib.seconds(0.03)
     r2 = lib.seconds(0.15)                   # v10 : retour lent (la musique ne remonte plus d'un coup)
     e = np.full(b - a, db(gdb), np.float32)
@@ -186,12 +188,14 @@ for _ in range(10):                     # loudness visée ET crête vraie ≤ -1
         break
     gain += -14.0 - final
 mix = out
+nf = lib.seconds(0.05)                       # v12 : fondu de 50 ms sur la toute fin (plus d'arrêt sec)
+mix[-nf:] *= np.linspace(1, 0, nf)[:, None]
 tp = lib.true_peak_db(mix)
 for name, x in (("stem_voice", vbus), ("stem_music", music), ("stem_sfx", sbus)):
     lib.sf.write(str(OUT / f"{name}.wav"), (x * db(gain)).astype(np.float32), SR, subtype="FLOAT")   # v8 : plus d'écrêtage des stems
 lib.sf.write(str(OUT / "trailer_mix.wav"), mix.astype(np.float32), SR, subtype="PCM_24")
 (ROOT / "logs" / "sfx_cues.json").write_text(json.dumps(cues, ensure_ascii=False, indent=1))
-report = {"integrated_lufs": round(float(final), 2), "true_peak_dbtp": round(float(tp), 2), "max_gain_reduction_db": round(gr, 2), "gain_applied_db": round(float(gain), 2),
+report = {"integrated_lufs": round(float(final), 2), "true_peak_dbtp": round(float(tp), 2), "max_gain_reduction_db": round(gr, 2), "max_gain_reduction_at_s": round(lib.limiter.last_at, 2), "gain_applied_db": round(float(gain), 2),
           "voice_lufs": round(float(meter.integrated_loudness(vbus * db(gain))), 2),
           "music_lufs": round(float(meter.integrated_loudness(music * db(gain))), 2),
           "sfx_cues": len(cues), "duration_s": round(len(mix) / SR, 2)}
