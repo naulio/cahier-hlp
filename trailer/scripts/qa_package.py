@@ -88,7 +88,16 @@ for lid in current:                      # seulement les répliques du script ac
     best = next(t for t in d["takes"] if t["file"] == d["best"]) if any(t["file"] == d["best"] for t in d["takes"]) else d["takes"][0]
     vm.append({k: best.get(k) for k in ("wer", "mean_word_prob", "f0_median_hz", "f0_std_st", "f0_range_p5_p95_st",
                                          "words_per_min_speech", "duration_s", "transcript")} | {"id": lid, "text": d["text"]})
-(Q / "voice_metrics.json").write_text(json.dumps(vm, ensure_ascii=False, indent=1))
+# v6 : mesures refaites sur les fichiers réellement montés (après vitesse, pauses, égalisation), pas sur les prises brutes
+sys.path.insert(0, str(ROOT / "scripts"))
+from voice_metrics import analyse
+for v in vm:
+    pf = ROOT / "audio/voice/processed" / f"{v['id']}.wav"
+    if pf.exists():
+        a, _ = analyse(str(pf), v["text"], model="medium")
+        v["processed"] = {k: a.get(k) for k in ("wer", "mean_word_prob", "f0_median_hz", "f0_std_st", "f0_range_p5_p95_st",
+                                                 "words_per_min_speech", "duration_s", "transcript")}
+(Q / "voice_metrics.json").write_text(json.dumps(vm, ensure_ascii=False, indent=1, default=float))
 for f in ("mix_report.json", "sfx_cues.json", "timeline.json", "voice_takes.json"):
     shutil.copy(ROOT / "logs" / f, Q / f)
 shutil.copy(ROOT / "audio/sfx/library.json", Q / "sfx_library.json")
