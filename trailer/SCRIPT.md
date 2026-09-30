@@ -1,6 +1,6 @@
 # Script, découpage et textes à l'écran
 
-Durée : **56.5 s** · 4:3, 1440×1080, 30 i/s · voix : `voir logs/voice_takes.json`
+Durée : **60.0 s** · 4:3, 1440×1080, 30 i/s · voix : `voir logs/voice_takes.json`
 
 Généré par `scripts/write_script_doc.py` à partir de la timeline réelle (les temps suivent la voix).
 
@@ -10,19 +10,19 @@ Généré par `scripts/write_script_doc.py` à partir de la timeline réelle (le
 |---|---|---|---|
 | V01 | 1.31 s | 3.73 s | Rabelais. Rousseau. Flaubert. Hugo. |
 | V02 | 3.98 s | 5.30 s | Tu te souviens de tout ? |
-| V03 | 5.69 s | 8.35 s | Depuis la rentrée, les textes s'accumulent. |
-| V04 | 8.58 s | 11.33 s | Les feuilles, les notes, les citations… |
-| V05a | 11.52 s | 12.89 s | Tout est quelque part. |
-| V05b | 13.23 s | 13.90 s | Mais où ? |
-| V06 | 15.64 s | 17.63 s | Alors on a tout rassemblé… |
-| V07 | 17.75 s | 19.36 s | dans le Cahier d'HLP. |
-| V08 | 20.52 s | 28.19 s | Pour chaque texte vu en classe, une fiche claire : l'auteur, l'époque, l'essentiel en cinq points, les citations à retenir. |
-| V09 | 28.57 s | 31.04 s | Des flashcards, qui reviennent au bon moment. |
-| V10 | 31.31 s | 33.74 s | Des QCM corrigés, et expliqués. |
-| V11 | 34.04 s | 38.44 s | Et une frise, pour relier les œuvres… de Rabelais à Arendt. |
-| V12 | 39.26 s | 43.47 s | C'est gratuit, sans compte. Ta progression reste sur ton appareil. |
-| V13 | 44.12 s | 46.58 s | Pensé en TG1, pour toute la classe. |
-| V14 | 47.80 s | 51.20 s | Le Cahier d'HLP. Tout pour réviser, au même endroit. |
+| V03 | 6.07 s | 8.73 s | Depuis la rentrée, les textes s'accumulent. |
+| V04 | 8.94 s | 11.69 s | Les feuilles, les notes, les citations… |
+| V05a | 11.88 s | 13.25 s | Tout est quelque part. |
+| V05b | 13.57 s | 14.24 s | Mais où ? |
+| V06 | 15.98 s | 17.97 s | Alors on a tout rassemblé… |
+| V07 | 18.29 s | 20.07 s | dans le Cahier d'HLP. |
+| V08 | 21.24 s | 28.91 s | Pour chaque texte vu en classe, une fiche claire : l'auteur, l'époque, l'essentiel en cinq points, les citations à retenir. |
+| V09 | 29.29 s | 31.76 s | Des flashcards, qui reviennent au bon moment. |
+| V10 | 32.43 s | 34.86 s | Des QCM corrigés, et expliqués. |
+| V11 | 35.74 s | 40.14 s | Et une frise, pour relier les œuvres… de Rabelais à Arendt. |
+| V12 | 40.98 s | 45.19 s | C'est gratuit, sans compte. Ta progression reste sur ton appareil. |
+| V13 | 45.84 s | 48.30 s | Pensé en TG1, pour toute la classe. |
+| V14 | 50.12 s | 53.82 s | Le Cahier d'HLP. Tout pour réviser, au même endroit. |
 
 Consigne de ton (Google TTS) : Voix off de bande-annonce en français : narrateur jeune adulte, assuré, présent, chaleureux, rythme soutenu, phrases qui avancent. Pas de ton publicitaire criard, pas de lecture scolaire.
 
@@ -30,20 +30,20 @@ Consigne de ton (Google TTS) : Voix off de bande-annonce en français : narrateu
 
 | Début | Section | Plan | Image | Texte à l'écran | Son |
 |---|---|---|---|---|---|
-| 0.0 s | Hook | 1. Polaroids | Bureau sombre ; quatre Polaroids tombent chacun sur son nom, avec un flash d'appareil et un impact de caméra ; les photos se développent (portraits du domaine public). | Rabelais · Rousseau · Flaubert · Hugo (légendes manuscrites) | Souffle inversé vers le premier nom ; déclic + flash + impact par nom ; une note de piano par nom (90 BPM) |
-| 4.0 s | Hook | 2. La question | « Tu te souviens de tout ? » s'écrit mot à mot ; poussée de caméra sur « tout », grand recul, halo chaud. | Tu te souviens de tout ? | Grand souffle sur le recul, chute grave |
-| 5.7 s | Problème | 3. L'accumulation | Les feuilles arrivent de tous côtés, secousses légères à chaque impact ; surligneur, notes ; vignette qui se resserre. | Feuilles de cours, post-it, fiches bristol | Souffle + impact de papier par feuille ; surligneur ; montée de 4 s jusqu'au déclic ; pulsation et caisse claire |
-| 13.2 s | Problème | 4. Le viseur | Le viseur cherche (trois visées, mise au point), la musique s'arrête sur « Mais où ? ». | — | Trois souffles de visée, déclic de mise au point |
-| 15.3 s | Solution | 5. Déclic | Éclair blanc, séparation des couleurs, secousse ; les objets s'envolent ; chaque feuille devient une carte. | Cartes des textes | Déclic + impact + chute grave + flash ; deux souffles ; pops des cartes ; accord de fa |
-| 17.8 s | Solution | 6. Le nom | Le logo apparaît avec un éclat ; reflet lumineux sur « Cahier d'HLP » ; filé horizontal vers l'interface qui se construit. | Cahier d'HLP · Humanités · Littérature · Philosophie | Impact sur le nom, scintillement, souffle du filé, clics du menu |
-| 20.5 s | Expérience | 7. La fiche | Clic sur Rousseau : la carte devient la fiche ; zooms sur l'auteur, l'essentiel, la citation surlignée (reflet). | Fiche Rousseau | Clic, souffles des zooms, pops des étiquettes et des 5 points, surligneur, groove |
-| 28.6 s | Expérience | 8. Flashcards | Filé vers les flashcards ; la carte se retourne, file dans la boîte 3 ; « Revient dans 4 jours ». | Boîtes de Leitner | Filé, retournement, carte qui tombe, pop |
-| 31.3 s | Expérience | 9. QCM | Filé vers le QCM ; la bonne réponse s'allume (éclat vert) ; l'explication se déplie. | Question et explication | Clic, scintillement de bonne réponse, deux notes de piano |
-| 34.0 s | Expérience | 10. La frise | Grand filé vers la frise ; la ligne se trace, les neuf auteurs apparaissent ; arc terracotta de Rabelais à Arendt. | Neuf auteurs, quatre siècles | Grand souffle, un pop par auteur, impacts sur Rabelais et Arendt, mélodie de piano |
-| 39.3 s | Communauté | 11. Gratuit, sans compte | Fond vert profond, halo chaud ; « Gratuit. Sans compte. » claquent ; le téléphone et la progression. | Gratuit. · Sans compte. · Sans publicité · rien n'est envoyé | Impacts sur les mots, tics de la progression |
-| 44.1 s | Communauté | 12. La classe | Le téléphone rejoint sa place dans le plan de classe ; « TG1 » ; toutes les places s'allument en vague. | TG1 · Lycée Notre-Dame · 2026-27 | Impact sur TG1, vague de pops, scintillement, roulement et montée vers le nom |
-| 47.8 s | Fin | 13. Carton | Les rangées deviennent les lignes du logo ; éclat et secousse ; reflet sur le nom ; promesse ; adresse. | Cahier d'HLP · Tout pour réviser, au même endroit. · naulio.github.io/cahier-hlp | Impact + chute grave, scintillement ; le motif du début revient et se pose sur fa |
-| 52.5 s | Fin | 14. Dernier déclic | Éclair : le carton devient un Polaroid posé sur le bureau ; légende manuscrite ; fondu au noir. | TG1 · 2026-27 | Déclic + impact + éjection du Polaroid, crayon |
+| 0.0 s | Hook | 1. Polaroids | Ardoise sombre ; quatre Polaroids se posent un à un, chacun sur son nom ; les portraits se révèlent (gravures et photos du domaine public). | Rabelais · Rousseau · Flaubert · Hugo (légendes manuscrites) | Un petit impact de papier par Polaroid ; une note de piano par nom ; ambiance de pièce |
+| 4.0 s | Hook | 2. La question | « Tu te souviens de tout ? » s'écrit sous les Polaroids ; très légère poussée de caméra sur « tout », puis recul. | Tu te souviens de tout ? | Un souffle doux ; nappe |
+| 6.1 s | Problème | 3. L'accumulation | Le bureau se remplit : feuilles de cours, notes au stylo, citations surlignées, post-it. | Feuilles de cours (textes du chapitre) | Glissés et petits impacts de papier, stylo, surligneur (discrets, adoucis dans les aigus) |
+| 13.6 s | Problème | 4. Le viseur | Un viseur d'appareil photo cherche dans le désordre, fait la mise au point ; « Mais où ? ». | — | Moteur d'autofocus, bip de mise au point |
+| 15.6 s | Solution | 5. Déclic | Déclic : l'image s'assombrit un instant ; le désordre se range, chaque feuille devient une carte. | Cartes des textes | Déclic d'appareil, avance du film, petits tics des cartes ; accord de fa |
+| 18.3 s | Solution | 6. Le nom | Le logo « Cahier d'HLP » apparaît (léger reflet) ; l'interface se construit autour. | Cahier d'HLP · Humanités · Littérature · Philosophie | Deux notes aiguës au piano ; souffle doux |
+| 21.2 s | Expérience | 7. La fiche | Clic sur Rousseau : la fiche s'ouvre ; l'auteur, l'époque, l'essentiel en 5 points, la citation surlignée. | Fiche Rousseau | Clic, tics des étiquettes, surligneur ; le groove démarre (piano, basse, arpège, sans batterie) |
+| 29.3 s | Expérience | 8. Flashcards | Les flashcards : la carte se retourne, clic sur « Je savais », elle passe dans la boîte suivante ; « Revient dans 1 h ». | Boîtes de Leitner (chaque tour · 10 min · 1 h · 6 h · 24 h) | Retournement de carte, clic, petit toc |
+| 32.4 s | Expérience | 9. QCM | Le QCM : la question est là dès l'arrivée ; la bonne réponse s'allume ; l'explication se déplie. | Question 4 / 16 et explication | Clic ; deux notes de piano sur « corrigés » |
+| 35.7 s | Expérience | 10. La frise | La ligne se trace, les neuf auteurs apparaissent ; un arc terracotta relie Rabelais à Arendt par-dessus la frise. | Neuf auteurs, quatre siècles | Une note montante par auteur ; mélodie de piano |
+| 41.0 s | Communauté | 11. Gratuit, sans compte | Respiration : fond vert profond ; « Gratuit. Sans compte. » ; le téléphone et la progression. | Gratuit. · Sans compte. · Sans publicité · Rien n'est envoyé | La musique respire (accords ouverts) |
+| 45.9 s | Communauté | 12. La classe | Le téléphone rejoint sa place dans le plan de classe ; « TG1 » ; toutes les places s'allument. | TG1 · Lycée Notre-Dame · 2026–27 | Arpège montant, une note par rangée |
+| 50.1 s | Fin | 13. Carton | Les rangées deviennent les lignes du logo ; le nom, la promesse, l'adresse. | Cahier d'HLP · Tout pour réviser, au même endroit. · naulio.github.io/cahier-hlp | Résolution sur fa ; le motif du début revient sur les derniers mots |
+| 56.1 s | Fin | 14. Dernier déclic | Déclic : le carton devient un Polaroid posé sur l'ardoise du début ; légende manuscrite. | TG1 — 2026–27 | Déclic, éjection du Polaroid, crayon ; deux dernières notes |
 
 ## Repères de synchro
 
@@ -57,74 +57,74 @@ n4                 3.333
 q_start            3.980
 q_souviens         4.480
 q_tout             5.020
-q_end              5.140
-v3_start           5.690
-v3_rentree         6.430
-v3_textes          7.130
-v3_accum           7.770
-v3_end             8.230
-v4_feuilles        8.920
-v4_notes           9.800
-v4_citations      10.700
-v4_end            11.220
-v5_tout           11.520
-v5_part           12.460
-v5_mais           13.230
-v5_ou             13.550
-v5_end            13.790
-shutter           15.290
-v6_start          15.640
-v6_tout           16.900
-v6_rassemble      17.020
-v6_end            17.500
-v7_start          17.750
-v7_cahier         18.350
-v7_hlp            18.830
-v7_end            19.170
-v8_start          20.520
-v8_texte          21.260
-v8_classe         22.000
-v8_fiche          22.880
-v8_auteur         23.600
-v8_epoque         24.240
-v8_essentiel      25.020
-v8_cinq           25.840
-v8_citations      26.980
-v8_retenir        27.620
-v8_end            28.120
-v9_start          28.630
-v9_flash          29.110
-v9_reviennent     30.070
-v9_moment         30.670
-v9_end            30.910
-v10_start         31.310
-v10_qcm           31.850
-v10_corriges      32.390
-v10_expliques     33.230
-v10_end           33.590
-v11_start         34.040
-v11_frise         34.480
-v11_relier        35.340
-v11_oeuvres       35.860
-v11_rabelais      36.840
-v11_arendt        37.940
-v11_end           38.360
-v12_start         39.260
-v12_gratuit       39.720
-v12_compte        40.460
-v12_progression   41.460
-v12_appareil      42.800
-v12_end           43.420
-v13_start         44.140
-v13_tg1           44.940
-v13_classe        46.220
-v13_end           46.400
-v14_start         47.800
-v14_cahier        48.140
-v14_tout          49.340
-v14_reviser       49.740
-v14_endroit       50.840
-v14_end           51.080
-capture           52.530
-end               56.480
+q_end              5.120
+v3_start           6.070
+v3_rentree         6.810
+v3_textes          7.530
+v3_accum           8.130
+v3_end             8.590
+v4_feuilles        9.320
+v4_notes          10.160
+v4_citations      11.060
+v4_end            11.580
+v5_tout           11.880
+v5_part           12.820
+v5_mais           13.570
+v5_ou             13.890
+v5_end            14.130
+shutter           15.630
+v6_start          15.980
+v6_tout           17.240
+v6_rassemble      17.360
+v6_end            17.840
+v7_start          18.290
+v7_cahier         19.170
+v7_hlp            19.510
+v7_end            19.890
+v8_start          21.240
+v8_texte          21.980
+v8_classe         22.720
+v8_fiche          23.580
+v8_auteur         24.320
+v8_epoque         24.960
+v8_essentiel      25.740
+v8_cinq           26.540
+v8_citations      27.700
+v8_retenir        28.340
+v8_end            28.840
+v9_start          29.290
+v9_flash          29.830
+v9_reviennent     30.810
+v9_moment         31.390
+v9_end            31.630
+v10_start         32.430
+v10_qcm           32.963
+v10_corriges      33.497
+v10_expliques     34.370
+v10_end           34.690
+v11_start         35.740
+v11_frise         36.180
+v11_relier        37.040
+v11_oeuvres       37.540
+v11_rabelais      38.520
+v11_arendt        39.640
+v11_end           40.080
+v12_start         40.980
+v12_gratuit       41.460
+v12_compte        42.180
+v12_progression   43.180
+v12_appareil      44.500
+v12_end           45.140
+v13_start         45.860
+v13_tg1           46.660
+v13_classe        47.940
+v13_end           48.120
+v14_start         50.120
+v14_cahier        50.460
+v14_tout          52.020
+v14_reviser       52.340
+v14_endroit       53.440
+v14_end           53.700
+capture           56.100
+end               60.050
 ```
