@@ -55,7 +55,7 @@
     tag = el("div", "abs", card, ["Tout", "pour", "réviser,", "au", "même", "endroit."].map(w => `<span class="word">${w}</span>`).join(" "));
     tag.style.cssText += `;left:0;width:1440px;text-align:center;top:${MY + MARK + 128}px;font:italic 400 52px/1 News;letter-spacing:-.015em;color:#1D1E1A`;
     tag.words = Array.from(tag.querySelectorAll(".word"));
-    url = el("div", "abs", card, `<span style="display:inline-flex;align-items:center;gap:14px;height:54px;padding:0 26px;border-radius:27px;background:#1D1E1A;color:#F2EDE3;font:500 19px/1 Mono;letter-spacing:.04em">${C.brand.url}${window.icon("arrow", 20, 'style="stroke:#C9D07A;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"')}</span>`);
+    url = el("div", "abs", card, `<span style="display:inline-flex;align-items:center;gap:14px;height:66px;padding:0 32px;border-radius:33px;background:#1D1E1A;color:#F2EDE3;font:500 24px/1 Mono;letter-spacing:.04em">${C.brand.url}${window.icon("arrow", 20, 'style="stroke:#C9D07A;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"')}</span>`);
     url.style.cssText += `;left:0;width:1440px;text-align:center;top:${MY + MARK + 236}px`;
     dark = el("div", "layer", root); dark.style.background = "#0b0b09";
     dark.style.zIndex = 200;
@@ -83,12 +83,15 @@
     bars.forEach((b, k) => {
       const row = rows[k], target = Math.floor(k / 2);
       const y0 = 330 + row * 78 - 20, x0 = 421.5, w0 = 597;
-      const y = lerp(y0, lineY[target], mg), x = lerp(x0, lineX0 + SH, mg), w = lerp(w0, lineW[target], mg);
+      // v9 : chaque ligne rétrécit autour de son centre final (dans le carré), et une barre sur deux s'efface :
+      // on passe des six rangées aux trois lignes sans étape « menu » qui déborde du carré
+      const w = lerp(w0, lineW[target], mg), y = lerp(y0, lineY[target], mg);
+      const cxl = lerp(x0 + w0 / 2, lineX0 + SH + lineW[target] / 2, mg), x = cxl - w / 2;
       b.style.width = w.toFixed(2) + "px";
       b.style.height = lerp(40, 6, mg).toFixed(2) + "px";
       b.style.borderRadius = lerp(2, 3, mg).toFixed(2) + "px";
       b.style.background = mg < 0.5 ? `rgba(242,237,227,${lerp(0.22, 1, mg * 2).toFixed(3)})` : "#F2EDE3";
-      put(b, { x, y, op: 1 });
+      put(b, { x, y, op: k % 2 ? 1 - seg(mg, 0.1, 0.45, E.linear) : 1 });
     });
     // v6 : le carré et la marge naissent avec les lignes (plus de « trois barres seules » façon menu)
     const bgIn = seg(t, v14s - 0.1, 0.35, E.out);             // v8 : naît en fondu à 85 % de sa taille (plus de point isolé)
@@ -96,12 +99,12 @@
     const mgl = seg(t, v14s + 0.05, 0.4, E.out);
     margin.style.transform = `translateX(${SH.toFixed(1)}px) scaleY(${mgl.toFixed(3)})`;
     // le fond se développe : vert profond → papier
-    const gf = seg(t, v14s + 0.05, 0.75, E.inOut);
+    const gf = seg(t, v14s + 0.05, 0.5, E.inOut);            // v9 : passage vert → papier plus court
     put(card.green, { op: 1 - gf });
     put(card.warm, { op: 0.55 * Math.sin(Math.PI * gf) });
     markBg.style.background = gf < 1 ? `rgb(${Math.round(lerp(110, 95, gf))},${Math.round(lerp(116, 100, gf))},${Math.round(lerp(80, 67, gf))})` : "#5F6443";   // à peine plus clair sur le vert, opaque
     // nom, sous-titre, promesse, adresse (le nom entre sur fond clair : lisible)
-    const wIn = seg(t, nm + 0.1, 0.7, E.out);
+    const wIn = seg(t, nm, 0.7, E.out);                      // v9 : le nom sort sur « Cahier »
     put(word.inner, { y: (1 - wIn) * 150 });
     word.style.transform = `translateX(${SH.toFixed(1)}px)`;
     put(sub, { op: seg(t, nm + 0.5, 0.6), y: (1 - seg(t, nm + 0.5, 0.6)) * 10 });

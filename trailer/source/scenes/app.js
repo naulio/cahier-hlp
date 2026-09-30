@@ -178,7 +178,7 @@
       <div class="q-exp" style="position:absolute;left:${hx}px;top:${250 + 4 * 76 + 10}px;width:${MN.w}px;height:0;overflow:hidden;border-radius:16px;background:#F1ECE0">
         <div style="padding:22px 26px">
           <div class="eyebrow">Explication</div>
-          <div style="margin-top:12px;font:400 19px/1.4 Sans;color:#2B2C27"><b style="font-weight:600">Métaphore</b> : ${Q.explication.replace("Ignorance", "l’ignorance")} Avec « comme », ce serait une comparaison.</div>
+          <div style="margin-top:12px;font:400 19px/1.4 Sans;color:#2B2C27"><b style="font-weight:600">Métaphore</b> : ${Q.explication.replace("Ignorance", "l’ignorance")} Avec « comme », ce serait une comparaison.</div>
         </div>
       </div>`;
     Object.assign(qcm, { q: qcm.querySelector(".q-q"), opts: Array.from(qcm.querySelectorAll(".q-o")), exp: qcm.querySelector(".q-exp") });
@@ -275,12 +275,12 @@
 
     // ---------- clic Rousseau : la carte devient la fiche ----------
     const ex = seg(t, k.click + 0.12, 0.62, E.emph);
-    const homeOut = seg(t, k.click + 0.1, 0.4, E.out);
+    const homeOut = seg(t, k.click + 0.1, 0.25, E.out);       // v9 : la grille part avant l'entrée du titre de la fiche
     put(home, { op: 1 - homeOut, y: homeOut * 18, s: 1 - homeOut * 0.015 });
     put(fiche, { op: seg(t, k.click + 0.2, 0.25, E.linear) * (1 - seg(t, k.toFlash, 0.15, E.linear)), x: -seg(t, k.toFlash, 0.45, E.in) * 60 });
     const fIn = (d, dur = 0.5) => seg(t, k.click + 0.22 + d, dur, E.out);
     put(fiche.back, { op: fIn(0.05) });
-    put(fiche.auth, { op: fIn(0), y: (1 - fIn(0)) * 22 });
+    put(fiche.auth, { op: fIn(0.1), y: (1 - fIn(0.1)) * 22 });
     fiche.ul.style.transform = `scaleX(${seg(t, k.auteur - 0.05, 0.5, E.inOut).toFixed(3)})`;
     fiche.ul.style.opacity = (1 - seg(t, k.ess, 0.4)).toFixed(3) * 0.85;
     put(fiche.ftitle, { op: fIn(0.08), y: (1 - fIn(0.08)) * 16 });
@@ -313,10 +313,10 @@
     if (toBox > 0) {
       const mx = lerp(g.fcx, bx, toBox), my = lerp(g.fcy, by, toBox) - Math.sin(Math.PI * toBox) * 90;
       // v6 : la carte garde sa réponse en rétrécissant, puis disparaît dans la boîte (ne masque plus le compteur)
-      const sw = lerp(1, 40 / g.fcw, toBox), sh2 = lerp(1, 22 / g.fch, toBox);
-      const bxc = bx + 66 - 20, byc = by + 56 - 11;
+      const sw = lerp(1, 8 / g.fcw, toBox), sh2 = lerp(1, 5 / g.fch, toBox);
+      const bxc = bx + 66 - 4, byc = by + 56 - 2.5;
       const mx2 = lerp(g.fcx, bxc, toBox), my2 = lerp(g.fcy, byc, toBox) - Math.sin(Math.PI * toBox) * 90;
-      put(flash.mini, { x: mx2, y: my2, sx: sw, sy: sh2, op: 1 - seg(toBox, 0.84, 0.11, E.linear) });   // v8 : opaque jusqu'au bord de la boîte
+      put(flash.mini, { x: mx2, y: my2, sx: sw, sy: sh2, op: 1 - seg(toBox, 0.95, 0.05, E.linear) });   // v9 : disparaît par l'échelle, pas en pavé gris
     } else put(flash.mini, { op: 0 });
     flash.boxes.forEach((b, i) => {
       const pulse = i === 2 ? Math.sin(Math.PI * seg(t, k.yes + 0.7, 0.35, E.linear)) : 0;   // la boîte 3 accueille la carte
@@ -330,7 +330,7 @@
     flash.n.textContent = landed ? "11" : "12";
     side.querySelector(".side-n").textContent = landed ? "11" : "12";
     flash.counts[0].textContent = "5";
-    const toast = seg(t, Math.max(k.moment - 0.2, k.yes + 0.63), 0.45, E.emph);   // la bulle arrive avec les compteurs
+    const toast = seg(t, Math.max(k.moment - 0.2, k.yes + 0.63), 0.2, E.out);   // v9 : lisible tout de suite   // la bulle arrive avec les compteurs
     put(flash.toast, { op: toast, y: (1 - toast) * 16 });
 
     // ---------- QCM ----------
@@ -390,8 +390,8 @@
       [k.click + 0.35, 1, 720, 540],
       [k.auteur + 0.1, 1.2, 600, 330],                       // poussée de 0,75 s, une fois la fiche affichée
       [k.ess - 0.5, 1.2, 600, 330],
-      [k.ess + 0.3, 1.2, 620, 500],                          // les cinq points (logo de la barre latérale entier)
-      [k.cit - 0.45, 1.2, 620, 500],
+      [k.ess + 0.3, 1.2, 620, 390],                          // les cinq points (haut de la fenêtre et logo dans le cadre)
+      [k.cit - 0.45, 1.2, 620, 390],
       [k.cit + 0.25, 1.14, 800, 520],                        // la citation, barre latérale entière
       [k.toFlash - 0.05, 1.14, 800, 520],
       [k.toFlash + 0.55, 1.1, 760, 520],

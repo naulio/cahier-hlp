@@ -39,7 +39,7 @@
       words.push(m);
     });
     caption = el("div", "abs mono", root, "Sans publicité · Rien n’est envoyé");
-    caption.style.cssText += ";left:134px;top:580px;font:500 19px/1 Mono;letter-spacing:.18em;color:#E2E0C6";
+    caption.style.cssText += ";left:134px;top:580px;font:500 23px/1 Mono;letter-spacing:.16em;color:#E2E0C6";   // v9 : +20 % (lisible sur téléphone)
     // téléphone
     phone = el("div", "abs", root);
     phone.style.cssText += ";left:930px;top:210px;width:300px;height:610px;border-radius:44px;background:#1D1E1A;padding:12px;box-shadow:0 30px 80px rgba(0,0,0,.35)";
@@ -69,7 +69,7 @@
       desks.push({ d, scr, ...s, i });
     });
     planCap = el("div", "abs mono", plan, `${C.brand.lycee} · ${C.brand.classe} · ${C.brand.annee}`);
-    planCap.style.cssText += ";left:0;width:1440px;text-align:center;top:846px;font:500 18px/1 Mono;letter-spacing:.2em;color:#D6D5B8;text-transform:uppercase";
+    planCap.style.cssText += ";left:0;width:1440px;text-align:center;top:840px;font:500 25px/1 Mono;letter-spacing:.16em;color:#E2E0C6;text-transform:uppercase";   // v9 : ×1,4
   };
 
   S.update = function (t) {

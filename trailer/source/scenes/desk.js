@@ -398,8 +398,9 @@
       c.box.style.background = ew > 0.5 ? "#FFFFFF" : "#FBF8F2";
       // contenu : la feuille s'efface sous la carte
       c.inner.style.transform = `scale(${cam0.z.toFixed(4)})`;
-      c.inner.style.opacity = (1 - seg(t, t0 + 0.35, 0.5, E.linear)).toFixed(3);
-      c.card.style.opacity = seg(t, t0 + 0.7, 0.45, E.out).toFixed(3);
+      // v9 : l'encre de la feuille s'éteint avant que le texte de la carte n'apparaisse (jamais texte sur texte)
+      c.inner.style.opacity = (1 - seg(t, t0 + 0.3, 0.3, E.linear)).toFixed(3);
+      c.card.style.opacity = seg(t, t0 + 0.62, 0.4, E.out).toFixed(3);
       c.box.style.zIndex = 5 + i;
     });
   };
