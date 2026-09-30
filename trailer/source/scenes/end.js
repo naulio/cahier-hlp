@@ -24,7 +24,7 @@
     pool.style.background = "radial-gradient(ellipse 60% 55% at 50% 46%, rgba(255,238,205,.10), rgba(255,238,205,0) 70%)";
     frame = el("div", "abs", root);
     frame.style.cssText += ";background:#F4F1EA url(../assets/textures/paper_sheet.png) center/600px;box-shadow:0 1px 1px rgba(0,0,0,.3),0 16px 36px rgba(0,0,0,.4),0 40px 90px rgba(0,0,0,.25)";
-    cap = el("div", "abs", root, "TG1 — 2026-27");
+    cap = el("div", "abs", root, `TG1 — ${C.brand.annee}`);
     cap.style.cssText += ";font:500 50px/1 Hand;color:#2c2f3a;white-space:nowrap";
     card = el("div", "layer", root);
     card.style.transformOrigin = "0 0";

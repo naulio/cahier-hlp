@@ -36,8 +36,8 @@
       m.inner = m.querySelector(".word");
       words.push(m);
     });
-    caption = el("div", "abs mono", root, "Sans publicité · Rien n'est envoyé");
-    caption.style.cssText += ";left:134px;top:580px;font:500 15px/1 Mono;letter-spacing:.2em;color:#C9C8A8";
+    caption = el("div", "abs mono", root, "Sans publicité · Rien n’est envoyé");
+    caption.style.cssText += ";left:134px;top:580px;font:500 19px/1 Mono;letter-spacing:.18em;color:#D6D5B8";
     // téléphone
     phone = el("div", "abs", root);
     phone.style.cssText += ";left:930px;top:210px;width:300px;height:610px;border-radius:44px;background:#1D1E1A;padding:12px;box-shadow:0 30px 80px rgba(0,0,0,.35)";
@@ -50,7 +50,7 @@
         <circle class="ringc" cx="60" cy="60" r="50" fill="none" stroke="#5F6443" stroke-width="10" stroke-linecap="round" stroke-dasharray="314.16" stroke-dashoffset="314.16" transform="rotate(-90 60 60)"/>
       </svg>
       <div class="pct" style="position:absolute;left:0;right:0;top:200px;text-align:center;font:400 38px/1 News;color:#1D1E1A">0 %</div>
-      <div style="position:absolute;left:22px;right:22px;top:326px;padding:14px 16px;border-radius:14px;background:#F1ECE0;font:500 13.5px/1.3 Sans;color:#2B2C27">12 cartes à revoir<div style="font:400 12px/1 Mono;color:#7A7B6F;margin-top:6px;letter-spacing:.06em">AUJOURD'HUI</div></div>
+      <div style="position:absolute;left:22px;right:22px;top:326px;padding:14px 16px;border-radius:14px;background:#F1ECE0;font:500 13.5px/1.3 Sans;color:#2B2C27">12 cartes à revoir<div style="font:400 12px/1 Mono;color:#7A7B6F;margin-top:6px;letter-spacing:.06em">AUJOURD’HUI</div></div>
       <div style="position:absolute;left:22px;right:22px;top:410px;padding:14px 16px;border-radius:14px;background:#F1ECE0;font:500 13.5px/1.3 Sans;color:#2B2C27">Examen blanc<div style="font:400 12px/1 Mono;color:#7A7B6F;margin-top:6px;letter-spacing:.06em">20 QUESTIONS · 20 MIN</div></div>
       <div style="position:absolute;left:22px;right:22px;bottom:24px;height:44px;border-radius:12px;background:#39402F;color:#F2EDE3;font:600 14px/44px Sans;text-align:center">Reprendre</div>
     </div>`;
@@ -67,7 +67,7 @@
       desks.push({ d, scr, ...s, i });
     });
     planCap = el("div", "abs mono", plan, `${C.brand.lycee} · ${C.brand.classe} · ${C.brand.annee}`);
-    planCap.style.cssText += ";left:0;width:1440px;text-align:center;top:846px;font:500 15px/1 Mono;letter-spacing:.22em;color:#C9C8A8;text-transform:uppercase";
+    planCap.style.cssText += ";left:0;width:1440px;text-align:center;top:846px;font:500 18px/1 Mono;letter-spacing:.2em;color:#D6D5B8;text-transform:uppercase";
   };
 
   S.update = function (t) {

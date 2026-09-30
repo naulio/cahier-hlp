@@ -51,7 +51,7 @@
     sideH.style.cssText = "position:absolute;left:34px;top:470px";
     const prog = el("div", "", side, `<div class="eyebrow" style="color:#8A8B7C">Ta progression</div>
       <div style="margin-top:12px;height:6px;border-radius:6px;background:#E0DACA"><div class="pfill" style="height:100%;width:52%;border-radius:6px;background:#5F6443"></div></div>
-      <div style="font:500 12px/1 Mono;color:#6F7159;margin-top:10px;letter-spacing:.06em">52 % · 12 CARTES À REVOIR</div>`);
+      <div style="font:500 12px/1 Mono;color:#6F7159;margin-top:10px;letter-spacing:.06em">52 % · 12 CARTES À REVOIR</div>`);
     prog.style.cssText = "position:absolute;left:34px;right:30px;bottom:34px";
 
     // accueil du chapitre
@@ -91,7 +91,7 @@
       <div class="f-oeuvre" style="position:absolute;left:${fx}px;top:216px;font:400 15px/1 Sans;color:#7A7B6F">${F.oeuvre} (1<sup style="font-size:.7em">re</sup> partie)</div>
       <div class="f-chips" style="position:absolute;left:${fx}px;top:252px">${F.chips.map((c, k) => `<span class="chip${k === 0 ? " k" : ""}" data-k="${k}" style="display:inline-flex">${c}</span>`).join("")}</div>
       <div style="position:absolute;left:${fx}px;right:44px;top:310px;height:1px;background:rgba(29,30,26,.1)"></div>
-      <div class="f-ess-h eyebrow" style="position:absolute;left:${fx}px;top:340px">L'essentiel en 5 points</div>
+      <div class="f-ess-h eyebrow" style="position:absolute;left:${fx}px;top:340px">L’essentiel en 5 points</div>
       <div class="f-ess" style="position:absolute;left:${fx}px;top:374px;width:500px">${F.essentiel.map((p, k) => `
         <div class="f-pt" style="display:flex;gap:16px;align-items:flex-start;margin-bottom:17px">
           <div style="flex:none;width:30px;height:30px;border-radius:50%;background:#5F6443;color:#F2EDE3;font:500 14px/30px Mono;text-align:center">${k + 1}</div>
@@ -109,7 +109,7 @@
       </div>
       <div class="f-btns" style="position:absolute;left:${fx}px;top:760px;display:flex;gap:12px">
         <div class="btn" style="background:#39402F;color:#F2EDE3">${window.icon("cards", 18, 'style="stroke:currentColor;fill:none;stroke-width:1.8;margin-right:10px"')}Flashcards · 9</div>
-        <div class="btn" style="background:#ECE7D8;color:#2B2C27">${window.icon("target", 18, 'style="stroke:currentColor;fill:none;stroke-width:1.8;margin-right:10px"')}QCM · 14</div>
+        <div class="btn" style="background:#ECE7D8;color:#2B2C27">${window.icon("target", 18, 'style="stroke:currentColor;fill:none;stroke-width:1.8;margin-right:10px"')}QCM · 16</div>
         <div class="btn" style="background:#ECE7D8;color:#2B2C27">${window.icon("mic", 18, 'style="stroke:currentColor;fill:none;stroke-width:1.8;margin-right:10px"')}Mode oral</div>
       </div>`;
     const q = s => fiche.querySelector(s);
@@ -126,7 +126,7 @@
     const FL = C.flash, fcw = 600, fch = 330, fcx = hx + (MN.w - fcw) / 2, fcy = 150;
     flash.innerHTML = `
       <div style="position:absolute;left:${hx}px;top:44px" class="eyebrow">Flashcards · répétition espacée</div>
-      <div style="position:absolute;left:${hx}px;top:70px;font:400 36px/1 News;letter-spacing:-.02em;color:#1D1E1A">12 cartes à revoir aujourd'hui</div>
+      <div style="position:absolute;left:${hx}px;top:70px;font:400 36px/1 News;letter-spacing:-.02em;color:#1D1E1A">12 cartes à revoir aujourd’hui</div>
       <div class="fc-wrap" style="position:absolute;left:${fcx}px;top:${fcy}px;width:${fcw}px;height:${fch}px;perspective:1600px">
         <div class="fc" style="position:absolute;inset:0;transform-style:preserve-3d">
           <div class="fc-f" style="position:absolute;inset:0;backface-visibility:hidden;border-radius:20px;background:#FFFFFF;box-shadow:0 0 0 1px rgba(29,30,26,.08),0 18px 40px rgba(40,42,30,.12);padding:34px 40px">
@@ -145,7 +145,7 @@
         <div class="btn fc-yes" style="flex:1;background:#E4E6C9;color:#39402F">Je savais ✓</div>
       </div>
       <div class="fc-boxes" style="position:absolute;left:${hx + 76}px;top:${fcy + fch + 124}px;display:flex;gap:18px">
-        ${[["1", "chaque jour", 5], ["2", "tous les 2 j", 4], ["3", "tous les 4 j", 7], ["4", "chaque semaine", 3], ["5", "acquises", 11]].map(([n, lab, c], k) => `
+        ${[["1", "chaque tour", 5], ["2", "10 min", 4], ["3", "1 h", 7], ["4", "6 h", 3], ["5", "24 h", 11]].map(([n, lab, c], k) => `
         <div class="fc-box" data-k="${k}" style="width:132px;height:112px;border-radius:14px;background:#F4F0E6;box-shadow:inset 0 0 0 1.5px rgba(29,30,26,.08);position:relative;padding:14px 16px">
           <div style="font:500 11px/1 Mono;letter-spacing:.12em;color:#7A7B6F">BOÎTE ${n}</div>
           <div class="fc-count" style="font:400 36px/1 News;color:#1D1E1A;margin-top:12px">${c}</div>
@@ -153,7 +153,7 @@
         </div>`).join("")}
       </div>
       <div class="fc-mini" style="position:absolute;left:0;top:0;width:${fcw}px;height:${fch}px;border-radius:20px;background:#39402F;opacity:0;transform-origin:0 0"></div>
-      <div class="fc-toast" style="position:absolute;left:${hx + 76 + 2 * 150 - 60}px;top:${fcy + fch + 252}px;width:252px;height:42px;border-radius:21px;background:#1D1E1A;color:#F2EDE3;display:flex;align-items:center;justify-content:center;gap:10px;font:500 14.5px/1 Sans">${window.icon("timer", 17, 'style="stroke:#C9D07A;fill:none;stroke-width:1.9"')}Revient dans 4 jours</div>`;
+      <div class="fc-toast" style="position:absolute;left:${hx + 76 + 2 * 150 - 60}px;top:${fcy + fch + 252}px;width:252px;height:42px;border-radius:21px;background:#1D1E1A;color:#F2EDE3;display:flex;align-items:center;justify-content:center;gap:10px;font:500 14.5px/1 Sans">${window.icon("timer", 17, 'style="stroke:#C9D07A;fill:none;stroke-width:1.9"')}Revient dans 1 h</div>`;
     Object.assign(flash, { wrap: flash.querySelector(".fc-wrap"), card: flash.querySelector(".fc"), actions: flash.querySelector(".fc-actions"),
       yes: flash.querySelector(".fc-yes"), boxes: Array.from(flash.querySelectorAll(".fc-box")), counts: Array.from(flash.querySelectorAll(".fc-count")),
       mini: flash.querySelector(".fc-mini"), toast: flash.querySelector(".fc-toast"), geo: { fcx, fcy, fcw, fch } });
@@ -164,7 +164,7 @@
     const Q = C.qcm;
     qcm.innerHTML = `
       <div style="position:absolute;left:${hx}px;top:44px" class="eyebrow">QCM · Victor Hugo</div>
-      <div style="position:absolute;right:44px;top:40px;font:500 12.5px/1 Mono;letter-spacing:.1em;color:#7A7B6F">QUESTION 4 / 15</div>
+      <div style="position:absolute;right:44px;top:40px;font:500 12.5px/1 Mono;letter-spacing:.1em;color:#7A7B6F">QUESTION 4 / 16</div>
       <div style="position:absolute;left:${hx}px;right:44px;top:66px;height:4px;border-radius:4px;background:#ECE7D8"><div style="width:27%;height:100%;border-radius:4px;background:#5F6443"></div></div>
       <div class="q-q" style="position:absolute;left:${hx}px;top:112px;width:820px;font:400 36px/1.2 News;letter-spacing:-.015em;color:#1D1E1A">${Q.q}</div>
       <div class="q-opts" style="position:absolute;left:${hx}px;top:250px;width:${MN.w}px">
@@ -175,7 +175,7 @@
       <div class="q-exp" style="position:absolute;left:${hx}px;top:${250 + 4 * 76 + 10}px;width:${MN.w}px;height:0;overflow:hidden;border-radius:16px;background:#F1ECE0">
         <div style="padding:22px 26px">
           <div class="eyebrow">Explication</div>
-          <div style="margin-top:12px;font:400 19px/1.4 Sans;color:#2B2C27"><b style="font-weight:600">Métaphore</b> : ${Q.explication.replace("Ignorance", "l'ignorance")} Avec « comme », ce serait une comparaison.</div>
+          <div style="margin-top:12px;font:400 19px/1.4 Sans;color:#2B2C27"><b style="font-weight:600">Métaphore</b> : ${Q.explication.replace("Ignorance", "l’ignorance")} Avec « comme », ce serait une comparaison.</div>
         </div>
       </div>`;
     Object.assign(qcm, { q: qcm.querySelector(".q-q"), opts: Array.from(qcm.querySelectorAll(".q-o")), exp: qcm.querySelector(".q-exp") });

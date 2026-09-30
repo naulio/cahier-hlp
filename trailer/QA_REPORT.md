@@ -149,6 +149,52 @@ détails » ; veut une bande-son **sans batterie** (celle de la v1) ; la voix ab
 - Deux corrections relevées par les agents : « 9 auteurs » au lieu de « 9 textes » (il y a 10 textes pour 9
   auteurs) ; plus de bord de feuille visible à l'ouverture.
 
-## v4
+## v4 — `renders/trailer_v4.mp4` (56,4 s)
+
+### Notes des agents (brief recalé sur les verdicts du commanditaire)
+
+| Agent | Note | v4 par rapport à la v1 |
+|---|---|---|
+| Direction artistique | 8 | « mieux » en typographie, « pareil » en identité ; aucun ajout recommandé |
+| Motion | 7 | « égale la v1 sans la dépasser » ; défauts de mouvement hérités de la v1 |
+| Son / musique / mix | 7,5 (mix 8) | « au moins autant » que la v1 ; deux défauts nés du resserrement |
+| Voix | 7,5 | voix B intacte (0,0 demi-ton), WER 0 ; retouches de pauses et d'une prise |
+| Montage / storytelling | 7 | même film que la v1 (≈ 7,5), mais plus pressé : temps de lecture perdus |
+| Orthographe / français | 7,5 | aucune faute ; libellés à aligner sur le vrai site |
+| AI slop detector | 7,5 | plus aucun signe de la v3 ; petits signes hérités de la v1 |
+
+**Calibrage** : cette fois conforme. Les agents situent la v4 au niveau de la v1 (7-8), ne recommandent plus
+aucun ajout d'effet, et ne proposent que des retraits, des corrections et des durées.
+
+### Modifications v4 → v5 (finitions seulement, rien d'ajouté)
+- **Textes alignés sur le vrai site** : boîtes de Leitner « chaque tour · 10 min · 1 h · 6 h · 24 h » et
+  « Revient dans 1 h » (`app/moteur.js`) ; « QCM · 16 » et « Question 4 / 16 » (`lecons/education.js`) ;
+  apostrophes courbes, « 100 % », « 2026–27 », « 12 cartes à revoir » insécable ; micro-légendes plus lisibles
+  sur téléphone.
+- **Mouvement** :
+  - le curseur clique bien sur « Je savais », puis marque un temps ;
+  - plus de traînée du logo ni de dédoublements (flou de mouvement retiré ou doublé selon les plans) ;
+  - l'image noire des deux déclics devient un assombrissement ;
+  - plus de fondus enchaînés entre les écrans de l'app ;
+  - la fiche est cadrée moins serré ;
+  - la question du QCM est là dès l'arrivée ;
+  - l'arc de la frise passe au-dessus des photos.
+- **Durées** : on rend du temps de lecture aux moments clés : question du hook, réponse de la flashcard,
+  explication du QCM, classe allumée, adresse.
+- **Voix** :
+  - prise de « dans le Cahier d'HLP » à l'attaque propre ;
+  - pause déplacée avant « dans » ;
+  - silence réduit dans « de Rabelais à Arendt » ;
+  - courte pause après « HLP » dans la phrase finale.
+- **Son** :
+  - la respiration musicale démarre sur la barre de mesure (plus de double attaque) ;
+  - musique −1 dB ;
+  - bruitages de l'accumulation −3 dB et adoucis dans les aigus ;
+  - un souffle retiré sur « au bon moment » ;
+  - autofocus et crayon final plus bas ;
+  - dernières notes plus présentes ;
+  - tics des cartes moins mécaniques.
+
+## v5
 
 (évaluation à venir)

@@ -28,9 +28,9 @@
     { id: "hug", img: "hugo_carjat_1876_sq.jpg", cap: "Hugo", x: 270, y: -12, r: 6, mark: "n4" },
   ];
   const EXTRAS = [
-    { kind: "page", x: -470, y: -40, r: 9, html: "<b>Plan du commentaire</b><br>I. Une éducation…<br>&nbsp;&nbsp;a) le corps<br>&nbsp;&nbsp;b) l'esprit<br>II. …", at: "v3_accum", dt: 0.3 },
+    { kind: "page", x: -470, y: -40, r: 9, html: "<b>Plan du commentaire</b><br>I. Une éducation…<br>&nbsp;&nbsp;a) le corps<br>&nbsp;&nbsp;b) l’esprit<br>II. …", at: "v3_accum", dt: 0.3 },
     { kind: "page", x: 480, y: -150, r: -8, html: "<b>Procédés</b><br>anaphore<br>antithèse<br>métaphore filée<br>litote ≠ euphémisme", at: "v4_citations", dt: -0.15 },
-    { kind: "page", x: 60, y: -700, r: 3, html: "<b>Dissertation</b><br>problématique ?<br>→ l'éducation<br>&nbsp;&nbsp;émancipe-t-elle ?", at: "v4_notes", dt: 0.2 },
+    { kind: "page", x: 60, y: -700, r: 3, html: "<b>Dissertation</b><br>problématique ?<br>→ l’éducation<br>&nbsp;&nbsp;émancipe-t-elle ?", at: "v4_notes", dt: 0.2 },
     { kind: "sticky", x: 620, y: -40, r: 8, html: "Arendt ??<br>p. 42" },
     { kind: "sticky", x: -640, y: -90, r: -10, html: "citations<br>à revoir !" },
     { kind: "index", x: 660, y: 170, r: -6, html: "perfectibilité<br>≠ perfection !<br>(Rousseau)" },
