@@ -11,7 +11,7 @@
   const C = window.CONTENT;
   const S = { name: "classe" };
   S.t0 = () => M("v12_start") - 0.45;
-  S.t1 = () => M("v14_start") - 0.29;
+  S.t1 = () => M("v14_start") - 0.49;   // v10 : relais plus tôt, rangées déjà refermées
 
   // plan de classe : 6 rangées × 3 paires de tables (36 places)
   const ROWS = 6, PAIRS = 3, DW = 64, DH = 40, GAPX = 150, GAPY = 78;
@@ -76,7 +76,7 @@
     const t0 = S.t0(), gr = M("v12_gratuit"), co = M("v12_compte"), pr = M("v12_progression"), ap = M("v12_appareil");
     const pe = M("v13_start"), tg = M("v13_tg1"), cl = M("v13_classe"), end = S.t1();
     put(root, { op: seg(t, t0 + 0.2, 0.25, E.linear) });   // v7 : fondu court sur la frise restée opaque
-    put(warm, { op: 0.6 * (1 - seg(t, t0 + 0.2, 0.45, E.linear)) });
+    put(warm, { op: 0.6 * (1 - seg(t, t0 + 0.2, 0.25, E.linear)) });   // v10 : s'efface avec le fondu (pas de saut de luminosité après)
     // mots
     [gr, co].forEach((tw, k) => {
       const e = seg(t, tw - 0.22, 0.6, E.out);
@@ -111,7 +111,7 @@
     });
     // les tables de chaque rangée se rejoignent : elles deviendront les lignes du logo
     const v14s = M("v14_start");
-    const mm = seg(t, v14s - 0.8, 0.5, E.inOut);
+    const mm = seg(t, v14s - 0.95, 0.45, E.inOut);
     if (mm > 0) {
       const x0 = 421.5, x1 = 1018.5, cw = (x1 - x0) / (PAIRS * 2);
       desks.forEach(d => {

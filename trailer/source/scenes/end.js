@@ -10,7 +10,7 @@
   const { E, seg, lerp, clamp, inv, el, svgEl, put, cue: M, spring } = window.ENG;
   const C = window.CONTENT;
   const S = { name: "end" };
-  S.t0 = () => M("v14_start") - 0.3;   // relais image pour image avec la scène « classe »
+  S.t0 = () => M("v14_start") - 0.5;   // relais image pour image avec la scène « classe » (barres pleines, sans raccords)
   S.t1 = () => M("end") + 0.01;
 
   let root, desk, frame, cap, card, cardBg, bars = [], markBg, margin, word, sub, tag, url, dark, flash;
@@ -76,7 +76,7 @@
 
     // ---- les rangées deviennent les lignes du logo
     const cls = window.SCENES.find(s => s.name === "classe").seatGeometry();
-    const mg = seg(t, t0 + 0.02, 0.8, E.emph);               // v8 : les lignes sont presque à leur taille quand le carré naît
+    const mg = seg(t, v14s - 0.28, 0.8, E.emph);               // v8 : les lignes sont presque à leur taille quand le carré naît
     const rows = [0, 1, 2, 3, 4, 5];
     const lineY = [46, 64, 82].map(v => MY + MARK * v / 120 - 3);
     const lineX0 = MX + MARK * 30 / 120, lineW = [66, 66, 50].map(v => MARK * v / 120);
@@ -85,8 +85,9 @@
       const y0 = 330 + row * 78 - 20, x0 = 421.5, w0 = 597;
       // v9 : chaque ligne rétrécit autour de son centre final (dans le carré), et une barre sur deux s'efface :
       // on passe des six rangées aux trois lignes sans étape « menu » qui déborde du carré
-      const w = lerp(w0, lineW[target], mg), y = lerp(y0, lineY[target], mg);
-      const cxl = lerp(x0 + w0 / 2, lineX0 + SH + lineW[target] / 2, mg), x = cxl - w / 2;
+      const mw = seg(t, v14s - 0.28, 0.45, E.emph);             // v10 : la largeur arrive vite à celle du carré
+      const w = lerp(w0, lineW[target], mw), y = lerp(y0, lineY[target], mg);
+      const cxl = lerp(x0 + w0 / 2, lineX0 + SH + lineW[target] / 2, mw), x = cxl - w / 2;   // v10 : largeur et place ensemble
       b.style.width = w.toFixed(2) + "px";
       b.style.height = lerp(40, 6, mg).toFixed(2) + "px";
       b.style.borderRadius = lerp(2, 3, mg).toFixed(2) + "px";
@@ -94,15 +95,16 @@
       put(b, { x, y, op: k % 2 ? 1 - seg(mg, 0.1, 0.45, E.linear) : 1 });
     });
     // v6 : le carré et la marge naissent avec les lignes (plus de « trois barres seules » façon menu)
-    const bgIn = seg(t, v14s - 0.1, 0.35, E.out);             // v8 : naît en fondu à 85 % de sa taille (plus de point isolé)
+    const bgIn = seg(t, v14s - 0.08, 0.22, E.out);             // v8-v10 : naît en fondu, une fois les lignes à leur place
     put(markBg, { x: SH, s: 0.85 + 0.15 * bgIn, op: bgIn });
     const mgl = seg(t, v14s + 0.05, 0.4, E.out);
     margin.style.transform = `translateX(${SH.toFixed(1)}px) scaleY(${mgl.toFixed(3)})`;
     // le fond se développe : vert profond → papier
-    const gf = seg(t, v14s + 0.05, 0.5, E.inOut);            // v9 : passage vert → papier plus court
+    const gf = seg(t, v14s + 0.13, 0.5, E.inOut);            // v9-v10 : passage vert → papier court, après la naissance du carré
     put(card.green, { op: 1 - gf });
     put(card.warm, { op: 0.55 * Math.sin(Math.PI * gf) });
-    markBg.style.background = gf < 1 ? `rgb(${Math.round(lerp(110, 95, gf))},${Math.round(lerp(116, 100, gf))},${Math.round(lerp(80, 67, gf))})` : "#5F6443";   // à peine plus clair sur le vert, opaque
+    markBg.style.background = "#5F6443";                                          // v10 : teinte finale d'emblée
+    markBg.style.boxShadow = `inset 0 0 0 1.5px rgba(242,237,227,${(0.35 * (1 - seg(gf, 0.45, 0.35, E.linear))).toFixed(3)})`;   // liseré le temps que le fond passe par sa teinte
     // nom, sous-titre, promesse, adresse (le nom entre sur fond clair : lisible)
     const wIn = seg(t, nm, 0.7, E.out);                      // v9 : le nom sort sur « Cahier »
     put(word.inner, { y: (1 - wIn) * 150 });
@@ -146,5 +148,6 @@
     put(flash, { op: 0 });                                 // v6 : plus de voile clair après le déclic
   };
   S.blur = t => { const c = M("capture"); return t > c + 0.1 && t < c + 1.3 ? 6 : 1; };
+  S.shutter = t => { const c = M("capture"); return t > c && t < c + 1.3 ? 0.25 : 0.5; };   // v10 : recul du Polaroid moins filé
   (window.SCENES = window.SCENES || []).push(S);
 })();

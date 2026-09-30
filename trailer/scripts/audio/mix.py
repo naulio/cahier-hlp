@@ -35,14 +35,14 @@ for line in TL["lines"]:
         if sg["file"].endswith("V01_1.wav"):   # v6 : attaque de « Rabelais » adoucie (-2,5 dB sur 80 ms), sans toucher à la hauteur
             env_a = np.ones(len(x), np.float32)
             n1, n2 = lib.seconds(0.15), lib.seconds(0.22)   # v8 : le pic est à 121 ms, pas dans les 60 premières
-            env_a[:n1] = db(-2.5)
-            env_a[n1:n2] = np.linspace(db(-2.5), 1.0, n2 - n1)
+            env_a[:n1] = db(-3.5)                   # v10 : -3,5 dB (le +1 dB du nom faisait de nouveau travailler le limiteur)
+            env_a[n1:n2] = np.linspace(db(-3.5), 1.0, n2 - n1)
             x = x * env_a[:, None]
         voice.add(x, sg["at"])
 # très légère ambiance commune (la voix « habite » la même pièce que le film)
 # v8-v9 : attaques qui faisaient le plus travailler le limiteur : gain réduit sur 120 ms centrées sur le pic RÉEL
 # de la voix autour du repère (le repère Whisper peut être en retard sur la syllabe, ex. « Ta » avant « progression »)
-for mk, g in (("v12_gratuit", -2.0), ("v12_progression", -2.0), ("v11_rabelais", -1.5)):
+for mk, g in (("v12_gratuit", -2.0), ("v12_progression", -2.0), ("v11_arendt", -1.5)):   # v10 : le pic est sur « à A- », pas sur « Rabelais »
     w0, w1 = lib.seconds(M[mk] - 0.2), lib.seconds(M[mk] + 0.15)
     pk = w0 + int(np.argmax(np.abs(voice.buf[w0:w1]).max(1)))
     n, r = lib.seconds(0.12), lib.seconds(0.03)
@@ -93,7 +93,7 @@ S("shutter_k1000", sh - 0.03, -4)
 S("film_advance", sh + 0.42, -14, 0.2)
 S("paper_sweep", sh + 0.3, -13)
 JIT = [(0.004, 0.8), (-0.011, -1.5), (0.013, 0.4), (-0.006, 1.7), (0.009, -0.9), (-0.014, 1.1), (0.002, -1.8), (0.012, 0.6), (-0.008, -0.3)]
-for i in range(9):                        # v5 : léger décalage ±15 ms / ±2 dB (fixe), moins mécanique
+for i in (0, 3, 6):                       # v10 : un tic par rangée de cartes (neuf en 0,6 s sonnaient « automatiques »)
     S(f"card_tick_{i % 3 + 1}", sh + 0.35 + i * 0.075 + 0.78 + JIT[i][0], -23 + JIT[i][1], -0.4 + 0.1 * i)
 # l'application
 build = M["v7_end"] + 0.35
@@ -155,11 +155,12 @@ DUCK = 5.0
 MUSIC_GAIN = -3.0
 music *= (db(MUSIC_GAIN) * db(-DUCK * g))[:, None]
 # v9 : creux de musique très localisés sous deux mots qu'elle couvrait (« Tu », « Arendt »)
-for t0, t1, gdb in ((M["q_start"] - 0.03, M["q_start"] + 0.27, -4.0), (M["v11_arendt"] + 0.05, M["v11_arendt"] + 0.65, -3.0)):
+for t0, t1, gdb in ((M["q_start"] - 0.03, M["q_start"] + 0.42, -4.0), (M["v11_arendt"] - 0.1, M["v11_arendt"] + 0.24, -3.0)):
     a, b, r = lib.seconds(t0), lib.seconds(t1), lib.seconds(0.03)
+    r2 = lib.seconds(0.15)                   # v10 : retour lent (la musique ne remonte plus d'un coup)
     e = np.full(b - a, db(gdb), np.float32)
     e[:r] = np.linspace(1.0, db(gdb), r)
-    e[-r:] = np.linspace(db(gdb), 1.0, r)
+    e[-r2:] = np.linspace(db(gdb), 1.0, r2)
     music[a:b] *= e[:, None]
 
 # ------------------------------------------------------------------ bus et master

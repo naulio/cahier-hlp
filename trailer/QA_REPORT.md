@@ -367,4 +367,36 @@ déclic était bien faux (les cartes, avec un z-index propre, passaient au-dessu
 
 ## v9
 
+61,4 s. Sept évaluateurs.
+
+| Domaine | Note v9 | (v8) | Verdict |
+|---|---|---|---|
+| Direction artistique | 9 | 9 | titre, cadrage, flashcard, symbole mieux ; lignes encore calées à gauche du carré |
+| Motion | 8,9 | 8,8 | texte sur texte et pavé gris réglés ; logo et entrée floue de l'app |
+| Son / musique / mix | 9 (mix 8,9) | 9 | « Ta » et « Tu » réglés ; deux correctifs mal ciblés (« à Arendt », creux sous « Arendt ») |
+| Voix | 8,9 | 8,6 | pause après « claire » réparée, « Tu » et « Arendt » réglés ; énumération de V08 irrégulière |
+| Montage / storytelling | 8,6 | 8,5 | « mieux minuté, pas plus chargé » ; citation, adresse, logo |
+| Orthographe / français | 9 | 9 | aucune faute ; trois finitions typographiques |
+| AI slop detector | 8,5 | 8,5 | téléphone, fiche, flashcard réglés ; logo, tics de cartes |
+
+**Calibrage** : conforme ; aucune demande d'effet. Moyenne 8,8.
+
+### Modifications v9 → v10 (finitions seulement, rien d'ajouté ; un bruitage retiré)
+- **Logo de fin** : la classe se referme en barres pleines avant le relais (plus de raccords) ; les lignes prennent
+  leur largeur et leur place dans le carré avant qu'il naisse ; le carré a d'emblée sa teinte finale, avec un liseré
+  clair le temps que le fond passe par sa teinte ; le fond s'éclaircit ensuite.
+- **App** : la grille n'est plus floue à l'entrée (seulement estompée) ; la carte de la flashcard s'efface avant
+  d'atteindre le compteur.
+- **Polaroid final** : recul moins filé (obturateur 90°).
+- **Classe** : le relais chaud s'efface avec le fondu (plus de saut de luminosité).
+- **Textes** : « quel procédé ? » insécable ; titre de l'œuvre en italique sur la fiche ; renvois des vers de Hugo
+  en retrait.
+- **Voix** (même voix B, aucune hauteur changée) : courte pause après « l'auteur » ; virgule après « frise » 0,22 s
+  (la suspension après « œuvres… » retrouve son relief) ; « Flaubert » −1 dB.
+- **Son** : attaque de « Rabelais » −3,5 dB ; la baisse de gain vise « à A(rendt) » ; creux de musique sous
+  « Arendt » recalé sur le mot ; retours des creux en 150 ms ; **tics des cartes : 3 au lieu de 9** (un par rangée).
+  Limiteur : 1,7 dB au maximum (v1 : 2,2).
+
+## v10
+
 (évaluation à venir)

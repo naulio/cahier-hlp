@@ -47,7 +47,7 @@ window.CONTENT = {
     { id: "flo", type: "print", entete: "Texte · Flaubert, Madame Bovary", date: "15.09",
       lignes: ["Nous étions à l’Étude, quand le Proviseur entra,", "suivi d’un nouveau habillé en bourgeois et d’un", "garçon de classe qui portait un grand pupitre.", "Ceux qui dormaient se réveillèrent, et chacun", "se leva comme surpris dans son travail."] },
     { id: "hug", type: "print", entete: "Texte · Hugo, Les Quatre Vents de l’esprit", date: "17.09",
-      lignes: ["Chaque enfant qu’on enseigne est un homme", "qu’on gagne.", "Quatre-vingt-dix voleurs sur cent qui sont", "au bagne", "Ne sont jamais allés à l’école une fois,", "Et ne savent pas lire, et signent d’une croix."] },
+      lignes: ["Chaque enfant qu’on enseigne est un homme", "    qu’on gagne.", "Quatre-vingt-dix voleurs sur cent qui sont", "    au bagne", "Ne sont jamais allés à l’école une fois,", "Et ne savent pas lire, et signent d’une croix."] },
     { id: "fer", type: "print", entete: "Texte · Ferry, Lettre aux instituteurs", date: "22.09",
       lignes: ["Monsieur l’Instituteur,", "L’année scolaire qui vient de s’ouvrir sera la", "seconde année d’application de la loi du", "28 mars 1882."] },
     { id: "peg", type: "print", entete: "Texte · Péguy, L’Argent (1913)", date: "22.09",
@@ -84,7 +84,7 @@ window.CONTENT = {
 
   qcm: {
     source: "Hugo · procédés",
-    q: "« L’ignorance est la nuit qui commence l’abîme » : quel procédé ?",
+    q: "« L’ignorance est la nuit qui commence l’abîme » : quel procédé ?",
     options: ["Une comparaison", "Une métaphore", "Une litote", "Un oxymore"],
     bonne: 1,
     explication: "Ignorance = nuit, sans outil de comparaison.",

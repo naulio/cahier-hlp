@@ -88,7 +88,7 @@
       <div class="f-auth" style="position:absolute;left:${fx}px;top:84px;font:400 56px/1 News;letter-spacing:-.025em;color:#1D1E1A;white-space:nowrap">${F.auteur}<span style="font:400 15px/1 Mono;letter-spacing:.08em;color:#8A8B7C;margin-left:18px;vertical-align:middle">${F.dates}</span></div>
       <div class="f-ul" style="position:absolute;left:${fx}px;top:152px;width:560px;height:5px;border-radius:5px;background:#C9D07A;transform-origin:0 50%"></div>
       <div class="f-title" style="position:absolute;left:${fx}px;top:176px;font:italic 400 27px/1.1 News;color:#3E3F36">${F.titre}</div>
-      <div class="f-oeuvre" style="position:absolute;left:${fx}px;top:216px;font:400 15px/1 Sans;color:#7A7B6F">${F.oeuvre} (1<sup style="font-size:.7em">re</sup> partie)</div>
+      <div class="f-oeuvre" style="position:absolute;left:${fx}px;top:216px;font:400 15px/1 Sans;color:#7A7B6F"><i>${F.oeuvre}</i> (1<sup style="font-size:.7em">re</sup> partie)</div>
       <div class="f-chips" style="position:absolute;left:${fx}px;top:252px">${F.chips.map((c, k) => `<span class="chip${k === 0 ? " k" : ""}" data-k="${k}" style="display:inline-flex">${c}</span>`).join("")}</div>
       <div style="position:absolute;left:${fx}px;right:44px;top:310px;height:1px;background:rgba(29,30,26,.1)"></div>
       <div class="f-ess-h eyebrow" style="position:absolute;left:${fx}px;top:340px">L’essentiel en 5 points</div>
@@ -259,7 +259,7 @@
     const gm = seg(t, k.build + 0.1, 1.0, E.emph);
     const dim = seg(t, k.v7s - 0.2, 0.45, E.outSoft) * (1 - seg(t, k.build + 0.55, 0.55, E.outSoft));
     put(home.hdr, { op: seg(t, k.build + 0.45, 0.5, E.out), y: (1 - seg(t, k.build + 0.45, 0.5, E.out)) * 14 });
-    home.style.filter = dim > 0.02 ? `blur(${(dim * 4).toFixed(2)}px)` : "none";   // v8 : grille moins floue à l'entrée de l'app
+    home.style.filter = "none";                                  // v10 : plus de grille floue à l'entrée de l'app (seulement estompée)
     // les cartes vivent dans la fenêtre : on compense la position centrée du bureau
     const dx = lerp(-124, 0, gm), dy = lerp(14, 0, gm);
     cardsEls.forEach((c, i) => {
@@ -316,7 +316,7 @@
       const sw = lerp(1, 8 / g.fcw, toBox), sh2 = lerp(1, 5 / g.fch, toBox);
       const bxc = bx + 66 - 4, byc = by + 56 - 2.5;
       const mx2 = lerp(g.fcx, bxc, toBox), my2 = lerp(g.fcy, byc, toBox) - Math.sin(Math.PI * toBox) * 90;
-      put(flash.mini, { x: mx2, y: my2, sx: sw, sy: sh2, op: 1 - seg(toBox, 0.95, 0.05, E.linear) });   // v9 : disparaît par l'échelle, pas en pavé gris
+      put(flash.mini, { x: mx2, y: my2, sx: sw, sy: sh2, op: 1 - seg(toBox, 0.85, 0.1, E.linear) });   // v9-v10 : disparaît par l'échelle, puis s'efface
     } else put(flash.mini, { op: 0 });
     flash.boxes.forEach((b, i) => {
       const pulse = i === 2 ? Math.sin(Math.PI * seg(t, k.yes + 0.7, 0.35, E.linear)) : 0;   // la boîte 3 accueille la carte
