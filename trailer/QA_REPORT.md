@@ -451,6 +451,37 @@ avait pris l'occlusion du /t/ pour un silence.
 - **Livrables** : les pistes FLAC gardent une marge commune (plus d'écrêtage) ; `exports/audio/LISEZMOI.txt`.
 - Durée : 61,2 s.
 
-## v12
+## v12 — version livrée (`exports/cahier-hlp_trailer_4-3_1440x1080.mp4`, 61,2 s)
 
-(rendu en cours)
+Les changements v11 → v12 ne touchent que le son : l'image est la même, simplement recalée sur la voix.
+La voix et le son ont été réévalués. Les cinq autres domaines gardent leur note v11, déjà « livrable ».
+
+| Domaine | Note v12 | (v11) | Livrable ? |
+|---|---|---|---|
+| Direction artistique | 9 (v11) | 9 | oui |
+| Motion | 9,2 (v11) | 9,2 | oui |
+| Son / musique / mix | 9 (mix 8,9) | 9,2 | oui, avec deux corrections (appliquées ci-dessous) |
+| Voix | 8,8 | 8 | oui (« l'auteur », « HLP » et « réviser » coupés dans de vrais silences, WER 0) |
+| Montage / storytelling | 8,8 (v11) | 8,8 | oui |
+| Orthographe / français | 9,5 (v11) | 9,5 | oui |
+| AI slop detector | 8,7 (v11) | 8,7 | oui |
+
+Moyenne ≈ 9. **Calibrage** conforme du début à la fin : à partir de la v5, aucun évaluateur n'a demandé d'effet
+en plus.
+
+### Corrections appliquées après les relectures (avant les livrables)
+- **« -lais à » (39,45 s)** : la baisse de gain visait un autre maximum. Il y en a maintenant deux, −2 dB sur le
+  pic juste avant « Arendt » et −1,5 dB plus tôt. Le limiteur retire au plus **2,1 dB, à 16,0 s** (le déclic,
+  sans voix) et plus rien de notable sous la voix.
+- **Fin** : le mix est coupé à la durée de l'image **avant** le fondu de 50 ms. Le MP4 finit donc sur le fondu
+  (−45 dB sur les 20 dernières ms) et non plus sur une coupe sèche.
+- **Voix, pipeline** : chaque pause insérée est revérifiée. La suite de la coupe est retranscrite seule par
+  Whisper et doit commencer par le mot attendu (« contrôle de coupe : OK »).
+- Mesures finales : **−14,1 LUFS, crête vraie −1,23 dBTP**, voix 11,5 LU au-dessus de la musique, 53 bruitages,
+  aucune batterie.
+
+### Reste, non bloquant
+- « claire : l'auteur » (24,2 s) s'enchaîne sans silence, et la prise n'en a pas. On pourrait régénérer V08 avec
+  une vraie respiration, mais la phrase reste comprise (WER 0).
+- **Sans écoute humaine, rien n'est garanti** : le timbre, le naturel des pauses et l'effet des 300 ms après
+  « HLP » restent à juger à l'oreille avant diffusion.

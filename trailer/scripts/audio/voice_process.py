@@ -225,6 +225,15 @@ def insert_pause(y, word, dur):
     r0, r1 = max(runs, key=lambda ab: ab[1] - ab[0])
     k = a + (r0 + r1) // 2
     print(f"    niveau au point d'insertion : {rdb[k]:.0f} dB (seuil {thr:.0f} dB)")
+    # v12 : contrôle — la suite, réentendue seule, doit commencer par le mot suivant (sinon on a coupé dans un mot)
+    if i + 1 < len(words):
+        with tempfile.NamedTemporaryFile(suffix=".wav") as tmp:
+            sf.write(tmp.name, y[k:k + int(1.2 * lib.SR)], lib.SR)
+            _, after = transcribe(tmp.name, "medium")
+        expect = norm_words(words[i + 1]["w"])
+        got = norm_words(after[0]["w"]) if after else []
+        ok = bool(expect and got and (expect[0] in got or got[0] in expect))
+        print(f"    contrôle de coupe : {'OK' if ok else 'ATTENTION'} (attendu « {words[i + 1]['w']} », entendu « {after[0]['w'] if after else '—'} »)")
     head, tail = y[:k].copy(), y[k:].copy()
     head[-fr:] *= np.linspace(1, 0, fr)[:, None]
     tail[:fr] *= np.linspace(0, 1, fr)[:, None]

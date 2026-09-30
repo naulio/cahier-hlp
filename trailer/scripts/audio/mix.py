@@ -43,7 +43,7 @@ for line in TL["lines"]:
 # v8-v9 : attaques qui faisaient le plus travailler le limiteur : gain réduit sur 120 ms centrées sur le pic RÉEL
 # de la voix autour du repère (le repère Whisper peut être en retard sur la syllabe, ex. « Ta » avant « progression »)
 for mk, g, lo, hi in (("v12_gratuit", -2.0, -0.2, 0.15), ("v12_progression", -2.0, -0.2, 0.15),
-                      ("v11_arendt", -1.5, -0.35, -0.03),    # v10-v12 : le pic est sur « -lais à », avant « Arendt »
+                      ("v11_arendt", -2.0, -0.15, 0.0), ("v11_arendt", -1.5, -0.35, -0.16),    # v10-v12 : le pic est sur « -lais à », avant « Arendt »
                       ("v8_start", -1.5, 0.35, 0.75)):        # v12 : « chaque »
     w0, w1 = lib.seconds(M[mk] + lo), lib.seconds(M[mk] + hi)
     pk = w0 + int(np.argmax(np.abs(voice.buf[w0:w1]).max(1)))
@@ -187,8 +187,8 @@ for _ in range(10):                     # loudness visée ET crête vraie ≤ -1
     if abs(final + 14.0) < 0.1:
         break
     gain += -14.0 - final
-mix = out
-nf = lib.seconds(0.05)                       # v12 : fondu de 50 ms sur la toute fin (plus d'arrêt sec)
+mix = out[: lib.seconds(TL["duration"])].copy()   # v12 : le mix s'arrête avec l'image (sinon l'export coupe le fondu)
+nf = lib.seconds(0.05)                       # fondu de 50 ms sur la toute fin (plus d'arrêt sec)
 mix[-nf:] *= np.linspace(1, 0, nf)[:, None]
 tp = lib.true_peak_db(mix)
 for name, x in (("stem_voice", vbus), ("stem_music", music), ("stem_sfx", sbus)):

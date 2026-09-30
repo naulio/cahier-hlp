@@ -1,0 +1,3 @@
+mix.flac : mixage final (−14 LUFS, crête vraie ≤ −1 dBTP).
+voix.flac, musique.flac, bruitages.flac : pistes avant limiteur, toutes abaissées de 1.9 dB
+pour ne pas écrêter ; leur somme, remontée de ce gain puis limitée, redonne le mixage.
