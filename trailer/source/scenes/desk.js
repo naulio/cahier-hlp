@@ -192,6 +192,7 @@
 
     vign = el("div", "vignette", root);
     dark = el("div", "layer", root); dark.style.background = "#0c0c0a";
+    dark.style.zIndex = 200;                               // v6 : l'assombrissement du déclic couvre tout (cartes comprises)
     flash = el("div", "flash", root);
   };
 
@@ -202,7 +203,7 @@
     let z = lerp(1.42, 1.52, E.sine(inv(0, q0, t)));
     let cx = lerp(-30, 20, E.sine(inv(0, q0, t))), cy = 0, r = 0;
     // recul sur « tout »
-    const pb = seg(t, q0 - 0.08, 1.45, E.inOut);
+    const pb = seg(t, q0 + 0.6, 1.45, E.inOut);           // v6 : la question reste immobile ~0,6 s avant le recul
     z = lerp(z, 0.7, pb); cx = lerp(cx, -10, pb); cy = lerp(cy, 60, pb); r = lerp(0, -1.6, pb);
     // accumulation : lente dérive
     const acc = inv(q0 + 1.4, mais, t);
@@ -278,7 +279,7 @@
       const e = seg(t, wt, 0.42, E.out);
       put(w, { op: e, y: (1 - e) * 16, blur: (1 - e) * 5 });
     });
-    const qOut = seg(t, q0 + 0.25, 0.6, E.in);
+    const qOut = seg(t, q0 + 0.8, 0.45, E.in);
     put(question, { y: 868 - qOut * 30, op: 1 - qOut });
 
     // ---- feuilles
@@ -287,7 +288,7 @@
     C.feuilles.forEach((f, i) => {
       const s = sheets[f.id], [hx, hy, hr] = s.home;
       let x = hx, y = hy, r = hr, op = 1;
-      if (PRESENT.includes(f.id)) op = seg(t, q0 - 0.3, 0.25, E.linear);   // hors champ tant que la caméra est serrée (plus de bord de feuille à l'ouverture)
+      if (PRESENT.includes(f.id)) op = seg(t, q0 + 0.3, 0.25, E.linear);   // hors champ tant que la caméra est serrée (plus de bord de feuille à l'ouverture)
       if (!PRESENT.includes(f.id)) {
         const ta = M(arrivals[f.id]) + (offs[f.id] || 0) - 0.34;
         const e = seg(t, ta, 0.62, E.out);
@@ -317,7 +318,7 @@
     // ---- post-it, fiches bristol
     extras.forEach((x, k) => {
       let px = x.x, py = x.y, pr = x.r, op = 1;
-      if (!x.at) op = seg(t, q0 - 0.3, 0.25, E.linear);  // fiches déjà posées : hors champ tant que la caméra est serrée
+      if (!x.at) op = seg(t, q0 + 0.3, 0.25, E.linear);  // fiches déjà posées : hors champ tant que la caméra est serrée
       if (x.at) {                                        // pages qui arrivent pendant l'accumulation
         const ta = M(x.at) + (x.dt || 0) - 0.34, e = seg(t, ta, 0.62, E.out);
         const n = Math.hypot(px, py) || 1;
@@ -336,7 +337,7 @@
       if (t > sh) {
         const e = seg(t, sh + 0.25 + k * 0.06, 0.95, E.in);
         const dx = p.x * 3, dy = 1500;
-        put(p.el, { x: p.x - 130 + dx * e, y: p.y - 159 + dy * e, r: p.r + e * (k % 2 ? 30 : -30), op: 1 });
+        put(p.el, { x: p.x - 130 + dx * e, y: p.y - 159 + dy * e, r: p.r + e * (k % 2 ? 30 : -30), op: 1 - seg(e, 0.35, 0.4, E.linear) });
       }
     });
 
@@ -357,9 +358,9 @@
     }
 
     // ---- obturateur : noir du miroir puis éclair doux
-    const blk = t >= sh && t < sh + 0.067 ? 0.6 : 0;      // déclic : un assombrissement, pas une image noire
+    const blk = t >= sh && t < sh + 0.067 ? 0.35 : 0;     // déclic : deux images un peu assombries, pas d'image noire
     put(dark, { op: Math.max(1 - seg(t, 0.05, 0.9, E.outSoft), blk) });
-    put(flash, { op: t >= sh + 0.067 ? 0.55 * (1 - seg(t, sh + 0.067, 0.45, E.out)) : 0 });
+    put(flash, { op: 0 });                                 // v6 : plus de voile clair après le déclic (il remontait les noirs)
 
     // ---- développement du fond et rangement
     const dv = seg(t, sh + 0.15, 1.5, E.inOut);
@@ -396,7 +397,7 @@
 
   S.blur = t => {
     const q0 = M("q_tout");
-    if (t > q0 && t < q0 + 1.3) return 6;                 // grand recul
+    if (t > q0 + 0.6 && t < q0 + 2.0) return 6;           // grand recul
     const sh = M("shutter");
     if (t > sh + 0.3 && t < sh + 1.6) return 12;          // envol des objets (plus de dédoublement en escalier)
     return 1;

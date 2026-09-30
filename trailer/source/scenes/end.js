@@ -32,6 +32,10 @@
     const green = el("div", "layer", card);
     green.style.background = "radial-gradient(ellipse 90% 80% at 50% 45%, #414936, #2F3527)";
     card.green = green;
+    // v6 : relais chaud entre le vert et le papier (le mélange direct passait par un gris sans teinte)
+    const warm = el("div", "layer", card);
+    warm.style.background = "#9A9376";
+    card.warm = warm;
     cardBg.style.background = "#F2EDE3 url(../assets/textures/paper_offwhite.png) center/1440px";
     // fond du logo + marge + 3 lignes (issues des rangées de tables)
     markBg = el("div", "abs", card);
@@ -54,6 +58,7 @@
     url = el("div", "abs", card, `<span style="display:inline-flex;align-items:center;gap:14px;height:54px;padding:0 26px;border-radius:27px;background:#1D1E1A;color:#F2EDE3;font:500 19px/1 Mono;letter-spacing:.04em">${C.brand.url}${window.icon("arrow", 20, 'style="stroke:#C9D07A;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"')}</span>`);
     url.style.cssText += `;left:0;width:1440px;text-align:center;top:${MY + MARK + 236}px`;
     dark = el("div", "layer", root); dark.style.background = "#0b0b09";
+    dark.style.zIndex = 200;
     flash = el("div", "flash", root);
   };
 
@@ -85,14 +90,17 @@
       b.style.background = mg < 0.5 ? `rgba(242,237,227,${lerp(0.22, 1, mg * 2).toFixed(3)})` : "#F2EDE3";
       put(b, { x, y, op: 1 });
     });
-    const bgIn = spring(t - (v14s + 0.35), 16, 0.7);
-    put(markBg, { x: SH, s: t < v14s + 0.35 ? 0.001 : clamp(bgIn, 0, 1.15), op: t < v14s + 0.35 ? 0 : 1 });
-    const mgl = seg(t, v14s + 0.55, 0.4, E.out);
+    // v6 : le carré et la marge naissent avec les lignes (plus de « trois barres seules » façon menu)
+    const bgIn = spring(t - (v14s + 0.1), 16, 0.7);
+    put(markBg, { x: SH, s: t < v14s + 0.1 ? 0.001 : clamp(bgIn, 0, 1.15), op: t < v14s + 0.1 ? 0 : 1 });
+    const mgl = seg(t, v14s + 0.3, 0.4, E.out);
     margin.style.transform = `translateX(${SH.toFixed(1)}px) scaleY(${mgl.toFixed(3)})`;
     // le fond se développe : vert profond → papier
-    put(card.green, { op: 1 - seg(t, v14s + 0.1, 0.9, E.inOut) });
-    // nom, sous-titre, promesse, adresse
-    const wIn = seg(t, nm - 0.1, 0.7, E.out);
+    const gf = seg(t, v14s + 0.05, 0.75, E.inOut);
+    put(card.green, { op: 1 - gf });
+    put(card.warm, { op: 0.55 * Math.sin(Math.PI * gf) });
+    // nom, sous-titre, promesse, adresse (le nom entre sur fond clair : lisible)
+    const wIn = seg(t, nm + 0.1, 0.7, E.out);
     put(word.inner, { y: (1 - wIn) * 150 });
     word.style.transform = `translateX(${SH.toFixed(1)}px)`;
     put(sub, { op: seg(t, nm + 0.5, 0.6), y: (1 - seg(t, nm + 0.5, 0.6)) * 10 });
@@ -103,7 +111,7 @@
     put(url, { op: uIn, y: (1 - uIn) * 18 });
 
     // ---- déclic final : le carton devient un Polaroid sur le bureau
-    const sh = seg(t, capT + 0.08, 1.25, E.emph);
+    const sh = seg(t, capT + 0.08, 1.2, E.inOut);        // v6 : départ plus doux (plus de textes dédoublés par le flou)
     const s = lerp(1, 0.47, sh), rot = lerp(0, -2.6, sh);
     const cw = 1440 * s, ch = 1080 * s, pad = 30, bottom = 138;
     const cx0 = 720, cy0 = lerp(540, 452, sh);          // centre de la photo
@@ -129,10 +137,10 @@
     cap.style.opacity = t > capT + 1.0 ? 1 : 0;
     put(desk, { op: t > capT + 0.1 ? 1 : 0 });
     // noir du miroir + éclair doux, puis fondu final
-    const blk = t >= capT && t < capT + 0.067 ? 0.6 : 0;  // déclic final : assombrissement, pas d'image noire
+    const blk = t >= capT && t < capT + 0.067 ? 0.35 : 0; // déclic final : deux images un peu assombries
     put(dark, { op: Math.max(blk, seg(t, capT + 2.95, M("end") - capT - 3.0, E.inOut)) });
-    put(flash, { op: t >= capT + 0.067 ? 0.5 * (1 - seg(t, capT + 0.067, 0.5, E.out)) : 0 });
+    put(flash, { op: 0 });                                 // v6 : plus de voile clair après le déclic
   };
-  S.blur = t => { const c = M("capture"); return t > c && t < c + 1.3 ? 12 : 1; };
+  S.blur = t => { const c = M("capture"); return t > c + 0.1 && t < c + 1.3 ? 6 : 1; };
   (window.SCENES = window.SCENES || []).push(S);
 })();

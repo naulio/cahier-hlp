@@ -51,7 +51,7 @@
     sideH.style.cssText = "position:absolute;left:34px;top:470px";
     const prog = el("div", "", side, `<div class="eyebrow" style="color:#8A8B7C">Ta progression</div>
       <div style="margin-top:12px;height:6px;border-radius:6px;background:#E0DACA"><div class="pfill" style="height:100%;width:52%;border-radius:6px;background:#5F6443"></div></div>
-      <div style="font:500 12px/1 Mono;color:#6F7159;margin-top:10px;letter-spacing:.06em">52 % · 12 CARTES À REVOIR</div>`);
+      <div style="font:500 12px/1 Mono;color:#6F7159;margin-top:10px;letter-spacing:.06em;line-height:1.55">52 %<br>12 CARTES À REVOIR</div>`);
     prog.style.cssText = "position:absolute;left:34px;right:30px;bottom:34px";
 
     // accueil du chapitre
@@ -71,7 +71,7 @@
     });
     hub = el("div", "abs", home);
     hub.style.cssText += `;left:${hx}px;top:${UI.GRID.y0 - A.y + 3 * (UI.GRID.ch + UI.GRID.gap) + 14}px;width:${MN.w}px;height:120px`;
-    const HUB = [["cards", "Flashcards", "12 cartes à revoir"], ["target", "QCM mélangé", "15 questions corrigées"], ["frise", "Frise", "1534 → 1958"]];
+    const HUB = [["cards", "Flashcards", "12 cartes à revoir"], ["target", "QCM mélangé", "15 questions entrelacées"], ["frise", "Frise", "1534 → 1958"]];
     hub.items = HUB.map(([ic, a, b], k) => {
       const h = el("div", "abs", hub, `<div style="width:44px;height:44px;border-radius:12px;background:#ECE7D8;display:flex;align-items:center;justify-content:center;color:#39402F">${window.icon(ic, 22, 'style="stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"')}</div>
         <div><div style="font:600 16px/1 Sans;color:#1D1E1A">${a}</div><div style="font:400 13.5px/1 Sans;color:#7A7B6F;margin-top:7px">${b}</div></div>`);
@@ -100,12 +100,12 @@
         <div class="eyebrow">Citation à retenir</div>
         <div style="margin-top:18px;font:italic 400 30px/1.22 News;color:#1D1E1A;position:relative">
           <span class="f-hl" style="position:absolute;left:-6px;right:-4px;top:4px;bottom:0;background:#DCE08E;opacity:.75;transform-origin:0 50%;border-radius:4px"></span>
-          <span style="position:relative">« ${F.citation} »</span></div>
+          <span style="position:relative">« ${F.citation} »</span></div>
         <div style="margin-top:18px;font:500 12px/1 Mono;letter-spacing:.1em;color:#7A7B6F">${F.citationNote.toUpperCase()}</div>
       </div>
       <div class="f-piege" style="position:absolute;left:${fx + 540}px;top:620px;width:372px;padding:20px 24px;border-radius:16px;border:1.5px solid rgba(181,82,59,.35);background:#FBF3EE">
         <div class="eyebrow" style="color:#B5523B">Piège</div>
-        <div style="margin-top:10px;font:400 16px/1.35 Sans;color:#3E3F36">« Perfectibilité » ≠ perfection : une <b style="font-weight:600">capacité</b>, qui peut aussi mener à la régression.</div>
+        <div style="margin-top:10px;font:400 16px/1.35 Sans;color:#3E3F36">« Perfectibilité » ≠ perfection : une <b style="font-weight:600">capacité</b>, qui peut aussi mener à la régression.</div>
       </div>
       <div class="f-btns" style="position:absolute;left:${fx}px;top:760px;display:flex;gap:12px">
         <div class="btn" style="background:#39402F;color:#F2EDE3">${window.icon("cards", 18, 'style="stroke:currentColor;fill:none;stroke-width:1.8;margin-right:10px"')}Flashcards · 9</div>
@@ -132,7 +132,7 @@
           <div class="fc-f" style="position:absolute;inset:0;backface-visibility:hidden;border-radius:20px;background:#FFFFFF;box-shadow:0 0 0 1px rgba(29,30,26,.08),0 18px 40px rgba(40,42,30,.12);padding:34px 40px">
             <div class="eyebrow">${FL.source}</div>
             <div style="margin-top:62px;font:400 40px/1.15 News;letter-spacing:-.015em;color:#1D1E1A;text-align:center">${FL.q}</div>
-            <div style="position:absolute;left:0;right:0;bottom:28px;text-align:center;font:500 12px/1 Mono;letter-spacing:.14em;color:#9A9B8C">TOUCHER POUR RETOURNER</div>
+            <div style="position:absolute;left:0;right:0;bottom:28px;text-align:center;font:500 12px/1 Mono;letter-spacing:.14em;color:#9A9B8C">TOUCHE LA CARTE POUR LA RETOURNER</div>
           </div>
           <div class="fc-b" style="position:absolute;inset:0;backface-visibility:hidden;transform:rotateY(180deg);border-radius:20px;background:#39402F;box-shadow:0 18px 40px rgba(40,42,30,.18);padding:34px 40px;color:#F2EDE3">
             <div class="eyebrow" style="color:#C9C8A8">Réponse</div>
@@ -152,7 +152,9 @@
           <div style="font:400 12.5px/1 Sans;color:#7A7B6F;margin-top:10px">${lab}</div>
         </div>`).join("")}
       </div>
-      <div class="fc-mini" style="position:absolute;left:0;top:0;width:${fcw}px;height:${fch}px;border-radius:20px;background:#39402F;opacity:0;transform-origin:0 0"></div>
+      <div class="fc-mini" style="position:absolute;left:0;top:0;width:${fcw}px;height:${fch}px;border-radius:20px;background:#39402F;opacity:0;transform-origin:0 0;padding:34px 40px;color:#F2EDE3;box-sizing:border-box">
+        <div class="eyebrow" style="color:#C9C8A8">Réponse</div>
+        <div style="margin-top:66px;font:italic 400 44px/1.1 News;text-align:center">${FL.a}</div></div>
       <div class="fc-toast" style="position:absolute;left:${hx + 76 + 2 * 150 - 60}px;top:${fcy + fch + 252}px;width:252px;height:42px;border-radius:21px;background:#1D1E1A;color:#F2EDE3;display:flex;align-items:center;justify-content:center;gap:10px;font:500 14.5px/1 Sans">${window.icon("timer", 17, 'style="stroke:#C9D07A;fill:none;stroke-width:1.9"')}Revient dans 1 h</div>`;
     Object.assign(flash, { wrap: flash.querySelector(".fc-wrap"), card: flash.querySelector(".fc"), actions: flash.querySelector(".fc-actions"),
       yes: flash.querySelector(".fc-yes"), boxes: Array.from(flash.querySelectorAll(".fc-box")), counts: Array.from(flash.querySelectorAll(".fc-count")),
@@ -204,9 +206,9 @@
       v7s, v7e, build,
       hover: M("v8_texte") - 0.2, click: M("v8_fiche") - 0.28,
       auteur: M("v8_auteur"), epoque: M("v8_epoque"), ess: M("v8_essentiel"), cit: M("v8_citations"), ret: M("v8_retenir"),
-      toFlash: M("v9_start") - 0.55, flashIn: M("v9_flash"), flip: M("v9_flash") + 0.62, yes: M("v9_reviennent") + 0.05, moment: M("v9_moment"),
-      toQcm: M("v10_start") - 0.5, qIn: M("v10_qcm"), qClick: M("v10_corriges") - 0.18, qExp: M("v10_expliques") - 0.05,
-      out: M("v11_start") - 0.15,
+      toFlash: M("v9_start") - 0.55, flashIn: M("v9_flash"), flip: M("v9_flash") + 0.4, yes: M("v9_reviennent") + 0.05, moment: M("v9_moment"),
+      toQcm: M("v10_start") - 0.5, qIn: M("v10_qcm"), qClick: M("v10_corriges") - 0.18, qExp: M("v10_expliques") - 0.25,
+      out: M("v11_start") - 0.25,
     };
   }
 
@@ -233,7 +235,7 @@
     put(lock.mark, { x: cMx, y: cMy, s: markS, op: lIn > 0 ? 1 : 0 });
     lock.mark.style.transformOrigin = "0 0";
     const wS = lerp(1, 25 / 118, toSide);
-    const wIn = seg(t, k.v7s + 0.12, 0.75, E.out);
+    const wIn = seg(t, k.v7s + 0.4, 0.75, E.out);            // v6 : le nom s'écrit sur « Cahier », pas sur « dans le »
     lock.word.style.transformOrigin = "0 0";
     lock.word.style.clipPath = `inset(0 ${((1 - wIn) * 100).toFixed(2)}% -20% 0)`;
     put(lock.word, { x: lerp(720 - 330 + 160, A.x + 26 + 52, toSide), y: lerp(540 - 100 + 8, A.y + 34 + 6, toSide) + (1 - wIn) * 10, s: wS, op: wIn > 0 ? 1 : 0 });
@@ -245,7 +247,7 @@
     win.style.transformOrigin = "720px 540px";
     win.style.boxShadow = `0 0 0 1px rgba(29,30,26,${(0.07 * wn).toFixed(3)}), 0 30px 80px rgba(40,42,30,${(0.18 * wn).toFixed(3)}), 0 8px 24px rgba(40,42,30,${(0.08 * wn).toFixed(3)})`;
     win.style.background = wn < 1 ? `rgba(251,248,242,${wn.toFixed(3)})` : "#FBF8F2";
-    put(side, { x: lerp(-A.side, 0, seg(t, k.build + 0.15, 0.9, E.emph)) });
+    put(side, { x: 0, op: seg(t, k.build + 0.15, 0.6, E.out) });
     navs.forEach((n, i) => put(n, { op: seg(t, k.build + 0.35 + i * 0.05, 0.4, E.out), x: (1 - seg(t, k.build + 0.35 + i * 0.05, 0.4, E.out)) * -12 }));
     // navigation active
     const navOn = t < k.toFlash + 0.2 ? 1 : t < k.toQcm + 0.2 ? 2 : 3;
@@ -273,8 +275,8 @@
     const ex = seg(t, k.click + 0.12, 0.62, E.emph);
     const homeOut = seg(t, k.click + 0.1, 0.4, E.out);
     put(home, { op: 1 - homeOut, y: homeOut * 18, s: 1 - homeOut * 0.015 });
-    put(fiche, { op: seg(t, k.click + 0.28, 0.3, E.linear) * (1 - seg(t, k.toFlash, 0.15, E.linear)), x: -seg(t, k.toFlash, 0.45, E.in) * 60 });
-    const fIn = (d, dur = 0.5) => seg(t, k.click + 0.3 + d, dur, E.out);
+    put(fiche, { op: seg(t, k.click + 0.2, 0.25, E.linear) * (1 - seg(t, k.toFlash, 0.15, E.linear)), x: -seg(t, k.toFlash, 0.45, E.in) * 60 });
+    const fIn = (d, dur = 0.5) => seg(t, k.click + 0.22 + d, dur, E.out);
     put(fiche.back, { op: fIn(0.05) });
     put(fiche.auth, { op: fIn(0), y: (1 - fIn(0)) * 22 });
     fiche.ul.style.transform = `scaleX(${seg(t, k.auteur - 0.05, 0.5, E.inOut).toFixed(3)})`;
@@ -290,15 +292,15 @@
     const qIn = seg(t, k.cit - 0.12, 0.6, E.emph);
     put(fiche.quote, { op: qIn, x: (1 - qIn) * 60 });
     fiche.hl.style.transform = `scaleX(${seg(t, k.ret - 0.05, 0.55, E.inOut).toFixed(3)})`;
-    put(fiche.piege, { op: seg(t, k.ret + 0.3, 0.5), y: (1 - seg(t, k.ret + 0.3, 0.5)) * 14 });
+    put(fiche.piege, { op: 0 });                                  // v6 : l'encadré « Piège » surgissait juste avant la sortie
     put(fiche.btns, { op: seg(t, k.cit + 0.3, 0.5), y: (1 - seg(t, k.cit + 0.3, 0.5)) * 12 });
 
     // ---------- flashcards ----------
-    const flIn = seg(t, k.toFlash + 0.3, 0.55, E.emph);       // l'écran sortant est parti avant (pas de double exposition)
+    const flIn = seg(t, k.toFlash + 0.12, 0.55, E.emph);      // entre quand l'écran sortant finit de partir (ni creux, ni double exposition)
     put(flash, { op: flIn * (1 - seg(t, k.toQcm, 0.15, E.linear)), x: (1 - flIn) * 70 - seg(t, k.toQcm, 0.45, E.in) * 60 });
     const cardIn = seg(t, k.flashIn - 0.15, 0.55, E.out);
-    const flip = seg(t, k.flip, 0.55, E.inOut);
-    const toBox = seg(t, k.yes + 0.12, 0.62, E.emph);
+    const flip = seg(t, k.flip, 0.5, E.inOut);
+    const toBox = seg(t, k.yes + 0.2, 0.62, E.emph);
     const g = flash.geo;
     put(flash.wrap, { op: cardIn * (toBox > 0 ? 0 : 1), y: (1 - cardIn) * 30 });
     flash.card.style.transform = `rotateY(${(flip * 180).toFixed(2)}deg) translateZ(0)`;
@@ -308,8 +310,11 @@
     const box = flash.boxes[2], bx = parseFloat(flash.querySelector(".fc-boxes").style.left) + 2 * 150, by = g.fcy + g.fch + 124;
     if (toBox > 0) {
       const mx = lerp(g.fcx, bx, toBox), my = lerp(g.fcy, by, toBox) - Math.sin(Math.PI * toBox) * 90;
-      const sw = lerp(1, 132 / g.fcw, toBox), sh2 = lerp(1, 112 / g.fch, toBox);
-      put(flash.mini, { x: mx, y: my, sx: sw, sy: sh2, op: 1 - seg(t, k.yes + 0.62, 0.15, E.linear) });
+      // v6 : la carte garde sa réponse en rétrécissant, puis disparaît dans la boîte (ne masque plus le compteur)
+      const sw = lerp(1, 40 / g.fcw, toBox), sh2 = lerp(1, 22 / g.fch, toBox);
+      const bxc = bx + 66 - 20, byc = by + 56 - 11;
+      const mx2 = lerp(g.fcx, bxc, toBox), my2 = lerp(g.fcy, byc, toBox) - Math.sin(Math.PI * toBox) * 90;
+      put(flash.mini, { x: mx2, y: my2, sx: sw, sy: sh2, op: 1 - seg(toBox, 0.55, 0.33, E.linear) });
     } else put(flash.mini, { op: 0 });
     flash.boxes.forEach((b, i) => {
       const pulse = i === 2 ? Math.sin(Math.PI * seg(t, k.yes + 0.7, 0.35, E.linear)) : 0;
@@ -317,17 +322,18 @@
       b.style.boxShadow = i === 2 && t > k.yes + 0.7 ? "inset 0 0 0 2px #5F6443" : "inset 0 0 0 1.5px rgba(29,30,26,.08)";
     });
     flash.counts[2].textContent = t > k.yes + 0.72 ? "8" : "7";
+    flash.counts[1].textContent = t > k.yes + 0.2 ? "3" : "4";      // la carte quitte la boîte 2 pour la boîte 3
     flash.counts[0].textContent = "5";
     const toast = seg(t, k.moment - 0.2, 0.45, E.emph);
     put(flash.toast, { op: toast, y: (1 - toast) * 16 });
 
     // ---------- QCM ----------
-    const qcIn = seg(t, k.toQcm + 0.3, 0.55, E.emph);
-    put(qcm, { op: qcIn * (1 - seg(t, k.out, 0.4, E.linear)), x: (1 - qcIn) * 70 });
+    const qcIn = seg(t, k.toQcm + 0.12, 0.55, E.emph);
+    put(qcm, { op: qcIn * (1 - seg(t, k.out, 0.2, E.linear)), x: (1 - qcIn) * 70 });
     const qT = Math.min(k.qIn - 0.2, k.toQcm + 0.4);                 // la question est là dès l'arrivée de l'écran
     put(qcm.q, { op: seg(t, qT, 0.5), y: (1 - seg(t, qT, 0.5)) * 14 });
     qcm.opts.forEach((o, i) => {
-      const e = seg(t, k.qIn + 0.05 + i * 0.08, 0.45, E.out);
+      const e = seg(t, qT + 0.1 + i * 0.05, 0.35, E.out);          // v6 : réponses posées avant le clic (plus de clic « robot »)
       const picked = t > k.qClick + 0.1;
       const good = i === C.qcm.bonne;
       let op = e;
@@ -351,7 +357,7 @@
     // ---------- curseur ----------
     const path = [
       [k.hover - 0.6, 1180, 980], [k.hover + 0.25, 700, 360],                  // vers Rousseau
-      [k.click + 0.25, 700, 362], [k.toFlash - 0.5, 640, 700],
+      [k.click + 0.25, 700, 362], [k.click + 1.1, 400, 890], [k.toFlash - 0.6, 400, 890],
       [k.toFlash - 0.12, A.x + 90, A.y + 118 + 2 * 46 + 20],                  // menu Flashcards
       [k.flip - 0.3, 880, 760], [k.yes - 0.12, 1021, 628], [k.yes + 0.3, 1021, 628],   // « Je savais » (centre du bouton), puis un temps
       [k.toQcm - 0.45, 520, 600], [k.toQcm - 0.12, A.x + 80, A.y + 118 + 3 * 46 + 20],   // menu QCM
@@ -374,15 +380,20 @@
     // ---------- caméra : zooms contrôlés sur la zone commentée ----------
     const focus = [
       [k.build, 1, 720, 540],
-      [k.click + 0.2, 1, 720, 540],
-      [k.auteur - 0.3, 1.2, 600, 330],                       // cadrage moins serré : la barre latérale et le fil d'Ariane restent entiers
-      [k.ess - 0.35, 1.2, 620, 540],
-      [k.cit - 0.3, 1.22, 980, 520],
-      [k.toFlash - 0.3, 1.02, 760, 540],
+      // v6 : chaque clé = début du mouvement vers la suivante ; les doublons tiennent le cadrage
+      [k.click + 0.35, 1, 720, 540],
+      [k.auteur + 0.1, 1.2, 600, 330],                       // poussée de 0,75 s, une fois la fiche affichée
+      [k.ess - 0.5, 1.2, 600, 330],
+      [k.ess + 0.3, 1.2, 620, 540],                          // les cinq points
+      [k.cit - 0.45, 1.2, 620, 540],
+      [k.cit + 0.25, 1.14, 800, 520],                        // la citation, barre latérale entière
+      [k.toFlash - 0.05, 1.14, 800, 520],
+      [k.toFlash + 0.55, 1.1, 760, 520],
       [k.flip + 0.6, 1.1, 760, 520],
       [k.toQcm - 0.2, 1.06, 760, 480],
-      [k.qExp, 1.14, 760, 560],
-      [k.out, 1, 720, 540],
+      [k.qExp - 0.3, 1.14, 760, 560],
+      [k.out - 0.05, 1.14, 760, 560],                        // l'explication reste cadrée jusqu'à la sortie
+      [k.out + 0.9, 1, 720, 540],
     ];
     let z = 1, fx = 720, fy = 540;
     for (let i = 1; i < focus.length; i++) {
@@ -396,13 +407,13 @@
 
     // sortie vers la frise : l'app recule
     const out = seg(t, k.out, 1.2, E.inOut);
-    put(root, { op: 1 - seg(t, k.out + 0.5, 0.8, E.linear) });
+    put(root, { op: 1 - seg(t, k.out + 0.15, 0.35, E.linear) });   // v6 : la fenêtre part pendant que la frise arrive (pas deux mises en page)
   };
 
   S.blur = t => {
     const k = T();
     if (t > k.build && t < k.build + 1.0) return 1;             // v5 : logo net vers la barre latérale (plus de traînée)
-    if (t > k.yes + 0.1 && t < k.yes + 0.75) return 8;
+    if (t > k.yes + 0.2 && t < k.yes + 0.85) return 4;
     return 1;
   };
 

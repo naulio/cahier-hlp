@@ -28,7 +28,7 @@ OUT_JS = ROOT / "source" / "data" / "cues.js"
 OUT_JSON = ROOT / "logs" / "timeline.json"
 VO_DIR = ROOT / "audio" / "voice" / "processed"
 
-SHUTTER_AFTER = 1.5   # s entre « Mais où ? » et le déclic (valeurs de la v1, reprise en v3)
+SHUTTER_AFTER = 1.85  # s entre « Mais où ? » et le déclic (v6 : +0,35 s pour que le viseur recule avant le déclic, au lieu d’un saut)
 CAPTURE_AFTER = 2.4   # s entre la fin de la dernière réplique et le déclic final (adresse lisible ~2 s)
 END_TAIL = 6.35       # s après la dernière réplique (Polaroid final + fondu : 3,95 s après le déclic, comme en v1)
 

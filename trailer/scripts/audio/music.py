@@ -114,7 +114,7 @@ for nn in ["F3", "C4", "A4", "G5"]:
 rv = lib.reverb(src, room=0.92, wet=1.0, tail=3.0)
 rv = rv[::-1][-lib.seconds(2.2):]
 T["texture"].add(lib.fade(rv * 0.5, 0.6, 0.01), sh - 2.2)
-T["texture"].add(lib.noise_swell(1.6, 600, 9000, level=0.05, curve=3.0), sh - 1.6)
+T["texture"].add(lib.noise_swell(1.6, 600, 5000, level=0.032, curve=3.0), sh - 1.6)   # v6 : -4 dB, moins d'aigus (plus de « levée » de bande-annonce)
 
 # =====================================================================
 # 4) RÉVÉLATION — fa (add9) sur le déclic ; éclat sur le logo
@@ -188,7 +188,7 @@ frise_notes = ["F4", "G4", "A4", "C5", "D5", "F5", "G5", "A5", "C6"]
 for k, nm in enumerate(frise_notes):
     P(nm, M["v11_frise"] - 0.25 + 0.9 * k / 8 * 0.95, vel=38, dur=0.5, gain=-8, pan_=-0.5 + k / 8)
 # levée vers la respiration
-T["texture"].add(lib.noise_swell(1.2, 500, 8000, level=0.035, curve=2.5), brk - 1.2)
+T["texture"].add(lib.noise_swell(1.2, 500, 8000, level=0.025, curve=2.5), brk - 1.2)   # v6 : -3 dB
 
 # =====================================================================
 # 6) RESPIRATION — la batterie s'efface, accords ouverts

@@ -23,7 +23,7 @@
    "takes": 6,
    "join_check": true,
    "part_gain": [
-    -2.0,
+    -1.0,
     1.5,
     0.0,
     -1.5
@@ -70,7 +70,13 @@
    "text": "Alors on a tout rassemblé…",
    "tts": "Alors, on a tout rassemblé...",
    "tts_google": "Alors on a tout rassemblé…",
-   "takes": 3
+   "takes": 3,
+   "cap_pauses": [
+    [
+     "alors",
+     0.28
+    ]
+   ]
   },
   {
    "id": "V07",
@@ -90,7 +96,7 @@
   },
   {
    "id": "V09",
-   "at": "+0.45",
+   "at": "+0.75",
    "text": "Des flashcards, qui reviennent au bon moment.",
    "tts": "Des flashcards, qui reviennent au bon moment.",
    "takes": 3
@@ -117,7 +123,7 @@
   },
   {
    "id": "V12",
-   "at": "+0.9",
+   "at": "+1.2",
    "text": "C'est gratuit, sans compte. Ta progression reste sur ton appareil.",
    "tts": "C'est gratuit, sans compte. Ta progression reste sur ton appareil.",
    "takes": 3

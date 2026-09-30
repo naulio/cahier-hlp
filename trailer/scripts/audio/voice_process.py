@@ -24,7 +24,7 @@ OUT.mkdir(parents=True, exist_ok=True)
 LINES = json.loads((ROOT / "scripts" / "voice" / "lines.json").read_text())
 TAKES_LOG = json.loads((ROOT / "logs" / "voice_takes.json").read_text())
 
-SPEED = {"default": 1.0, "V02": 0.88, "V05b": 0.9}   # v3 : débit naturel du narrateur, sans ralentissement (retour du commanditaire : « longue »)
+SPEED = {"default": 1.0, "V02": 0.88, "V05b": 0.9, "V14": 0.95}   # v6 : phrase finale un peu moins pressée   # v3 : débit naturel du narrateur, sans ralentissement (retour du commanditaire : « longue »)
 TARGET_RMS_DB = -20.0
 
 # v4 : voix B d'origine (sans demi-ton) — le décalage reste réglable par VOICE_SHIFT_ST ; égalisation légère (v1)
@@ -119,13 +119,20 @@ def cap_pause(y, word, max_dur):
     fr = int(lib.SR * 0.01)
     m = y.mean(1)
     r = np.sqrt(np.convolve(m ** 2, np.ones(fr) / fr, "same"))
-    a, b = int(words[k]["t1"] * lib.SR), int(words[k + 1]["t0"] * lib.SR)
-    quiet = np.where(r[a:b] < r.max() * 0.03)[0]
-    if len(quiet) < 2:
+    # v6 : Whisper étire souvent la fin du mot sur le silence ; on cherche donc le plus long silence (niveau
+    # d'énergie) entre le début du mot et la fin du mot suivant, au lieu de se fier à leurs bornes
+    a, b = int((words[k]["t0"] + 0.1) * lib.SR), int(words[k + 1]["t1"] * lib.SR)
+    q = np.concatenate([[0], (r[a:b] < r.max() * 0.03).astype(np.int8), [0]])
+    edges = np.flatnonzero(np.diff(q))
+    runs = list(zip(edges[::2], edges[1::2]))
+    if not runs:
+        print("  pause plafonnée : aucun silence trouvé après", word)
         return y
-    s0, s1 = a + quiet[0], a + quiet[-1]
+    r0, r1 = max(runs, key=lambda ab: ab[1] - ab[0])
+    s0, s1 = a + r0, a + r1
     gap = (s1 - s0) / lib.SR
     if gap <= max_dur:
+        print(f"  pause après « {word} » : {gap:.2f} s, déjà sous {max_dur:.2f} s")
         return y
     keep = int(max_dur * lib.SR)
     cut0, cut1 = s0 + keep // 2, s1 - keep // 2

@@ -37,7 +37,7 @@
       words.push(m);
     });
     caption = el("div", "abs mono", root, "Sans publicité · Rien n’est envoyé");
-    caption.style.cssText += ";left:134px;top:580px;font:500 19px/1 Mono;letter-spacing:.18em;color:#D6D5B8";
+    caption.style.cssText += ";left:134px;top:580px;font:500 19px/1 Mono;letter-spacing:.18em;color:#E2E0C6";
     // téléphone
     phone = el("div", "abs", root);
     phone.style.cssText += ";left:930px;top:210px;width:300px;height:610px;border-radius:44px;background:#1D1E1A;padding:12px;box-shadow:0 30px 80px rgba(0,0,0,.35)";
@@ -49,7 +49,7 @@
         <circle cx="60" cy="60" r="50" fill="none" stroke="#ECE7D8" stroke-width="10"/>
         <circle class="ringc" cx="60" cy="60" r="50" fill="none" stroke="#5F6443" stroke-width="10" stroke-linecap="round" stroke-dasharray="314.16" stroke-dashoffset="314.16" transform="rotate(-90 60 60)"/>
       </svg>
-      <div class="pct" style="position:absolute;left:0;right:0;top:200px;text-align:center;font:400 38px/1 News;color:#1D1E1A">0 %</div>
+      <div class="pct" style="position:absolute;left:0;right:0;top:200px;text-align:center;font:400 38px/1 News;color:#1D1E1A">52 %</div>
       <div style="position:absolute;left:22px;right:22px;top:326px;padding:14px 16px;border-radius:14px;background:#F1ECE0;font:500 13.5px/1.3 Sans;color:#2B2C27">12 cartes à revoir<div style="font:400 12px/1 Mono;color:#7A7B6F;margin-top:6px;letter-spacing:.06em">AUJOURD’HUI</div></div>
       <div style="position:absolute;left:22px;right:22px;top:410px;padding:14px 16px;border-radius:14px;background:#F1ECE0;font:500 13.5px/1.3 Sans;color:#2B2C27">Examen blanc<div style="font:400 12px/1 Mono;color:#7A7B6F;margin-top:6px;letter-spacing:.06em">20 QUESTIONS · 20 MIN</div></div>
       <div style="position:absolute;left:22px;right:22px;bottom:24px;height:44px;border-radius:12px;background:#39402F;color:#F2EDE3;font:600 14px/44px Sans;text-align:center">Reprendre</div>
@@ -63,7 +63,7 @@
       const d = el("div", "abs", plan);
       d.style.cssText += `;left:${s.x - DW / 2}px;top:${s.y - DH / 2}px;width:${DW}px;height:${DH}px;border-radius:7px;background:rgba(242,237,227,.1);box-shadow:inset 0 0 0 1.5px rgba(242,237,227,.22)`;
       const scr = el("div", "abs", d);
-      scr.style.cssText += ";left:22px;top:9px;width:20px;height:22px;border-radius:4px;background:#C9D07A;opacity:0";
+      scr.style.cssText += ";left:22px;top:9px;width:20px;height:22px;border-radius:4px;background:#C8CE84;opacity:0";
       desks.push({ d, scr, ...s, i });
     });
     planCap = el("div", "abs mono", plan, `${C.brand.lycee} · ${C.brand.classe} · ${C.brand.annee}`);
@@ -77,7 +77,7 @@
     // mots
     [gr, co].forEach((tw, k) => {
       const e = seg(t, tw - 0.12, 0.6, E.out);
-      put(words[k].inner, { y: (1 - e) * 120 });
+      put(words[k].inner, { y: (1 - e) * 120, op: t < tw - 0.12 ? 0 : 1 });   // v6 : plus aucun bout de lettre sous le masque avant l'entrée
       const out = seg(t, pe - 0.35, 0.5, E.in);
       put(words[k], { op: 1 - out, y: -out * 30 });
     });
@@ -86,7 +86,7 @@
     const phIn = seg(t, pr - 0.35, 0.7, E.emph);
     const ring = seg(t, pr + 0.1, 1.4, E.inOut);
     phone.ring.setAttribute("stroke-dashoffset", (314.16 * (1 - 0.52 * ring)).toFixed(2));
-    phone.pct.textContent = Math.round(52 * ring) + " %";
+    phone.pct.style.opacity = seg(t, pr - 0.1, 0.4).toFixed(3);   // v6 : 52 % affiché d'emblée, seul l'anneau se remplit
     // le téléphone rejoint sa place dans le plan
     const me = desks[MINE];
     const toSeat = seg(t, pe - 0.15, 1.05, E.emph);
@@ -104,7 +104,7 @@
       const wave = d.i === MINE ? seg(t, pe + 0.8, 0.3) : seg(t, cl - 0.35 + d.r * 0.075 + (d.i % 6) * 0.012, 0.35, E.out);
       d.scr.style.opacity = wave.toFixed(3);
       d.d.style.background = `rgba(242,237,227,${(0.1 + wave * 0.08).toFixed(3)})`;
-      d.scr.style.boxShadow = `0 0 ${(14 * wave).toFixed(1)}px rgba(201,208,122,${(0.55 * wave).toFixed(3)})`;
+      d.scr.style.boxShadow = `0 0 ${(14 * wave).toFixed(1)}px rgba(200,206,132,${(0.5 * wave).toFixed(3)})`;
     });
     // les tables de chaque rangée se rejoignent : elles deviendront les lignes du logo
     const v14s = M("v14_start");

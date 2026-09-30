@@ -200,4 +200,57 @@ aucun ajout d'effet, et ne proposent que des retraits, des corrections et des du
 
 ## v5
 
+60,0 s. Sept évaluateurs indépendants, même brief recalé sur le goût du commanditaire. Trois d'entre eux ont été
+coupés par une limite d'utilisation : son et montage avaient déjà écrit leur rapport, la voix a été relancée.
+
+| Domaine | Note v5 | (v4) | Verdict |
+|---|---|---|---|
+| Direction artistique | 8,5 | 8 | « la version la plus propre » ; mieux que la v1 en typographie et conformité au site |
+| Motion | 7,5 | 7 | même mouvement et même retenue que la v1, un peu plus propre ; deux clignotements (déclic, capture) |
+| Son / musique / mix | 8,3 (mix 8,5) | 7,5 | « même musique sans batterie, mêmes bruitages, moins de défauts : c'est la demande » |
+| Voix | 7,5 | 7,5 | voix B intacte ; une pause annoncée corrigée ne l'était pas (V11) |
+| Montage / storytelling | 7,8 | 7 | « même film, en plus propre, il dépasse la v1 » ; trois lectures trop courtes |
+| Orthographe / français | 8 | 7,5 | aucune faute ; libellés à aligner, curseur sur un mot |
+| AI slop detector | 8 | 7,5 | « aussi sobre que la v1, plus propre » ; petits signes de rendu scripté |
+
+**Calibrage** : conforme. Tous situent la v5 au niveau de la v1 ou juste au-dessus, aucun ne demande d'ajouter
+un effet ; toutes les corrections proposées sont des retraits, des durées ou des alignements.
+**Vérification d'un rapport** : l'évaluateur voix pensait « dans » (V07) presque inaudible ; l'analyse spectrale
+montre que la zone faible est une inspiration (énergie 1-6 kHz, sans voisement) et que « dans le » est à niveau.
+Rien changé sur ce point.
+
+### Modifications v5 → v6 (finitions seulement, rien d'ajouté)
+- **Déclics** : un seul assombrissement léger (35 %) sur deux images, au-dessus de tout ; le voile clair qui
+  suivait (et remontait les noirs) est supprimé, au premier déclic comme à la capture finale. Le viseur a
+  désormais 0,35 s pour reculer avant le déclic (il sautait du plan serré au plan large en une image).
+- **Capture finale** : départ plus doux et flou de mouvement réduit (plus de textes dédoublés).
+- **Hook** : « Tu te souviens de *tout* ? » reste immobile ~0,6 s avant le recul.
+- **Logo de fin** : le carré et la marge naissent avec les lignes (plus de « trois barres seules ») ; le nom
+  entre sur fond clair ; le fond passe du vert au papier par un beige chaud au lieu d'un gris.
+- **Logo du début** : « Cahier d'HLP » s'écrit sur « Cahier », plus sur « dans le » ; la barre latérale apparaît
+  en fondu sur place.
+- **Fiche** : poussée plus douce, cadrages tenus (auteur, cinq points, citation) ; la citation est cadrée sans
+  couper la barre latérale ; le curseur se gare sous la liste ; l'encadré « Piège », qui surgissait juste avant la
+  sortie, est retiré ; +0,3 s entre la fiche et les flashcards.
+- **Écrans de l'app** : le nouvel écran entre pendant la fin de la sortie (plus de creux vide, sans fondu enchaîné).
+- **Flashcard** : la réponse reste lisible ~0,7 s ; la carte garde son texte en rétrécissant et disparaît dans la
+  boîte 3 ; la boîte 2 passe de 4 à 3 quand la boîte 3 passe de 7 à 8.
+- **QCM** : les réponses sont posées ~0,4 s avant le clic ; l'explication s'ouvre sur « expliqués » et reste
+  cadrée jusqu'à la sortie ; la frise n'entre qu'une fois le QCM parti.
+- **Frise** : arc remonté de 15 px (ne frôle plus Hugo) ; +0,3 s de tenue après « Arendt ».
+- **Textes** : « Touche la carte pour la retourner », « 15 questions entrelacées » (libellés du site),
+  « 1712–1778 », « 52 % » et « 12 cartes à revoir » sur deux lignes voulues, espaces fines ; le 52 % du téléphone
+  est affiché d'emblée (seul l'anneau se remplit) ; plus de bout de lettre sous « Gratuit. ».
+- **Couleurs** : places allumées un peu moins « citron » ; micro-légende « Sans publicité · Rien n'est envoyé »
+  plus lisible.
+- **Voix** (même voix B, aucune hauteur changée) : la pause « de Rabelais … à Arendt » passe de 0,53 à 0,15 s
+  (détection au niveau d'énergie, Whisper étirait le mot sur le silence) ; pause après « Alors » 0,44 → 0,28 s ;
+  phrase finale ralentie de 5 % ; attaque de « Rabelais » adoucie, le nom un peu plus présent.
+- **Son** : traits de stylo −4 dB et adoucis ; l'impact de papier collé au premier trait retiré ; souffle avant le
+  déclic −4 dB et moins brillant ; levée avant la respiration −3 dB ; crayon final −4 dB ; souffle déplacé sur le
+  recul du hook.
+- Durée : 60,0 → 60,9 s.
+
+## v6
+
 (évaluation à venir)

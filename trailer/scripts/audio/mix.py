@@ -31,7 +31,14 @@ OUT.mkdir(parents=True, exist_ok=True)
 voice = Track(DUR)
 for line in TL["lines"]:
     for sg in line["segments"]:
-        voice.add(lib.load(ROOT / sg["file"]), sg["at"])
+        x = lib.load(ROOT / sg["file"])
+        if sg["file"].endswith("V01_1.wav"):   # v6 : attaque de « Rabelais » adoucie (-2,5 dB sur 80 ms), sans toucher à la hauteur
+            env_a = np.ones(len(x), np.float32)
+            n1, n2 = lib.seconds(0.06), lib.seconds(0.14)
+            env_a[:n1] = db(-2.5)
+            env_a[n1:n2] = np.linspace(db(-2.5), 1.0, n2 - n1)
+            x = x * env_a[:, None]
+        voice.add(x, sg["at"])
 # très légère ambiance commune (la voix « habite » la même pièce que le film)
 vbuf = lib.fx(voice.buf, Reverb(room_size=0.18, damping=0.7, wet_level=0.05, dry_level=1.0, width=0.6))[: len(voice.buf)]
 
@@ -51,16 +58,17 @@ sh = M["shutter"]
 for k, x in enumerate([-0.35, -0.12, 0.12, 0.35]):
     S(f"paper_hit_{k % 3 + 1}", M[f"n{k + 1}"] + 0.035, -13 - k * 0.5, x)
 S("room_tone", 0.0, -30)
-S("air_long", M["q_tout"] - 0.15, -14)
+S("air_long", M["q_tout"] + 0.45, -14)     # v6 : suit le recul, qui part après la question
 # les feuilles arrivent (glissé, puis petit impact), sans en sonoriser chacune
 arr = [("v3_rentree", 0, 0.5), ("v3_textes", 0, -0.4), ("v3_accum", 0, 0.3), ("v4_feuilles", 0, -0.5), ("v4_notes", -0.25, 0.1)]
 for k, (m, off, p) in enumerate(arr):
     ta = M[m] + off - 0.34
     S(f"paper_slide_{k % 6 + 1}", ta + 0.05, -19, p, lpf=5000)
-    S(f"paper_hit_{(k + 1) % 3 + 1}", ta + 0.5, -21, p)
+    if m != "v4_notes":                   # v6 : l'impact tombait 10 ms avant le premier trait de stylo (double attaque)
+        S(f"paper_hit_{(k + 1) % 3 + 1}", ta + 0.5, -21, p)
 # notes au stylo, surligneur sur les citations
 for k in range(3):
-    S(f"pen_stroke_{k + 2}", M["v4_notes"] - 0.1 + k * 0.22, -15, 0.3 - k * 0.3)
+    S(f"pen_stroke_{k + 2}", M["v4_notes"] - 0.1 + k * 0.22, -19, 0.3 - k * 0.3, lpf=6000)
 for k in range(2):
     S(f"marker_{k + 1}", M["v4_citations"] - 0.05 + k * 0.18, -20, -0.2 + k * 0.4, lpf=5000)
 # « Mais où ? » : le viseur cherche (moteur AF), puis verrouille (bip)
@@ -99,7 +107,7 @@ S("air_soft", M["v13_start"] - 0.15, -21)
 S("air_soft", M["v14_start"] - 0.8, -21)
 S("shutter_k1000", M["capture"] - 0.03, -6)
 S("polaroid_eject", M["capture"] + 0.12, -7)
-S("pencil_caption", M["capture"] + 1.05, -18)
+S("pencil_caption", M["capture"] + 1.05, -22)
 
 sfx = Track(DUR)
 for c in cues:

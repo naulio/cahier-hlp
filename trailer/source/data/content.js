@@ -61,7 +61,7 @@ window.CONTENT = {
   fiche: {
     id: "rou",
     auteur: "Jean-Jacques Rousseau",
-    dates: "1712 – 1778",
+    dates: "1712–1778",
     titre: "L’homme : l’être « perfectible »",
     oeuvre: "Discours sur l’origine et les fondements de l’inégalité parmi les hommes",
     chips: ["1755", "Lumières", "Discours"],
