@@ -144,6 +144,29 @@ def cap_pause(y, word, max_dur):
     return np.concatenate([head, tail[xf:]])
 
 
+def word_gain(y, word, gain_db):
+    """v7 : remonte un mot qui s'éteint en fin de phrase (gain seul, fondus de 20 ms ; la hauteur ne change pas)."""
+    import sys, tempfile
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from voice_metrics import transcribe, norm_words
+    with tempfile.NamedTemporaryFile(suffix=".wav") as tmp:
+        sf.write(tmp.name, y, lib.SR)
+        _, words = transcribe(tmp.name, "medium")
+    hits = [w for w in words if norm_words(word)[0] in norm_words(w["w"])]
+    if not hits:
+        print("  gain de mot : mot introuvable", word)
+        return y
+    w = hits[-1]
+    a, b = max(0, int((w["t0"] - 0.02) * lib.SR)), min(len(y), int((w["t1"] + 0.06) * lib.SR))
+    g = np.ones(len(y), np.float32)
+    r = int(0.02 * lib.SR)
+    g[a:b] = lib.db(gain_db)
+    g[a:a + r] = np.linspace(1, lib.db(gain_db), r)
+    g[b - r:b] = np.linspace(lib.db(gain_db), 1, r)
+    print(f"  « {word} » {gain_db:+.1f} dB ({w['t0']:.2f}-{w['t1']:.2f} s)")
+    return (y * g[:, None]).astype(np.float32)
+
+
 def insert_pause(y, word, dur):
     """Insert `dur` s of silence right after `word` (found with Whisper word timestamps)."""
     import sys, tempfile
@@ -182,6 +205,8 @@ def main():
             y = cap_pause(y, word, dur)
         for word, dur in line.get("pauses", []):
             y = insert_pause(y, word, dur)
+        for word, g in line.get("word_gain", []):
+            y = word_gain(y, word, g)
         sf.write(OUT / f"{lid}.wav", y, lib.SR, subtype="PCM_24")
         info = {"dur": round(len(y) / lib.SR, 3), "speed": sp}
         if line.get("split"):

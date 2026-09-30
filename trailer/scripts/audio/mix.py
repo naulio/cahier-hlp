@@ -35,8 +35,8 @@ for line in TL["lines"]:
         if sg["file"].endswith("V01_1.wav"):   # v6 : attaque de « Rabelais » adoucie (-2,5 dB sur 80 ms), sans toucher à la hauteur
             env_a = np.ones(len(x), np.float32)
             n1, n2 = lib.seconds(0.06), lib.seconds(0.14)
-            env_a[:n1] = db(-2.5)
-            env_a[n1:n2] = np.linspace(db(-2.5), 1.0, n2 - n1)
+            env_a[:n1] = db(-4.0)                  # v7 : -4 dB (le limiteur travaillait encore là)
+            env_a[n1:n2] = np.linspace(db(-4.0), 1.0, n2 - n1)
             x = x * env_a[:, None]
         voice.add(x, sg["at"])
 # très légère ambiance commune (la voix « habite » la même pièce que le film)
@@ -46,8 +46,10 @@ vbuf = lib.fx(voice.buf, Reverb(room_size=0.18, damping=0.7, wet_level=0.05, dry
 cues = []
 
 
-def S(name, t, g=0.0, p=0.0, lpf=None):
+def S(name, t, g=0.0, p=0.0, lpf=None, fin=None):
     c = {"t": round(t, 3), "sfx": name, "gain_db": g, "pan": p}
+    if fin:
+        c["fade_in"] = fin
     if lpf:
         c["lpf"] = lpf                    # v5 : adoucit les aigus (sifflantes de la voix au même moment)
     cues.append(c)
@@ -58,7 +60,7 @@ sh = M["shutter"]
 for k, x in enumerate([-0.35, -0.12, 0.12, 0.35]):
     S(f"paper_hit_{k % 3 + 1}", M[f"n{k + 1}"] + 0.035, -13 - k * 0.5, x)
 S("room_tone", 0.0, -30)
-S("air_long", M["q_tout"] + 0.45, -14)     # v6 : suit le recul, qui part après la question
+S("air_long", M["q_tout"] + 0.45, -18)     # v6 : suit le recul, qui part après la question ; v7 : -4 dB (il tombait sur la voix)
 # les feuilles arrivent (glissé, puis petit impact), sans en sonoriser chacune
 arr = [("v3_rentree", 0, 0.5), ("v3_textes", 0, -0.4), ("v3_accum", 0, 0.3), ("v4_feuilles", 0, -0.5), ("v4_notes", -0.25, 0.1)]
 for k, (m, off, p) in enumerate(arr):
@@ -86,7 +88,7 @@ for i in range(9):                        # v5 : léger décalage ±15 ms / ±2 
 build = M["v7_end"] + 0.35
 S("air_soft", build - 0.05, -20)
 clicks = [M["v8_fiche"] - 0.28, M["v9_start"] - 0.55 - 0.08, M["v9_reviennent"] + 0.05 - 0.05,
-          M["v10_start"] - 0.5 - 0.08, M["v10_corriges"] - 0.18]
+          M["v10_start"] - 0.5 - 0.08, M["v10_corriges"] - 0.14]   # v7 : le clic se fond avec le do aigu de « corrigés »
 for i, c in enumerate(clicks):
     S("ui_click", c, -20 if i == 3 else -15)   # v5 : le clic de navigation vers le QCM, plus discret
 S("air_soft", M["v8_fiche"] - 0.28 + 0.12, -22)
@@ -94,8 +96,8 @@ for k in range(3):
     S("ui_tick", M["v8_epoque"] - 0.08 + k * 0.1, -22)
 S("marker_3", M["v8_retenir"] - 0.05, -22)
 S("air_soft", M["v9_start"] - 0.5, -22)
-S("card_flip", M["v9_flash"] + 0.62, -13)
-S("wood_tock", M["v9_reviennent"] + 0.05 + 0.12 + 0.62, -16)
+S("card_flip", M["v9_flash"] + 0.4, -13)          # v6-v7 : suit le retournement (avancé)
+S("wood_tock", M["v9_reviennent"] + 0.05 + 0.7, -16)   # la carte se pose dans la boîte 3
 S("ui_tick", M["v9_moment"] - 0.2, -20)
 S("air_soft", M["v10_expliques"] - 0.05, -24)
 # frise
@@ -107,13 +109,15 @@ S("air_soft", M["v13_start"] - 0.15, -21)
 S("air_soft", M["v14_start"] - 0.8, -21)
 S("shutter_k1000", M["capture"] - 0.03, -6)
 S("polaroid_eject", M["capture"] + 0.12, -7)
-S("pencil_caption", M["capture"] + 1.05, -22)
+S("pencil_caption", M["capture"] + 1.05, -24, fin=0.3)
 
 sfx = Track(DUR)
 for c in cues:
     x = lib.load(SFX / f"{c['sfx']}.wav")
     if c.get("lpf"):
         x = lib.filt(x, "lowpass", c["lpf"])
+    if c.get("fade_in"):
+        x = lib.fade(x, c["fade_in"], 0.005)
     if c["sfx"] == "room_tone":           # lit d'ambiance jusqu'au déclic, en fondu
         n = lib.seconds(sh + 0.1)
         x = np.concatenate([x] * 3)[:n]

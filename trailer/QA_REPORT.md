@@ -253,4 +253,47 @@ Rien changé sur ce point.
 
 ## v6
 
+60,6 s. Sept évaluateurs, même brief. Tous les rapports sont complets.
+
+| Domaine | Note v6 | (v5) | Verdict |
+|---|---|---|---|
+| Direction artistique | 8,5 | 8,5 | trois défauts réglés, mais un passage par le gris créé entre le QCM et la frise |
+| Motion | 8 | 7,5 | déclic et capture « enfin propres » ; même creux gris à 36,2 s |
+| Son / musique / mix | 8,6 (mix 8,8) | 8,3 | stylos, double attaque, levée réglés ; le souffle du recul tombe maintenant sur la voix |
+| Voix | 8,5 | 7,5 | pause « Rabelais | à » corrigée, « Rabelais » au niveau des autres noms ; fins de phrase qui s'éteignent |
+| Montage / storytelling | 8,1 | 7,8 | « même film, mieux minuté, sans surcharge » ; citation de la fiche jamais cadrée |
+| Orthographe / français | 8,5 | 8 | aucune faute ; « Flaubert » coupé par le Polaroid de Hugo ; deux titres à aligner sur le site |
+| AI slop detector | 8,5 | 8 | aussi sobre que la v1, plus propre ; barres seules du logo, gris à 36,2 s |
+
+**Calibrage** : conforme, toujours aucune demande d'effet en plus. Défaut créé par la v6 et relevé par quatre
+évaluateurs : le fondu QCM → frise laissait voir le fond sombre de la scène (les deux calques étaient
+semi-transparents en même temps).
+**Vérification** : l'évaluateur « slop » a relevé que les mots de « Des QCM corrigés, et expliqués » étaient placés
+à intervalles fixes : exact. Whisper entendait « DQCM corrigé et expliqué » et l'alignement abandonnait. Il est
+désormais insensible à ces homophones (et découpe « DQCM ») : le clic et l'explication sont calés sur les vrais mots.
+
+### Modifications v6 → v7 (finitions seulement, rien d'ajouté)
+- **Plus aucun passage par le gris** : QCM → frise, la fenêtre s'efface vers le papier puis la frise entre (le
+  fond ne devient jamais transparent) ; frise → classe, la frise reste opaque sous un fondu court (0,25 s).
+- **Logo de fin** : le carré naît dès que les lignes blanchissent, un peu plus clair sur le vert pour qu'on le voie.
+- **Viseur** : le recul part dès la dernière visée et se fait à vitesse régulière (0,6 s au lieu d'un zoom éclair).
+- **Déclic** : les post-it, pages et Polaroids restent au-dessus des feuilles qui deviennent des cartes (le bureau
+  ne change plus d'aspect pendant les deux images assombries).
+- **Flashcard** : la carte rétrécit sans flou ; les compteurs changent ensemble quand elle se pose (boîte 2 : 4 → 3,
+  boîte 3 : 7 → 8) et il reste « 11 cartes à revoir » (en-tête, barre latérale, téléphone).
+- **Fiche** : les boutons arrivent avec les cinq points (ils ne détournent plus l'œil au moment de la citation) ;
+  le curseur se gare dans le vide et ne part qu'au dernier moment ; le logo de la barre latérale n'est plus coupé.
+- **Hook** : le Polaroid de Hugo ne cache plus le « t » de « Flaubert ».
+- **Textes** : titres des cartes Hugo et Ferry repris du site ; « Neuf auteurs » partout ; espaces insécables
+  dans « 10 min », « 1 h »…
+- **Fin** : le Polaroid « TG1 — 2026–27 » tient 0,5 s de plus avant le fondu au noir.
+- **Voix** (même voix B, aucune hauteur changée) : « Arendt » et « classe » +3 dB (ils s'éteignaient) ; courte pause
+  après « une fiche claire : » ; « dans le Cahier d'HLP » arrive 0,15 s plus tôt.
+- **Son** : souffle du recul −4 dB (il couvrait « Depuis la rentrée ») ; attaque de « Rabelais » −4 dB sur 60 ms ;
+  crayon final −2 dB avec entrée en fondu ; le clic du QCM se fond avec la note de « corrigés » ; le retournement de
+  la flashcard et le « toc » de la boîte suivent l'image.
+- Durée : 60,6 → 61,1 s.
+
+## v7
+
 (évaluation à venir)

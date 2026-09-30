@@ -25,7 +25,7 @@
     { id: "rab", img: "rabelais_sq.jpg", cap: "Rabelais", x: -270, y: 16, r: -7, mark: "n1" },
     { id: "rou", img: "rousseau_latour_sq.jpg", cap: "Rousseau", x: -90, y: -20, r: 3.5, mark: "n2" },
     { id: "flo", img: "flaubert_sq.jpg", cap: "Flaubert", x: 90, y: 14, r: -3, mark: "n3" },
-    { id: "hug", img: "hugo_carjat_1876_sq.jpg", cap: "Hugo", x: 270, y: -12, r: 6, mark: "n4" },
+    { id: "hug", img: "hugo_carjat_1876_sq.jpg", cap: "Hugo", x: 294, y: -12, r: 6, mark: "n4" },   // v7 : ne cache plus le « t » de « Flaubert »
   ];
   const EXTRAS = [
     { kind: "page", x: -470, y: -40, r: 9, html: "<b>Plan du commentaire</b><br>I. Une éducation…<br>&nbsp;&nbsp;a) le corps<br>&nbsp;&nbsp;b) l’esprit<br>II. …", at: "v3_accum", dt: 0.3 },
@@ -48,7 +48,7 @@
   };
   const HILITE = { rou: [4, 5], hug: [0], peg: [0, 1] };
 
-  let root, bg, pool, develop, khaki, world, screenL, question, vf, flash, dark, vign;
+  let root, bg, pool, develop, khaki, world, screenL, over, question, vf, flash, dark, vign;
   const sheets = {}, cards = {}, polas = [], extras = [];
 
   function sheetContent(f) {
@@ -124,6 +124,9 @@
 
     // feuilles (dans le monde) + leur version « écran » pour le morphing
     screenL = el("div", "layer", root);
+    // v7 : au déclic, les objets posés sur les feuilles (post-it, pages, Polaroids) passent dans ce calque, au-dessus
+    // des cartes, avec la même caméra figée : le bureau ne change pas d'aspect pendant le déclic
+    over = el("div", "world", root);
     C.feuilles.forEach((f, i) => {
       const w = el("div", "abs", world);
       w.style.width = SHEET_W + "px"; w.style.height = SHEET_H + "px";
@@ -225,8 +228,8 @@
         if (h > 0 && h < 1) blur = Math.max(blur, Math.sin(Math.PI * h) * 2.2);
       }
     });
-    const back0 = mais + 0.05 + spots.length * (dur + gap);
-    const back = seg(t, back0, sh - back0 - 0.12, E.inOut);
+    const back0 = mais + 0.05 + spots.length * (dur + gap) - gap;   // v7 : le recul commence dès la dernière visée
+    const back = seg(t, back0, sh - back0 - 0.08, E.sine);            // et se fait à vitesse régulière (plus de zoom éclair)
     bx = lerp(bx, 0, back); by = lerp(by, 60, back); bz = lerp(bz, 0.66, back); br = lerp(br, 0, back);
     if (t >= back0) blur = Math.max(0, blur * (1 - back)) + Math.sin(Math.PI * back) * 3.5;
     if (t >= mais) { cx = bx; cy = by; z = bz; r = br; }
@@ -249,6 +252,9 @@
     const cam = t < sh ? camera(t) : camAt(sh);
     world.style.transform = `rotate(${cam.r.toFixed(3)}deg) scale(${cam.z.toFixed(4)}) translate(${(-cam.cx).toFixed(2)}px,${(-cam.cy).toFixed(2)}px)`;
     world.style.filter = cam.blur > 0.1 && t < sh ? `blur(${cam.blur.toFixed(2)}px)` : "none";
+    over.style.transform = world.style.transform;
+    const host = t >= sh ? over : world;
+    [...extras.map(x => x.el), ...polas.map(p => p.el)].forEach(e => { if (e.parentNode !== host) host.appendChild(e); });
 
     // ouverture au noir
     put(dark, { op: 1 - seg(t, 0.05, 0.9, E.outSoft) });

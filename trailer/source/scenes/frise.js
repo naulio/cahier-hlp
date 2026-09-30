@@ -10,7 +10,7 @@
   const C = window.CONTENT;
   const S = { name: "frise" };
   S.t0 = () => M("v11_start") - 0.3;
-  S.t1 = () => M("v12_start") - 0.2;
+  S.t1 = () => M("v12_start") + 0.02;   // v7 : reste opaque jusqu'à ce que la classe le recouvre (plus de gris)
 
   const X0 = 150, X1 = 1290, Y = 600;
   const xs = C.textes.map((t, i) => X0 + (X1 - X0) * i / (C.textes.length - 1));
@@ -66,7 +66,7 @@
 
   S.update = function (t) {
     const t0 = M("v11_start") - 0.3, fr = M("v11_frise"), rel = M("v11_relier"), rab = M("v11_rabelais"), are = M("v11_arendt");
-    put(root, { op: seg(t, M("v11_start") - 0.05, 0.4, E.linear) * (1 - seg(t, S.t1() - 0.35, 0.35, E.linear)) });   // v6 : entre une fois le QCM parti
+    put(root, { op: seg(t, M("v11_start") - 0.05, 0.4, E.linear) });   // v6 : entre une fois le QCM parti ; v7 : ne s'efface plus (la classe le recouvre)
     // la ligne se trace sur « frise »
     const ln = seg(t, fr - 0.25, 0.9, E.inOut);
     const L = (X1 - X0 + 140);

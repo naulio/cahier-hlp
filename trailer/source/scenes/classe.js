@@ -50,7 +50,7 @@
         <circle class="ringc" cx="60" cy="60" r="50" fill="none" stroke="#5F6443" stroke-width="10" stroke-linecap="round" stroke-dasharray="314.16" stroke-dashoffset="314.16" transform="rotate(-90 60 60)"/>
       </svg>
       <div class="pct" style="position:absolute;left:0;right:0;top:200px;text-align:center;font:400 38px/1 News;color:#1D1E1A">52 %</div>
-      <div style="position:absolute;left:22px;right:22px;top:326px;padding:14px 16px;border-radius:14px;background:#F1ECE0;font:500 13.5px/1.3 Sans;color:#2B2C27">12 cartes à revoir<div style="font:400 12px/1 Mono;color:#7A7B6F;margin-top:6px;letter-spacing:.06em">AUJOURD’HUI</div></div>
+      <div style="position:absolute;left:22px;right:22px;top:326px;padding:14px 16px;border-radius:14px;background:#F1ECE0;font:500 13.5px/1.3 Sans;color:#2B2C27">11 cartes à revoir<div style="font:400 12px/1 Mono;color:#7A7B6F;margin-top:6px;letter-spacing:.06em">AUJOURD’HUI</div></div>
       <div style="position:absolute;left:22px;right:22px;top:410px;padding:14px 16px;border-radius:14px;background:#F1ECE0;font:500 13.5px/1.3 Sans;color:#2B2C27">Examen blanc<div style="font:400 12px/1 Mono;color:#7A7B6F;margin-top:6px;letter-spacing:.06em">20 QUESTIONS · 20 MIN</div></div>
       <div style="position:absolute;left:22px;right:22px;bottom:24px;height:44px;border-radius:12px;background:#39402F;color:#F2EDE3;font:600 14px/44px Sans;text-align:center">Reprendre</div>
     </div>`;
@@ -73,7 +73,7 @@
   S.update = function (t) {
     const t0 = S.t0(), gr = M("v12_gratuit"), co = M("v12_compte"), pr = M("v12_progression"), ap = M("v12_appareil");
     const pe = M("v13_start"), tg = M("v13_tg1"), cl = M("v13_classe"), end = S.t1();
-    put(root, { op: seg(t, t0, 0.45, E.linear) });
+    put(root, { op: seg(t, t0 + 0.2, 0.25, E.linear) });   // v7 : fondu court sur la frise restée opaque
     // mots
     [gr, co].forEach((tw, k) => {
       const e = seg(t, tw - 0.12, 0.6, E.out);

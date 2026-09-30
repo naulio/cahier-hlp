@@ -91,14 +91,15 @@
       put(b, { x, y, op: 1 });
     });
     // v6 : le carré et la marge naissent avec les lignes (plus de « trois barres seules » façon menu)
-    const bgIn = spring(t - (v14s + 0.1), 16, 0.7);
-    put(markBg, { x: SH, s: t < v14s + 0.1 ? 0.001 : clamp(bgIn, 0, 1.15), op: t < v14s + 0.1 ? 0 : 1 });
-    const mgl = seg(t, v14s + 0.3, 0.4, E.out);
+    const bgIn = spring(t - (v14s - 0.2), 16, 0.7);           // v7 : naît dès que les lignes blanchissent
+    put(markBg, { x: SH, s: t < v14s - 0.2 ? 0.001 : clamp(bgIn, 0, 1.15), op: t < v14s - 0.2 ? 0 : 1 });
+    const mgl = seg(t, v14s + 0.05, 0.4, E.out);
     margin.style.transform = `translateX(${SH.toFixed(1)}px) scaleY(${mgl.toFixed(3)})`;
     // le fond se développe : vert profond → papier
     const gf = seg(t, v14s + 0.05, 0.75, E.inOut);
     put(card.green, { op: 1 - gf });
     put(card.warm, { op: 0.55 * Math.sin(Math.PI * gf) });
+    markBg.style.background = gf < 1 ? `rgb(${Math.round(lerp(124, 95, gf))},${Math.round(lerp(130, 100, gf))},${Math.round(lerp(92, 67, gf))})` : "#5F6443";   // plus clair sur le vert, pour qu'on le voie
     // nom, sous-titre, promesse, adresse (le nom entre sur fond clair : lisible)
     const wIn = seg(t, nm + 0.1, 0.7, E.out);
     put(word.inner, { y: (1 - wIn) * 150 });
@@ -138,7 +139,7 @@
     put(desk, { op: t > capT + 0.1 ? 1 : 0 });
     // noir du miroir + éclair doux, puis fondu final
     const blk = t >= capT && t < capT + 0.067 ? 0.35 : 0; // déclic final : deux images un peu assombries
-    put(dark, { op: Math.max(blk, seg(t, capT + 2.95, M("end") - capT - 3.0, E.inOut)) });
+    put(dark, { op: Math.max(blk, seg(t, capT + 3.45, M("end") - capT - 3.5, E.inOut)) });
     put(flash, { op: 0 });                                 // v6 : plus de voile clair après le déclic
   };
   S.blur = t => { const c = M("capture"); return t > c + 0.1 && t < c + 1.3 ? 6 : 1; };
