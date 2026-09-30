@@ -326,6 +326,8 @@ def main():
             print(f"  {line['id']} take {k}: score {m['score']} wer {m['wer']} p {m['mean_word_prob']} "
                   f"f0sd {m.get('f0_std_st')} wpm {m['words_per_min_speech']} | {m['transcript']}")
         best = min(results, key=lambda r: r["score"])
+        if line.get("prefer"):          # choix humain après QA (ex. attaque propre), s'il existe parmi les prises
+            best = next((r for r in results if Path(r["file"]).name == line["prefer"]), best)
         y, sr = sf.read(best["file"])
         if line.get("keep"):
             y, _, _ = keep_word(y, sr, best["words"], line["keep"])

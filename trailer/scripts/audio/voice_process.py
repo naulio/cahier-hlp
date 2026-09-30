@@ -104,6 +104,39 @@ def cut_points_words(y, n_parts, parts=None):
     return cuts
 
 
+def cap_pause(y, word, max_dur):
+    """Shorten the silence after `word` to at most `max_dur` s (cut in the middle, 10 ms crossfade)."""
+    import sys, tempfile
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from voice_metrics import transcribe, norm_words
+    with tempfile.NamedTemporaryFile(suffix=".wav") as tmp:
+        sf.write(tmp.name, y, lib.SR)
+        _, words = transcribe(tmp.name, "medium")
+    k = next((i for i, w in enumerate(words[:-1]) if norm_words(word)[0] in norm_words(w["w"])), None)
+    if k is None:
+        print("  pause plafonnée : mot introuvable", word)
+        return y
+    fr = int(lib.SR * 0.01)
+    m = y.mean(1)
+    r = np.sqrt(np.convolve(m ** 2, np.ones(fr) / fr, "same"))
+    a, b = int(words[k]["t1"] * lib.SR), int(words[k + 1]["t0"] * lib.SR)
+    quiet = np.where(r[a:b] < r.max() * 0.03)[0]
+    if len(quiet) < 2:
+        return y
+    s0, s1 = a + quiet[0], a + quiet[-1]
+    gap = (s1 - s0) / lib.SR
+    if gap <= max_dur:
+        return y
+    keep = int(max_dur * lib.SR)
+    cut0, cut1 = s0 + keep // 2, s1 - keep // 2
+    xf = fr
+    head, tail = y[:cut0 + xf].copy(), y[cut1:].copy()
+    ramp = np.linspace(1, 0, xf)[:, None]
+    head[-xf:] = head[-xf:] * ramp + tail[:xf] * (1 - ramp)
+    print(f"  pause après « {word} » : {gap:.2f} s → {max_dur:.2f} s")
+    return np.concatenate([head, tail[xf:]])
+
+
 def insert_pause(y, word, dur):
     """Insert `dur` s of silence right after `word` (found with Whisper word timestamps)."""
     import sys, tempfile
@@ -112,7 +145,7 @@ def insert_pause(y, word, dur):
     with tempfile.NamedTemporaryFile(suffix=".wav") as tmp:
         sf.write(tmp.name, y, lib.SR)
         _, words = transcribe(tmp.name, "medium")
-    hit = next((w for w in words if norm_words(w["w"]) and norm_words(w["w"])[0] == norm_words(word)[0]), None)
+    hit = next((w for w in words if norm_words(word)[0] in norm_words(w["w"])), None)
     if not hit:
         print("  pause: mot introuvable", word)
         return y
@@ -138,6 +171,8 @@ def main():
         if peak > 0.89:
             y *= 0.89 / peak
         y = lib.fade(y.astype(np.float32), 0.01, 0.04)
+        for word, dur in line.get("cap_pauses", []):
+            y = cap_pause(y, word, dur)
         for word, dur in line.get("pauses", []):
             y = insert_pause(y, word, dur)
         sf.write(OUT / f"{lid}.wav", y, lib.SR, subtype="PCM_24")
@@ -154,6 +189,9 @@ def main():
             for k, (a, b) in enumerate(zip(edges, edges[1:]), 1):
                 part = lib.fade(y[a:b], 0.004, 0.03)
                 part = part * lib.db(TARGET_RMS_DB - speech_rms_db(part))   # niveau égal entre segments
+                pg = line.get("part_gain")
+                if pg:                                                        # correction fine après QA (niveau perçu)
+                    part = part * lib.db(pg[k - 1])
                 sf.write(OUT / f"{lid}_{k}.wav", part.astype(np.float32), lib.SR, subtype="PCM_24")
             info["cuts_s"] = [round(c / lib.SR, 4) for c in cuts]
             print(lid, "coupée en", len(edges) - 1, "à", info["cuts_s"])

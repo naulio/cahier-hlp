@@ -21,7 +21,13 @@
     "Hugo."
    ],
    "takes": 6,
-   "join_check": true
+   "join_check": true,
+   "part_gain": [
+    -2.0,
+    1.5,
+    0.0,
+    -1.5
+   ]
   },
   {
    "id": "V02",
@@ -32,7 +38,7 @@
   },
   {
    "id": "V03",
-   "at": "+0.55",
+   "at": "+0.95",
    "text": "Depuis la rentrée, les textes s'accumulent.",
    "tts": "Depuis la rentrée, les textes s'accumulent.",
    "takes": 3
@@ -68,11 +74,12 @@
   },
   {
    "id": "V07",
-   "at": "+0.25",
+   "at": "+0.45",
    "text": "dans le Cahier d'HLP.",
    "tts": "dans le Cahier d'hache-elle-pé.",
    "tts_google": "dans le Cahier d'HLP.",
-   "takes": 3
+   "takes": 3,
+   "prefer": "V07_kyutai_37d7ecc452.wav"
   },
   {
    "id": "V08",
@@ -90,17 +97,23 @@
   },
   {
    "id": "V10",
-   "at": "+0.4",
+   "at": "+0.8",
    "text": "Des QCM corrigés, et expliqués.",
    "tts": "Des Q C M corrigés, et expliqués.",
    "takes": 3
   },
   {
    "id": "V11",
-   "at": "+0.45",
+   "at": "+1.05",
    "text": "Et une frise, pour relier les œuvres… de Rabelais à Arendt.",
    "tts": "Et une frise, pour relier les œuvres... de Rabelais à Arendt.",
-   "takes": 3
+   "takes": 3,
+   "cap_pauses": [
+    [
+     "rabelais",
+     0.15
+    ]
+   ]
   },
   {
    "id": "V12",
@@ -119,11 +132,17 @@
   },
   {
    "id": "V14",
-   "at": "+1.4",
+   "at": "+2.0",
    "text": "Le Cahier d'HLP. Tout pour réviser, au même endroit.",
    "tts": "Le Cahier d'hache-elle-pé. Tout pour réviser, au même endroit.",
    "tts_google": "Le Cahier d'HLP. Tout pour réviser, au même endroit.",
-   "takes": 3
+   "takes": 3,
+   "pauses": [
+    [
+     "hlp",
+     0.3
+    ]
+   ]
   }
  ],
  "_history": {

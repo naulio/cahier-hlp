@@ -39,7 +39,7 @@
       const p = svgEl("path", { d: `M${a} ${Y - 10} C ${a + 30} ${Y - h - 12}, ${b - 30} ${Y - h - 12}, ${b} ${Y - 10}`, fill: "none", stroke: "#8C8F66", "stroke-width": 1.8, "stroke-dasharray": "300", "stroke-dashoffset": "300", "stroke-linecap": "round" }, svg);
       arcs.push(p);
     }
-    bigArc = svgEl("path", { d: `M${xs[0]} ${Y + 12} C ${xs[0] + 200} ${Y + 250}, ${xs[8] - 200} ${Y + 250}, ${xs[8]} ${Y + 12}`, fill: "none", stroke: "#C4674E", "stroke-width": 2.4, "stroke-dasharray": "1500", "stroke-dashoffset": "1500", "stroke-linecap": "round" }, svg);
+    bigArc = svgEl("path", { d: `M${xs[0]} ${Y + 12} C ${xs[0] + 200} ${Y + 400}, ${xs[8] - 200} ${Y + 400}, ${xs[8]} ${Y + 12}`, fill: "none", stroke: "#C4674E", "stroke-width": 2.4, "stroke-dasharray": "2000", "stroke-dashoffset": "2000", "stroke-linecap": "round" }, svg);
     C.textes.forEach((t, i) => {
       const up = i % 2 === 0;
       const n = el("div", "abs", world);
@@ -53,6 +53,8 @@
       if (PHOTOS[t.id]) {
         ph = el("div", "abs", world, `<img src="../assets/archive/${PHOTOS[t.id]}" style="width:112px;height:112px;object-fit:cover;display:block;filter:grayscale(1) sepia(.22) contrast(1.05)">`);
         ph.style.cssText += `;left:${xs[i] - 64}px;top:${up ? Y - 210 : Y + 104}px;padding:8px 8px 26px;background:#FBF8F2;box-shadow:0 1px 1px rgba(0,0,0,.15),0 8px 20px rgba(40,42,30,.16)`;
+        // fine tige qui rattache la photo à son point (on ne confond plus les visages avec les noms voisins)
+        ph.stem = svgEl("line", { x1: xs[i], y1: up ? Y - 64 : Y + 12, x2: xs[i], y2: up ? Y - 12 : Y + 104, stroke: "#8C8F66", "stroke-width": 1.2, opacity: 0 }, svg);
       }
       nodes.push({ n, ring, lab, ph, up, i });
     });
@@ -73,6 +75,7 @@
       put(nd.n, { s: t < tn ? 0.001 : clamp(sp, 0, 1.3), op: t < tn ? 0 : 1 });
       const le = seg(t, tn + 0.05, 0.5, E.out);
       put(nd.lab, { op: le, y: (1 - le) * (nd.up ? 10 : -10) });
+      if (nd.ph) nd.ph.stem.setAttribute("opacity", (0.7 * seg(t, tn + 0.3, 0.4)).toFixed(3));
       if (nd.ph) { const pe = seg(t, tn + 0.1, 0.55, E.out); put(nd.ph, { op: pe, y: (1 - pe) * (nd.up ? -26 : 26), r: (1 - pe) * (nd.i % 4 === 0 ? -8 : 7) + (nd.i % 4 === 0 ? -3 : 3) }); }
       // pulsation sur « Rabelais » et « Arendt »
       const hit = nd.i === 0 ? rab : nd.i === 8 ? are : null;
@@ -84,7 +87,7 @@
     });
     // « relier » : les arcs se tracent
     arcs.forEach((a, i) => a.setAttribute("stroke-dashoffset", (300 * (1 - seg(t, rel - 0.1 + i * 0.07, 0.5, E.inOut))).toFixed(1)));
-    bigArc.setAttribute("stroke-dashoffset", (1500 * (1 - seg(t, rab + 0.05, are - rab + 0.35, E.inOut))).toFixed(1));
+    bigArc.setAttribute("stroke-dashoffset", (2000 * (1 - seg(t, rab + 0.05, are - rab + 0.35, E.inOut))).toFixed(1));
     put(title, { op: seg(t, fr - 0.1, 0.5), y: (1 - seg(t, fr - 0.1, 0.5)) * 12 });
     // caméra : léger travelling gauche → droite, parallaxe des siècles
     const pan = E.inOut(inv(fr - 0.3, are + 0.8, t));

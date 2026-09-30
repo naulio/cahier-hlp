@@ -273,7 +273,7 @@
     const ex = seg(t, k.click + 0.12, 0.62, E.emph);
     const homeOut = seg(t, k.click + 0.1, 0.4, E.out);
     put(home, { op: 1 - homeOut, y: homeOut * 18, s: 1 - homeOut * 0.015 });
-    put(fiche, { op: seg(t, k.click + 0.28, 0.3, E.linear) * (1 - seg(t, k.toFlash, 0.35, E.linear)), x: -seg(t, k.toFlash, 0.45, E.in) * 60 });
+    put(fiche, { op: seg(t, k.click + 0.28, 0.3, E.linear) * (1 - seg(t, k.toFlash, 0.15, E.linear)), x: -seg(t, k.toFlash, 0.45, E.in) * 60 });
     const fIn = (d, dur = 0.5) => seg(t, k.click + 0.3 + d, dur, E.out);
     put(fiche.back, { op: fIn(0.05) });
     put(fiche.auth, { op: fIn(0), y: (1 - fIn(0)) * 22 });
@@ -294,8 +294,8 @@
     put(fiche.btns, { op: seg(t, k.cit + 0.3, 0.5), y: (1 - seg(t, k.cit + 0.3, 0.5)) * 12 });
 
     // ---------- flashcards ----------
-    const flIn = seg(t, k.toFlash + 0.15, 0.55, E.emph);
-    put(flash, { op: flIn * (1 - seg(t, k.toQcm, 0.35, E.linear)), x: (1 - flIn) * 70 - seg(t, k.toQcm, 0.45, E.in) * 60 });
+    const flIn = seg(t, k.toFlash + 0.3, 0.55, E.emph);       // l'écran sortant est parti avant (pas de double exposition)
+    put(flash, { op: flIn * (1 - seg(t, k.toQcm, 0.15, E.linear)), x: (1 - flIn) * 70 - seg(t, k.toQcm, 0.45, E.in) * 60 });
     const cardIn = seg(t, k.flashIn - 0.15, 0.55, E.out);
     const flip = seg(t, k.flip, 0.55, E.inOut);
     const toBox = seg(t, k.yes + 0.12, 0.62, E.emph);
@@ -322,9 +322,10 @@
     put(flash.toast, { op: toast, y: (1 - toast) * 16 });
 
     // ---------- QCM ----------
-    const qcIn = seg(t, k.toQcm + 0.15, 0.55, E.emph);
+    const qcIn = seg(t, k.toQcm + 0.3, 0.55, E.emph);
     put(qcm, { op: qcIn * (1 - seg(t, k.out, 0.4, E.linear)), x: (1 - qcIn) * 70 });
-    put(qcm.q, { op: seg(t, k.qIn - 0.2, 0.5), y: (1 - seg(t, k.qIn - 0.2, 0.5)) * 14 });
+    const qT = Math.min(k.qIn - 0.2, k.toQcm + 0.4);                 // la question est là dès l'arrivée de l'écran
+    put(qcm.q, { op: seg(t, qT, 0.5), y: (1 - seg(t, qT, 0.5)) * 14 });
     qcm.opts.forEach((o, i) => {
       const e = seg(t, k.qIn + 0.05 + i * 0.08, 0.45, E.out);
       const picked = t > k.qClick + 0.1;
@@ -352,7 +353,7 @@
       [k.hover - 0.6, 1180, 980], [k.hover + 0.25, 700, 360],                  // vers Rousseau
       [k.click + 0.25, 700, 362], [k.toFlash - 0.5, 640, 700],
       [k.toFlash - 0.12, A.x + 90, A.y + 118 + 2 * 46 + 20],                  // menu Flashcards
-      [k.flip - 0.3, 880, 760], [k.yes - 0.12, 900, 690],                        // « Je savais »
+      [k.flip - 0.3, 880, 760], [k.yes - 0.12, 1021, 628], [k.yes + 0.3, 1021, 628],   // « Je savais » (centre du bouton), puis un temps
       [k.toQcm - 0.45, 520, 600], [k.toQcm - 0.12, A.x + 80, A.y + 118 + 3 * 46 + 20],   // menu QCM
       [k.qClick - 0.55, 760, 700], [k.qClick - 0.05, 640, A.y + 250 + 76 + 32],        // « Une métaphore »
       [k.out, 700, 1160],
@@ -374,9 +375,9 @@
     const focus = [
       [k.build, 1, 720, 540],
       [k.click + 0.2, 1, 720, 540],
-      [k.auteur - 0.3, 1.32, 560, 300],
-      [k.ess - 0.35, 1.3, 590, 560],
-      [k.cit - 0.3, 1.34, 1010, 520],
+      [k.auteur - 0.3, 1.2, 600, 330],                       // cadrage moins serré : la barre latérale et le fil d'Ariane restent entiers
+      [k.ess - 0.35, 1.2, 620, 540],
+      [k.cit - 0.3, 1.22, 980, 520],
       [k.toFlash - 0.3, 1.02, 760, 540],
       [k.flip + 0.6, 1.1, 760, 520],
       [k.toQcm - 0.2, 1.06, 760, 480],
@@ -400,7 +401,7 @@
 
   S.blur = t => {
     const k = T();
-    if (t > k.build && t < k.build + 1.0) return 6;             // v3 : plus de sous-images (plus d'images fantômes)
+    if (t > k.build && t < k.build + 1.0) return 1;             // v5 : logo net vers la barre latérale (plus de traînée)
     if (t > k.yes + 0.1 && t < k.yes + 0.75) return 8;
     return 1;
   };

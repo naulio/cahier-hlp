@@ -29,8 +29,8 @@ OUT_JSON = ROOT / "logs" / "timeline.json"
 VO_DIR = ROOT / "audio" / "voice" / "processed"
 
 SHUTTER_AFTER = 1.5   # s entre « Mais où ? » et le déclic (valeurs de la v1, reprise en v3)
-CAPTURE_AFTER = 1.45  # s entre la fin de la dernière réplique et le déclic final
-END_TAIL = 5.4        # s après la dernière réplique (Polaroid final + fondu)
+CAPTURE_AFTER = 2.4   # s entre la fin de la dernière réplique et le déclic final (adresse lisible ~2 s)
+END_TAIL = 6.35       # s après la dernière réplique (Polaroid final + fondu : 3,95 s après le déclic, comme en v1)
 
 # alias -> (line, word of the script, occurrence)  | "start"/"end" of a line
 ALIASES = {

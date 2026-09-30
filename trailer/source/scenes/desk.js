@@ -357,7 +357,7 @@
     }
 
     // ---- obturateur : noir du miroir puis éclair doux
-    const blk = t >= sh && t < sh + 0.067 ? 1 : 0;
+    const blk = t >= sh && t < sh + 0.067 ? 0.6 : 0;      // déclic : un assombrissement, pas une image noire
     put(dark, { op: Math.max(1 - seg(t, 0.05, 0.9, E.outSoft), blk) });
     put(flash, { op: t >= sh + 0.067 ? 0.55 * (1 - seg(t, sh + 0.067, 0.45, E.out)) : 0 });
 
@@ -398,7 +398,7 @@
     const q0 = M("q_tout");
     if (t > q0 && t < q0 + 1.3) return 6;                 // grand recul
     const sh = M("shutter");
-    if (t > sh + 0.3 && t < sh + 1.6) return 6;           // envol des objets
+    if (t > sh + 0.3 && t < sh + 1.6) return 12;          // envol des objets (plus de dédoublement en escalier)
     return 1;
   };
 

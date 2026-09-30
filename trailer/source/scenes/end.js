@@ -129,10 +129,10 @@
     cap.style.opacity = t > capT + 1.0 ? 1 : 0;
     put(desk, { op: t > capT + 0.1 ? 1 : 0 });
     // noir du miroir + éclair doux, puis fondu final
-    const blk = t >= capT && t < capT + 0.067 ? 1 : 0;
+    const blk = t >= capT && t < capT + 0.067 ? 0.6 : 0;  // déclic final : assombrissement, pas d'image noire
     put(dark, { op: Math.max(blk, seg(t, capT + 2.95, M("end") - capT - 3.0, E.inOut)) });
     put(flash, { op: t >= capT + 0.067 ? 0.5 * (1 - seg(t, capT + 0.067, 0.5, E.out)) : 0 });
   };
-  S.blur = t => { const c = M("capture"); return t > c && t < c + 1.3 ? 6 : 1; };
+  S.blur = t => { const c = M("capture"); return t > c && t < c + 1.3 ? 12 : 1; };
   (window.SCENES = window.SCENES || []).push(S);
 })();
