@@ -27,10 +27,13 @@ video:            ## rendu image par image (Chromium headless)
 export:           ## MP4 final
 	$(PY) scripts/export.py renders/video_only.mp4 exports/cahier-hlp_trailer_4-3_1440x1080.mp4
 
+deliver:          ## livrables : vidéo finale, version de travail sous-titrée, .srt, pistes audio FLAC
+	$(PY) scripts/deliver.py renders/video_only.mp4
+
 qa:               ## dossier de contrôle qualité pour les évaluateurs
 	$(PY) scripts/qa_package.py $(VERSION) exports/cahier-hlp_trailer_4-3_1440x1080.mp4
 
 preview:          ## aperçu interactif : http://localhost:8790/source/index.html?play
 	$(PY) -m http.server 8790
 
-.PHONY: all voice timeline music sfx mix video export qa preview
+.PHONY: all voice timeline music sfx mix video export deliver qa preview
