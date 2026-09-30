@@ -52,16 +52,20 @@ revérifiée à la source ; métadonnées complètes dans `audio/sfx/sources/sou
 | card_flip | flipCard.wav | Splashdust | https://freesound.org/people/Splashdust/sounds/84322/ |
 | shutter_k1000 (déclic) | Pentax K1000 Camera Shutter | yfjesse | https://freesound.org/people/yfjesse/sounds/579883/ |
 | polaroid_eject | PRO_Polaroid | Sami_Zadoud | https://freesound.org/people/Sami_Zadoud/sounds/755841/ |
+| film_advance | Canon A-1 Shutter and Film Advance | lisaisanut | https://freesound.org/people/lisaisanut/sounds/734819/ |
+| af_motor_1…3 (viseur qui cherche) | focus_01_copy.aif | finestship | https://freesound.org/people/finestship/sounds/176539/ |
+| af_beep (mise au point) | Sony A7 II autofocus & shutter mechanism sound | michx123 | https://freesound.org/people/michx123/sounds/483381/ |
 | room_tone | Room tone, very quiet small apartment room | visionear | https://freesound.org/people/visionear/sounds/565535/ |
 
 Sons **procéduraux** (créés en code dans `scripts/audio/sfx.py`) : `ui_click`, `ui_tick`, `wood_tock`,
-`card_tick_1…3`, `air_soft`, `air_long`, et le corps du tampon `stamp` ; kit de bande-annonce v3
-(`scripts/audio/sfx_trailer.py`) : `whoosh_1…4`, `whoosh_long`, `impact_1…2`, `hit_small`, `riser_2`, `riser_4`,
-`sub_drop`, `shimmer`, `pop_1…3`, `fizz`, `reverse_swell`.
+`card_tick_1…3`, `air_soft`, `air_long`, et le corps du tampon `stamp`. Le kit « bande-annonce » de la v3
+(`scripts/audio/sfx_trailer.py` : whooshes, impacts, risers…) reste dans le dépôt mais **n'est plus utilisé**
+depuis la v4 (retour du commanditaire : trop d'effets). Version finale : 53 bruitages, tous listés avec leur
+instant et leur gain dans `logs/sfx_cues.json`.
 
 Écartés : 40 autres enregistrements CC0 écoutés/mesurés puis rejetés (trop bruités, trop « cinéma »,
-ou appareils photo numériques) ; en v2, les sons d'autofocus et d'avance de film ont été retirés pour ne
-garder **qu'un seul appareil** (déclic + éjection de Polaroid). Liste complète avec `retenu: False`
+ou appareils photo numériques) ; en v2, les sons d'autofocus et d'avance de film avaient été retirés ; ils sont revenus en v4
+avec les bruitages de la v1, que le commanditaire préfère. Liste complète avec `retenu: False`
 dans `sources.json`.
 
 ## Images
