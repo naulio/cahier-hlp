@@ -40,13 +40,16 @@ for line in TL["lines"]:
             x = x * env_a[:, None]
         voice.add(x, sg["at"])
 # très légère ambiance commune (la voix « habite » la même pièce que le film)
-# v8 : attaques qui faisaient le plus travailler le limiteur (« gratuit », « progression ») : -2 dB sur 100 ms
-for mk in ("v12_gratuit", "v12_progression"):
-    a = lib.seconds(M[mk] - 0.03)
-    n, r = lib.seconds(0.13), lib.seconds(0.03)
-    e = np.full(n, db(-2.0), np.float32)
-    e[-r:] = np.linspace(db(-2.0), 1.0, r)
-    e[:r] = np.linspace(1.0, db(-2.0), r)
+# v8-v9 : attaques qui faisaient le plus travailler le limiteur : gain réduit sur 120 ms centrées sur le pic RÉEL
+# de la voix autour du repère (le repère Whisper peut être en retard sur la syllabe, ex. « Ta » avant « progression »)
+for mk, g in (("v12_gratuit", -2.0), ("v12_progression", -2.0), ("v11_rabelais", -1.5)):
+    w0, w1 = lib.seconds(M[mk] - 0.2), lib.seconds(M[mk] + 0.15)
+    pk = w0 + int(np.argmax(np.abs(voice.buf[w0:w1]).max(1)))
+    n, r = lib.seconds(0.12), lib.seconds(0.03)
+    a = pk - n // 2
+    e = np.full(n, db(g), np.float32)
+    e[-r:] = np.linspace(db(g), 1.0, r)
+    e[:r] = np.linspace(1.0, db(g), r)
     voice.buf[a:a + n] *= e[:, None]
 vbuf = lib.fx(voice.buf, Reverb(room_size=0.18, damping=0.7, wet_level=0.05, dry_level=1.0, width=0.6))[: len(voice.buf)]
 
@@ -151,6 +154,13 @@ for i in range(len(act)):
 DUCK = 5.0
 MUSIC_GAIN = -3.0
 music *= (db(MUSIC_GAIN) * db(-DUCK * g))[:, None]
+# v9 : creux de musique très localisés sous deux mots qu'elle couvrait (« Tu », « Arendt »)
+for t0, t1, gdb in ((M["q_start"] - 0.03, M["q_start"] + 0.27, -4.0), (M["v11_arendt"] + 0.05, M["v11_arendt"] + 0.65, -3.0)):
+    a, b, r = lib.seconds(t0), lib.seconds(t1), lib.seconds(0.03)
+    e = np.full(b - a, db(gdb), np.float32)
+    e[:r] = np.linspace(1.0, db(gdb), r)
+    e[-r:] = np.linspace(db(gdb), 1.0, r)
+    music[a:b] *= e[:, None]
 
 # ------------------------------------------------------------------ bus et master
 VOICE_GAIN, SFX_GAIN = 0.0, -2.0

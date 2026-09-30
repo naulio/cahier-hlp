@@ -207,7 +207,7 @@ for k, (pd, pn) in enumerate(BR):
     P(pn[-1].replace("4", "5").replace("3", "5"), t + seglen * 0.5, vel=34, dur=seglen * 0.5, gain=-8)
 # la classe s'allume : arpège montant (une note par rangée)
 for r, nm in enumerate(["F5", "G5", "A5", "C6", "D6", "F6"]):
-    P(nm, M["v13_classe"] - 0.35 + r * 0.075 + 0.02, vel=34 + r * 2, dur=1.6, gain=-9, pan_=-0.4 + r * 0.16, rel=1.5)   # v8 : -3 dB sous « classe »
+    P(nm, M["v13_classe"] - 0.35 + r * 0.075 + 0.02, vel=34 + r * 2, dur=1.6, gain=-9 - (3 if r >= 4 else 0), pan_=-0.4 + r * 0.16, rel=1.5)   # v8 : -3 dB sous « classe » ; v9 : ré6 et fa6 encore -3 dB
 
 # =====================================================================
 # 7) FIN — résolution ; le motif du début revient et se pose sur fa

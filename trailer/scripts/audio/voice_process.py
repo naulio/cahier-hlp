@@ -24,7 +24,7 @@ OUT.mkdir(parents=True, exist_ok=True)
 LINES = json.loads((ROOT / "scripts" / "voice" / "lines.json").read_text())
 TAKES_LOG = json.loads((ROOT / "logs" / "voice_takes.json").read_text())
 
-SPEED = {"default": 1.0, "V02": 0.88, "V05b": 0.9, "V14": 0.92}   # v6 : phrase finale un peu moins pressée   # v3 : débit naturel du narrateur, sans ralentissement (retour du commanditaire : « longue »)
+SPEED = {"default": 1.0, "V02": 0.88, "V05b": 0.9, "V14": 0.9}   # v6 : phrase finale un peu moins pressée   # v3 : débit naturel du narrateur, sans ralentissement (retour du commanditaire : « longue »)
 TARGET_RMS_DB = -20.0
 
 # v4 : voix B d'origine (sans demi-ton) — le décalage reste réglable par VOICE_SHIFT_ST ; égalisation légère (v1)
@@ -202,9 +202,20 @@ def insert_pause(y, word, dur):
     if not hit:
         print("  pause: mot introuvable", word)
         return y
-    k = int((hit["t1"] + 0.03) * lib.SR)
+    # v9 : on insère au creux d'énergie du vrai silence qui suit le mot (Whisper rogne souvent la fin du mot),
+    # avec des fondus de 10 ms : plus de mot coupé ni de clic
+    i = words.index(hit)
+    nxt = words[i + 1]["t0"] if i + 1 < len(words) else hit["t1"] + 0.3
+    a, b = int((hit["t1"] - 0.05) * lib.SR), int((max(nxt, hit["t1"]) + 0.12) * lib.SR)
+    fr = int(lib.SR * 0.01)
+    r = np.sqrt(np.convolve(y.mean(1) ** 2, np.ones(fr) / fr, "same"))
+    k = a + int(np.argmin(r[a:b])) if b > a else int(hit["t1"] * lib.SR)
+    head, tail = y[:k].copy(), y[k:].copy()
+    head[-fr:] *= np.linspace(1, 0, fr)[:, None]
+    tail[:fr] *= np.linspace(0, 1, fr)[:, None]
     sil = np.zeros((int(dur * lib.SR), 2), np.float32)
-    return np.concatenate([y[:k], sil, y[k:]])
+    print(f"  pause après « {word} » : +{dur:.2f} s à {k / lib.SR:.2f} s")
+    return np.concatenate([head, sil, tail])
 
 
 def main():

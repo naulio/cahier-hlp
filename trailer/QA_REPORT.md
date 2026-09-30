@@ -332,4 +332,39 @@ déclic était bien faux (les cartes, avec un z-index propre, passaient au-dessu
 
 ## v8
 
+61,3 s. Sept évaluateurs (relancés après une coupure de la limite d'utilisation).
+
+| Domaine | Note v8 | (v7) | Verdict |
+|---|---|---|---|
+| Direction artistique | 9 | 9 | envol, Rabelais, relais chaud réglés ; lignes du logo qui débordent du carré |
+| Motion | 8,8 | 8,5 | « déclic enfin propre » ; quelques doubles expositions de quelques images |
+| Son / musique / mix | 9 (mix 8,9) | 8,7 | « la bande-son la plus propre de la série » ; limiteur 1,9 dB (v1 : 2,2) |
+| Voix | 8,6 | 8,7 | pause après « claire » insérée dans le mot (défaut créé par la v8) ; fin encore rapide |
+| Montage / storytelling | 8,5 | 8,4 | « même film, mieux minuté, pas plus chargé » ; petits textes illisibles sur téléphone |
+| Orthographe / français | 9 | 8 | aucune faute ; « comparaison. » seul sur sa ligne ; coupures des titres |
+| AI slop detector | 8,5 | 8,5 | hook et V10 réglés ; relais feuilles → cartes, six barres du logo |
+
+**Calibrage** : conforme ; aucune demande d'effet. Moyenne 8,8.
+
+### Modifications v8 → v9 (finitions seulement, rien d'ajouté)
+- **Logo de fin** : les lignes rétrécissent autour de leur place finale dans le carré et une barre sur deux s'efface
+  (plus d'étape « menu » qui déborde) ; le passage vert → papier est plus court ; le nom sort sur « Cahier ».
+- **Lisibilité sur téléphone** : « Sans publicité · Rien n'est envoyé » +20 %, « Lycée Notre-Dame · TG1 · 2026–27 »
+  ×1,4, adresse ×1,25.
+- **Fiche** : la grille part avant l'entrée du titre (plus de double titre) ; le haut de la fenêtre et le logo restent
+  dans le cadre.
+- **Feuilles → cartes** : l'encre des feuilles s'éteint avant que le texte des cartes n'apparaisse (jamais de texte
+  sur texte).
+- **Flashcard** : la carte disparaît dans la boîte par l'échelle (plus de pavé gris) ; bulle lisible tout de suite.
+- **Textes** : « une comparaison. » et les titres longs ne se coupent plus après un article.
+- **Voix** (même voix B, aucune hauteur changée) : la pause après « claire » est insérée au creux du vrai silence,
+  avec des fondus (elle coupait le mot) ; phrase finale à 90 % avec une courte pause après « réviser » ; « Rabelais »
+  +1 dB.
+- **Son** : la baisse de gain sur les attaques se cale sur le pic réel de la voix (« Ta progression », second
+  « Rabelais ») ; ré6 et fa6 de l'arpège −3 dB sous « classe » ; musique −4 dB sous « Tu » et −3 dB sous « Arendt ».
+  (Rappel v8 : le clic de navigation vers le QCM avait suivi l'écran, 0,2 s plus tôt.)
+- Durée : 61,3 → 61,4 s.
+
+## v9
+
 (évaluation à venir)
