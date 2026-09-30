@@ -29,7 +29,7 @@ window.CONTENT = {
     { id: "flo", auteur: "Flaubert", nom: "Gustave Flaubert", titre: "Le « nouveau »", oeuvre: "Madame Bovary", annee: 1857, mvt: "Réalisme" },
     { id: "hug", auteur: "Hugo", nom: "Victor Hugo", titre: "Éduquer pour intégrer l’homme à la société", oeuvre: "Les Quatre Vents de l’esprit", annee: 1881, mvt: "Romantisme" },
     { id: "fer", auteur: "Ferry", nom: "Jules Ferry", titre: "L’éducation morale de la nation, une priorité", oeuvre: "Circulaire", annee: 1883, mvt: "École républicaine" },
-    { id: "peg", auteur: "Péguy", nom: "Charles Péguy", titre: "Le mythe républicain", oeuvre: "L’Argent", annee: 1913, mvt: "Essai engagé" },
+    { id: "peg", auteur: "Péguy", nom: "Charles Péguy", titre: "Le mythe républicain", oeuvre: "L’Argent", annee: 1913, mvt: "Belle Époque" },
     { id: "cam", auteur: "Camus", nom: "Albert Camus", titre: "Hommage au maître", oeuvre: "Lettre à Louis Germain", annee: 1957, mvt: "Absurde et révolte" },
     { id: "are", auteur: "Arendt", nom: "Hannah Arendt", titre: "Préparer l’enfant au monde", oeuvre: "« La crise de l’éducation »", annee: 1958, mvt: "Philosophie politique" },
   ],
@@ -54,7 +54,7 @@ window.CONTENT = {
       lignes: ["Nos jeunes maîtres étaient beaux comme des", "hussards noirs. Sveltes ; sévères ; sanglés.", "Sérieux, et un peu tremblants de leur précoce,", "de leur soudaine omnipotence."] },
     { id: "cam", type: "notes", entete: "Camus · lettre à L. Germain (1957)", date: "24.09",
       lignes: ["1re pensée, après sa mère :", "→ son instituteur", "→ reconnaissance de l’élève", "cf. Le Premier Homme"] },
-    { id: "are", type: "notes", entete: "Arendt · La crise de l’éducation", date: "29.09",
+    { id: "are", type: "notes", entete: "Arendt · « La crise de l’éducation »", date: "29.09",
       lignes: ["autorité + tradition", "→ préparer l’enfant au monde", "→ l’école ≠ la politique", "à revoir !!"] },
   ],
 

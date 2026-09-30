@@ -22,12 +22,14 @@
   }
   const MINE = 2 * PAIRS * 2 + 1 * 2 + 1;     // rangée 3, 2e paire, place de droite
 
-  let root, bgk, words = [], caption, phone, plan, desks = [], board, planCap;
+  let root, bgk, warm, words = [], caption, phone, plan, desks = [], board, planCap;
 
   S.build = function (stage) {
     root = el("div", "layer", stage);
     bgk = el("div", "layer", root);
     bgk.style.background = "radial-gradient(ellipse 90% 80% at 50% 45%, #414936, #2F3527)";
+    warm = el("div", "layer", root);                        // v8 : relais chaud pendant le fondu depuis la frise (pas d'olive terne)
+    warm.style.background = "#9A9376";
     // typographie
     const txt = [["Gratuit.", 0], ["Sans compte.", 1]];
     txt.forEach(([w, k]) => {
@@ -74,10 +76,11 @@
     const t0 = S.t0(), gr = M("v12_gratuit"), co = M("v12_compte"), pr = M("v12_progression"), ap = M("v12_appareil");
     const pe = M("v13_start"), tg = M("v13_tg1"), cl = M("v13_classe"), end = S.t1();
     put(root, { op: seg(t, t0 + 0.2, 0.25, E.linear) });   // v7 : fondu court sur la frise restée opaque
+    put(warm, { op: 0.6 * (1 - seg(t, t0 + 0.2, 0.45, E.linear)) });
     // mots
     [gr, co].forEach((tw, k) => {
-      const e = seg(t, tw - 0.12, 0.6, E.out);
-      put(words[k].inner, { y: (1 - e) * 120, op: t < tw - 0.12 ? 0 : 1 });   // v6 : plus aucun bout de lettre sous le masque avant l'entrée
+      const e = seg(t, tw - 0.22, 0.6, E.out);
+      put(words[k].inner, { y: (1 - e) * 120, op: t < tw - 0.22 ? 0 : 1 });   // v6 : plus aucun bout de lettre sous le masque avant l'entrée
       const out = seg(t, pe - 0.35, 0.5, E.in);
       put(words[k], { op: 1 - out, y: -out * 30 });
     });

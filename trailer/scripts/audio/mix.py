@@ -34,12 +34,20 @@ for line in TL["lines"]:
         x = lib.load(ROOT / sg["file"])
         if sg["file"].endswith("V01_1.wav"):   # v6 : attaque de « Rabelais » adoucie (-2,5 dB sur 80 ms), sans toucher à la hauteur
             env_a = np.ones(len(x), np.float32)
-            n1, n2 = lib.seconds(0.06), lib.seconds(0.14)
-            env_a[:n1] = db(-4.0)                  # v7 : -4 dB (le limiteur travaillait encore là)
-            env_a[n1:n2] = np.linspace(db(-4.0), 1.0, n2 - n1)
+            n1, n2 = lib.seconds(0.15), lib.seconds(0.22)   # v8 : le pic est à 121 ms, pas dans les 60 premières
+            env_a[:n1] = db(-2.5)
+            env_a[n1:n2] = np.linspace(db(-2.5), 1.0, n2 - n1)
             x = x * env_a[:, None]
         voice.add(x, sg["at"])
 # très légère ambiance commune (la voix « habite » la même pièce que le film)
+# v8 : attaques qui faisaient le plus travailler le limiteur (« gratuit », « progression ») : -2 dB sur 100 ms
+for mk in ("v12_gratuit", "v12_progression"):
+    a = lib.seconds(M[mk] - 0.03)
+    n, r = lib.seconds(0.13), lib.seconds(0.03)
+    e = np.full(n, db(-2.0), np.float32)
+    e[-r:] = np.linspace(db(-2.0), 1.0, r)
+    e[:r] = np.linspace(1.0, db(-2.0), r)
+    voice.buf[a:a + n] *= e[:, None]
 vbuf = lib.fx(voice.buf, Reverb(room_size=0.18, damping=0.7, wet_level=0.05, dry_level=1.0, width=0.6))[: len(voice.buf)]
 
 # ------------------------------------------------------------------ SFX
@@ -88,7 +96,7 @@ for i in range(9):                        # v5 : léger décalage ±15 ms / ±2 
 build = M["v7_end"] + 0.35
 S("air_soft", build - 0.05, -20)
 clicks = [M["v8_fiche"] - 0.28, M["v9_start"] - 0.55 - 0.08, M["v9_reviennent"] + 0.05 - 0.05,
-          M["v10_start"] - 0.5 - 0.08, M["v10_corriges"] - 0.14]   # v7 : le clic se fond avec le do aigu de « corrigés »
+          M["v10_start"] - 0.3 - 0.08, M["v10_corriges"] - 0.14]   # v7 : le clic se fond avec le do aigu de « corrigés »
 for i, c in enumerate(clicks):
     S("ui_click", c, -20 if i == 3 else -15)   # v5 : le clic de navigation vers le QCM, plus discret
 S("air_soft", M["v8_fiche"] - 0.28 + 0.12, -22)
@@ -108,7 +116,7 @@ S("air_soft", M["v13_start"] - 0.15, -21)
 # fin : les rangées se rejoignent, le logo, puis le Polaroid final
 S("air_soft", M["v14_start"] - 0.8, -21)
 S("shutter_k1000", M["capture"] - 0.03, -6)
-S("polaroid_eject", M["capture"] + 0.12, -7)
+S("polaroid_eject", M["capture"] + 0.12, -9, lpf=6000)   # v8 : il dominait la fin
 S("pencil_caption", M["capture"] + 1.05, -24, fin=0.3)
 
 sfx = Track(DUR)
@@ -167,7 +175,7 @@ for _ in range(10):                     # loudness visée ET crête vraie ≤ -1
 mix = out
 tp = lib.true_peak_db(mix)
 for name, x in (("stem_voice", vbus), ("stem_music", music), ("stem_sfx", sbus)):
-    lib.sf.write(str(OUT / f"{name}.wav"), (x * db(gain)).astype(np.float32), SR, subtype="PCM_24")
+    lib.sf.write(str(OUT / f"{name}.wav"), (x * db(gain)).astype(np.float32), SR, subtype="FLOAT")   # v8 : plus d'écrêtage des stems
 lib.sf.write(str(OUT / "trailer_mix.wav"), mix.astype(np.float32), SR, subtype="PCM_24")
 (ROOT / "logs" / "sfx_cues.json").write_text(json.dumps(cues, ensure_ascii=False, indent=1))
 report = {"integrated_lufs": round(float(final), 2), "true_peak_dbtp": round(float(tp), 2), "max_gain_reduction_db": round(gr, 2), "gain_applied_db": round(float(gain), 2),

@@ -50,7 +50,7 @@ run(sys.executable, ROOT / "scripts" / "export.py", video, final, "--crf", "18")
 # 2) sous-titres de la voix off (texte exact du script, découpé aux phrases)
 voice = []
 for l in TL["lines"]:
-    voice.append((l["at"], l["end"] + 0.35, LINES[l["id"]]["text"]))
+    voice.append((l["at"], l["end"] + 0.35, LINES[l["id"]]["text"].replace("'", "’")))   # apostrophe typographique
 voice = [(a, min(b, voice[i + 1][0] - 0.02) if i + 1 < len(voice) else b, t) for i, (a, b, t) in enumerate(voice)]
 (EXP / "cahier-hlp_trailer_sous-titres.srt").write_text(srt(voice), encoding="utf-8")
 

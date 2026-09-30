@@ -23,7 +23,7 @@
     return `<div style="position:absolute;left:0;top:0;bottom:0;width:5px;background:${ERA[t.annee] || "#5F6443"}"></div>
       <div style="position:absolute;left:24px;top:22px;font:500 11.5px/1 Mono;letter-spacing:.14em;color:#6F7159">${t.annee} · ${t.mvt.toUpperCase()}</div>
       <div style="position:absolute;left:23px;top:44px;font:400 31px/1 News;letter-spacing:-.015em;color:#1D1E1A">${t.auteur}</div>
-      <div style="position:absolute;left:24px;top:86px;right:20px;font:400 14.5px/1.3 Sans;color:#6B6C61;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${t.titre}</div>
+      <div style="position:absolute;left:24px;top:86px;right:20px;font:400 13.5px/1.25 Sans;color:#6B6C61;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">${t.titre}</div>
       <div style="position:absolute;left:24px;right:64px;bottom:22px;height:4px;border-radius:4px;background:#ECE7D8"><div style="height:100%;width:${p}%;border-radius:4px;background:#5F6443"></div></div>
       <div style="position:absolute;right:20px;bottom:16px;font:500 12px/1 Mono;color:#8A8B7C">${p} %</div>`;
   }

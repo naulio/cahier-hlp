@@ -24,7 +24,7 @@ OUT.mkdir(parents=True, exist_ok=True)
 LINES = json.loads((ROOT / "scripts" / "voice" / "lines.json").read_text())
 TAKES_LOG = json.loads((ROOT / "logs" / "voice_takes.json").read_text())
 
-SPEED = {"default": 1.0, "V02": 0.88, "V05b": 0.9, "V14": 0.95}   # v6 : phrase finale un peu moins pressée   # v3 : débit naturel du narrateur, sans ralentissement (retour du commanditaire : « longue »)
+SPEED = {"default": 1.0, "V02": 0.88, "V05b": 0.9, "V14": 0.92}   # v6 : phrase finale un peu moins pressée   # v3 : débit naturel du narrateur, sans ralentissement (retour du commanditaire : « longue »)
 TARGET_RMS_DB = -20.0
 
 # v4 : voix B d'origine (sans demi-ton) — le décalage reste réglable par VOICE_SHIFT_ST ; égalisation légère (v1)
@@ -167,6 +167,29 @@ def word_gain(y, word, gain_db):
     return (y * g[:, None]).astype(np.float32)
 
 
+def span_gain(y, w0, w1, gain_db):
+    """v8 : gain sur une suite de mots (du début de w0 à la fin de w1), fondus de 20 ms."""
+    import sys, tempfile
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from voice_metrics import transcribe, norm_words
+    with tempfile.NamedTemporaryFile(suffix=".wav") as tmp:
+        sf.write(tmp.name, y, lib.SR)
+        _, words = transcribe(tmp.name, "medium")
+    i0 = next((i for i, w in enumerate(words) if norm_words(w0)[0] in norm_words(w["w"])), None)
+    i1 = next((i for i in range(len(words) - 1, -1, -1) if norm_words(w1)[0] in norm_words(words[i]["w"])), None)
+    if i0 is None or i1 is None or i1 < i0:
+        print("  gain de plage : mots introuvables", w0, w1)
+        return y
+    a, b = max(0, int((words[i0]["t0"] - 0.02) * lib.SR)), min(len(y), int((words[i1]["t1"] + 0.06) * lib.SR))
+    g = np.ones(len(y), np.float32)
+    r = int(0.02 * lib.SR)
+    g[a:b] = lib.db(gain_db)
+    g[a:a + r] = np.linspace(1, lib.db(gain_db), r)
+    g[b - r:b] = np.linspace(lib.db(gain_db), 1, r)
+    print(f"  « {w0} … {w1} » {gain_db:+.1f} dB")
+    return (y * g[:, None]).astype(np.float32)
+
+
 def insert_pause(y, word, dur):
     """Insert `dur` s of silence right after `word` (found with Whisper word timestamps)."""
     import sys, tempfile
@@ -207,6 +230,8 @@ def main():
             y = insert_pause(y, word, dur)
         for word, g in line.get("word_gain", []):
             y = word_gain(y, word, g)
+        for w0, w1, g in line.get("span_gain", []):          # v8 : toute une fin de phrase
+            y = span_gain(y, w0, w1, g)
         sf.write(OUT / f"{lid}.wav", y, lib.SR, subtype="PCM_24")
         info = {"dur": round(len(y) / lib.SR, 3), "speed": sp}
         if line.get("split"):

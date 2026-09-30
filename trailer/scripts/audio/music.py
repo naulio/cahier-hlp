@@ -181,8 +181,8 @@ for b in range(nb):
                 P(nm, bar0 + k * BEAT, vel=54, dur=BEAT * 1.6, gain=-2, pan_=0.1)
 
 # « corrigés » : deux notes au piano pour la bonne réponse
-P("C6", M["v10_corriges"] - 0.14, vel=46, dur=0.6, gain=-5)
-P("F6", M["v10_corriges"] - 0.02, vel=50, dur=1.2, gain=-4)
+P("C6", M["v10_corriges"] - 0.14, vel=46, dur=0.6, gain=-7)   # v8 : -2 dB, moins sous la voix
+P("F6", M["v10_corriges"] - 0.02, vel=50, dur=1.2, gain=-6)
 # les neuf textes de la frise s'allument : une note chacun, montante
 frise_notes = ["F4", "G4", "A4", "C5", "D5", "F5", "G5", "A5", "C6"]
 for k, nm in enumerate(frise_notes):
@@ -207,7 +207,7 @@ for k, (pd, pn) in enumerate(BR):
     P(pn[-1].replace("4", "5").replace("3", "5"), t + seglen * 0.5, vel=34, dur=seglen * 0.5, gain=-8)
 # la classe s'allume : arpège montant (une note par rangée)
 for r, nm in enumerate(["F5", "G5", "A5", "C6", "D6", "F6"]):
-    P(nm, M["v13_classe"] - 0.35 + r * 0.075 + 0.02, vel=34 + r * 2, dur=1.6, gain=-6, pan_=-0.4 + r * 0.16, rel=1.5)
+    P(nm, M["v13_classe"] - 0.35 + r * 0.075 + 0.02, vel=34 + r * 2, dur=1.6, gain=-9, pan_=-0.4 + r * 0.16, rel=1.5)   # v8 : -3 dB sous « classe »
 
 # =====================================================================
 # 7) FIN — résolution ; le motif du début revient et se pose sur fa

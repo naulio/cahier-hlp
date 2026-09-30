@@ -50,13 +50,14 @@ def worker(k, frames, fps, out_path, log_path):
         for n, i in enumerate(frames):
             t = i / fps
             sub = int(pg.evaluate(f"window.subframes({t:.6f})"))
+            shut = float(pg.evaluate(f"window.shutter ? window.shutter({t:.6f}) : 0.5"))
             if sub <= 1:
                 img = grab(t)
             else:
-                # 180° shutter: sub-frames spread over half a frame, centred on t
+                # obturateur (180° par défaut) : sous-images réparties sur une fraction d'image, centrées sur t
                 acc = np.zeros((H, W, 3), np.float32)
                 for s in range(sub):
-                    acc += grab(t + ((s + 0.5) / sub - 0.5) * 0.5 / fps)
+                    acc += grab(t + ((s + 0.5) / sub - 0.5) * shut / fps)
                 img = acc / sub
             ff.stdin.write(np.clip(img + 0.5, 0, 255).astype(np.uint8).tobytes())
             if n % 60 == 0:

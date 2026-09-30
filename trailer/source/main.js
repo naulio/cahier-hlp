@@ -24,6 +24,12 @@
     window.VFX.apply(t, window.FXTRACK().vfx);      // couche d'effets (éclairs, poussées, filés…)
   };
 
+  // v8 : angle d'obturateur (fraction d'image) ; 0,5 = 180°. Une scène peut le réduire (flou de mouvement plus court).
+  window.shutter = function (t) {
+    let f = 0.5;
+    for (const s of scenes) if (s.shutter && t >= s.t0() && t < s.t1()) f = Math.min(f, s.shutter(t));
+    return f;
+  };
   /* Nombre de sous-images pour le flou de mouvement à l'instant t. */
   window.subframes = function (t) {
     let n = 1;

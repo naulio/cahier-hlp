@@ -22,7 +22,7 @@
   };
   const PRESENT = ["rab", "rou", "hug"];         // déjà là quand la caméra recule
   const POLA = [                                  // Polaroids du hook
-    { id: "rab", img: "rabelais_sq.jpg", cap: "Rabelais", x: -270, y: 16, r: -7, mark: "n1" },
+    { id: "rab", img: "rabelais_sq.jpg", cap: "Rabelais", x: -288, y: 16, r: -7, mark: "n1" },   // v8 : le « s » ne passe plus sous Rousseau
     { id: "rou", img: "rousseau_latour_sq.jpg", cap: "Rousseau", x: -90, y: -20, r: 3.5, mark: "n2" },
     { id: "flo", img: "flaubert_sq.jpg", cap: "Flaubert", x: 90, y: 14, r: -3, mark: "n3" },
     { id: "hug", img: "hugo_carjat_1876_sq.jpg", cap: "Hugo", x: 294, y: -12, r: 6, mark: "n4" },   // v7 : ne cache plus le « t » de « Flaubert »
@@ -127,6 +127,7 @@
     // v7 : au déclic, les objets posés sur les feuilles (post-it, pages, Polaroids) passent dans ce calque, au-dessus
     // des cartes, avec la même caméra figée : le bureau ne change pas d'aspect pendant le déclic
     over = el("div", "world", root);
+    over.style.zIndex = 20;                                  // au-dessus des cartes (z 5 à 16)
     C.feuilles.forEach((f, i) => {
       const w = el("div", "abs", world);
       w.style.width = SHEET_W + "px"; w.style.height = SHEET_H + "px";
@@ -194,9 +195,11 @@
     vf.dot.style.cssText = "position:absolute;left:1262px;top:98px;width:10px;height:10px;border-radius:50%;background:#C8D48A";
 
     vign = el("div", "vignette", root);
+    vign.style.zIndex = 30; vf.style.zIndex = 40;
     dark = el("div", "layer", root); dark.style.background = "#0c0c0a";
     dark.style.zIndex = 200;                               // v6 : l'assombrissement du déclic couvre tout (cartes comprises)
     flash = el("div", "flash", root);
+    flash.style.zIndex = 201;
   };
 
   /* ---------------- caméra ---------------- */
@@ -401,6 +404,7 @@
     });
   };
 
+  S.shutter = t => { const sh = M("shutter"); return t > sh + 0.3 && t < sh + 1.6 ? 0.25 : 0.5; };   // v8 : envol, flou divisé par deux
   S.blur = t => {
     const q0 = M("q_tout");
     if (t > q0 + 0.6 && t < q0 + 2.0) return 6;           // grand recul

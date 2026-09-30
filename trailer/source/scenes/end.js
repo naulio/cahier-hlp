@@ -76,7 +76,7 @@
 
     // ---- les rangées deviennent les lignes du logo
     const cls = window.SCENES.find(s => s.name === "classe").seatGeometry();
-    const mg = seg(t, t0 + 0.02, 1.05, E.emph);
+    const mg = seg(t, t0 + 0.02, 0.8, E.emph);               // v8 : les lignes sont presque à leur taille quand le carré naît
     const rows = [0, 1, 2, 3, 4, 5];
     const lineY = [46, 64, 82].map(v => MY + MARK * v / 120 - 3);
     const lineX0 = MX + MARK * 30 / 120, lineW = [66, 66, 50].map(v => MARK * v / 120);
@@ -91,15 +91,15 @@
       put(b, { x, y, op: 1 });
     });
     // v6 : le carré et la marge naissent avec les lignes (plus de « trois barres seules » façon menu)
-    const bgIn = spring(t - (v14s - 0.2), 16, 0.7);           // v7 : naît dès que les lignes blanchissent
-    put(markBg, { x: SH, s: t < v14s - 0.2 ? 0.001 : clamp(bgIn, 0, 1.15), op: t < v14s - 0.2 ? 0 : 1 });
+    const bgIn = seg(t, v14s - 0.1, 0.35, E.out);             // v8 : naît en fondu à 85 % de sa taille (plus de point isolé)
+    put(markBg, { x: SH, s: 0.85 + 0.15 * bgIn, op: bgIn });
     const mgl = seg(t, v14s + 0.05, 0.4, E.out);
     margin.style.transform = `translateX(${SH.toFixed(1)}px) scaleY(${mgl.toFixed(3)})`;
     // le fond se développe : vert profond → papier
     const gf = seg(t, v14s + 0.05, 0.75, E.inOut);
     put(card.green, { op: 1 - gf });
     put(card.warm, { op: 0.55 * Math.sin(Math.PI * gf) });
-    markBg.style.background = gf < 1 ? `rgb(${Math.round(lerp(124, 95, gf))},${Math.round(lerp(130, 100, gf))},${Math.round(lerp(92, 67, gf))})` : "#5F6443";   // plus clair sur le vert, pour qu'on le voie
+    markBg.style.background = gf < 1 ? `rgb(${Math.round(lerp(110, 95, gf))},${Math.round(lerp(116, 100, gf))},${Math.round(lerp(80, 67, gf))})` : "#5F6443";   // à peine plus clair sur le vert, opaque
     // nom, sous-titre, promesse, adresse (le nom entre sur fond clair : lisible)
     const wIn = seg(t, nm + 0.1, 0.7, E.out);
     put(word.inner, { y: (1 - wIn) * 150 });

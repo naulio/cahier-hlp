@@ -296,4 +296,40 @@ désormais insensible à ces homophones (et découpe « DQCM ») : le clic et l'
 
 ## v7
 
+61,1 s. Sept évaluateurs, même brief.
+
+| Domaine | Note v7 | (v6) | Verdict |
+|---|---|---|---|
+| Direction artistique | 9 | 8,5 | « le creux gris a disparu » ; reste le calage carré/lignes du logo |
+| Motion | 8,5 | 8 | gris, logo et flashcard propres ; empilement au déclic encore faux |
+| Son / musique / mix | 8,7 (mix 8,6) | 8,6 | flam du QCM, souffle, crayon réglés ; limiteur plus sollicité (correctif de « Rabelais » à côté du pic) |
+| Voix | 8,7 | 8,5 | « Arendt » réglé ; « Tu » faible, fin de V13 et phrase finale un peu rapides |
+| Montage / storytelling | 8,4 | 8,1 | « même film, mieux minuté et pas plus chargé » ; résultat de la flashcard trop bref |
+| Orthographe / français | 8 | 8,5 | titres du site tronqués par « … » (défaut créé par la v7) ; « s » de « Rabelais » |
+| AI slop detector | 8,5 | 8,5 | voile gris réglé ; flou de l'envol, six barres du logo |
+
+**Calibrage** : conforme ; aucune demande d'effet. **Vérifications** : le « saut d'échelle » du viseur signalé par
+l'évaluateur motion ne se retrouve pas image par image (230 → 180 px, sans saut) ; en revanche l'empilement au
+déclic était bien faux (les cartes, avec un z-index propre, passaient au-dessus du calque des post-it).
+
+### Modifications v7 → v8 (finitions seulement, rien d'ajouté)
+- **Déclic** : les post-it, pages et Polaroids restent réellement au-dessus des cartes.
+- **Envol** : flou de mouvement des feuilles divisé par deux (obturateur 90° sur ce plan seulement).
+- **Cartes** : les titres du site passent sur deux lignes au lieu d'être tronqués ; Péguy : « Belle Époque ».
+- **Hook** : le Polaroid de Rabelais laisse voir tout son nom.
+- **Flashcard** : la carte reste opaque jusqu'au bord de la boîte ; compteurs et bulle « Revient dans 1 h » changent
+  sur la même image ; le résultat reste ~0,6 s avant le QCM.
+- **App** : la grille entre moins floue.
+- **Logo de fin** : lignes plus vite à leur taille ; le carré naît en fondu à 85 % (plus de « point » isolé), teinte
+  opaque.
+- **Classe** : relais chaud pendant le fondu depuis la frise ; « Gratuit. » 0,1 s plus tôt.
+- **Voix** (même voix B, aucune hauteur changée) : « Tu » +5 dB ; « pour toute la classe » +2,5 dB ; pause après
+  « une fiche claire : » 0,28 s ; phrase finale à 92 % ; « Rousseau » −1 dB.
+- **Son** : attaque de « Rabelais » −2,5 dB sur 150 ms (le pic est à 121 ms) ; « gratuit » et « progression »
+  −2 dB sur 100 ms (limiteur : 2,8 → 1,9 dB au maximum, 2,2 en v1) ; éjection du Polaroid −2 dB et adoucie ;
+  notes de « corrigés » −2 dB ; arpège de la classe −3 dB ; stems écrits en flottant (plus d'écrêtage).
+- Durée : 61,1 → 61,3 s.
+
+## v8
+
 (évaluation à venir)

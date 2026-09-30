@@ -208,7 +208,7 @@
       hover: M("v8_texte") - 0.2, click: M("v8_fiche") - 0.28,
       auteur: M("v8_auteur"), epoque: M("v8_epoque"), ess: M("v8_essentiel"), cit: M("v8_citations"), ret: M("v8_retenir"),
       toFlash: M("v9_start") - 0.55, flashIn: M("v9_flash"), flip: M("v9_flash") + 0.4, yes: M("v9_reviennent") + 0.05, moment: M("v9_moment"),
-      toQcm: M("v10_start") - 0.5, qIn: M("v10_qcm"), qClick: M("v10_corriges") - 0.18, qExp: M("v10_expliques") - 0.25,
+      toQcm: M("v10_start") - 0.3,   /* v8 : le résultat de la flashcard reste ~0,6 s */ qIn: M("v10_qcm"), qClick: M("v10_corriges") - 0.18, qExp: M("v10_expliques") - 0.25,
       out: M("v11_start") - 0.25,
     };
   }
@@ -259,7 +259,7 @@
     const gm = seg(t, k.build + 0.1, 1.0, E.emph);
     const dim = seg(t, k.v7s - 0.2, 0.45, E.outSoft) * (1 - seg(t, k.build + 0.55, 0.55, E.outSoft));
     put(home.hdr, { op: seg(t, k.build + 0.45, 0.5, E.out), y: (1 - seg(t, k.build + 0.45, 0.5, E.out)) * 14 });
-    home.style.filter = dim > 0.02 ? `blur(${(dim * 9).toFixed(2)}px)` : "none";
+    home.style.filter = dim > 0.02 ? `blur(${(dim * 4).toFixed(2)}px)` : "none";   // v8 : grille moins floue à l'entrée de l'app
     // les cartes vivent dans la fenêtre : on compense la position centrée du bureau
     const dx = lerp(-124, 0, gm), dy = lerp(14, 0, gm);
     cardsEls.forEach((c, i) => {
@@ -316,7 +316,7 @@
       const sw = lerp(1, 40 / g.fcw, toBox), sh2 = lerp(1, 22 / g.fch, toBox);
       const bxc = bx + 66 - 20, byc = by + 56 - 11;
       const mx2 = lerp(g.fcx, bxc, toBox), my2 = lerp(g.fcy, byc, toBox) - Math.sin(Math.PI * toBox) * 90;
-      put(flash.mini, { x: mx2, y: my2, sx: sw, sy: sh2, op: 1 - seg(toBox, 0.55, 0.33, E.linear) });
+      put(flash.mini, { x: mx2, y: my2, sx: sw, sy: sh2, op: 1 - seg(toBox, 0.84, 0.11, E.linear) });   // v8 : opaque jusqu'au bord de la boîte
     } else put(flash.mini, { op: 0 });
     flash.boxes.forEach((b, i) => {
       const pulse = i === 2 ? Math.sin(Math.PI * seg(t, k.yes + 0.7, 0.35, E.linear)) : 0;   // la boîte 3 accueille la carte
@@ -324,13 +324,13 @@
       b.style.boxShadow = i === 2 && t > k.yes + 0.7 ? "inset 0 0 0 2px #5F6443" : "inset 0 0 0 1.5px rgba(29,30,26,.08)";
     });
     // v7 : les compteurs changent ensemble, quand la carte se pose dans la boîte 3 (et il reste 11 cartes à revoir)
-    const landed = t > k.yes + 0.3 + 0.4;
+    const landed = t > k.yes + 0.63;                          // v8 : sur l'image où la carte disparaît dans la boîte
     flash.counts[2].textContent = landed ? "8" : "7";
     flash.counts[1].textContent = landed ? "3" : "4";
     flash.n.textContent = landed ? "11" : "12";
     side.querySelector(".side-n").textContent = landed ? "11" : "12";
     flash.counts[0].textContent = "5";
-    const toast = seg(t, k.moment - 0.2, 0.45, E.emph);
+    const toast = seg(t, Math.max(k.moment - 0.2, k.yes + 0.63), 0.45, E.emph);   // la bulle arrive avec les compteurs
     put(flash.toast, { op: toast, y: (1 - toast) * 16 });
 
     // ---------- QCM ----------

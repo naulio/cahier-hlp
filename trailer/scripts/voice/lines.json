@@ -24,7 +24,7 @@
    "join_check": true,
    "part_gain": [
     -1.0,
-    1.5,
+    0.5,
     0.0,
     -1.5
    ]
@@ -34,7 +34,13 @@
    "at": 3.98,
    "text": "Tu te souviens de tout ?",
    "tts": "Tu te souviens de tout ?",
-   "takes": 3
+   "takes": 3,
+   "word_gain": [
+    [
+     "tu",
+     5.0
+    ]
+   ]
   },
   {
    "id": "V03",
@@ -96,7 +102,7 @@
    "pauses": [
     [
      "claire",
-     0.15
+     0.28
     ]
    ]
   },
@@ -147,10 +153,11 @@
    "tts": "Pensé en té-gé-un... pour toute la classe.",
    "tts_google": "Pensé en TG1, pour toute la classe.",
    "takes": 3,
-   "word_gain": [
+   "span_gain": [
     [
+     "pour",
      "classe",
-     3.0
+     2.5
     ]
    ]
   },
