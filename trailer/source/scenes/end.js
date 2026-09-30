@@ -92,15 +92,15 @@
       b.style.height = lerp(40, 6, mg).toFixed(2) + "px";
       b.style.borderRadius = lerp(2, 3, mg).toFixed(2) + "px";
       b.style.background = mg < 0.5 ? `rgba(242,237,227,${lerp(0.22, 1, mg * 2).toFixed(3)})` : "#F2EDE3";
-      put(b, { x, y, op: k % 2 ? 1 - seg(mg, 0.1, 0.45, E.linear) : 1 });
+      put(b, { x, y, op: k % 2 ? 1 - seg(mg, 0.08, 0.1, E.linear) : 1 });   // v11 : 6 → 3 barres presque en coupe franche
     });
     // v6 : le carré et la marge naissent avec les lignes (plus de « trois barres seules » façon menu)
-    const bgIn = seg(t, v14s - 0.08, 0.22, E.out);             // v8-v10 : naît en fondu, une fois les lignes à leur place
+    const bgIn = seg(t, v14s + 0.01, 0.2, E.out);            // v11 : naît une fois les lignes en place             // v8-v10 : naît en fondu, une fois les lignes à leur place
     put(markBg, { x: SH, s: 0.85 + 0.15 * bgIn, op: bgIn });
     const mgl = seg(t, v14s + 0.05, 0.4, E.out);
     margin.style.transform = `translateX(${SH.toFixed(1)}px) scaleY(${mgl.toFixed(3)})`;
     // le fond se développe : vert profond → papier
-    const gf = seg(t, v14s + 0.13, 0.5, E.inOut);            // v9-v10 : passage vert → papier court, après la naissance du carré
+    const gf = seg(t, v14s + 0.15, 0.3, E.inOut);            // v9-v11 : passage vert → papier court, après la naissance du carré
     put(card.green, { op: 1 - gf });
     put(card.warm, { op: 0.55 * Math.sin(Math.PI * gf) });
     markBg.style.background = "#5F6443";                                          // v10 : teinte finale d'emblée

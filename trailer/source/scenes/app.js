@@ -258,12 +258,12 @@
     // cartes : centrées (fin de la scène bureau) → place dans l'application
     const gm = seg(t, k.build + 0.1, 1.0, E.emph);
     const dim = seg(t, k.v7s - 0.2, 0.45, E.outSoft) * (1 - seg(t, k.build + 0.55, 0.55, E.outSoft));
-    put(home.hdr, { op: seg(t, k.build + 0.45, 0.5, E.out), y: (1 - seg(t, k.build + 0.45, 0.5, E.out)) * 14 });
+    put(home.hdr, { op: seg(t, k.build + 0.62, 0.45, E.out), y: (1 - seg(t, k.build + 0.62, 0.45, E.out)) * 14 });   // v11 : après le passage du nom
     home.style.filter = "none";                                  // v10 : plus de grille floue à l'entrée de l'app (seulement estompée)
     // les cartes vivent dans la fenêtre : on compense la position centrée du bureau
     const dx = lerp(-124, 0, gm), dy = lerp(14, 0, gm);
     cardsEls.forEach((c, i) => {
-      let x = dx, y = dy, sc = 1, op = 1 - dim * 0.86;
+      let x = dx, y = dy, sc = 1, op = 1 - dim;                  // v11 : pas de grille fantôme sous le logo en transit
       if (i === 1) {                            // Rousseau : survol puis clic
         const hv = seg(t, k.hover + 0.35, 0.25, E.out) * (1 - seg(t, k.click + 0.1, 0.15, E.linear));
         y -= hv * 4; sc = 1 + hv * 0.012 - Math.sin(Math.PI * seg(t, k.click, 0.18, E.linear)) * 0.025;
@@ -277,7 +277,7 @@
     const ex = seg(t, k.click + 0.12, 0.62, E.emph);
     const homeOut = seg(t, k.click + 0.1, 0.25, E.out);       // v9 : la grille part avant l'entrée du titre de la fiche
     put(home, { op: 1 - homeOut, y: homeOut * 18, s: 1 - homeOut * 0.015 });
-    put(fiche, { op: seg(t, k.click + 0.2, 0.25, E.linear) * (1 - seg(t, k.toFlash, 0.15, E.linear)), x: -seg(t, k.toFlash, 0.45, E.in) * 60 });
+    put(fiche, { op: seg(t, k.click + 0.15, 0.25, E.linear) * (1 - seg(t, k.toFlash, 0.15, E.linear)), x: -seg(t, k.toFlash, 0.45, E.in) * 60 });
     const fIn = (d, dur = 0.5) => seg(t, k.click + 0.22 + d, dur, E.out);
     put(fiche.back, { op: fIn(0.05) });
     put(fiche.auth, { op: fIn(0.1), y: (1 - fIn(0.1)) * 22 });
@@ -316,7 +316,7 @@
       const sw = lerp(1, 8 / g.fcw, toBox), sh2 = lerp(1, 5 / g.fch, toBox);
       const bxc = bx + 66 - 4, byc = by + 56 - 2.5;
       const mx2 = lerp(g.fcx, bxc, toBox), my2 = lerp(g.fcy, byc, toBox) - Math.sin(Math.PI * toBox) * 90;
-      put(flash.mini, { x: mx2, y: my2, sx: sw, sy: sh2, op: 1 - seg(toBox, 0.85, 0.1, E.linear) });   // v9-v10 : disparaît par l'échelle, puis s'efface
+      put(flash.mini, { x: mx2, y: my2, sx: sw, sy: sh2, op: 1 - seg(toBox, 0.8, 0.06, E.linear) });   // v9-v11 : disparaît par l'échelle, puis s'efface avant la boîte
     } else put(flash.mini, { op: 0 });
     flash.boxes.forEach((b, i) => {
       const pulse = i === 2 ? Math.sin(Math.PI * seg(t, k.yes + 0.7, 0.35, E.linear)) : 0;   // la boîte 3 accueille la carte

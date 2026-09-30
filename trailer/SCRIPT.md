@@ -43,7 +43,7 @@ Consigne de ton (Google TTS) : Voix off de bande-annonce en français : narrateu
 | 41.4 s | Communauté | 11. Gratuit, sans compte | Respiration : fond vert profond ; « Gratuit. Sans compte. » ; le téléphone et la progression. | Gratuit. · Sans compte. · Sans publicité · Rien n'est envoyé | La musique respire (accords ouverts) |
 | 46.2 s | Communauté | 12. La classe | Le téléphone rejoint sa place dans le plan de classe ; « TG1 » ; toutes les places s'allument. | TG1 · Lycée Notre-Dame · 2026–27 | Arpège montant, une note par rangée |
 | 50.5 s | Fin | 13. Carton | Les rangées deviennent les lignes du logo ; le nom, la promesse, l'adresse. | Cahier d'HLP · Tout pour réviser, au même endroit. · naulio.github.io/cahier-hlp | Résolution sur fa ; le motif du début revient sur les derniers mots |
-| 56.9 s | Fin | 14. Dernier déclic | Déclic : le carton devient un Polaroid posé sur l'ardoise du début ; légende manuscrite. | TG1 — 2026–27 | Déclic, éjection du Polaroid, crayon ; deux dernières notes |
+| 57.2 s | Fin | 14. Dernier déclic | Déclic : le carton devient un Polaroid posé sur l'ardoise du début ; légende manuscrite. | TG1 — 2026–27 | Déclic, éjection du Polaroid, crayon ; deux dernières notes |
 
 ## Repères de synchro
 
@@ -125,6 +125,6 @@ v14_tout          52.640
 v14_reviser       52.960
 v14_endroit       54.260
 v14_end           54.540
-capture           56.940
+capture           57.240
 end               61.390
 ```

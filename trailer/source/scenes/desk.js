@@ -30,19 +30,19 @@
   const EXTRAS = [
     { kind: "page", x: -470, y: -40, r: 9, html: "<b>Plan du commentaire</b><br>I. Une éducation…<br>&nbsp;&nbsp;a) le corps<br>&nbsp;&nbsp;b) l’esprit<br>II. …", at: "v3_accum", dt: 0.3 },
     { kind: "page", x: 480, y: -150, r: -8, html: "<b>Procédés</b><br>anaphore<br>antithèse<br>métaphore filée<br>litote ≠ euphémisme", at: "v4_citations", dt: -0.15 },
-    { kind: "page", x: 60, y: -700, r: 3, html: "<b>Dissertation</b><br>problématique ?<br>→ l’éducation<br>&nbsp;&nbsp;émancipe-t-elle ?", at: "v4_notes", dt: 0.2 },
-    { kind: "sticky", x: 620, y: -40, r: 8, html: "Arendt ??<br>p. 42" },
-    { kind: "sticky", x: -640, y: -90, r: -10, html: "citations<br>à revoir !" },
-    { kind: "index", x: 660, y: 170, r: -6, html: "perfectibilité<br>≠ perfection !<br>(Rousseau)" },
+    { kind: "page", x: 60, y: -700, r: 3, html: "<b>Dissertation</b><br>problématique ?<br>→ l’éducation<br>&nbsp;&nbsp;émancipe-t-elle ?", at: "v4_notes", dt: 0.2 },
+    { kind: "sticky", x: 620, y: -40, r: 8, html: "Arendt ??<br>p. 42" },
+    { kind: "sticky", x: -640, y: -90, r: -10, html: "citations<br>à revoir !" },
+    { kind: "index", x: 660, y: 170, r: -6, html: "perfectibilité<br>≠ perfection !<br>(Rousseau)" },
     { kind: "index", x: -680, y: 150, r: 5, html: "Quos ego → Virgile<br>Charbovari = Charles" },
   ];
 
   /* annotations au stylo, en coordonnées de feuille (px) : [type, ligne, x0, x1, texte] */
   const NOTES = {
-    rou: [["under", 5, 0, 250], ["bracket", 3, 5], ["margin", 5, "déf. !"]],
+    rou: [["under", 5, 0, 250], ["bracket", 3, 5], ["margin", 5, "déf. !"]],
     hug: [["circle", 4, 205, 285], ["margin", 0, "thèse"]],
     flo: [["under", 1, 18, 150], ["margin", 1, "Charles"]],
-    rab: [["under", 0, 208, 330], ["margin", 0, "4 h !"]],
+    rab: [["under", 0, 208, 330], ["margin", 0, "4 h !"]],
     fer: [["under", 3, 0, 110]],
     peg: [["circle", 1, 0, 120]],
   };
@@ -292,6 +292,7 @@
     put(question, { y: 868 - qOut * 30, op: 1 - qOut });
 
     // ---- feuilles
+    const sheetZ = f => 10 + (PRESENT.includes(f.id) ? C.feuilles.indexOf(f) : 20 + C.feuilles.indexOf(f));
     const arrivals = { flo: "v3_rentree", fer: "v3_textes", peg: "v3_accum", bal: "v4_feuilles", cam: "v4_feuilles", are: "v4_notes" };
     const offs = { cam: 0.28, are: -0.25 };
     C.feuilles.forEach((f, i) => {
@@ -385,7 +386,7 @@
       const [hx, hy, hr] = s.home;
       const [sx, sy] = toScreen(cam0, hx, hy);
       const slot = UI.slot(i); slot.x += S.GRID_DX; slot.y += S.GRID_DY;
-      const t0 = sh + 0.35 + i * 0.075;
+      const t0 = sh + 0.35 + i * 0.05;                      // v11 : cascade resserrée (les dernières feuilles ne traînent plus)
       const e = seg(t, t0, 1.25, E.emph);
       const ew = seg(t, t0 + 0.1, 1.1, E.inOut);
       const bw = lerp(SHEET_W * cam0.z, slot.w, ew), bh = lerp(SHEET_H * cam0.z, slot.h, ew);
@@ -399,9 +400,11 @@
       // contenu : la feuille s'efface sous la carte
       c.inner.style.transform = `scale(${cam0.z.toFixed(4)})`;
       // v9 : l'encre de la feuille s'éteint avant que le texte de la carte n'apparaisse (jamais texte sur texte)
-      c.inner.style.opacity = (1 - seg(t, t0 + 0.3, 0.3, E.linear)).toFixed(3);
+      c.inner.style.opacity = (1 - seg(t, sh + 0.55 + i * 0.03, 0.3, E.linear)).toFixed(3);   // v11 : toute l'encre éteinte avant ~17,1 s
       c.card.style.opacity = seg(t, t0 + 0.62, 0.4, E.out).toFixed(3);
-      c.box.style.zIndex = 5 + i;
+      // v11 : même empilement que les feuilles au déclic ; une carte posée passe au-dessus des feuilles encore en vol
+      const rank = [...C.feuilles].sort((p, q) => sheetZ(p) - sheetZ(q)).indexOf(f);
+      c.box.style.zIndex = e > 0.85 ? 18 - i : 1 + rank;    // reste sous le calque des post-it (z 20) ; les premières posées dessus
     });
   };
 

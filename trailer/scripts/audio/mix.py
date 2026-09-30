@@ -42,8 +42,9 @@ for line in TL["lines"]:
 # très légère ambiance commune (la voix « habite » la même pièce que le film)
 # v8-v9 : attaques qui faisaient le plus travailler le limiteur : gain réduit sur 120 ms centrées sur le pic RÉEL
 # de la voix autour du repère (le repère Whisper peut être en retard sur la syllabe, ex. « Ta » avant « progression »)
-for mk, g in (("v12_gratuit", -2.0), ("v12_progression", -2.0), ("v11_arendt", -1.5)):   # v10 : le pic est sur « à A- », pas sur « Rabelais »
-    w0, w1 = lib.seconds(M[mk] - 0.2), lib.seconds(M[mk] + 0.15)
+for mk, g, lo, hi in (("v12_gratuit", -2.0, -0.2, 0.15), ("v12_progression", -2.0, -0.2, 0.15),
+                      ("v11_arendt", -1.5, -0.30, -0.12)):   # v10-v11 : le pic est sur « -lais à », avant « Arendt »
+    w0, w1 = lib.seconds(M[mk] + lo), lib.seconds(M[mk] + hi)
     pk = w0 + int(np.argmax(np.abs(voice.buf[w0:w1]).max(1)))
     n, r = lib.seconds(0.12), lib.seconds(0.03)
     a = pk - n // 2
@@ -93,8 +94,8 @@ S("shutter_k1000", sh - 0.03, -4)
 S("film_advance", sh + 0.42, -14, 0.2)
 S("paper_sweep", sh + 0.3, -13)
 JIT = [(0.004, 0.8), (-0.011, -1.5), (0.013, 0.4), (-0.006, 1.7), (0.009, -0.9), (-0.014, 1.1), (0.002, -1.8), (0.012, 0.6), (-0.008, -0.3)]
-for i in (0, 3, 6):                       # v10 : un tic par rangée de cartes (neuf en 0,6 s sonnaient « automatiques »)
-    S(f"card_tick_{i % 3 + 1}", sh + 0.35 + i * 0.075 + 0.78 + JIT[i][0], -23 + JIT[i][1], -0.4 + 0.1 * i)
+for k, i in enumerate((0, 3, 6)):         # v10 : un tic par rangée de cartes ; v11 : trois sons différents
+    S(f"card_tick_{k + 1}", sh + 0.35 + i * 0.05 + 0.78 + JIT[i][0], -23 + JIT[i][1], -0.4 + 0.1 * i)
 # l'application
 build = M["v7_end"] + 0.35
 S("air_soft", build - 0.05, -20)

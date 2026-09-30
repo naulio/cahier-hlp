@@ -399,4 +399,31 @@ déclic était bien faux (les cartes, avec un z-index propre, passaient au-dessu
 
 ## v10
 
-(évaluation à venir)
+61,4 s. Sept évaluateurs (le rapport voix est arrivé après la préparation de la v11).
+
+| Domaine | Note v10 | (v9) | Verdict |
+|---|---|---|---|
+| Direction artistique | 9 | 9 | « la naissance du symbole est enfin propre » ; feuilles vierges sur les cartes à 17,3 s |
+| Motion | 9 | 8,9 | grille, tiret, raccords réglés ; carré né avant les lignes placées ; nom/titre qui se touchent |
+| Son / musique / mix | 9,1 (mix 9,1) | 9 | limiteur 1,72 dB (v1 : 2,21) ; pic « -lais à » encore manqué ; trois tics identiques |
+| Montage / storytelling | 8,7 | 8,6 | « même film, mieux minuté, pas plus chargé » ; adresse courte, citation |
+| Orthographe / français | 9,5 | 9 | aucune faute visible |
+| AI slop detector | 8,6 | 8,5 | tics et recul réglés ; feuilles → cartes |
+
+**Calibrage** : conforme ; aucune demande d'effet. Moyenne ≈ 9.
+
+### Modifications v10 → v11 (finitions seulement, rien d'ajouté)
+- **Feuilles → cartes** : même empilement que les feuilles au déclic, puis chaque carte posée passe au-dessus des
+  feuilles encore en vol ; toute l'encre des feuilles s'éteint avant ~17,1 s ; cascade resserrée.
+- **Logo de fin** : 6 → 3 barres presque en coupe franche ; le carré naît une fois les lignes en place ; passage
+  vert → papier en 0,3 s.
+- **App** : aucune grille fantôme sous le nom en transit ; le titre entre après le passage du nom ; une image vide
+  de moins entre la grille et la fiche ; la carte de la flashcard s'efface avant la boîte.
+- **Fin** : le déclic final arrive 0,3 s plus tard (l'adresse se lit ~2,3 s), le Polaroid tient toujours ~3,4 s.
+- **Textes** : espaces fines insécables dans les notes du bureau.
+- **Son** : la baisse de gain vise enfin le pic « -lais à » (fenêtre avant « Arendt ») ; trois tics de cartes
+  différents.
+
+## v11
+
+(rendu en cours)

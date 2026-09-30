@@ -178,14 +178,14 @@
   "pan": -0.4
  },
  {
-  "t": 17.329,
-  "sfx": "card_tick_1",
+  "t": 17.254,
+  "sfx": "card_tick_2",
   "gain_db": -21.3,
   "pan": -0.09999999999999998
  },
  {
-  "t": 17.562,
-  "sfx": "card_tick_1",
+  "t": 17.412,
+  "sfx": "card_tick_3",
   "gain_db": -24.8,
   "pan": 0.20000000000000007
  },
@@ -310,20 +310,20 @@
   "pan": 0.0
  },
  {
-  "t": 56.91,
+  "t": 57.21,
   "sfx": "shutter_k1000",
   "gain_db": -6,
   "pan": 0.0
  },
  {
-  "t": 57.06,
+  "t": 57.36,
   "sfx": "polaroid_eject",
   "gain_db": -9,
   "pan": 0.0,
   "lpf": 6000
  },
  {
-  "t": 57.99,
+  "t": 58.29,
   "sfx": "pencil_caption",
   "gain_db": -24,
   "pan": 0.0,
